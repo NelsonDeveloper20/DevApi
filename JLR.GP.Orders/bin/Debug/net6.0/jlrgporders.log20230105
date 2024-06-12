@@ -1,0 +1,1061 @@
+2023-01-05 09:42:07,694 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-01-05 09:42:07,714 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-01-05 09:42:07,723 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-01-05 09:42:07,727 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-01-05 09:42:07,729 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-01-05 09:42:22,242 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlAcumulado' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 09:42:22,254 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlIngresos' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 09:42:22,260 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlSalidas' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 09:42:22,266 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmPorcentajeUtilidadC' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 09:42:22,273 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlMetrosCuadrados' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 09:42:22,740 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 09:42:22,740 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 09:42:25,166 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (226ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-01-05 09:42:25,570 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (107ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-01-05 09:44:30,591 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 09:44:30,593 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 09:44:30,725 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (123ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-01-05 09:44:30,814 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (213ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-01-05 09:45:13,546 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 09:45:13,552 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 09:45:14,860 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1,299ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-01-05 09:45:14,950 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1,393ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-01-05 10:02:34,424 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-01-05 10:02:34,457 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-01-05 10:02:34,472 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-01-05 10:02:34,474 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-01-05 10:02:34,476 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-01-05 10:02:43,743 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlAcumulado' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 10:02:43,754 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlIngresos' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 10:02:43,759 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlSalidas' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 10:02:43,764 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmPorcentajeUtilidadC' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 10:02:43,769 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlMetrosCuadrados' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 10:02:44,198 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 10:02:44,198 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 10:02:48,459 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (625ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-01-05 10:02:49,901 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (209ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-01-05 10:02:55,216 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 10:02:55,220 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 10:02:55,354 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (124ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-01-05 10:02:55,357 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (124ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-01-05 10:03:25,644 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 10:03:27,095 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (273ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRHHCurvaPersonal] ([dmlAcumulado], [dmlIngresos], [dmlSalidas], [dtmFechaCarga], [dtmFechaCorte], [dtmFechaFinal], [dtmFechaInico], [intContrata], [intFecha], [intObreros], [intProyecto], [intSemana], [vchAnioSemana], [vchDescripcionSemana], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+SELECT [intCurvaPersonal]
+FROM [ods].[FactRRHHCurvaPersonal]
+WHERE @@ROWCOUNT = 1 AND [intCurvaPersonal] = scope_identity();
+2023-01-05 12:02:18,065 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-01-05 12:02:18,080 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-01-05 12:02:18,088 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-01-05 12:02:18,091 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-01-05 12:02:18,093 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-01-05 12:03:07,451 [.NET ThreadPool Worker] ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware - An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'ApiPortal_DataLake.Domain.Contracts.ISubContratistaService' while attempting to activate 'ApiPortal_DataLake.Application.Controllers.SubContratistaController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method28(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass7_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-01-05 12:03:48,838 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-01-05 12:03:48,852 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-01-05 12:03:48,859 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-01-05 12:03:48,862 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-01-05 12:03:48,864 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-01-05 12:05:06,165 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-01-05 12:05:06,212 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-01-05 12:05:06,220 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-01-05 12:05:06,221 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-01-05 12:05:06,223 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-01-05 12:05:25,010 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlAcumulado' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 12:05:25,017 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlIngresos' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 12:05:25,023 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlSalidas' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 12:05:25,025 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlValor' on entity type 'FactRRhhReportPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 12:05:25,028 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmPorcentajeUtilidadC' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 12:05:25,030 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlMetrosCuadrados' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 12:05:25,311 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 12:05:29,395 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Database.Command - Failed executing DbCommand (3,611ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[intSubContratista], [s].[dtmFechaCarga], [s].[vchEmpresa]
+FROM [SubContratista] AS [s]
+2023-01-05 12:05:29,518 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Query - An exception occurred while iterating over the results of a query for context type 'ApiPortal_DataLake.Domain.Models.JlrGpOrdersContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'SubContratista'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:e0e5740c-722d-4c79-882a-e0bbd64348ac
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'SubContratista'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:e0e5740c-722d-4c79-882a-e0bbd64348ac
+Error Number:208,State:1,Class:16
+2023-01-05 12:05:52,850 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Controllers.SubContratistaController - Error GetPurcharseRequest : {"ClassName":"Microsoft.Data.SqlClient.SqlException","Message":"Invalid object name 'SubContratista'.","Data":{"HelpLink.ProdName":"Microsoft SQL Server","HelpLink.ProdVer":"12.00.0816","HelpLink.EvtSrc":"MSSQLServer","HelpLink.EvtID":"208","HelpLink.BaseHelpUrl":"https://go.microsoft.com/fwlink","HelpLink.LinkId":"20476","SqlError 1":"Microsoft.Data.SqlClient.SqlError: Invalid object name 'SubContratista'."},"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)\r\n   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()\r\n   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n--- End of stack trace from previous location ---\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\r\n   at ApiPortal_DataLake.Domain.Services.SubContratistaService.GetAllAsync() in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Domain\\Services\\SubContratistaService.cs:line 31\r\n   at ApiPortal_DataLake.Application.Controllers.SubContratistaController.GetPurcharseRequest() in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Application\\Controllers\\SubContratistaController.cs:line 39","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146232060,"Source":"Core Microsoft SqlClient Data Provider","WatsonBuckets":null,"Errors":null,"ClientConnectionId":"e0e5740c-722d-4c79-882a-e0bbd64348ac"}
+2023-01-05 12:06:21,108 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-01-05 12:06:21,123 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-01-05 12:06:21,130 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-01-05 12:06:21,133 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-01-05 12:06:21,136 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-01-05 12:06:42,775 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlAcumulado' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 12:06:42,781 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlIngresos' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 12:06:42,785 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlSalidas' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 12:06:42,790 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlValor' on entity type 'FactRRhhReportPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 12:06:42,793 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmPorcentajeUtilidadC' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 12:06:42,796 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlMetrosCuadrados' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 12:06:43,143 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 12:06:45,872 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (192ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intSubContratista], [d].[dtmFechaCarga], [d].[vchEmpresa]
+FROM [ods].[Dim_SubContratista] AS [d]
+2023-01-05 12:07:39,956 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-01-05 12:07:39,968 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-01-05 12:07:39,975 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-01-05 12:07:39,977 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-01-05 12:07:39,978 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-01-05 12:07:57,259 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlAcumulado' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 12:07:57,267 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlIngresos' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 12:07:57,270 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlSalidas' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 12:07:57,272 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlValor' on entity type 'FactRRhhReportPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 12:07:57,274 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmPorcentajeUtilidadC' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 12:07:57,277 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlMetrosCuadrados' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 12:07:57,513 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 12:07:57,513 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 12:07:59,641 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (439ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-01-05 12:08:00,046 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (100ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-01-05 12:12:33,392 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 12:12:33,364 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 12:12:33,552 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (124ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-01-05 12:12:33,555 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (124ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-01-05 12:13:37,825 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 12:13:37,828 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 12:13:45,923 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8,093ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-01-05 12:13:45,925 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8,092ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-01-05 12:13:45,938 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 12:13:46,077 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (103ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intSubContratista], [d].[dtmFechaCarga], [d].[vchEmpresa]
+FROM [ods].[Dim_SubContratista] AS [d]
+2023-01-05 12:16:54,716 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 12:16:54,717 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 12:16:54,755 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 12:16:54,886 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (117ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-01-05 12:16:54,973 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (212ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-01-05 12:16:55,965 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (113ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intSubContratista], [d].[dtmFechaCarga], [d].[vchEmpresa]
+FROM [ods].[Dim_SubContratista] AS [d]
+2023-01-05 12:59:15,470 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-01-05 12:59:15,483 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-01-05 12:59:15,491 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-01-05 12:59:15,493 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-01-05 12:59:15,494 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-01-05 13:04:49,584 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-01-05 13:04:49,603 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-01-05 13:04:49,613 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-01-05 13:04:49,615 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-01-05 13:04:49,617 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-01-05 13:06:02,612 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlAcumulado' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 13:06:02,617 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlIngresos' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 13:06:02,619 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlSalidas' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 13:06:02,621 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlValor' on entity type 'FactRRhhReportPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 13:06:02,623 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmPorcentajeUtilidadC' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 13:06:02,625 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlMetrosCuadrados' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 13:06:02,877 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 13:06:02,877 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 13:06:02,877 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 13:06:04,782 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (212ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-01-05 13:06:05,221 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (117ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intSubContratista], [d].[dtmFechaCarga], [d].[vchEmpresa]
+FROM [ods].[Dim_SubContratista] AS [d]
+2023-01-05 13:06:05,831 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (124ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-01-05 13:06:36,631 [.NET ThreadPool Worker] ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware - An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'ApiPortal_DataLake.Domain.Contracts.IFactRRhhReportPersonalService' while attempting to activate 'ApiPortal_DataLake.Application.Controllers.FactRRhhReportPersonalController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method283(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass7_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-01-05 13:07:48,751 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-01-05 13:07:48,766 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-01-05 13:07:48,773 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-01-05 13:07:48,775 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-01-05 13:07:48,777 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-01-05 13:08:22,036 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlAcumulado' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 13:08:22,043 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlIngresos' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 13:08:22,047 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlSalidas' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 13:08:22,051 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlValor' on entity type 'FactRRhhReportPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 13:08:22,055 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmPorcentajeUtilidadC' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 13:08:22,058 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlMetrosCuadrados' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 13:08:22,355 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 13:10:22,723 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-01-05 13:10:22,736 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-01-05 13:10:22,743 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-01-05 13:10:22,746 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-01-05 13:10:22,749 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-01-05 13:10:47,560 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlAcumulado' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 13:10:47,565 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlIngresos' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 13:10:47,569 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlSalidas' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 13:10:47,572 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlValor' on entity type 'FactRRhhReportPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 13:10:47,576 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmPorcentajeUtilidadC' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 13:10:47,581 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlMetrosCuadrados' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 13:10:47,928 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 13:10:50,053 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (273ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:10:50,580 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (105ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:10:50,918 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (108ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:10:51,241 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (103ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:10:51,563 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (103ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:10:51,884 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (103ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:10:52,205 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (103ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:10:52,536 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (104ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:10:52,864 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (103ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:10:53,192 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (103ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:10:53,521 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (102ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:10:53,853 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (109ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:10:54,178 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (104ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:10:54,502 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (103ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:10:54,839 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (115ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:10:55,161 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (106ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:10:55,487 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (103ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:10:55,808 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (107ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:10:56,135 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (110ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:11:16,881 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 13:11:16,882 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 13:11:16,883 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 13:11:17,420 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (123ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-01-05 13:11:18,079 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (111ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intSubContratista], [d].[dtmFechaCarga], [d].[vchEmpresa]
+FROM [ods].[Dim_SubContratista] AS [d]
+2023-01-05 13:11:18,111 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (144ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-01-05 13:12:07,608 [21] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 13:12:07,856 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (118ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[Dim_ProcesoCarga] ([dtmFechaFin], [dtmFechaInicio], [intEstado], [intUsuario], [vchNombreArchivo])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [intProcesoCarga]
+FROM [ods].[Dim_ProcesoCarga]
+WHERE @@ROWCOUNT = 1 AND [intProcesoCarga] = scope_identity();
+2023-01-05 13:12:08,271 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (112ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[Dim_ProcesoCarga_Detalle] ([intProcesoCarga], [dtmFechaCarga], [vchDescripcionError], [vchDetalle])
+VALUES (@p0, @p1, @p2, @p3);
+2023-01-05 13:13:45,868 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 13:13:46,151 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (113ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRHHCurvaPersonal] ([dmlAcumulado], [dmlIngresos], [dmlSalidas], [dtmFechaCarga], [dtmFechaCorte], [dtmFechaFinal], [dtmFechaInico], [intContrata], [intFecha], [intObreros], [intProyecto], [intSemana], [vchAnioSemana], [vchDescripcionSemana], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+SELECT [intCurvaPersonal]
+FROM [ods].[FactRRHHCurvaPersonal]
+WHERE @@ROWCOUNT = 1 AND [intCurvaPersonal] = scope_identity();
+2023-01-05 13:18:02,866 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 13:18:04,120 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Database.Command - Failed executing DbCommand (122ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:18:04,427 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Update - An exception occurred in the database while saving changes for context type 'ApiPortal_DataLake.Domain.Models.JlrGpOrdersContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_FactRRhhReportPersonal_Dim_TipoContrata". The conflict occurred in database "Besco_BI", table "ods.Dim_TipoContrata", column 'intContrata'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:deedf9e1-733b-4e61-a809-d47675f759fc
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_FactRRhhReportPersonal_Dim_TipoContrata". The conflict occurred in database "Besco_BI", table "ods.Dim_TipoContrata", column 'intContrata'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:deedf9e1-733b-4e61-a809-d47675f759fc
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-01-05 13:18:04,574 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Domain.Services.FactRRhhReportPersonalService - AgregarUsuario Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateException","Message":"An error occurred while saving the entity changes. See the inner exception for details.","Data":null,"InnerException":{"ClassName":"Microsoft.Data.SqlClient.SqlException","Message":"The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_FactRRhhReportPersonal_Dim_TipoContrata\". The conflict occurred in database \"Besco_BI\", table \"ods.Dim_TipoContrata\", column 'intContrata'.\r\nThe statement has been terminated.","Data":{"HelpLink.ProdName":"Microsoft SQL Server","HelpLink.ProdVer":"12.00.0816","HelpLink.EvtSrc":"MSSQLServer","HelpLink.EvtID":"547","HelpLink.BaseHelpUrl":"https://go.microsoft.com/fwlink","HelpLink.LinkId":"20476","SqlError 1":"Microsoft.Data.SqlClient.SqlError: The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_FactRRhhReportPersonal_Dim_TipoContrata\". The conflict occurred in database \"Besco_BI\", table \"ods.Dim_TipoContrata\", column 'intContrata'.","SqlError 2":"Microsoft.Data.SqlClient.SqlError: The statement has been terminated."},"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)\r\n   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()\r\n   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n--- End of stack trace from previous location ---\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146232060,"Source":"Core Microsoft SqlClient Data Provider","WatsonBuckets":null,"Errors":null,"ClientConnectionId":"deedf9e1-733b-4e61-a809-d47675f759fc"},"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at ApiPortal_DataLake.Domain.Services.FactRRhhReportPersonalService.Agregar(List`1 Items, AgregarFactRRhhReportPersonalRequest Datos) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Domain\\Services\\FactRRhhReportPersonalService.cs:line 53","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2023-01-05 13:18:12,857 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 13:18:13,091 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Database.Command - Failed executing DbCommand (115ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:18:13,227 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Update - An exception occurred in the database while saving changes for context type 'ApiPortal_DataLake.Domain.Models.JlrGpOrdersContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_FactRRhhReportPersonal_Dim_TipoContrata". The conflict occurred in database "Besco_BI", table "ods.Dim_TipoContrata", column 'intContrata'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:deedf9e1-733b-4e61-a809-d47675f759fc
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_FactRRhhReportPersonal_Dim_TipoContrata". The conflict occurred in database "Besco_BI", table "ods.Dim_TipoContrata", column 'intContrata'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:deedf9e1-733b-4e61-a809-d47675f759fc
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-01-05 13:18:13,288 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Domain.Services.FactRRhhReportPersonalService - AgregarUsuario Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateException","Message":"An error occurred while saving the entity changes. See the inner exception for details.","Data":null,"InnerException":{"ClassName":"Microsoft.Data.SqlClient.SqlException","Message":"The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_FactRRhhReportPersonal_Dim_TipoContrata\". The conflict occurred in database \"Besco_BI\", table \"ods.Dim_TipoContrata\", column 'intContrata'.\r\nThe statement has been terminated.","Data":{"HelpLink.ProdName":"Microsoft SQL Server","HelpLink.ProdVer":"12.00.0816","HelpLink.EvtSrc":"MSSQLServer","HelpLink.EvtID":"547","HelpLink.BaseHelpUrl":"https://go.microsoft.com/fwlink","HelpLink.LinkId":"20476","SqlError 1":"Microsoft.Data.SqlClient.SqlError: The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_FactRRhhReportPersonal_Dim_TipoContrata\". The conflict occurred in database \"Besco_BI\", table \"ods.Dim_TipoContrata\", column 'intContrata'.","SqlError 2":"Microsoft.Data.SqlClient.SqlError: The statement has been terminated."},"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)\r\n   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()\r\n   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n--- End of stack trace from previous location ---\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146232060,"Source":"Core Microsoft SqlClient Data Provider","WatsonBuckets":null,"Errors":null,"ClientConnectionId":"deedf9e1-733b-4e61-a809-d47675f759fc"},"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at ApiPortal_DataLake.Domain.Services.FactRRhhReportPersonalService.Agregar(List`1 Items, AgregarFactRRhhReportPersonalRequest Datos) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Domain\\Services\\FactRRhhReportPersonalService.cs:line 53","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2023-01-05 13:19:11,943 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 13:19:11,960 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 13:19:11,974 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 13:19:12,166 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (149ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intSubContratista], [d].[dtmFechaCarga], [d].[vchEmpresa]
+FROM [ods].[Dim_SubContratista] AS [d]
+2023-01-05 13:19:13,056 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (109ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-01-05 13:19:13,063 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (114ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-01-05 13:19:44,977 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 13:19:45,199 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (108ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:19:45,539 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (104ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:19:45,893 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (107ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:19:46,223 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (105ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:19:46,583 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (110ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:19:46,911 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (104ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:19:47,232 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (104ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:19:47,568 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (103ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:19:47,905 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (110ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:19:48,237 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (107ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:19:48,568 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (104ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:19:48,902 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (107ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:19:49,252 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (113ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:19:49,587 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (114ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:19:49,914 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (113ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:19:50,251 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (109ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:19:50,582 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (106ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:19:50,905 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (105ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:19:51,240 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (110ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:20:50,479 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 13:20:50,701 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (110ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:20:51,035 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (107ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:20:51,360 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (103ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:20:51,684 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (104ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:20:52,011 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (105ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:20:52,344 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (108ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:20:52,675 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (115ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:20:52,996 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (106ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:20:53,318 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (104ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:20:53,662 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (105ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:20:54,002 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (118ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:20:54,329 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (106ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:20:54,668 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (108ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:20:54,997 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (107ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:20:55,322 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (104ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:20:55,656 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (102ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:20:55,997 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (114ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:20:56,348 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (113ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 13:20:56,690 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (106ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:07:13,023 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-01-05 15:07:13,037 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-01-05 15:07:13,045 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-01-05 15:07:13,048 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-01-05 15:07:13,049 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-01-05 15:07:23,710 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-01-05 15:07:23,728 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-01-05 15:07:23,735 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-01-05 15:07:23,737 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-01-05 15:07:23,738 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-01-05 15:07:30,849 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlAcumulado' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 15:07:30,859 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlIngresos' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 15:07:30,865 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlSalidas' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 15:07:30,870 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlValor' on entity type 'FactRRhhReportPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 15:07:30,879 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmPorcentajeUtilidadC' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 15:07:30,883 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlMetrosCuadrados' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 15:07:31,181 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 15:07:31,181 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 15:07:31,181 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 15:07:33,275 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (205ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-01-05 15:07:33,813 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (117ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-01-05 15:07:33,818 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (120ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intSubContratista], [d].[dtmFechaCarga], [d].[vchEmpresa]
+FROM [ods].[Dim_SubContratista] AS [d]
+2023-01-05 15:08:14,435 [6] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 15:08:14,988 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (161ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[Dim_ProcesoCarga] ([dtmFechaFin], [dtmFechaInicio], [intEstado], [intUsuario], [vchNombreArchivo])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [intProcesoCarga]
+FROM [ods].[Dim_ProcesoCarga]
+WHERE @@ROWCOUNT = 1 AND [intProcesoCarga] = scope_identity();
+2023-01-05 15:08:15,498 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (117ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[Dim_ProcesoCarga_Detalle] ([intProcesoCarga], [dtmFechaCarga], [vchDescripcionError], [vchDetalle])
+VALUES (@p0, @p1, @p2, @p3);
+2023-01-05 15:13:09,027 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 15:13:09,332 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (116ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRHHCurvaPersonal] ([dmlAcumulado], [dmlIngresos], [dmlSalidas], [dtmFechaCarga], [dtmFechaCorte], [dtmFechaFinal], [dtmFechaInico], [intContrata], [intFecha], [intObreros], [intProyecto], [intSemana], [vchAnioSemana], [vchDescripcionSemana], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+SELECT [intCurvaPersonal]
+FROM [ods].[FactRRHHCurvaPersonal]
+WHERE @@ROWCOUNT = 1 AND [intCurvaPersonal] = scope_identity();
+2023-01-05 15:15:09,497 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 15:15:09,719 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (114ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRHHCurvaPersonal] ([dmlAcumulado], [dmlIngresos], [dmlSalidas], [dtmFechaCarga], [dtmFechaCorte], [dtmFechaFinal], [dtmFechaInico], [intContrata], [intFecha], [intObreros], [intProyecto], [intSemana], [vchAnioSemana], [vchDescripcionSemana], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+SELECT [intCurvaPersonal]
+FROM [ods].[FactRRHHCurvaPersonal]
+WHERE @@ROWCOUNT = 1 AND [intCurvaPersonal] = scope_identity();
+2023-01-05 15:17:01,738 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 15:17:01,958 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (105ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRHHCurvaPersonal] ([dmlAcumulado], [dmlIngresos], [dmlSalidas], [dtmFechaCarga], [dtmFechaCorte], [dtmFechaFinal], [dtmFechaInico], [intContrata], [intFecha], [intObreros], [intProyecto], [intSemana], [vchAnioSemana], [vchDescripcionSemana], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+SELECT [intCurvaPersonal]
+FROM [ods].[FactRRHHCurvaPersonal]
+WHERE @@ROWCOUNT = 1 AND [intCurvaPersonal] = scope_identity();
+2023-01-05 15:19:05,924 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 15:19:06,193 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (109ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:19:06,532 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (103ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:19:06,863 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (104ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:19:07,213 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (106ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:19:07,535 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (104ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:19:07,871 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (113ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:19:08,238 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (117ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:19:08,575 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (104ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:19:08,902 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (103ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:19:09,235 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (106ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:19:09,560 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (106ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:19:09,890 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (102ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:19:10,221 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (113ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:19:10,539 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (103ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:19:10,866 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (103ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:19:11,198 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (112ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:19:11,516 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (104ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:19:11,837 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (104ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:19:12,163 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (102ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRhhReportPersonal] ([dmlValor], [dtmFechaCarga], [dtmFechaCargaMes], [dtmFechaRegistro], [intArticulos], [intContrata], [intFecha], [intProyectos], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [intRRhhReportPersonal]
+FROM [ods].[FactRRhhReportPersonal]
+WHERE @@ROWCOUNT = 1 AND [intRRhhReportPersonal] = scope_identity();
+2023-01-05 15:26:03,013 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-01-05 15:26:03,026 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-01-05 15:26:03,035 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-01-05 15:26:03,037 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-01-05 15:26:03,038 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-01-05 15:27:02,576 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlAcumulado' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 15:27:02,583 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlIngresos' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 15:27:02,588 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlSalidas' on entity type 'FactRRHHCurvaPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 15:27:02,593 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlValor' on entity type 'FactRRhhReportPersonal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 15:27:02,598 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmPorcentajeUtilidadC' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 15:27:02,601 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dmlMetrosCuadrados' on entity type 'Proyecto'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-01-05 15:27:02,930 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-01-05 15:27:05,099 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (211ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactRRHHCurvaPersonal] ([dmlAcumulado], [dmlIngresos], [dmlSalidas], [dtmFechaCarga], [dtmFechaCorte], [dtmFechaFinal], [dtmFechaInico], [intContrata], [intFecha], [intObreros], [intProyecto], [intSemana], [vchAnioSemana], [vchDescripcionSemana], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+SELECT [intCurvaPersonal]
+FROM [ods].[FactRRHHCurvaPersonal]
+WHERE @@ROWCOUNT = 1 AND [intCurvaPersonal] = scope_identity();

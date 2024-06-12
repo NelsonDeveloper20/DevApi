@@ -1,0 +1,873 @@
+2024-02-13 09:24:00,309 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-02-13 09:24:00,367 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2024-02-13 09:24:00,371 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\PROYECTOS\WORKFLOW\Proyecto Git\WorkFlowGrupoPana\WorkFlowGP.ApiRest\JLR.GP.Orders\
+2024-02-13 09:35:08,357 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2024-02-13 09:35:08,399 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjVCM25SeHRRN2ppOGVORGMzRnkwNUtmOTdaRSJ9.eyJhdWQiOiJjMWYzZTUyMy01ZDFiLTQzNzQtYThjOS1lNjZkZTU4Y2JmOTciLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE3MDQ3NDg5ODcsIm5iZiI6MTcwNDc0ODk4NywiZXhwIjoxNzA0NzUyODg3LCJhaW8iOiJBVVFBdS84VkFBQUFEMDBFdzBIVTlTb0ZjRGlVRFdSWXpOaSt3NmxKelhSbVVFOUwwaHJaMGRobjNBRGlnOS9KeHFRLzI0SnIvbWRLRW9HMDJ2MUlmT1BWY2RRcVBZdnJ6dz09IiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiNjYxNzc3YjAtZTg5MS00YmRiLTgyZTQtOGYxNTA1NzlhNzBkIiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVmlQbDg4RWJYWFJEcU1ubWJlV012NWNsQUdBLiIsInN1YiI6Im02MW5HZEp6ZlhLd3ZZYUNRNmNwdS1WOEl5SEM5bGJCS1JWWEdlc0xXUGciLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiJWcmgzdm9QbFBrLWhDUVhsUDNXNEF3IiwidmVyIjoiMi4wIn0.z_w_ZJ5l8ijMkaaUTTJ91cq4NLKmaNm2L84Lh6eBh3W2IwR1ZBel_DMI_A0nN2bsXgCCCJS5pROiGRbIUffO_Blceh0cPQYCmGa4lSO3BTvlDkszC01zBgobrUpQQ2e5GSmiN0tAJgCIer8aNse8Wmm9k-kUL2GaP8yeKM5Zzi9jCcmA_LJYNx_POPEbiEOHPsL2SGQ8yDGGQnedJ7OQlHSqi7GeQc3bnQ9W_HdYBo0PNk02VQ71DL0wgfWvShtmMsACiRpzvH3gwRKmrpfn44JqlisHBp4LAS7yYzwzH6UogAvezT7NZfcQ2GiZ-8nd3GwzzCkWq3xpz9wl83G5FQ
+2024-02-13 09:35:08,691 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2024-02-13 09:35:08,722 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjVCM25SeHRRN2ppOGVORGMzRnkwNUtmOTdaRSJ9.eyJhdWQiOiJjMWYzZTUyMy01ZDFiLTQzNzQtYThjOS1lNjZkZTU4Y2JmOTciLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE3MDQ3NDg5ODcsIm5iZiI6MTcwNDc0ODk4NywiZXhwIjoxNzA0NzUyODg3LCJhaW8iOiJBVVFBdS84VkFBQUFEMDBFdzBIVTlTb0ZjRGlVRFdSWXpOaSt3NmxKelhSbVVFOUwwaHJaMGRobjNBRGlnOS9KeHFRLzI0SnIvbWRLRW9HMDJ2MUlmT1BWY2RRcVBZdnJ6dz09IiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiNjYxNzc3YjAtZTg5MS00YmRiLTgyZTQtOGYxNTA1NzlhNzBkIiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVmlQbDg4RWJYWFJEcU1ubWJlV012NWNsQUdBLiIsInN1YiI6Im02MW5HZEp6ZlhLd3ZZYUNRNmNwdS1WOEl5SEM5bGJCS1JWWEdlc0xXUGciLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiJWcmgzdm9QbFBrLWhDUVhsUDNXNEF3IiwidmVyIjoiMi4wIn0.z_w_ZJ5l8ijMkaaUTTJ91cq4NLKmaNm2L84Lh6eBh3W2IwR1ZBel_DMI_A0nN2bsXgCCCJS5pROiGRbIUffO_Blceh0cPQYCmGa4lSO3BTvlDkszC01zBgobrUpQQ2e5GSmiN0tAJgCIer8aNse8Wmm9k-kUL2GaP8yeKM5Zzi9jCcmA_LJYNx_POPEbiEOHPsL2SGQ8yDGGQnedJ7OQlHSqi7GeQc3bnQ9W_HdYBo0PNk02VQ71DL0wgfWvShtmMsACiRpzvH3gwRKmrpfn44JqlisHBp4LAS7yYzwzH6UogAvezT7NZfcQ2GiZ-8nd3GwzzCkWq3xpz9wl83G5FQ
+2024-02-13 09:35:08,849 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2024-02-13 09:35:08,849 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2024-02-13 09:35:09,789 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2024-02-13 09:35:09,793 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImtXYmthYTZxczh3c1RuQndpaU5ZT2hIYm5BdyJ9.eyJhdWQiOiJlMTVhZjdhOS1mZTRjLTQ2MGUtYTUwMC04MmJiOGYxY2ZlZDMiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE3MDc4MzQ2MDgsIm5iZiI6MTcwNzgzNDYwOCwiZXhwIjoxNzA3ODM4NTA4LCJhaW8iOiJBVVFBdS84VkFBQUFibW1sUWJnV1ZoRS9WSDgrZ21vdVl3YnhJS1l6Y1ZYSklmZVN3S1gwMGtua3FhQ3dmMzlxeUd6cjRETExNRUNyczFrWUQxRUUwb2hHOUVUYVZIMVFiUT09IiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiMjk0YmUyZmMtY2U4My00M2E1LWFjY2UtOGEyNDFhMTc4YWFjIiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVnFuM1d1Rk1fZzVHcFFDQ3U0OGNfdE1sQUdBLiIsInN1YiI6ImVWc2JmcncxWk01LXlGSWFpbXZVWno4Y2lCbzZRRlE3eEs1RDlINUJwaXMiLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiJIbFExc2g0X1drMmlScWJhbmRaekFBIiwidmVyIjoiMi4wIn0.M5-NUkN4QwdJbxrOj2O-o9l4gzCHkFMRp-z2vRwYoWB5uUzmOgoPUyr3yPp-X9VgGUTNh9GMsqQCcTZ34-tHj2leqgnHJzXWz0XzV4xJnvNa00VoUgHGZUx729Hy-kp_Dbr1zvhmOFLikOfST3Da4_eYlg-TxfewgGDWW0FIAQzT3q0cymKGk6Ro-mcr5KMNbJH2hBJZ3gbuxz8Lo49cKSqudBsCOgiEzK1GLiW6O-0haXhyH0a0RKyAbl7eaC1vRxMDD8PeFtbvjOWZxBUislsVsX9wiJrw_WnY7E8ZYRBBLvw97Kyz1wsG8ofEJQsqoOSYZOZ-iPnGk6Qq_fTBqQ
+2024-02-13 09:35:09,798 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2024-02-13 09:35:09,938 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2024-02-13 09:35:09,942 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImtXYmthYTZxczh3c1RuQndpaU5ZT2hIYm5BdyJ9.eyJhdWQiOiJlMTVhZjdhOS1mZTRjLTQ2MGUtYTUwMC04MmJiOGYxY2ZlZDMiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE3MDc4MzQ2MDgsIm5iZiI6MTcwNzgzNDYwOCwiZXhwIjoxNzA3ODM4NTA4LCJhaW8iOiJBVVFBdS84VkFBQUFibW1sUWJnV1ZoRS9WSDgrZ21vdVl3YnhJS1l6Y1ZYSklmZVN3S1gwMGtua3FhQ3dmMzlxeUd6cjRETExNRUNyczFrWUQxRUUwb2hHOUVUYVZIMVFiUT09IiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiMjk0YmUyZmMtY2U4My00M2E1LWFjY2UtOGEyNDFhMTc4YWFjIiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVnFuM1d1Rk1fZzVHcFFDQ3U0OGNfdE1sQUdBLiIsInN1YiI6ImVWc2JmcncxWk01LXlGSWFpbXZVWno4Y2lCbzZRRlE3eEs1RDlINUJwaXMiLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiJIbFExc2g0X1drMmlScWJhbmRaekFBIiwidmVyIjoiMi4wIn0.M5-NUkN4QwdJbxrOj2O-o9l4gzCHkFMRp-z2vRwYoWB5uUzmOgoPUyr3yPp-X9VgGUTNh9GMsqQCcTZ34-tHj2leqgnHJzXWz0XzV4xJnvNa00VoUgHGZUx729Hy-kp_Dbr1zvhmOFLikOfST3Da4_eYlg-TxfewgGDWW0FIAQzT3q0cymKGk6Ro-mcr5KMNbJH2hBJZ3gbuxz8Lo49cKSqudBsCOgiEzK1GLiW6O-0haXhyH0a0RKyAbl7eaC1vRxMDD8PeFtbvjOWZxBUislsVsX9wiJrw_WnY7E8ZYRBBLvw97Kyz1wsG8ofEJQsqoOSYZOZ-iPnGk6Qq_fTBqQ
+2024-02-13 09:35:09,947 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2024-02-13 09:35:10,416 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-02-13 09:35:10,417 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-02-13 09:35:10,417 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-02-13 09:35:10,417 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-02-13 09:35:13,087 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (281ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUnidadNegocio], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[IdSede], [t0].[IdUnidadNegocio], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[IdUnidadNegocio], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[IdSede], [r].[IdUnidadNegocio], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2024-02-13 09:35:13,426 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tL2NsYWltcy9yb2wiOlsiOCIsIjgiLCIxIiwiMiIsIjIiLCIzIiwiMyIsIjMiLCI4IiwiNyJdLCJodHRwOi8vQXBpUG9ydGFsX0RhdGFMYWtlLmNvbS9jbGFpbXMvcm9sbmFtZSI6WyJHZXJlbmNpYSIsIkdlcmVuY2lhIiwiQWRtaW4iLCJBc2Vzb3IiLCJBc2Vzb3IiLCJBRFYiLCJBRFYiLCJBRFYiLCJHZXJlbmNpYSIsIlRlc29yZXLDrWEiXSwibmJmIjoxNzA3ODM0OTEzLCJleHAiOjE3MDc4Mzg1MTMsImlhdCI6MTcwNzgzNDkxMywiaXNzIjoiaHR0cDovL0FwaVBvcnRhbF9EYXRhTGFrZS5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL0FwaVBvcnRhbF9EYXRhTGFrZS5jb20ifQ.vDrj9EVvnF4lSu18CJzY5gEORygEfK9eXfky8O9SFw0
+2024-02-13 09:35:13,430 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken refreshToken: azc37gdvGg3dpBVTnTOlcAPhrZVQuLGMc1leQEoDCLA=
+2024-02-13 09:35:13,677 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (295ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUnidadNegocio], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[IdSede], [t0].[IdUnidadNegocio], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[IdUnidadNegocio], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[IdSede], [r].[IdUnidadNegocio], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2024-02-13 09:35:13,682 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (295ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUnidadNegocio], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[IdSede], [t0].[IdUnidadNegocio], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[IdUnidadNegocio], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[IdSede], [r].[IdUnidadNegocio], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2024-02-13 09:35:13,687 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tL2NsYWltcy9yb2wiOlsiOCIsIjgiLCIxIiwiMiIsIjIiLCIzIiwiMyIsIjMiLCI4IiwiNyJdLCJodHRwOi8vQXBpUG9ydGFsX0RhdGFMYWtlLmNvbS9jbGFpbXMvcm9sbmFtZSI6WyJHZXJlbmNpYSIsIkdlcmVuY2lhIiwiQWRtaW4iLCJBc2Vzb3IiLCJBc2Vzb3IiLCJBRFYiLCJBRFYiLCJBRFYiLCJHZXJlbmNpYSIsIlRlc29yZXLDrWEiXSwibmJmIjoxNzA3ODM0OTEzLCJleHAiOjE3MDc4Mzg1MTMsImlhdCI6MTcwNzgzNDkxMywiaXNzIjoiaHR0cDovL0FwaVBvcnRhbF9EYXRhTGFrZS5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL0FwaVBvcnRhbF9EYXRhTGFrZS5jb20ifQ.vDrj9EVvnF4lSu18CJzY5gEORygEfK9eXfky8O9SFw0
+2024-02-13 09:35:13,691 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tL2NsYWltcy9yb2wiOlsiOCIsIjgiLCIxIiwiMiIsIjIiLCIzIiwiMyIsIjMiLCI4IiwiNyJdLCJodHRwOi8vQXBpUG9ydGFsX0RhdGFMYWtlLmNvbS9jbGFpbXMvcm9sbmFtZSI6WyJHZXJlbmNpYSIsIkdlcmVuY2lhIiwiQWRtaW4iLCJBc2Vzb3IiLCJBc2Vzb3IiLCJBRFYiLCJBRFYiLCJBRFYiLCJHZXJlbmNpYSIsIlRlc29yZXLDrWEiXSwibmJmIjoxNzA3ODM0OTEzLCJleHAiOjE3MDc4Mzg1MTMsImlhdCI6MTcwNzgzNDkxMywiaXNzIjoiaHR0cDovL0FwaVBvcnRhbF9EYXRhTGFrZS5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL0FwaVBvcnRhbF9EYXRhTGFrZS5jb20ifQ.vDrj9EVvnF4lSu18CJzY5gEORygEfK9eXfky8O9SFw0
+2024-02-13 09:35:13,695 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken refreshToken: 22hJxogMYX2rCdp+nMKm9f3MDf6Md2mT1D/RYlYiSAg=
+2024-02-13 09:35:13,699 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken refreshToken: w/lLgVT5GvKNezz9NcouC5ZiDTYqWJiXLZO9CagL9Cw=
+2024-02-13 09:35:13,999 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (291ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-02-13 09:35:14,005 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (300ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-02-13 09:35:14,307 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (283ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-02-13 09:35:14,316 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (262ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2024-02-13 09:35:14,523 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (210ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2024-02-13 09:35:14,533 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (223ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUnidadNegocio], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[IdSede], [t0].[IdUnidadNegocio], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[IdUnidadNegocio], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[IdSede], [r].[IdUnidadNegocio], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2024-02-13 09:35:14,542 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tL2NsYWltcy9yb2wiOlsiOCIsIjgiLCIxIiwiMiIsIjIiLCIzIiwiMyIsIjMiLCI4IiwiNyJdLCJodHRwOi8vQXBpUG9ydGFsX0RhdGFMYWtlLmNvbS9jbGFpbXMvcm9sbmFtZSI6WyJHZXJlbmNpYSIsIkdlcmVuY2lhIiwiQWRtaW4iLCJBc2Vzb3IiLCJBc2Vzb3IiLCJBRFYiLCJBRFYiLCJBRFYiLCJHZXJlbmNpYSIsIlRlc29yZXLDrWEiXSwibmJmIjoxNzA3ODM0OTE0LCJleHAiOjE3MDc4Mzg1MTQsImlhdCI6MTcwNzgzNDkxNCwiaXNzIjoiaHR0cDovL0FwaVBvcnRhbF9EYXRhTGFrZS5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL0FwaVBvcnRhbF9EYXRhTGFrZS5jb20ifQ.fMeBAu7KMxqTi2uCsc6Kq5NUFcPwvDMYR6yGyXfM2Jo
+2024-02-13 09:35:14,548 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken refreshToken: T5It7ii70WR8SKgA8oVZX0o/kA3hGCXGTeXeG5RAQV4=
+2024-02-13 09:35:14,711 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (157ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-02-13 09:35:14,855 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (140ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2024-02-13 09:35:15,225 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (375ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2024-02-13 09:35:15,439 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (152ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2024-02-13 09:35:15,663 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (815ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2024-02-13 09:35:16,146 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (921ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2024-02-13 09:35:16,245 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (154ms) [Parameters=[@__usuario_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUnidadNegocio], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t1].[Id], [t1].[FechaCreacion], [t1].[FechaModificacion], [t1].[IdSede], [t1].[IdUnidadNegocio], [t1].[RolId], [t1].[UsuarioCreacion], [t1].[UsuarioId], [t1].[UsuarioModificacion], [t1].[Id0], [t1].[Nombre], [t1].[Id1], [t1].[Descripcion], [t1].[Estado], [t1].[FechaCreacion0], [t1].[FechaModificacion0], [t1].[UsuarioCreacion0], [t1].[Id2], [t1].[Descripcion0], [t1].[Estado0], [t1].[FechaCreacion1], [t1].[FechaModificacion1], [t1].[UsuarioCreacion1]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[IdUnidadNegocio], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Id] = @__usuario_Id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[IdSede], [r].[IdUnidadNegocio], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre], [t0].[Id] AS [Id1], [t0].[Descripcion], [t0].[Estado], [t0].[FechaCreacion] AS [FechaCreacion0], [t0].[FechaModificacion] AS [FechaModificacion0], [t0].[UsuarioCreacion] AS [UsuarioCreacion0], [t2].[Id] AS [Id2], [t2].[Descripcion] AS [Descripcion0], [t2].[Estado] AS [Estado0], [t2].[FechaCreacion] AS [FechaCreacion1], [t2].[FechaModificacion] AS [FechaModificacion1], [t2].[UsuarioCreacion] AS [UsuarioCreacion1]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+    INNER JOIN [TblUnidadNegocio] AS [t0] ON [r].[IdUnidadNegocio] = [t0].[Id]
+    INNER JOIN [TblSede] AS [t2] ON [r].[IdSede] = [t2].[Id]
+) AS [t1] ON [t].[Id] = [t1].[UsuarioId]
+ORDER BY [t].[Id], [t1].[Id], [t1].[Id0], [t1].[Id1]
+2024-02-13 09:35:16,766 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1,189ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2024-02-13 09:35:17,118 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (145ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2024-02-13 09:35:17,292 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2024-02-13 09:35:17,336 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Domain.Services.AuthService - GetToken Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException","Message":"The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagationAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at ApiPortal_DataLake.Domain.Services.AuthService.GetToken(String tokenAD) in C:\\Users\\NelsonR\\Documents\\PROYECTOS\\WORKFLOW\\Proyecto Git\\WorkFlowGrupoPana\\WorkFlowGP.ApiRest\\JLR.GP.Orders\\Domain\\Services\\AuthService.cs:line 106","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2024-02-13 09:35:17,337 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Domain.Services.AuthService - GetToken Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException","Message":"The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagationAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at ApiPortal_DataLake.Domain.Services.AuthService.GetToken(String tokenAD) in C:\\Users\\NelsonR\\Documents\\PROYECTOS\\WORKFLOW\\Proyecto Git\\WorkFlowGrupoPana\\WorkFlowGP.ApiRest\\JLR.GP.Orders\\Domain\\Services\\AuthService.cs:line 106","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2024-02-13 09:35:17,720 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (142ms) [Parameters=[@__usuario_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUnidadNegocio], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t1].[Id], [t1].[FechaCreacion], [t1].[FechaModificacion], [t1].[IdSede], [t1].[IdUnidadNegocio], [t1].[RolId], [t1].[UsuarioCreacion], [t1].[UsuarioId], [t1].[UsuarioModificacion], [t1].[Id0], [t1].[Nombre], [t1].[Id1], [t1].[Descripcion], [t1].[Estado], [t1].[FechaCreacion0], [t1].[FechaModificacion0], [t1].[UsuarioCreacion0], [t1].[Id2], [t1].[Descripcion0], [t1].[Estado0], [t1].[FechaCreacion1], [t1].[FechaModificacion1], [t1].[UsuarioCreacion1]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[IdUnidadNegocio], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Id] = @__usuario_Id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[IdSede], [r].[IdUnidadNegocio], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre], [t0].[Id] AS [Id1], [t0].[Descripcion], [t0].[Estado], [t0].[FechaCreacion] AS [FechaCreacion0], [t0].[FechaModificacion] AS [FechaModificacion0], [t0].[UsuarioCreacion] AS [UsuarioCreacion0], [t2].[Id] AS [Id2], [t2].[Descripcion] AS [Descripcion0], [t2].[Estado] AS [Estado0], [t2].[FechaCreacion] AS [FechaCreacion1], [t2].[FechaModificacion] AS [FechaModificacion1], [t2].[UsuarioCreacion] AS [UsuarioCreacion1]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+    INNER JOIN [TblUnidadNegocio] AS [t0] ON [r].[IdUnidadNegocio] = [t0].[Id]
+    INNER JOIN [TblSede] AS [t2] ON [r].[IdSede] = [t2].[Id]
+) AS [t1] ON [t].[Id] = [t1].[UsuarioId]
+ORDER BY [t].[Id], [t1].[Id], [t1].[Id0], [t1].[Id1]
+2024-02-13 09:35:26,033 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-02-13 09:35:26,095 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-02-13 09:35:26,112 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-02-13 09:35:26,249 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (180ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[IdUnidadNegocio], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t1].[Id], [t1].[FechaCreacion], [t1].[FechaModificacion], [t1].[IdSede], [t1].[IdUnidadNegocio], [t1].[RolId], [t1].[UsuarioCreacion], [t1].[UsuarioId], [t1].[UsuarioModificacion], [t1].[Id0], [t1].[Nombre], [t1].[Id1], [t1].[Descripcion], [t1].[Estado], [t1].[FechaCreacion0], [t1].[FechaModificacion0], [t1].[UsuarioCreacion0], [t1].[Id2], [t1].[Descripcion0], [t1].[Estado0], [t1].[FechaCreacion1], [t1].[FechaModificacion1], [t1].[UsuarioCreacion1]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[IdSede], [r].[IdUnidadNegocio], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre], [t].[Id] AS [Id1], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion] AS [FechaCreacion0], [t].[FechaModificacion] AS [FechaModificacion0], [t].[UsuarioCreacion] AS [UsuarioCreacion0], [t0].[Id] AS [Id2], [t0].[Descripcion] AS [Descripcion0], [t0].[Estado] AS [Estado0], [t0].[FechaCreacion] AS [FechaCreacion1], [t0].[FechaModificacion] AS [FechaModificacion1], [t0].[UsuarioCreacion] AS [UsuarioCreacion1]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+    INNER JOIN [TblUnidadNegocio] AS [t] ON [r].[IdUnidadNegocio] = [t].[Id]
+    INNER JOIN [TblSede] AS [t0] ON [r].[IdSede] = [t0].[Id]
+) AS [t1] ON [u].[Id] = [t1].[UsuarioId]
+ORDER BY [u].[Id], [t1].[Id], [t1].[Id0], [t1].[Id1]
+2024-02-13 09:35:26,270 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (141ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[IdSede], [r].[IdUnidadNegocio], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion]
+FROM [RolUsuario] AS [r]
+WHERE [r].[UsuarioId] = @__Parse_0
+2024-02-13 09:35:26,285 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (162ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[ArchivoFactura], [t].[ArchivoNotaCredito], [t].[ArchivoTesoreria], [t].[Area], [t].[Asesor], [t].[AsesorAsignado], [t].[Banco], [t].[CentroCosto], [t].[ClienteRazonSocial], [t].[ClienteRealiza], [t].[Comentario], [t].[ComentarioAprobacion], [t].[ComentarioContabilidad], [t].[ComprobanteOrigen], [t].[DescripcionArticuloSap], [t].[DniClienteRuc], [t].[DniclienteRealiza], [t].[DocPorPlicar], [t].[EntidadBancaria], [t].[EstadoSolicitud], [t].[FechSolicitud], [t].[FechaAplicacion], [t].[FechaCreacion], [t].[FechaModificacion], [t].[FormaPago], [t].[IdSede], [t].[IdTipoSolicitud], [t].[IdUnidadNegocio], [t].[Importe], [t].[Local], [t].[Moneda], [t].[Motivo], [t].[NroFacturaSunat], [t].[NroSap], [t].[NroSapTesoreria], [t].[NumNotaCredito], [t].[NumOperacion], [t].[NumeroArticuloSap], [t].[NumeroCuentaBancaria], [t].[NumeroCuentaInterbancaria], [t].[PjudicialPnatural], [t].[Proveedor], [t].[Proyecto], [t].[Solicitante], [t].[SubEstadoSolicitud], [t].[Tienda], [t].[Tipo], [t].[TipoCarta], [t].[TipoDocumento], [t].[TipoPago], [t].[UnidadNegocio], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t].[ValidacionContabilidad], [t].[Vinculo]
+FROM [TblSolicitud] AS [t]
+2024-02-13 09:35:26,548 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (247ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [r].[IdUnidadNegocio]
+FROM [RolUsuario] AS [r]
+WHERE [r].[UsuarioId] = @__Parse_0
+2024-02-13 09:35:26,698 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (141ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [r].[IdSede]
+FROM [RolUsuario] AS [r]
+WHERE [r].[UsuarioId] = @__Parse_0
+2024-02-13 09:35:27,626 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (910ms) [Parameters=[@__fechaFiltro_0='?' (DbType = DateTime2), @__fechaFiltroFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[ArchivoFactura], [t].[ArchivoNotaCredito], [t].[ArchivoTesoreria], [t].[Area], [t].[Asesor], [t].[AsesorAsignado], [t].[Banco], [t].[CentroCosto], [t].[ClienteRazonSocial], [t].[ClienteRealiza], [t].[Comentario], [t].[ComentarioAprobacion], [t].[ComentarioContabilidad], [t].[ComprobanteOrigen], [t].[DescripcionArticuloSap], [t].[DniClienteRuc], [t].[DniclienteRealiza], [t].[DocPorPlicar], [t].[EntidadBancaria], [t].[EstadoSolicitud], [t].[FechSolicitud], [t].[FechaAplicacion], [t].[FechaCreacion], [t].[FechaModificacion], [t].[FormaPago], [t].[IdSede], [t].[IdTipoSolicitud], [t].[IdUnidadNegocio], [t].[Importe], [t].[Local], [t].[Moneda], [t].[Motivo], [t].[NroFacturaSunat], [t].[NroSap], [t].[NroSapTesoreria], [t].[NumNotaCredito], [t].[NumOperacion], [t].[NumeroArticuloSap], [t].[NumeroCuentaBancaria], [t].[NumeroCuentaInterbancaria], [t].[PjudicialPnatural], [t].[Proveedor], [t].[Proyecto], [t].[Solicitante], [t].[SubEstadoSolicitud], [t].[Tienda], [t].[Tipo], [t].[TipoCarta], [t].[TipoDocumento], [t].[TipoPago], [t].[UnidadNegocio], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t].[ValidacionContabilidad], [t].[Vinculo]
+FROM [TblSolicitud] AS [t]
+WHERE ([t].[FechaModificacion] >= @__fechaFiltro_0) AND ([t].[FechaModificacion] <= @__fechaFiltroFin_1)
+2024-02-13 09:35:29,400 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (137ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion]
+FROM [TblTipoSolicitud] AS [t]
+2024-02-13 09:35:29,575 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (138ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[idadjunto], [a].[Nombre], [a].[fecharegistro], [a].[idsolicitud], [a].[idtipoadjunto], [a].[nombrearchivo], [a].[nombrestorage], [a].[nrodococumento], [a].[observacion]
+FROM [adjunto] AS [a]
+2024-02-13 09:35:34,549 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[IdUnidadNegocio], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+FROM [Usuario] AS [u]
+2024-02-13 09:35:34,703 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (137ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion]
+FROM [TblUnidadNegocio] AS [t]
+2024-02-13 09:35:34,852 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion]
+FROM [TblSede] AS [t]
+2024-02-13 09:35:35,016 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (140ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:35,201 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (137ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:35,347 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (137ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:35,492 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (137ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:35,704 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (204ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:36,029 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (317ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:36,318 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (281ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:36,738 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (414ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:36,892 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (145ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:37,156 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (256ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:37,317 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (153ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:37,508 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (187ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:37,649 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:37,792 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:37,944 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (145ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:38,096 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (146ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:38,239 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (137ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:38,381 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:38,526 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:38,671 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:38,812 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:38,960 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (141ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:39,101 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:39,242 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:39,385 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:39,555 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (164ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:39,800 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (237ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:40,107 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (299ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:40,528 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (415ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:40,825 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (288ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:41,129 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (297ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:41,525 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (389ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:41,847 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (315ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:42,257 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (402ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:42,667 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (402ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:42,872 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (198ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:43,179 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (299ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:43,383 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (198ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:43,891 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (501ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:44,189 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (292ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:44,364 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (168ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:44,677 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (308ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:45,021 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (337ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:45,550 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (523ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:45,898 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (342ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:46,163 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (260ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:46,388 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (219ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:46,755 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (362ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:46,899 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:47,372 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (465ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:47,598 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (219ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:47,888 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (283ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:48,295 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (401ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:48,606 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (304ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:48,930 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (318ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:49,220 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (284ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:49,556 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (330ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:49,798 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (235ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:50,300 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (496ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:50,450 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (144ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:50,692 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (235ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:51,167 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (469ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:51,567 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (393ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:51,781 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (206ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:51,973 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (184ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:52,392 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (414ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:52,701 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (302ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:53,105 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (397ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:53,419 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (306ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:53,713 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (286ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:54,034 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (313ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:54,443 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (402ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:54,853 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (402ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:55,262 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (403ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:55,506 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (236ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:55,875 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (363ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:56,281 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (398ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:56,561 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (273ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:57,003 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (434ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:57,586 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (577ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:57,874 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (285ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:58,135 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (257ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:58,431 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (293ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:58,594 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (161ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:58,866 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (266ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:59,247 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (376ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:59,591 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (338ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:35:59,910 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (285ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:00,082 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (160ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:00,294 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (207ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:00,481 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (182ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:00,743 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (257ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:00,907 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (157ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:01,199 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (287ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:01,404 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (201ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:01,744 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (335ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:02,104 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (355ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:02,469 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (352ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:02,825 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (349ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:03,059 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (229ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:03,375 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (308ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:03,734 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (351ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:04,119 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (379ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:04,470 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (344ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:04,838 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (359ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:05,188 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (343ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:05,534 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (341ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:05,890 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (351ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:06,184 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (289ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:06,577 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (388ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:07,352 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (771ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:07,845 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (486ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:08,618 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (764ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:08,909 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (283ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:09,665 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (751ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:10,031 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (355ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:10,414 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (378ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:10,780 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (360ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:11,123 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (338ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:11,369 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (242ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:11,511 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:11,651 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:11,791 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:11,936 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (141ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:12,158 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (208ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:12,394 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (232ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:12,541 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (142ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:12,784 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (237ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:12,925 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:13,064 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (134ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:13,203 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:13,349 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (142ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:13,583 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (228ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:13,733 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (141ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:13,877 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:14,019 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:14,162 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:14,308 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (139ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:14,451 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:14,594 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:14,742 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (142ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:36:14,889 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (140ms) [Parameters=[@__solicitud_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Comentario], [t].[EstadoSolicitud], [t].[FechaCreacion], [t].[IdSolicitud], [t].[Motivo], [t].[Paso], [t].[SubEstado], [t].[UsuarioCreacion]
+FROM [TblHistorialSolicitud] AS [t]
+WHERE ([t].[IdSolicitud] = @__solicitud_Id_0) AND ([t].[EstadoSolicitud] = N'Validacion ADV')
+2024-02-13 09:37:39,860 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-02-13 09:37:40,101 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (227ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[IdSede], [r].[IdUnidadNegocio], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion]
+FROM [RolUsuario] AS [r]
+WHERE [r].[UsuarioId] = @__Parse_0
+2024-02-13 09:37:40,425 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (314ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [r].[IdUnidadNegocio]
+FROM [RolUsuario] AS [r]
+WHERE [r].[UsuarioId] = @__Parse_0
+2024-02-13 09:37:40,758 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (325ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [r].[IdSede]
+FROM [RolUsuario] AS [r]
+WHERE [r].[UsuarioId] = @__Parse_0
+2024-02-13 09:37:41,054 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (289ms) [Parameters=[@__fechaFiltro_0='?' (DbType = DateTime2), @__fechaFiltroFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[ArchivoFactura], [t].[ArchivoNotaCredito], [t].[ArchivoTesoreria], [t].[Area], [t].[Asesor], [t].[AsesorAsignado], [t].[Banco], [t].[CentroCosto], [t].[ClienteRazonSocial], [t].[ClienteRealiza], [t].[Comentario], [t].[ComentarioAprobacion], [t].[ComentarioContabilidad], [t].[ComprobanteOrigen], [t].[DescripcionArticuloSap], [t].[DniClienteRuc], [t].[DniclienteRealiza], [t].[DocPorPlicar], [t].[EntidadBancaria], [t].[EstadoSolicitud], [t].[FechSolicitud], [t].[FechaAplicacion], [t].[FechaCreacion], [t].[FechaModificacion], [t].[FormaPago], [t].[IdSede], [t].[IdTipoSolicitud], [t].[IdUnidadNegocio], [t].[Importe], [t].[Local], [t].[Moneda], [t].[Motivo], [t].[NroFacturaSunat], [t].[NroSap], [t].[NroSapTesoreria], [t].[NumNotaCredito], [t].[NumOperacion], [t].[NumeroArticuloSap], [t].[NumeroCuentaBancaria], [t].[NumeroCuentaInterbancaria], [t].[PjudicialPnatural], [t].[Proveedor], [t].[Proyecto], [t].[Solicitante], [t].[SubEstadoSolicitud], [t].[Tienda], [t].[Tipo], [t].[TipoCarta], [t].[TipoDocumento], [t].[TipoPago], [t].[UnidadNegocio], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t].[ValidacionContabilidad], [t].[Vinculo]
+FROM [TblSolicitud] AS [t]
+WHERE ([t].[FechaModificacion] >= @__fechaFiltro_0) AND ([t].[FechaModificacion] <= @__fechaFiltroFin_1)
+2024-02-13 09:37:41,574 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (514ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion]
+FROM [TblTipoSolicitud] AS [t]
+2024-02-13 09:37:41,761 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (181ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[idadjunto], [a].[Nombre], [a].[fecharegistro], [a].[idsolicitud], [a].[idtipoadjunto], [a].[nombrearchivo], [a].[nombrestorage], [a].[nrodococumento], [a].[observacion]
+FROM [adjunto] AS [a]
+2024-02-13 09:37:42,512 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (142ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[IdUnidadNegocio], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+FROM [Usuario] AS [u]
+2024-02-13 09:37:42,656 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion]
+FROM [TblUnidadNegocio] AS [t]
+2024-02-13 09:37:42,799 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion]
+FROM [TblSede] AS [t]
+2024-02-13 09:38:18,271 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-02-13 09:38:18,722 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (443ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[IdSede], [r].[IdUnidadNegocio], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion]
+FROM [RolUsuario] AS [r]
+WHERE [r].[UsuarioId] = @__Parse_0
+2024-02-13 09:38:18,975 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (244ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [r].[IdUnidadNegocio]
+FROM [RolUsuario] AS [r]
+WHERE [r].[UsuarioId] = @__Parse_0
+2024-02-13 09:38:19,355 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (374ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [r].[IdSede]
+FROM [RolUsuario] AS [r]
+WHERE [r].[UsuarioId] = @__Parse_0
+2024-02-13 09:38:19,502 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (139ms) [Parameters=[@__fechaFiltro_0='?' (DbType = DateTime2), @__fechaFiltroFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[ArchivoFactura], [t].[ArchivoNotaCredito], [t].[ArchivoTesoreria], [t].[Area], [t].[Asesor], [t].[AsesorAsignado], [t].[Banco], [t].[CentroCosto], [t].[ClienteRazonSocial], [t].[ClienteRealiza], [t].[Comentario], [t].[ComentarioAprobacion], [t].[ComentarioContabilidad], [t].[ComprobanteOrigen], [t].[DescripcionArticuloSap], [t].[DniClienteRuc], [t].[DniclienteRealiza], [t].[DocPorPlicar], [t].[EntidadBancaria], [t].[EstadoSolicitud], [t].[FechSolicitud], [t].[FechaAplicacion], [t].[FechaCreacion], [t].[FechaModificacion], [t].[FormaPago], [t].[IdSede], [t].[IdTipoSolicitud], [t].[IdUnidadNegocio], [t].[Importe], [t].[Local], [t].[Moneda], [t].[Motivo], [t].[NroFacturaSunat], [t].[NroSap], [t].[NroSapTesoreria], [t].[NumNotaCredito], [t].[NumOperacion], [t].[NumeroArticuloSap], [t].[NumeroCuentaBancaria], [t].[NumeroCuentaInterbancaria], [t].[PjudicialPnatural], [t].[Proveedor], [t].[Proyecto], [t].[Solicitante], [t].[SubEstadoSolicitud], [t].[Tienda], [t].[Tipo], [t].[TipoCarta], [t].[TipoDocumento], [t].[TipoPago], [t].[UnidadNegocio], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t].[ValidacionContabilidad], [t].[Vinculo]
+FROM [TblSolicitud] AS [t]
+WHERE ([t].[FechaModificacion] >= @__fechaFiltro_0) AND ([t].[FechaModificacion] <= @__fechaFiltroFin_1)
+2024-02-13 09:38:19,684 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (172ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion]
+FROM [TblTipoSolicitud] AS [t]
+2024-02-13 09:38:19,855 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (164ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[idadjunto], [a].[Nombre], [a].[fecharegistro], [a].[idsolicitud], [a].[idtipoadjunto], [a].[nombrearchivo], [a].[nombrestorage], [a].[nrodococumento], [a].[observacion]
+FROM [adjunto] AS [a]
+2024-02-13 09:38:22,000 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (139ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[IdUnidadNegocio], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+FROM [Usuario] AS [u]
+2024-02-13 09:38:22,150 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (141ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion]
+FROM [TblUnidadNegocio] AS [t]
+2024-02-13 09:38:22,290 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion]
+FROM [TblSede] AS [t]

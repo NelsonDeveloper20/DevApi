@@ -1,0 +1,556 @@
+2022-05-09 00:06:21,446 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:06:21,474 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:08:37,937 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:08:37,944 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:11:34,359 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:11:34,402 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (17ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+FROM [Usuario] AS [u]
+WHERE [u].[Id] = @__p_0
+2022-05-09 00:11:34,484 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Usuario] SET [Correo] = @p0, [Estado] = @p1, [FechaCreacion] = @p2, [FechaModificacion] = @p3, [UsuarioCreacion] = @p4, [UsuarioModificacion] = @p5
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+2022-05-09 00:11:34,545 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:11:34,553 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:12:44,529 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:12:44,534 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+FROM [Usuario] AS [u]
+WHERE [u].[Id] = @__p_0
+2022-05-09 00:12:44,539 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Usuario] SET [Correo] = @p0, [Estado] = @p1, [FechaCreacion] = @p2, [FechaModificacion] = @p3, [UsuarioCreacion] = @p4, [UsuarioModificacion] = @p5
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+2022-05-09 00:12:44,575 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:12:44,582 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:16:44,955 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:16:44,962 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:16:54,990 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:16:54,995 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+FROM [Usuario] AS [u]
+WHERE [u].[Id] = @__p_0
+2022-05-09 00:16:54,999 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Usuario] SET [Correo] = @p0, [Estado] = @p1, [FechaCreacion] = @p2, [FechaModificacion] = @p3, [UsuarioCreacion] = @p4, [UsuarioModificacion] = @p5
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+2022-05-09 00:16:55,036 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:16:55,042 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:17:02,976 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:17:02,981 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+FROM [Usuario] AS [u]
+WHERE [u].[Id] = @__p_0
+2022-05-09 00:17:02,988 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Usuario] SET [Correo] = @p0, [Estado] = @p1, [FechaCreacion] = @p2, [FechaModificacion] = @p3, [UsuarioCreacion] = @p4, [UsuarioModificacion] = @p5
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+2022-05-09 00:17:02,997 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:17:03,006 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:17:08,447 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:17:08,451 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Nombre]
+FROM [Rol] AS [r]
+2022-05-09 00:26:01,583 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:26:01,601 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:28:19,818 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:28:19,825 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:28:25,794 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:28:25,797 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Nombre]
+FROM [Rol] AS [r]
+2022-05-09 00:28:33,275 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:28:33,279 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Nombre]
+FROM [Rol] AS [r]
+2022-05-09 00:29:01,589 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:29:01,596 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:29:03,214 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:29:03,219 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Nombre]
+FROM [Rol] AS [r]
+2022-05-09 00:29:06,790 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:29:06,794 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Nombre]
+FROM [Rol] AS [r]
+2022-05-09 00:29:08,829 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:29:08,835 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Nombre]
+FROM [Rol] AS [r]
+2022-05-09 00:29:15,477 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:29:15,481 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+FROM [Usuario] AS [u]
+WHERE [u].[Id] = @__p_0
+2022-05-09 00:29:15,491 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__usuarioId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion]
+FROM [RolUsuario] AS [r]
+WHERE [r].[UsuarioId] = @__usuarioId_0
+2022-05-09 00:29:15,509 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [RolUsuario]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-05-09 00:29:15,549 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RolUsuario] ([FechaCreacion], [FechaModificacion], [RolId], [UsuarioCreacion], [UsuarioId], [UsuarioModificacion])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [RolUsuario]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-05-09 00:29:15,668 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:29:15,673 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:29:16,862 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:29:16,865 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Nombre]
+FROM [Rol] AS [r]
+2022-05-09 00:29:19,355 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:29:19,358 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+FROM [Usuario] AS [u]
+WHERE [u].[Id] = @__p_0
+2022-05-09 00:29:19,361 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__usuarioId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion]
+FROM [RolUsuario] AS [r]
+WHERE [r].[UsuarioId] = @__usuarioId_0
+2022-05-09 00:29:19,366 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [RolUsuario]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-05-09 00:29:19,372 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RolUsuario] ([FechaCreacion], [FechaModificacion], [RolId], [UsuarioCreacion], [UsuarioId], [UsuarioModificacion])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [RolUsuario]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-05-09 00:29:19,470 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:29:19,473 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:29:20,798 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:29:20,806 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Nombre]
+FROM [Rol] AS [r]
+2022-05-09 00:29:22,690 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:29:22,693 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+FROM [Usuario] AS [u]
+WHERE [u].[Id] = @__p_0
+2022-05-09 00:29:22,696 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__usuarioId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion]
+FROM [RolUsuario] AS [r]
+WHERE [r].[UsuarioId] = @__usuarioId_0
+2022-05-09 00:29:22,699 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [RolUsuario]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-05-09 00:29:22,705 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RolUsuario] ([FechaCreacion], [FechaModificacion], [RolId], [UsuarioCreacion], [UsuarioId], [UsuarioModificacion])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [RolUsuario]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-05-09 00:29:22,803 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:29:22,806 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:30:17,116 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:30:17,123 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:30:27,899 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:30:27,903 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Nombre]
+FROM [Rol] AS [r]
+2022-05-09 00:30:47,021 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:30:47,026 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Nombre]
+FROM [Rol] AS [r]
+2022-05-09 00:30:49,777 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:30:49,781 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+FROM [Usuario] AS [u]
+WHERE [u].[Id] = @__p_0
+2022-05-09 00:30:49,785 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__usuarioId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion]
+FROM [RolUsuario] AS [r]
+WHERE [r].[UsuarioId] = @__usuarioId_0
+2022-05-09 00:30:49,790 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [RolUsuario]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-05-09 00:30:49,797 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RolUsuario] ([FechaCreacion], [FechaModificacion], [RolId], [UsuarioCreacion], [UsuarioId], [UsuarioModificacion])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [RolUsuario]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-05-09 00:30:49,892 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:30:49,899 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:34:24,516 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:34:24,524 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:34:36,765 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:34:36,769 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Nombre]
+FROM [Rol] AS [r]
+2022-05-09 00:34:53,634 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:34:53,639 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Usuario] ([Correo], [Estado], [FechaCreacion], [FechaModificacion], [UsuarioCreacion], [UsuarioModificacion])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [Usuario]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-05-09 00:34:53,646 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RolUsuario] ([FechaCreacion], [FechaModificacion], [RolId], [UsuarioCreacion], [UsuarioId], [UsuarioModificacion])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [RolUsuario]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-05-09 00:34:53,769 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:34:53,775 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:35:06,373 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:35:06,378 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+FROM [Usuario] AS [u]
+WHERE [u].[Id] = @__p_0
+2022-05-09 00:35:06,383 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Usuario] SET [Correo] = @p0, [Estado] = @p1, [FechaCreacion] = @p2, [FechaModificacion] = @p3, [UsuarioCreacion] = @p4, [UsuarioModificacion] = @p5
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+2022-05-09 00:35:06,393 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:35:06,398 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:53:24,160 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2022-05-09 00:53:24,168 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2022-05-09 00:53:24,171 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2022-05-09 00:53:24,173 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2022-05-09 00:53:24,175 [1] INFO Microsoft.Hosting.Lifetime - Content root path: D:\jlr\grupopana\proyectos\JLR.GP.Orders\JLR.GP.Orders\
+2022-05-09 00:53:35,206 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:53:35,663 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:53:39,862 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:53:39,870 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:53:44,082 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:53:44,086 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:53:48,313 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:53:48,317 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:54:55,312 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:54:55,318 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:55:12,409 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:55:12,415 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 00:55:47,177 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 00:55:47,183 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 01:03:53,002 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 01:03:53,017 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 01:16:55,040 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 01:16:55,051 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 09:19:03,486 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2022-05-09 09:19:03,493 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2022-05-09 09:19:03,496 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2022-05-09 09:19:03,497 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2022-05-09 09:19:03,499 [1] INFO Microsoft.Hosting.Lifetime - Content root path: D:\jlr\grupopana\proyectos\JLR.GP.Orders\JLR.GP.Orders\
+2022-05-09 09:19:24,253 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 09:19:25,094 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (35ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2022-05-09 09:19:25,176 [.NET ThreadPool Worker] WARN JLR.GP.Orders.Application.Controllers.AuthController - Usuario inactivo : rpa@grupopana.com.pe
+2022-05-09 09:19:44,338 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 09:19:44,359 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2022-05-09 09:19:59,823 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2022-05-09 09:19:59,835 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2022-05-09 09:19:59,842 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2022-05-09 09:19:59,846 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2022-05-09 09:19:59,850 [1] INFO Microsoft.Hosting.Lifetime - Content root path: D:\jlr\grupopana\proyectos\JLR.GP.Orders\JLR.GP.Orders\
+2022-05-09 09:20:13,320 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 09:20:13,844 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (43ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2022-05-09 09:34:41,561 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 09:34:41,590 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 09:35:09,474 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 09:35:09,482 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2022-05-09 09:38:52,501 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2022-05-09 09:38:52,508 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2022-05-09 09:38:52,511 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2022-05-09 09:38:52,512 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2022-05-09 09:38:52,514 [1] INFO Microsoft.Hosting.Lifetime - Content root path: D:\jlr\grupopana\proyectos\JLR.GP.Orders\JLR.GP.Orders\
+2022-05-09 09:40:09,217 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-05-09 09:40:09,675 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (26ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]

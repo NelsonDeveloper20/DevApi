@@ -1,0 +1,943 @@
+2023-03-07 13:23:22,405 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-03-07 13:23:22,423 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-03-07 13:23:22,432 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-03-07 13:23:22,435 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-03-07 13:23:22,437 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-03-07 13:24:52,813 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 13:24:52,833 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMTMxOTEsIm5iZiI6MTY3ODIxMzE5MSwiZXhwIjoxNjc4MjE3MDkxLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6ImZiNWYxYjEyLTI5M2UtNDNmMC1hMTg2LTI2YTA1YzA0MDI2YyIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJXMThWNUhTREEwQ3hTTUJHYk1iSkFBIiwidmVyIjoiMi4wIn0.FYVy338mu-ZXLJYWoQyx5SkjKd5BwQ3qJDcX868zX2lfc4kO-8Pg9fEBH6t3OCWC9DiP7Jz9ZBjVlfWZK1EnTGI03y81NBHoU-t6M7SM70gz41oa6u-jVay_8wTPDlwe_f3aw3U7xwkk-eGRWJXKI_izPGAu9bBi-zWM4qBwTi-3Rts23I1frCkiNEFlV_eQDVSGpZAl1n5-P5iqPGDz1L2ZaWj-tJZX1x9IXMTTRrg1BjqYmV7HBsZEihGKv_ED3U3LrVNI-DKepWoW0elqhcGgIBtJCNiJdx6FJZ_CPqSD1S9rBHLSzwhutMkWJNlx6I7IXiQVKR_OaryG5E4GsQ
+2023-03-07 13:24:53,084 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 13:24:53,819 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmCapacitacionesExternas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-07 13:24:53,825 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmCapacitacionesInternas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-07 13:24:53,831 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmHHCapacitadas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-07 13:24:53,833 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndCapacitaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-07 13:24:53,836 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndObservaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-07 13:24:53,839 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndResponsabilidades' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-07 13:24:53,841 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmNumeroCapacitaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-07 13:24:53,843 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmNumeroObservaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-07 13:24:54,049 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 13:24:57,195 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (379ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 13:24:57,488 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJ1c2VyTmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJodHRwOi8vQXBpUG9ydGFsX0RhdGFMYWtlLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tL2NsYWltcy9yb2xuYW1lIjoiQWRtaW5pc3RyYWRvciIsIm5iZiI6MTY3ODIxMzQ5NywiZXhwIjoxNjc4MjE3MDk3LCJpYXQiOjE2NzgyMTM0OTcsImlzcyI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuaXNzdWVyLmNvbSIsImF1ZCI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tIn0.ncSZRH5cCsgOEyy8-M61lygj9lK9Jv4x49VKxSTdxaM
+2023-03-07 13:24:57,490 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken refreshToken: aanUzT53AGRfvFIUnt3bwMdlILdxCmxUootYx0lx/Qs=
+2023-03-07 13:24:57,670 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (134ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-03-07 13:24:57,936 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (240ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2023-03-07 13:24:58,367 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (133ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2023-03-07 13:24:58,520 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (130ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-03-07 13:58:27,916 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 13:58:27,928 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMTUyMDYsIm5iZiI6MTY3ODIxNTIwNiwiZXhwIjoxNjc4MjE5MTA2LCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6IjE0ZWE3YjA0LTZkZDMtNGJmYi1hMGJkLTRiYWEyNWE2NTQzYSIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJSb1JyRTZFUF8waU1GcVBxbWpBZkFBIiwidmVyIjoiMi4wIn0.fRLs5qHlL65Jqx-UCH-AGX0xqOb29Th_1sCUcRzvgBWQbEB8zDM4wO1Uclznl-ADPWF9odFpaKFV1PioWOWH7GwAXQLIG4pQnhyV722JwoWRR5jyrDnJpKjMKdUE6Oyubc9hqkdSu1t3tssUF2o9GJkiz3pBGoYqty1zc9exTBsN6jVeYbY8xdk0EKGBn7mGAP_KTzEGgJGZ_AOidENfbD0L_GtRSYtvKdo3GM0-ZBN4XuYe3I9PWaGSKkgiegKPGg9_YZfy8MnYtGQIzMpYjo5IiNygjaMNucm217oaJU-bGpfDPy4lKz-njDOzPKP_W4t_dIfouxb5gWbnNNPYLA
+2023-03-07 13:58:27,942 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 13:58:27,985 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 13:58:29,516 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (162ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 13:58:29,540 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJ1c2VyTmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJodHRwOi8vQXBpUG9ydGFsX0RhdGFMYWtlLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tL2NsYWltcy9yb2xuYW1lIjoiQWRtaW5pc3RyYWRvciIsIm5iZiI6MTY3ODIxNTUwOSwiZXhwIjoxNjc4MjE5MTA5LCJpYXQiOjE2NzgyMTU1MDksImlzcyI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuaXNzdWVyLmNvbSIsImF1ZCI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tIn0.f9huHrqCcI6o0X9D015SAFWVck_jkOHbiYXwrJX92fA
+2023-03-07 13:58:29,543 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken refreshToken: EON9I8+96kCsrdSBSn/Wwr4qkkJpQNcDa5Z+ceM8WyM=
+2023-03-07 13:58:30,521 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (139ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-03-07 13:58:30,666 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (137ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2023-03-07 13:58:30,980 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (139ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2023-03-07 13:58:31,122 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-03-07 13:59:47,258 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 13:59:58,149 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMTUyODIsIm5iZiI6MTY3ODIxNTI4MiwiZXhwIjoxNjc4MjE5MTgyLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6IjgzYTVmNTg4LTVkODItNDdlYi04MjQwLTU1NTMwZTkwYjhiZCIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJ5OEQ3VFlqczRVeUJISmViMEZZdkFBIiwidmVyIjoiMi4wIn0.hk3f823Zjza598sxgHebWzyPu83Wyry18MDmACXc0nNdHa9JAvEem9dbLIVCyM_MhswTkoIySBguzC1rr-lb0bx9jczRt46mTZxhrQ5VxKq8wINfAN2ug3URKNnrNNJo-rLWhqw3SH3CBnn8knU18V-u5qR3LbENJEZbv6iD2FHnJC9Kq6YEk_nQMS4iRvLfQ-GjdN65qMlL4Zpqpl1Q1S2tKM3yh48H6gPAxB0bAqVdre0uKsk77TR13LFu6AV9xHI8lReIPLf75wV7hTPeG-2i6ZXVY_TUDv-BY6EfrNEOOceDysUYnYvzk9mqM-jXEfasXM5gSlwKj5YBOwItmg
+2023-03-07 14:00:09,827 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 14:00:10,473 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 14:00:10,784 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (297ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 14:00:20,398 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJ1c2VyTmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJodHRwOi8vQXBpUG9ydGFsX0RhdGFMYWtlLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tL2NsYWltcy9yb2xuYW1lIjoiQWRtaW5pc3RyYWRvciIsIm5iZiI6MTY3ODIxNTYyMCwiZXhwIjoxNjc4MjE5MjIwLCJpYXQiOjE2NzgyMTU2MjAsImlzcyI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuaXNzdWVyLmNvbSIsImF1ZCI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tIn0.EHU06SPcJAI9M9EIDoE9lq_J8VNLQFSWKEhUQqoswvU
+2023-03-07 14:00:20,401 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken refreshToken: 2OrHhvATZU6Jsa9whUnuLIvkZwxg8dbWd7rfaDn3BVI=
+2023-03-07 14:00:20,809 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (399ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-03-07 14:00:21,222 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (408ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2023-03-07 14:00:21,851 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (301ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2023-03-07 14:00:22,374 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (514ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-03-07 14:05:17,363 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 14:05:19,202 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMTU2MTQsIm5iZiI6MTY3ODIxNTYxNCwiZXhwIjoxNjc4MjE5NTE0LCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6Ijg4YmRmYjYwLWRiOTEtNGZiYi1iZDU4LWMzNDMxMmE1ZDNlNiIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJkY2VWZGp2QUpFZUhkQktwR19fUEFRIiwidmVyIjoiMi4wIn0.D08aOpZIVm_QaBB-8RVxW0nUgCpZveBHhVOs3yt3Z5_PxIhnqCgyaYDk9xeu02iFKC97-9nkdXRtb-u4RHbQ8anM7Geu6zLRl0_Ulj0luaJzgNXv0hOceI1-lu81XGGB3xzWaN7IBu_AoKeBYaRv2jjjgVB6Ga-96pa8F9z1NsKAqO2mbN5vYK0nM0GwiNGFicyqeh8LZNaHaSxXMjdWiIJZUJuXVGGpOBUkQbH58-ATyoHKqelbEktpjmV_wm4UzbK_uI96D6LRRjVdRavoSOEuCnuwpD5JotNQpwhawMQGIVcdJ_9p37q7PoytJsNkRAKSGHpC8g3k8Fi0D0PPcw
+2023-03-07 14:05:19,220 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 14:05:19,243 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 14:05:20,553 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 14:05:20,560 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJ1c2VyTmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJodHRwOi8vQXBpUG9ydGFsX0RhdGFMYWtlLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tL2NsYWltcy9yb2xuYW1lIjoiQWRtaW5pc3RyYWRvciIsIm5iZiI6MTY3ODIxNTkyMCwiZXhwIjoxNjc4MjE5NTIwLCJpYXQiOjE2NzgyMTU5MjAsImlzcyI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuaXNzdWVyLmNvbSIsImF1ZCI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tIn0.8MS2iyFrSrLIvDx05zBlTVAHeYh35WmrXySrw342-A0
+2023-03-07 14:05:20,562 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken refreshToken: 6Jm9tpePwYgj02podW7kMpsj9xy+wV+hfej4UYPwfn4=
+2023-03-07 14:05:20,710 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (144ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-03-07 14:05:20,849 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (134ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2023-03-07 14:05:21,504 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (360ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2023-03-07 14:05:21,883 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (372ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-03-07 15:16:05,063 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 15:16:26,363 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMTk4NjAsIm5iZiI6MTY3ODIxOTg2MCwiZXhwIjoxNjc4MjIzNzYwLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6IjkzOWMzNDIzLWU1YzItNGU0My1iOTFkLTY5MjgyMjExMDA4OSIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJ2MXg4ZG02bWdFU0N5ajdoNTRVQkFBIiwidmVyIjoiMi4wIn0.OugghUhcu-dLQxZd0Ip4Q-czj2Y1kIUOUunv1Ap4NJixBHJHCVfX8WU14Dpk1xxbkGoJeeaXp40GRvHB02ujynrfKXuAtUkq9tQbtZd-p0WWIjl71uLWOkCOUI7q8VgwlGo_tYSASzYlECT4RlpRnknkgg71Xyxj0Bcgt0En3VdcidCu0TIHXfXJKTCUpSSp1_O6Yu6cV6Ip9gd6ZDcsGtytF2qS20BUPg1h3XbawVgRvh0jilAmaRM8ny9DCDxU35JEhlM33fefb6W9vKvTcNkufmKo0-Q4hzvkB_I-JlBh6nSOeobypJaTD2i6wi22Mbpr4JS9cXtvslankLgcLg
+2023-03-07 15:16:37,058 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 15:16:37,689 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 15:16:40,066 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (396ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 15:16:43,297 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : desarrollador4@jlranalytics.com
+2023-03-07 15:18:58,047 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 15:18:58,054 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjAwMzUsIm5iZiI6MTY3ODIyMDAzNSwiZXhwIjoxNjc4MjIzOTM1LCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6Ijk0MTM1YjRmLTUzMTItNDcxZC1iZjM0LTZmN2JiOWYyNTZhYyIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJBekhTcDc0bTRFbUlVSnlhXzZBcEFBIiwidmVyIjoiMi4wIn0.sIXSpepbAKFQUnlk_iOngzrNmQQcGxIjwJ_y1tbZP1vg3kUXOS02u7IwlOzok-c_GwBuqHCCqRbRIjWGlpzyll6QeMdrzjUAusGIcTJKWhEGSFQFihyfKWRFCf3_BMejj_Sy6uFBuuaP6BIRxqq4xc4LPPmmfbhp-JGeHrzzf_OolcMKVG0fKYXEz-Gqj5SZOYMirgwQ3gB0T7R7gGo9NrvqssZfTT3nHAguVjZvZIp97k629ivX8R0nRioMcs5kJ3XHSSJFo7HxgcTIp_LJbCOiwrggND_wmShep8jrXmO2dG8ialHTsv-HbSKunXVMWmnCMVO7GRZRa16EVCBtIg
+2023-03-07 15:18:58,069 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 15:18:58,092 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 15:18:58,287 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (167ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 15:18:58,297 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : desarrollador4@jlranalytics.com
+2023-03-07 15:31:35,957 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 15:31:35,989 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 15:31:36,001 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjA3ODksIm5iZiI6MTY3ODIyMDc4OSwiZXhwIjoxNjc4MjI0Njg5LCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6ImM2MDUyYzQ2LWQyMzQtNGU3Mi05NjQ1LWMzMGM5OWZlOTNhYiIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJEXzRYa3VEbUFFYUY0Q0liSlN3RUFBIiwidmVyIjoiMi4wIn0.n3BuuwF09oeCMGgG_EF_ssiAwYP1P2QNfYGO4dGiUrMP-ANDTJn6apxNA3jlTUoqIiVFCaIkt9bU9Df4wQhg-DaQ1DeBxhsA8PUdzuarZ4LSFr5SWjJjapZi_r6OC3xA3YsgAvhazybb1JPiCHZKFCYKkFub1JTsctAMtkf49bOByEGFf4IyAor9wzXM7AvKjRCYjaVxHNYPQXeCY5MxoBdPjFVwJ2prTIX7KMnVvKPtwTqaYU3whCDrI8c5ULSUUtIrfBiW4uza3_wqavHS5dck9PLYCdDLoHpY1Yii6ZfMSxPBT0MueTMkAFtXXOONdLO0ddG__LZdj_N-pdY2KQ
+2023-03-07 15:31:36,005 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjA3ODksIm5iZiI6MTY3ODIyMDc4OSwiZXhwIjoxNjc4MjI0Njg5LCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6ImM2MDUyYzQ2LWQyMzQtNGU3Mi05NjQ1LWMzMGM5OWZlOTNhYiIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJEXzRYa3VEbUFFYUY0Q0liSlN3RUFBIiwidmVyIjoiMi4wIn0.n3BuuwF09oeCMGgG_EF_ssiAwYP1P2QNfYGO4dGiUrMP-ANDTJn6apxNA3jlTUoqIiVFCaIkt9bU9Df4wQhg-DaQ1DeBxhsA8PUdzuarZ4LSFr5SWjJjapZi_r6OC3xA3YsgAvhazybb1JPiCHZKFCYKkFub1JTsctAMtkf49bOByEGFf4IyAor9wzXM7AvKjRCYjaVxHNYPQXeCY5MxoBdPjFVwJ2prTIX7KMnVvKPtwTqaYU3whCDrI8c5ULSUUtIrfBiW4uza3_wqavHS5dck9PLYCdDLoHpY1Yii6ZfMSxPBT0MueTMkAFtXXOONdLO0ddG__LZdj_N-pdY2KQ
+2023-03-07 15:31:36,022 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 15:31:36,022 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 15:31:36,038 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 15:31:36,064 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 15:31:39,154 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (231ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 15:31:39,164 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : desarrollador4@jlranalytics.com
+2023-03-07 15:31:40,053 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (140ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 15:31:40,061 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : desarrollador4@jlranalytics.com
+2023-03-07 15:31:54,017 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Domain.Services.Jwt - ValidateToken error: IDX10223: Lifetime validation failed. The token is expired. ValidTo: 'System.DateTime', Current time: 'System.DateTime'.    at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at ApiPortal_DataLake.Domain.Services.Jwt.ValidateToken(String authorization) in C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\Domain\Services\Jwt.cs:line 96
+2023-03-07 15:31:54,021 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Filters.ValidateGroupsAttribute.ValidateGroupsAttributeImp - Error validate token: Token invalid
+2023-03-07 15:31:54,333 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 15:31:54,540 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (167ms) [Parameters=[@__refreshTokenRequest_RefreshToken_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[RefreshToken] = @__refreshTokenRequest_RefreshToken_0
+2023-03-07 15:31:54,868 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (147ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2023-03-07 15:31:55,011 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-03-07 15:31:55,200 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 15:31:55,390 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (153ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2023-03-07 16:54:54,978 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 16:54:54,977 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 16:54:54,994 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjU3ODcsIm5iZiI6MTY3ODIyNTc4NywiZXhwIjoxNjc4MjI5Njg3LCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6ImEyMzhkZjZiLTFiMWYtNGM1YS1hZGJhLTgwZTVjYTJhN2NlMyIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJLU3JrUDYyVGJVT1duQmM2THVRQ0FBIiwidmVyIjoiMi4wIn0.hxD9wE7jbmKTYaR_cww4FajOuB6B__4CR_DGeMoDeEsDl8BAtMCSDUwPj2rZ1QiEzddKRYDhuR5aLx4Gdp9j0z2_64J5sUMu5XEOV9xzSR02HAzMlJKuHs6Dxy56n7qR6KqifURdQma7yeLvymR2T0-eJwsirHG-sFriH2sptdRCdqlkgS8sD2SB4eHht5OL-TE8F7BSMh1GcQiD9QQi2j2l5ZbxRV0uH3tjICG336auXGBbVbbNjdznr78pieOgu284YHFxk_JHwK14diNFOAO6vg2167C96AaV6pJTMXaGozWyQjKF2OIFUVUg_Vr5OLstpS5oBBzFMGr3bUEh4w
+2023-03-07 16:54:54,997 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjU3ODcsIm5iZiI6MTY3ODIyNTc4NywiZXhwIjoxNjc4MjI5Njg3LCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6ImEyMzhkZjZiLTFiMWYtNGM1YS1hZGJhLTgwZTVjYTJhN2NlMyIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJLU3JrUDYyVGJVT1duQmM2THVRQ0FBIiwidmVyIjoiMi4wIn0.hxD9wE7jbmKTYaR_cww4FajOuB6B__4CR_DGeMoDeEsDl8BAtMCSDUwPj2rZ1QiEzddKRYDhuR5aLx4Gdp9j0z2_64J5sUMu5XEOV9xzSR02HAzMlJKuHs6Dxy56n7qR6KqifURdQma7yeLvymR2T0-eJwsirHG-sFriH2sptdRCdqlkgS8sD2SB4eHht5OL-TE8F7BSMh1GcQiD9QQi2j2l5ZbxRV0uH3tjICG336auXGBbVbbNjdznr78pieOgu284YHFxk_JHwK14diNFOAO6vg2167C96AaV6pJTMXaGozWyQjKF2OIFUVUg_Vr5OLstpS5oBBzFMGr3bUEh4w
+2023-03-07 16:54:55,048 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 16:54:55,048 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 16:54:55,092 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 16:54:55,136 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 16:54:58,331 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (388ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 16:54:58,339 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : desarrollador4@jlranalytics.com
+2023-03-07 16:54:59,660 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (246ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 16:54:59,665 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : desarrollador4@jlranalytics.com
+2023-03-07 16:55:07,253 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 16:55:07,257 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjU4MDQsIm5iZiI6MTY3ODIyNTgwNCwiZXhwIjoxNjc4MjI5NzA0LCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6IjAyZDg5ZDE0LWFmZWUtNGI3ZC1hZWY4LTRlZGQ0NTI4NjQ3NiIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJfc2ZhMWd4amJVS25rZEFsWlBzREFBIiwidmVyIjoiMi4wIn0.rLLMxKAjYrbYuu14e7Ha_BJ9ommAjgJcIRXKa5ujlD3XNsrnHnATtuae8TETNaHLCjaL2zj-u6GD3CiweN9AFDyQbPAWSi_xpRomkYxZ8PRLVA1q_IHf4C3mIm4xOpFlo5aK51SX3_YufEZaedBSnPa2VtgM2uY8yjTSSHHwq_Fbsz8nCsYelB1Bvoo2MAN0umTXUAFJezuQuBTxPQfL1yaFozXuham0mxLoK068hmeORQgGprR6qWlkh7jWyi-ih13ZZ7gyPA3MsFI1sICWQNXhBYFA7jYCwMEYRGmNcjDYjGcn-rNSQOaLpLlfBYcPCBkGRw8fZXa0Ysls3FETWg
+2023-03-07 16:55:09,814 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 16:55:09,818 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 16:55:09,819 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjU4MDQsIm5iZiI6MTY3ODIyNTgwNCwiZXhwIjoxNjc4MjI5NzA0LCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6IjAyZDg5ZDE0LWFmZWUtNGI3ZC1hZWY4LTRlZGQ0NTI4NjQ3NiIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJfc2ZhMWd4amJVS25rZEFsWlBzREFBIiwidmVyIjoiMi4wIn0.rLLMxKAjYrbYuu14e7Ha_BJ9ommAjgJcIRXKa5ujlD3XNsrnHnATtuae8TETNaHLCjaL2zj-u6GD3CiweN9AFDyQbPAWSi_xpRomkYxZ8PRLVA1q_IHf4C3mIm4xOpFlo5aK51SX3_YufEZaedBSnPa2VtgM2uY8yjTSSHHwq_Fbsz8nCsYelB1Bvoo2MAN0umTXUAFJezuQuBTxPQfL1yaFozXuham0mxLoK068hmeORQgGprR6qWlkh7jWyi-ih13ZZ7gyPA3MsFI1sICWQNXhBYFA7jYCwMEYRGmNcjDYjGcn-rNSQOaLpLlfBYcPCBkGRw8fZXa0Ysls3FETWg
+2023-03-07 16:55:09,828 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 16:55:09,831 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 16:55:09,837 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 16:55:10,221 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (388ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 16:55:10,222 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (381ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 16:55:10,227 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : desarrollador4@jlranalytics.com
+2023-03-07 16:55:10,228 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : desarrollador4@jlranalytics.com
+2023-03-07 16:57:54,369 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 16:57:54,375 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjU4MjEsIm5iZiI6MTY3ODIyNTgyMSwiZXhwIjoxNjc4MjI5NzIxLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6IjNjYjE2MTQwLTcxNTYtNDQ3Ni04ZTkzLTYxOTFlNDYwMmQ0MCIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJuUkQyMk1YSmNrV1NjdGkyODJJeUFBIiwidmVyIjoiMi4wIn0.tG9dnQuKBITaqeftdQqR-5OnB0lUzFi_i8KE8lRs3PeFxZzrek1smBpXV9A7Q4nvWyW3q5XY7kuF_evUOqX8zcHuZgpg21XqoBQzUeS51c0Cg6Ye-lFpdySTXqmMwgc8BU_HjQPQU3ga2W8QGGAi7NPWNscYKobdJDKo9sA9BzdVQVrpu2XZcORVib-P8niNYBR6Wdb9gpKJGSvd8ZXWqlHfOhRz6cAWjyAFSwMgGqZh4pe-qYhP0uICwm7AueSKikqtkaQQJperjZoZk4-hV1i_W_-PUKp7oFg49h1lxv07dWnkFN79gOMBbVVnR0sD8GcnpOghveqSHyjcQzsEaA
+2023-03-07 16:57:54,401 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 16:57:56,617 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 16:57:56,620 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 16:57:56,623 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjU4MjEsIm5iZiI6MTY3ODIyNTgyMSwiZXhwIjoxNjc4MjI5NzIxLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6IjNjYjE2MTQwLTcxNTYtNDQ3Ni04ZTkzLTYxOTFlNDYwMmQ0MCIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJuUkQyMk1YSmNrV1NjdGkyODJJeUFBIiwidmVyIjoiMi4wIn0.tG9dnQuKBITaqeftdQqR-5OnB0lUzFi_i8KE8lRs3PeFxZzrek1smBpXV9A7Q4nvWyW3q5XY7kuF_evUOqX8zcHuZgpg21XqoBQzUeS51c0Cg6Ye-lFpdySTXqmMwgc8BU_HjQPQU3ga2W8QGGAi7NPWNscYKobdJDKo9sA9BzdVQVrpu2XZcORVib-P8niNYBR6Wdb9gpKJGSvd8ZXWqlHfOhRz6cAWjyAFSwMgGqZh4pe-qYhP0uICwm7AueSKikqtkaQQJperjZoZk4-hV1i_W_-PUKp7oFg49h1lxv07dWnkFN79gOMBbVVnR0sD8GcnpOghveqSHyjcQzsEaA
+2023-03-07 16:57:56,630 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 16:57:56,633 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 16:57:57,205 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (578ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 16:57:57,206 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (570ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 16:57:57,210 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : desarrollador4@jlranalytics.com
+2023-03-07 16:57:57,251 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : desarrollador4@jlranalytics.com
+2023-03-07 17:03:17,547 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:03:17,549 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:03:17,551 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjYyOTEsIm5iZiI6MTY3ODIyNjI5MSwiZXhwIjoxNjc4MjMwMTkxLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6IjBhZTRkZmU1LTMxNjktNDAyZC1iMWI1LTUwMmQ4MmE0YmNhOCIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiIxTWdlZ3BKRnRFVzJlOTR5TnhJRkFBIiwidmVyIjoiMi4wIn0.e7qm8uw-hR6Uj-zWSBrS5qDSLlPY7D850oZ_e8SiFt-zTi8G_G-HGrZOl5gjNhEOzDLsknR4aStDBrwJQzjr-itIoeQsLkcrvTq-wKbjr5tE6h2WBrrCtEl4N-M6vGp5z7Gx_oDsx9-c9h-13qCI8dyAUNTkKeJJfSPutHBR3Vik39-Jwj97diGx-vfBBeG0LDR7-jSxdqQIJn3SQsXchg14G9nXbovly7UKObE59EumnubDxT38lS6uTGOolg-U4qfO7i7CfYd5OyvqkyvhSCr3toYyIx28IEs8J2krN0wVxf_VlMqb9oXWJbGhEki4dhphQo7Zh64-ZAddJTvY_A
+2023-03-07 17:03:17,552 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjYyOTEsIm5iZiI6MTY3ODIyNjI5MSwiZXhwIjoxNjc4MjMwMTkxLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6IjBhZTRkZmU1LTMxNjktNDAyZC1iMWI1LTUwMmQ4MmE0YmNhOCIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiIxTWdlZ3BKRnRFVzJlOTR5TnhJRkFBIiwidmVyIjoiMi4wIn0.e7qm8uw-hR6Uj-zWSBrS5qDSLlPY7D850oZ_e8SiFt-zTi8G_G-HGrZOl5gjNhEOzDLsknR4aStDBrwJQzjr-itIoeQsLkcrvTq-wKbjr5tE6h2WBrrCtEl4N-M6vGp5z7Gx_oDsx9-c9h-13qCI8dyAUNTkKeJJfSPutHBR3Vik39-Jwj97diGx-vfBBeG0LDR7-jSxdqQIJn3SQsXchg14G9nXbovly7UKObE59EumnubDxT38lS6uTGOolg-U4qfO7i7CfYd5OyvqkyvhSCr3toYyIx28IEs8J2krN0wVxf_VlMqb9oXWJbGhEki4dhphQo7Zh64-ZAddJTvY_A
+2023-03-07 17:03:17,557 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 17:03:17,557 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 17:03:17,563 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:03:17,595 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:03:18,788 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (155ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:03:18,799 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : desarrollador4@jlranalytics.com
+2023-03-07 17:03:19,647 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (161ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:03:19,651 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : desarrollador4@jlranalytics.com
+2023-03-07 17:07:28,738 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:07:28,740 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:07:28,743 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjY1NDgsIm5iZiI6MTY3ODIyNjU0OCwiZXhwIjoxNjc4MjMwNDQ4LCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6ImU5NTE3ODUzLWZjMzMtNDU1My05MDdkLTFkYjYyNjMzMjFjOSIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJ1VEFYUWFMTWIwMkRTSG5LTlprcEFBIiwidmVyIjoiMi4wIn0.nq-AydFVKnHOWBTQv3wnhqPbxMo-Lqjf1vRFVfCKuIbexvW5BWmFVZtclTTTClIenKQsPf7TkHG6HWBlBnrXXRn4sUTyCOI3fHsZvUEXO8X4ZNkR5EH983qKiLBgoLF5hg2-e5Nbd2P9GRoXi97zwCncqwZr9vRTHqxCaUxgeoT4_G7uK36iV12W6ULX78vD7lt8YQddO3Y2pX0qjqj7M74j0e6M71Y8mAbGa3oIBb4iMbblx0xExZf-R1DNVZMCKbA7yAT0Kp2yjePtCIVFkiGRf9fwjuQ34fFBV2vwxenYTC1V7j-M8cpqam1eRWuz2HucCUgLFjxs7JAcmwajiA
+2023-03-07 17:07:28,766 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjY1NDgsIm5iZiI6MTY3ODIyNjU0OCwiZXhwIjoxNjc4MjMwNDQ4LCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6ImU5NTE3ODUzLWZjMzMtNDU1My05MDdkLTFkYjYyNjMzMjFjOSIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJ1VEFYUWFMTWIwMkRTSG5LTlprcEFBIiwidmVyIjoiMi4wIn0.nq-AydFVKnHOWBTQv3wnhqPbxMo-Lqjf1vRFVfCKuIbexvW5BWmFVZtclTTTClIenKQsPf7TkHG6HWBlBnrXXRn4sUTyCOI3fHsZvUEXO8X4ZNkR5EH983qKiLBgoLF5hg2-e5Nbd2P9GRoXi97zwCncqwZr9vRTHqxCaUxgeoT4_G7uK36iV12W6ULX78vD7lt8YQddO3Y2pX0qjqj7M74j0e6M71Y8mAbGa3oIBb4iMbblx0xExZf-R1DNVZMCKbA7yAT0Kp2yjePtCIVFkiGRf9fwjuQ34fFBV2vwxenYTC1V7j-M8cpqam1eRWuz2HucCUgLFjxs7JAcmwajiA
+2023-03-07 17:07:28,771 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 17:07:28,776 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 17:07:28,777 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:07:28,782 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:07:28,919 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:07:28,925 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : desarrollador4@jlranalytics.com
+2023-03-07 17:07:28,950 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (161ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:07:28,957 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : desarrollador4@jlranalytics.com
+2023-03-07 17:11:14,464 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:11:14,466 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:11:14,468 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjY3NzQsIm5iZiI6MTY3ODIyNjc3NCwiZXhwIjoxNjc4MjMwNjc0LCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6IjJjYzE1MzVkLTA3YjAtNGY1NC05ZjhkLTc2ZTMzZGNjZjc2ZiIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJLdTBoSVc3VzYwMmltdjJxVHlFekFBIiwidmVyIjoiMi4wIn0.k8_VnQqGv95XAUztXokVgCtVsLvNrx3dUzCQrbFMBVytE7nRKsPpr4_oaZ2tNJoWllSgeOlWq1tP6zVVXyqv-9Dav1Du67lP0Zeuom56r_9nYk7NzPNOpEmm4e9gtqy0rI8COFt5LxKmwQTNEEdbjL4YEU2pSJoElrA2f1h4gIHw6AcTINLDqPDh0IwwHiO7TSDQ_upjgSpFGh3aDBbbaBBBWSdbZlBV4loI2bzVPuAjmB32Fr-8x1o0elVXYe2-x_fv-AJDMrZOd74VZ-aeOrnKej_iab7zf9SNXhTa2_eDPHAcrNuYE4QeUlStAAFtQNoO1akdTitjY7XgqXMDMQ
+2023-03-07 17:11:14,472 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjY3NzQsIm5iZiI6MTY3ODIyNjc3NCwiZXhwIjoxNjc4MjMwNjc0LCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6IjJjYzE1MzVkLTA3YjAtNGY1NC05ZjhkLTc2ZTMzZGNjZjc2ZiIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJLdTBoSVc3VzYwMmltdjJxVHlFekFBIiwidmVyIjoiMi4wIn0.k8_VnQqGv95XAUztXokVgCtVsLvNrx3dUzCQrbFMBVytE7nRKsPpr4_oaZ2tNJoWllSgeOlWq1tP6zVVXyqv-9Dav1Du67lP0Zeuom56r_9nYk7NzPNOpEmm4e9gtqy0rI8COFt5LxKmwQTNEEdbjL4YEU2pSJoElrA2f1h4gIHw6AcTINLDqPDh0IwwHiO7TSDQ_upjgSpFGh3aDBbbaBBBWSdbZlBV4loI2bzVPuAjmB32Fr-8x1o0elVXYe2-x_fv-AJDMrZOd74VZ-aeOrnKej_iab7zf9SNXhTa2_eDPHAcrNuYE4QeUlStAAFtQNoO1akdTitjY7XgqXMDMQ
+2023-03-07 17:11:14,477 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 17:11:14,481 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 17:11:14,484 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:11:14,487 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:11:14,624 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (137ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:11:14,629 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : desarrollador4@jlranalytics.com
+2023-03-07 17:11:14,670 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (176ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:11:14,675 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : desarrollador4@jlranalytics.com
+2023-03-07 17:11:28,579 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:11:28,580 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:11:28,582 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjY3ODgsIm5iZiI6MTY3ODIyNjc4OCwiZXhwIjoxNjc4MjMwNjg4LCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6ImM1YzI2ZGRlLTZlYWYtNDNmOS04YjRiLTNhYTYwZjQ0Yjk1NiIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJyd0hJdllPVzBrNmlPNTlZQ3QwQ0FBIiwidmVyIjoiMi4wIn0.XzQiv2lDQIeKF-63690P_LbrhHPSPB5S9_MUcFJPogfIb-FLSqESv4k8ZB9fjULFA41O6zOXE1u6DMz4VLTjPOklfdCYsEXrkYNzT5L4mDE7n25ZtBFvL46k31as0buW2SmEFItbRGgsMHkkMybg3nbPH8NZo7BHCyEagoWRD-2SFDY67GAyeFRIVu__hyA01zq192JYG0b40ipo-MpkD8QTX1JwM7TdAqUVl2jXwV5yclxRmqYea8eJt8IBerkIizWPg2oMa4ACdh2Hztk8yDaGQZhHS1HhALgx3LkT-utsAn6CHnbJqos4ZQAOPykbgo-wvRHNDW69ItYgH6in5g
+2023-03-07 17:11:28,585 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjY3ODgsIm5iZiI6MTY3ODIyNjc4OCwiZXhwIjoxNjc4MjMwNjg4LCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6ImM1YzI2ZGRlLTZlYWYtNDNmOS04YjRiLTNhYTYwZjQ0Yjk1NiIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJyd0hJdllPVzBrNmlPNTlZQ3QwQ0FBIiwidmVyIjoiMi4wIn0.XzQiv2lDQIeKF-63690P_LbrhHPSPB5S9_MUcFJPogfIb-FLSqESv4k8ZB9fjULFA41O6zOXE1u6DMz4VLTjPOklfdCYsEXrkYNzT5L4mDE7n25ZtBFvL46k31as0buW2SmEFItbRGgsMHkkMybg3nbPH8NZo7BHCyEagoWRD-2SFDY67GAyeFRIVu__hyA01zq192JYG0b40ipo-MpkD8QTX1JwM7TdAqUVl2jXwV5yclxRmqYea8eJt8IBerkIizWPg2oMa4ACdh2Hztk8yDaGQZhHS1HhALgx3LkT-utsAn6CHnbJqos4ZQAOPykbgo-wvRHNDW69ItYgH6in5g
+2023-03-07 17:11:28,589 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 17:11:28,595 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 17:11:28,595 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:11:28,599 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:11:28,742 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (138ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:11:28,785 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (162ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:11:28,789 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJ1c2VyTmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJodHRwOi8vQXBpUG9ydGFsX0RhdGFMYWtlLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tL2NsYWltcy9yb2xuYW1lIjoiQWRtaW5pc3RyYWRvciIsIm5iZiI6MTY3ODIyNzA4OCwiZXhwIjoxNjc4MjMwNjg4LCJpYXQiOjE2NzgyMjcwODgsImlzcyI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuaXNzdWVyLmNvbSIsImF1ZCI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tIn0.albgMp6roC2x46tdYwmAVM-knn7bj95mUFJ-S6VG0f8
+2023-03-07 17:11:28,794 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken refreshToken: vZrZ+GUXoff4IA8RLgrQw9WLOzMtihr3zUgtV9kwtXM=
+2023-03-07 17:11:28,797 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJ1c2VyTmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJodHRwOi8vQXBpUG9ydGFsX0RhdGFMYWtlLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tL2NsYWltcy9yb2xuYW1lIjoiQWRtaW5pc3RyYWRvciIsIm5iZiI6MTY3ODIyNzA4OCwiZXhwIjoxNjc4MjMwNjg4LCJpYXQiOjE2NzgyMjcwODgsImlzcyI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuaXNzdWVyLmNvbSIsImF1ZCI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tIn0.albgMp6roC2x46tdYwmAVM-knn7bj95mUFJ-S6VG0f8
+2023-03-07 17:11:28,836 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken refreshToken: 0KjJTgHXGaRByu6yUVUDjoKYueAt+Rjr92cI9Z9B+B8=
+2023-03-07 17:11:28,989 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (148ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-03-07 17:11:28,997 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (158ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-03-07 17:11:29,127 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (131ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2023-03-07 17:11:29,160 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (157ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2023-03-07 17:11:29,432 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (132ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2023-03-07 17:11:29,571 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-03-07 17:11:29,741 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (416ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2023-03-07 17:11:53,632 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Domain.Services.AuthService - GetToken Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException","Message":"The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagationAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at ApiPortal_DataLake.Domain.Services.AuthService.GetToken(String tokenAD) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Domain\\Services\\AuthService.cs:line 104","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2023-03-07 17:12:07,793 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:12:10,602 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjY4MjcsIm5iZiI6MTY3ODIyNjgyNywiZXhwIjoxNjc4MjMwNzI3LCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6Ijk2MDUxNzkzLTVkOTUtNDAxMi1iN2YxLWRjZWUzN2VlMzlkYyIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJjVzNhX3E5eVdFQzduSG43b2NvSEFBIiwidmVyIjoiMi4wIn0.lX7hix3ohu_8uTCKMbkH5S4coeM11XcPlYHqQIO0iRSK7-Qy7911d2i9qms_e2DApZIR24FxmJb8yfJe0NZO70VxnOTepoJs84PxBQgolHsx_IzGZog4bX8Jm-_oJX2J9GYfbajedytXn1ZFRzUQdt2CohlKTiFuH95VuMiqs85hdxaaN6Wi5e4kCJHodvIksCl2FIEZgTkS6bnYUT_403KWkWh2BF8TqY-B3YoStTAmPOX6Foln1o12ipc27CfOwj9Vv_ojphTHCUJt38kgxYsEeFn9v6p15bywc0z0eOfI0cy7PSk8iSwFCk5NVo42B3UBB1H77DNuoLTap4v84w
+2023-03-07 17:12:18,098 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 17:12:18,350 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:12:18,527 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (169ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:12:40,685 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJ1c2VyTmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJodHRwOi8vQXBpUG9ydGFsX0RhdGFMYWtlLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tL2NsYWltcy9yb2xuYW1lIjoiQWRtaW5pc3RyYWRvciIsIm5iZiI6MTY3ODIyNzE1NCwiZXhwIjoxNjc4MjMwNzUzLCJpYXQiOjE2NzgyMjcxNTQsImlzcyI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuaXNzdWVyLmNvbSIsImF1ZCI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tIn0.RQ2ESef6jUyWcwpiB-Higaux_36Ysg3jcA1htzbLBqI
+2023-03-07 17:12:41,109 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken refreshToken: BJsJAfYmEPQmQZbc9pqKyACBc2YN1cfPKjR1R1QtGlU=
+2023-03-07 17:12:42,396 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (190ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-03-07 17:12:43,410 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (160ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2023-03-07 17:12:52,585 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (164ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2023-03-07 17:12:52,746 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (156ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-03-07 17:13:57,661 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:14:01,612 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjY5MzcsIm5iZiI6MTY3ODIyNjkzNywiZXhwIjoxNjc4MjMwODM3LCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6ImExNTg5YzEzLWVkMzEtNGNhNC1hYWQ5LTAyYjM2NTRhNTNhOCIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJmMnY2Y2JiOVJrcTB6TDhyQzFvSEFBIiwidmVyIjoiMi4wIn0.EGKBCBmtdnBGWP5kDbAnN_nCTiej7819bVPnQ6h7JAJuhUTVBkGScQC-RjlMlfQRn-i6Rw1zGUIkBXJDmJ05-UH8ncd-yax3iZvPCjGOTln_0cwBkGveWAytCu1kv9l8vS02R7BN_EcVF8sCCWQ9KHjSgkk_dB6wBn1uGA1HQQZzB0M-JP5DVY4Zg9upfYIDayIF-kmTlij86oVvQxcUPGmpC1XKTmzqLYfRpKC7I9twXe4APfY1pTtlJmaQpsQ8_iPwc5yLr-VOWKDpa9PP4O6182NHMMzPC80VVEOZI2nvBZZwGFIT2PiuFYw2npY6JaldMtT74KZIVYG9_npqZA
+2023-03-07 17:14:01,616 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 17:14:01,618 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:14:01,757 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:14:01,759 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJ1c2VyTmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJodHRwOi8vQXBpUG9ydGFsX0RhdGFMYWtlLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tL2NsYWltcy9yb2xuYW1lIjoiQWRtaW5pc3RyYWRvciIsIm5iZiI6MTY3ODIyNzI0MSwiZXhwIjoxNjc4MjMwODQxLCJpYXQiOjE2NzgyMjcyNDEsImlzcyI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuaXNzdWVyLmNvbSIsImF1ZCI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tIn0.GIY2nWAbC5wRPwYa1GhcXY398lZq74Whk6RTy2rLiQg
+2023-03-07 17:14:01,762 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken refreshToken: +6lnU1ckVcdsSm/l+2B3KGQl8Qg0gqxDVSX4wbPcBtU=
+2023-03-07 17:14:01,901 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (133ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-03-07 17:14:02,036 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (130ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2023-03-07 17:14:02,310 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (137ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2023-03-07 17:14:02,449 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (130ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-03-07 17:35:15,320 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:35:17,835 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjgyMTAsIm5iZiI6MTY3ODIyODIxMCwiZXhwIjoxNjc4MjMyMTEwLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6ImEzZWZhZmU2LTM1MTgtNGIxMy1iMmUzLThhMDVkNWFjODNlYSIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJPT2dYYmlnU0YwS2l0dGRKOXowMEFBIiwidmVyIjoiMi4wIn0.HN6QNffaA3gpAYxZM4xw7wiN-xOOb9h6HYMEzKDY9BEJvIrnJ9dMwWJOeWYXvait2CRZw-GcTGIBjQTrswp15w_-E5Y3H2qdyioO1uuy_oeZW2547MH1VWHLmZROXUEYA8QPfaWUALKIah8yJvN9wwdvfCTyaVtQwHdZqzIU0mF6mMAOrAUWbVlKmdoENWjqHyVBjQyew6jAs0BJIonfMa_Hd_ho8it0ob0WOBpuEwSRJ4Tn41GbHNXLQM7So0eHtCoeCh1FuPdiDCKf462NaD9z7X5XKxab7DXXzTXmjjUF2hcc8Zex9_kpILNI5CV9tnm3hux5xVdrDr2AEgYDXQ
+2023-03-07 17:35:17,950 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 17:35:18,008 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:35:19,399 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (181ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:35:19,426 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJ1c2VyTmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJodHRwOi8vQXBpUG9ydGFsX0RhdGFMYWtlLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tL2NsYWltcy9yb2xuYW1lIjoiQWRtaW5pc3RyYWRvciIsIm5iZiI6MTY3ODIyODUxOSwiZXhwIjoxNjc4MjMyMTE5LCJpYXQiOjE2NzgyMjg1MTksImlzcyI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuaXNzdWVyLmNvbSIsImF1ZCI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tIn0.dssRxfM3wfFcSbFXRrzRpkwx2p_jgXeqAHzNrHB1Tuc
+2023-03-07 17:35:19,428 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken refreshToken: pTEvlmSMQPaOuxUTJgZcY5ub3+mmk0Nd5PSvPaJPG8U=
+2023-03-07 17:35:19,587 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (151ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-03-07 17:35:19,739 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (148ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2023-03-07 17:35:20,058 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (156ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2023-03-07 17:35:20,212 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (150ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-03-07 17:35:22,944 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:35:22,947 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:35:23,179 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (159ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-03-07 17:35:23,953 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-03-07 17:42:54,145 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:42:54,178 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:42:54,293 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:42:56,050 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (235ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-03-07 17:42:56,090 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Domain.Services.Jwt - ValidateToken error: IDX12741: JWT: 'System.String' must have three segments (JWS) or five segments (JWE).    at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at ApiPortal_DataLake.Domain.Services.Jwt.ValidateToken(String authorization) in C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\Domain\Services\Jwt.cs:line 96
+2023-03-07 17:42:56,094 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Filters.ValidateGroupsAttribute.ValidateGroupsAttributeImp - Error validate token: Token invalid
+2023-03-07 17:42:56,130 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Filters.ValidateGroupsAttribute.ValidateGroupsAttributeImp - Error validate token: Not Header Authorization
+2023-03-07 17:42:56,866 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (158ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-03-07 17:42:57,662 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (149ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intSubContratista], [d].[dtmFechaCarga], [d].[vchEmpresa]
+FROM [ods].[Dim_SubContratista] AS [d]
+2023-03-07 17:43:03,537 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:43:05,884 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjg2NzgsIm5iZiI6MTY3ODIyODY3OCwiZXhwIjoxNjc4MjMyNTc4LCJuYW1lIjoiQW5kcmVzIFNhbnRpc3RlYmFuIExpbm8iLCJub25jZSI6IjkyODYzYjVkLTk1NmQtNGU4Yy1hZTc2LTgyY2ExMWQ3OTczMCIsIm9pZCI6ImY2MTQyOTA3LTQ0NDktNGU2MS05MTlkLTkzYzllNzg4NTI3OSIsInByZWZlcnJlZF91c2VybmFtZSI6ImFzYW50aXN0ZWJhbkBiZXNjby5jb20ucGUiLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUVRLiIsInN1YiI6InUyMUpDLU9sNGF1YkFIdDBWNE1XMllONk1hRUluZ3lheVhjQXFrWUU0eFkiLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJfZ0FLbnVIX1MwdWs1NW5YZnZnRUFBIiwidmVyIjoiMi4wIn0.h9wJZI9_Sg9yne4rmj-Hc0eGxPV-ctA5vyumYcEahnnP7wUxWX1I4SsOTqB6W2ec0PorDrXQ0lndV2x8wiOdOzk161YJdYL6aWFJadcH1m7MiYpPSEsy3wbyg09qcEZtNgBJjGuqUGfNgu0na3iMl494RyQz8qxt61-VdE4-c6_cs4GuH9sNek4Swc8C_2xTGUCwY_K-hr4x_EIc-cqVXyhMunSVED9Hfh6urYcdXorjhMvXWeLSWtPt7o6sKML55mIXMVTR32ilCiVQdLJo5CI1CcGpwc0BX0m_WfNKAPS_8f9oSmnaxrJw1WANB4_vSOdRtA7b5y24O05GQ6VWkQ
+2023-03-07 17:43:05,909 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:43:06,732 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Domain.Services.Jwt - ValidateToken error: IDX12741: JWT: 'System.String' must have three segments (JWS) or five segments (JWE).    at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at ApiPortal_DataLake.Domain.Services.Jwt.ValidateToken(String authorization) in C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\Domain\Services\Jwt.cs:line 96
+2023-03-07 17:43:06,811 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjg2NzgsIm5iZiI6MTY3ODIyODY3OCwiZXhwIjoxNjc4MjMyNTc4LCJuYW1lIjoiQW5kcmVzIFNhbnRpc3RlYmFuIExpbm8iLCJub25jZSI6IjkyODYzYjVkLTk1NmQtNGU4Yy1hZTc2LTgyY2ExMWQ3OTczMCIsIm9pZCI6ImY2MTQyOTA3LTQ0NDktNGU2MS05MTlkLTkzYzllNzg4NTI3OSIsInByZWZlcnJlZF91c2VybmFtZSI6ImFzYW50aXN0ZWJhbkBiZXNjby5jb20ucGUiLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUVRLiIsInN1YiI6InUyMUpDLU9sNGF1YkFIdDBWNE1XMllONk1hRUluZ3lheVhjQXFrWUU0eFkiLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJfZ0FLbnVIX1MwdWs1NW5YZnZnRUFBIiwidmVyIjoiMi4wIn0.h9wJZI9_Sg9yne4rmj-Hc0eGxPV-ctA5vyumYcEahnnP7wUxWX1I4SsOTqB6W2ec0PorDrXQ0lndV2x8wiOdOzk161YJdYL6aWFJadcH1m7MiYpPSEsy3wbyg09qcEZtNgBJjGuqUGfNgu0na3iMl494RyQz8qxt61-VdE4-c6_cs4GuH9sNek4Swc8C_2xTGUCwY_K-hr4x_EIc-cqVXyhMunSVED9Hfh6urYcdXorjhMvXWeLSWtPt7o6sKML55mIXMVTR32ilCiVQdLJo5CI1CcGpwc0BX0m_WfNKAPS_8f9oSmnaxrJw1WANB4_vSOdRtA7b5y24O05GQ6VWkQ
+2023-03-07 17:43:06,853 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Filters.ValidateGroupsAttribute.ValidateGroupsAttributeImp - Error validate token: Token invalid
+2023-03-07 17:43:06,877 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: asantisteban@besco.com.pe
+2023-03-07 17:43:06,881 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:43:06,886 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: asantisteban@besco.com.pe
+2023-03-07 17:43:06,946 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:43:07,054 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Filters.ValidateGroupsAttribute.ValidateGroupsAttributeImp - Error validate token: Not Header Authorization
+2023-03-07 17:43:08,071 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (152ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:43:08,075 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : asantisteban@besco.com.pe
+2023-03-07 17:43:08,881 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (149ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:43:08,890 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : asantisteban@besco.com.pe
+2023-03-07 17:43:10,788 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:43:13,155 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:43:15,405 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjg2ODgsIm5iZiI6MTY3ODIyODY4OCwiZXhwIjoxNjc4MjMyNTg4LCJuYW1lIjoiQW5kcmVzIFNhbnRpc3RlYmFuIExpbm8iLCJub25jZSI6ImYwNjE4YjBlLThiNDgtNDllZC1iZjE4LTY5YjU3MDFhOTRlNyIsIm9pZCI6ImY2MTQyOTA3LTQ0NDktNGU2MS05MTlkLTkzYzllNzg4NTI3OSIsInByZWZlcnJlZF91c2VybmFtZSI6ImFzYW50aXN0ZWJhbkBiZXNjby5jb20ucGUiLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUVRLiIsInN1YiI6InUyMUpDLU9sNGF1YkFIdDBWNE1XMllONk1hRUluZ3lheVhjQXFrWUU0eFkiLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJDc3d1QkUyalpVS2xCQW5IS180RUFBIiwidmVyIjoiMi4wIn0.lf0CNfA8ICPIq501npN-OiKwqP9QIMrfqErlXcgFEJVXE4sorUrKvoi3B70zLtVLBjxXO6zUODDFn-_vN5eWeKPRZ5pTbcZvxQPrUk5J-o7PZeCAoPt3RBY4C68ACpv4ricNpPmQzVPfipZxzUcbRjAlQWPzWSgAVpezSmCf3FVvwalQme0ix_XC7QS0q2Bdjn3Dt_O8zpU_7h1h84uWi2G9o3AwTaJuadNF9SS2LcjC0ILUz1BPlEDe5Va53qS8eluZ_e33upKX0hSAc7OEJk1dZF34OGo_mnRrVQfSeTizFdchBPwzvrQH3b0_eqT72zzV15Ajyv9FI9gvleqMFw
+2023-03-07 17:43:15,407 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjg2ODgsIm5iZiI6MTY3ODIyODY4OCwiZXhwIjoxNjc4MjMyNTg4LCJuYW1lIjoiQW5kcmVzIFNhbnRpc3RlYmFuIExpbm8iLCJub25jZSI6ImYwNjE4YjBlLThiNDgtNDllZC1iZjE4LTY5YjU3MDFhOTRlNyIsIm9pZCI6ImY2MTQyOTA3LTQ0NDktNGU2MS05MTlkLTkzYzllNzg4NTI3OSIsInByZWZlcnJlZF91c2VybmFtZSI6ImFzYW50aXN0ZWJhbkBiZXNjby5jb20ucGUiLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUVRLiIsInN1YiI6InUyMUpDLU9sNGF1YkFIdDBWNE1XMllONk1hRUluZ3lheVhjQXFrWUU0eFkiLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJDc3d1QkUyalpVS2xCQW5IS180RUFBIiwidmVyIjoiMi4wIn0.lf0CNfA8ICPIq501npN-OiKwqP9QIMrfqErlXcgFEJVXE4sorUrKvoi3B70zLtVLBjxXO6zUODDFn-_vN5eWeKPRZ5pTbcZvxQPrUk5J-o7PZeCAoPt3RBY4C68ACpv4ricNpPmQzVPfipZxzUcbRjAlQWPzWSgAVpezSmCf3FVvwalQme0ix_XC7QS0q2Bdjn3Dt_O8zpU_7h1h84uWi2G9o3AwTaJuadNF9SS2LcjC0ILUz1BPlEDe5Va53qS8eluZ_e33upKX0hSAc7OEJk1dZF34OGo_mnRrVQfSeTizFdchBPwzvrQH3b0_eqT72zzV15Ajyv9FI9gvleqMFw
+2023-03-07 17:43:15,420 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Domain.Services.Jwt - ValidateToken error: IDX12741: JWT: 'System.String' must have three segments (JWS) or five segments (JWE).    at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at ApiPortal_DataLake.Domain.Services.Jwt.ValidateToken(String authorization) in C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\Domain\Services\Jwt.cs:line 96
+2023-03-07 17:43:15,433 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: asantisteban@besco.com.pe
+2023-03-07 17:43:15,435 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: asantisteban@besco.com.pe
+2023-03-07 17:43:15,438 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:43:15,441 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:43:15,455 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Filters.ValidateGroupsAttribute.ValidateGroupsAttributeImp - Error validate token: Token invalid
+2023-03-07 17:43:15,504 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Filters.ValidateGroupsAttribute.ValidateGroupsAttributeImp - Error validate token: Not Header Authorization
+2023-03-07 17:43:15,639 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (193ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:43:15,645 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (190ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:43:15,699 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : asantisteban@besco.com.pe
+2023-03-07 17:43:15,728 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : asantisteban@besco.com.pe
+2023-03-07 17:44:03,840 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:44:04,948 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjg2OTcsIm5iZiI6MTY3ODIyODY5NywiZXhwIjoxNjc4MjMyNTk3LCJuYW1lIjoiQW5kcmVzIFNhbnRpc3RlYmFuIExpbm8iLCJub25jZSI6IjcxMGU2ODYyLTUyMjktNDE0Yy1iZTdhLWI3OWY4ZWRhY2I2NyIsIm9pZCI6ImY2MTQyOTA3LTQ0NDktNGU2MS05MTlkLTkzYzllNzg4NTI3OSIsInByZWZlcnJlZF91c2VybmFtZSI6ImFzYW50aXN0ZWJhbkBiZXNjby5jb20ucGUiLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUVRLiIsInN1YiI6InUyMUpDLU9sNGF1YkFIdDBWNE1XMllONk1hRUluZ3lheVhjQXFrWUU0eFkiLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJyVF9PR1YxaTZFeWpsaF81R0dRcEFBIiwidmVyIjoiMi4wIn0.FZI8M6faqj24JkyRU9T79dzENEulc_ZXN6LPbEqN38Nxbx91WAnfSYOYKh7cxtQTr1Q81TziZlWKxhiWey5-eo1pMf05z0P9nq8LSW3666HVtmXGPRhAd4k9xSuOwQeZUpAOMVSFXf7hq3DWNMDc_-Q8_yWUcExIAY9GN5QbFM9RKlC_Ky9vttO52XOIVwPKd7tHbIyTFL_2kOPgBn79L0EQ9fbfC_9tYfjFqGAZlmcLU_zld39iGmWwJ5SnKLSG0rc9MVI0iHQoM9xSELOu_zaG2ce-deDbonI-MzMMrbv6uTVJIzddowndVZfzI-lkaQXh50oDhICali5tDleVhQ
+2023-03-07 17:44:04,990 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: asantisteban@besco.com.pe
+2023-03-07 17:52:55,211 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:52:55,359 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:52:56,887 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjg2OTcsIm5iZiI6MTY3ODIyODY5NywiZXhwIjoxNjc4MjMyNTk3LCJuYW1lIjoiQW5kcmVzIFNhbnRpc3RlYmFuIExpbm8iLCJub25jZSI6IjcxMGU2ODYyLTUyMjktNDE0Yy1iZTdhLWI3OWY4ZWRhY2I2NyIsIm9pZCI6ImY2MTQyOTA3LTQ0NDktNGU2MS05MTlkLTkzYzllNzg4NTI3OSIsInByZWZlcnJlZF91c2VybmFtZSI6ImFzYW50aXN0ZWJhbkBiZXNjby5jb20ucGUiLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUVRLiIsInN1YiI6InUyMUpDLU9sNGF1YkFIdDBWNE1XMllONk1hRUluZ3lheVhjQXFrWUU0eFkiLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJyVF9PR1YxaTZFeWpsaF81R0dRcEFBIiwidmVyIjoiMi4wIn0.FZI8M6faqj24JkyRU9T79dzENEulc_ZXN6LPbEqN38Nxbx91WAnfSYOYKh7cxtQTr1Q81TziZlWKxhiWey5-eo1pMf05z0P9nq8LSW3666HVtmXGPRhAd4k9xSuOwQeZUpAOMVSFXf7hq3DWNMDc_-Q8_yWUcExIAY9GN5QbFM9RKlC_Ky9vttO52XOIVwPKd7tHbIyTFL_2kOPgBn79L0EQ9fbfC_9tYfjFqGAZlmcLU_zld39iGmWwJ5SnKLSG0rc9MVI0iHQoM9xSELOu_zaG2ce-deDbonI-MzMMrbv6uTVJIzddowndVZfzI-lkaQXh50oDhICali5tDleVhQ
+2023-03-07 17:52:56,936 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: asantisteban@besco.com.pe
+2023-03-07 17:52:56,955 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:52:58,391 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (162ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:52:58,399 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : asantisteban@besco.com.pe
+2023-03-07 17:52:59,136 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:52:59,140 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : asantisteban@besco.com.pe
+2023-03-07 17:53:13,231 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:53:15,237 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjkyODksIm5iZiI6MTY3ODIyOTI4OSwiZXhwIjoxNjc4MjMzMTg5LCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yMzFmYzg0NS1mZmJiLTQwZTctYTJkZi0yN2Y0ZGI4ZmNjYTAvIiwibmFtZSI6Ik5lbHNvbiAgUm9kcmlndWV6IEh1YWxscGEiLCJub25jZSI6IjYzZjk1ZDc3LTFiOGQtNGQ5Yy1hZjAxLTQxNDVhOGY3NjcyYSIsIm9pZCI6Ijc1NTNmNzhhLTFmMTQtNGY5Ni1hMjkxLTRlY2U2NDY5YmE2NCIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUxVLiIsInN1YiI6InduT3VHWU5XbDVvQVhGdUFiUHlnSGlfcVhDa3VpaWtrVzNDamVZbWV3MG8iLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJObjVrZ3lpdnNFT09nSXYwRUs0RUFBIiwidmVyIjoiMi4wIn0.XP_05XCi8HM4idxjO0DwL3JH6OWcstAcY0DtdMj5inuHymwi0iufo5x_g2p3XDhDnaXLogqS1TG9TmRk1eRk_59s8BA_P7wD4kslfWii9JKIVok9RyOnB4Ls5S3fDAZfi7CvEDTKYhrGmlTaFXcKSMdpUVtHs0MOJTXWP6xmWeXFT66zXFUvL1VvWS6SW28PmQCCNUl5db63HbJdq8ilBzCTTWIz5K-x0he0V_o97NBN8iKQ7SgayhX_JOMT4iPSdJVEySOQwQdasy81L79x25odHppOwa5o8BXPHWAno6eV2BkgcQbg9cASGN_uS99im8sl_QVXC5v3cN95mp-aLw
+2023-03-07 17:53:15,241 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-03-07 17:53:15,243 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:53:15,383 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:53:15,428 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJ1c2VyTmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJodHRwOi8vQXBpUG9ydGFsX0RhdGFMYWtlLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tL2NsYWltcy9yb2xuYW1lIjoiQWRtaW5pc3RyYWRvciIsIm5iZiI6MTY3ODIyOTU5NSwiZXhwIjoxNjc4MjMzMTk1LCJpYXQiOjE2NzgyMjk1OTUsImlzcyI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuaXNzdWVyLmNvbSIsImF1ZCI6Imh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tIn0.lFdwF9_W8UO89EgGpISeA8AdCZw1EilK9IgfwBreyaU
+2023-03-07 17:53:15,430 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken refreshToken: YbiT+5M/bZxvDczsWHQpmZoFav9/5pRWJ1EjFM0GEA0=
+2023-03-07 17:53:15,578 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (132ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-03-07 17:53:15,721 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (133ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2023-03-07 17:53:16,012 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (132ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2023-03-07 17:53:16,159 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (141ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-03-07 17:53:19,442 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:53:19,594 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t].[Id], [t].[FechaCreacion], [t].[FechaModificacion], [t].[RolId], [t].[UsuarioCreacion], [t].[UsuarioId], [t].[UsuarioModificacion], [t].[Id0], [t].[Nombre]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t] ON [u].[Id] = [t].[UsuarioId]
+ORDER BY [u].[Id], [t].[Id]
+2023-03-07 17:53:30,604 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:53:30,607 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-03-07 17:53:33,806 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjkzMDUsIm5iZiI6MTY3ODIyOTMwNSwiZXhwIjoxNjc4MjMzMjA1LCJuYW1lIjoiQW5kcmVzIFNhbnRpc3RlYmFuIExpbm8iLCJub25jZSI6Ijk3NzI2ZGRiLTI1OTEtNDQzZi04M2NlLWQ2MTEyOTk0YmQ3YyIsIm9pZCI6ImY2MTQyOTA3LTQ0NDktNGU2MS05MTlkLTkzYzllNzg4NTI3OSIsInByZWZlcnJlZF91c2VybmFtZSI6ImFzYW50aXN0ZWJhbkBiZXNjby5jb20ucGUiLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUVRLiIsInN1YiI6InUyMUpDLU9sNGF1YkFIdDBWNE1XMllONk1hRUluZ3lheVhjQXFrWUU0eFkiLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJVaGFxZ2JHd2VrLXV5VFQyb3VBSEFBIiwidmVyIjoiMi4wIn0.kl3EIJqQbkcSXj0HyOszIz8Gq6oDv43-gy1lZK0cck2BuzdyirX5gqvg3PtosEG3F1m7i8OR7yBlSswj-xE32742AJZwoxw7tVCWiE2BGaQAzoDCmT_3VzKPicXMy6ZDDHEyAqLPvLqY5lWgCTnip5m7OFFA1keI9ewXnfazw8U8pbORy8p7TKmKbI0MK1A05n6_3k26-7AsiJC3sXAAzYVFHBaeXBs7XOdWkLSH9rHg2d3byvu8OdjYPa3W7JeNPEgNsxfnqEDxIbzWCYQSjIfFHseoB4l3NrprME_zSUcDZug_HZcnt5EAb5RLoIBcrNwQURcLRJ6Wl4PhuDjJFg
+2023-03-07 17:53:33,811 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiI1MGQ5ZTAxNy01MWVkLTRhYzktOGVmMi1jYTRmYmNmOTEzZTQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYjVmZGM0M2QtODkwZi00MjA4LTkxN2QtMTA3YzcxMWQ1N2NjL3YyLjAiLCJpYXQiOjE2NzgyMjkzMDUsIm5iZiI6MTY3ODIyOTMwNSwiZXhwIjoxNjc4MjMzMjA1LCJuYW1lIjoiQW5kcmVzIFNhbnRpc3RlYmFuIExpbm8iLCJub25jZSI6Ijk3NzI2ZGRiLTI1OTEtNDQzZi04M2NlLWQ2MTEyOTk0YmQ3YyIsIm9pZCI6ImY2MTQyOTA3LTQ0NDktNGU2MS05MTlkLTkzYzllNzg4NTI3OSIsInByZWZlcnJlZF91c2VybmFtZSI6ImFzYW50aXN0ZWJhbkBiZXNjby5jb20ucGUiLCJyaCI6IjAuQVNZQVBjVDl0US1KQ0VLUmZSQjhjUjFYekJmZzJWRHRVY2xLanZMS1Q3ejVFLVFtQUVRLiIsInN1YiI6InUyMUpDLU9sNGF1YkFIdDBWNE1XMllONk1hRUluZ3lheVhjQXFrWUU0eFkiLCJ0aWQiOiJiNWZkYzQzZC04OTBmLTQyMDgtOTE3ZC0xMDdjNzExZDU3Y2MiLCJ1dGkiOiJVaGFxZ2JHd2VrLXV5VFQyb3VBSEFBIiwidmVyIjoiMi4wIn0.kl3EIJqQbkcSXj0HyOszIz8Gq6oDv43-gy1lZK0cck2BuzdyirX5gqvg3PtosEG3F1m7i8OR7yBlSswj-xE32742AJZwoxw7tVCWiE2BGaQAzoDCmT_3VzKPicXMy6ZDDHEyAqLPvLqY5lWgCTnip5m7OFFA1keI9ewXnfazw8U8pbORy8p7TKmKbI0MK1A05n6_3k26-7AsiJC3sXAAzYVFHBaeXBs7XOdWkLSH9rHg2d3byvu8OdjYPa3W7JeNPEgNsxfnqEDxIbzWCYQSjIfFHseoB4l3NrprME_zSUcDZug_HZcnt5EAb5RLoIBcrNwQURcLRJ6Wl4PhuDjJFg
+2023-03-07 17:53:33,819 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: asantisteban@besco.com.pe
+2023-03-07 17:53:33,820 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: asantisteban@besco.com.pe
+2023-03-07 17:53:33,821 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:53:33,822 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-07 17:53:33,965 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:53:33,971 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : asantisteban@besco.com.pe
+2023-03-07 17:53:33,971 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (148ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-03-07 17:53:33,975 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - Usuario no encontrado : asantisteban@besco.com.pe

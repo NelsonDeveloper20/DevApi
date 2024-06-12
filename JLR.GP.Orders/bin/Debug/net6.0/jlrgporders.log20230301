@@ -1,0 +1,341 @@
+2023-03-01 10:25:36,913 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-03-01 10:25:36,932 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-03-01 10:25:36,941 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-03-01 10:25:36,943 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-03-01 10:25:36,945 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-03-01 10:34:41,006 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmCapacitacionesExternas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 10:34:41,019 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmCapacitacionesInternas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 10:34:41,025 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmHHCapacitadas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 10:34:41,030 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndCapacitaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 10:34:41,035 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndObservaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 10:34:41,041 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndResponsabilidades' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 10:34:41,048 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmNumeroCapacitaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 10:34:41,053 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmNumeroObservaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 10:34:41,584 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 10:34:41,584 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 10:34:41,584 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 10:34:41,584 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 10:34:44,619 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (301ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-03-01 10:34:45,750 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (256ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intEtapaZona], [d].[dtmFechaCarga], [d].[vchEtapaZona]
+FROM [ods].[Dim_Etapa_Zona] AS [d]
+2023-03-01 10:34:45,755 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (258ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-03-01 10:34:47,000 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (130ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intEtapaZona], [d].[dtmFechaCarga], [d].[vchEtapaZona]
+FROM [ods].[Dim_Etapa_Zona] AS [d]
+2023-03-01 10:42:20,647 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 10:42:20,650 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 10:42:20,654 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 10:42:20,657 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 10:42:22,297 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (142ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intEtapaZona], [d].[dtmFechaCarga], [d].[vchEtapaZona]
+FROM [ods].[Dim_Etapa_Zona] AS [d]
+2023-03-01 10:42:23,047 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (141ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-03-01 10:42:23,065 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (158ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-03-01 10:42:23,806 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (131ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intEtapaZona], [d].[dtmFechaCarga], [d].[vchEtapaZona]
+FROM [ods].[Dim_Etapa_Zona] AS [d]
+2023-03-01 10:48:28,204 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 10:48:28,207 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 10:48:28,210 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 10:48:28,214 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 10:48:28,349 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (132ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-03-01 10:48:28,353 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (134ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-03-01 10:48:28,358 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (145ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intEtapaZona], [d].[dtmFechaCarga], [d].[vchEtapaZona]
+FROM [ods].[Dim_Etapa_Zona] AS [d]
+2023-03-01 10:48:29,374 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (133ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intEtapaZona], [d].[dtmFechaCarga], [d].[vchEtapaZona]
+FROM [ods].[Dim_Etapa_Zona] AS [d]
+2023-03-01 13:21:44,250 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-03-01 13:21:44,268 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-03-01 13:21:44,276 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-03-01 13:21:44,278 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-03-01 13:21:44,280 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-03-01 13:36:20,527 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmCapacitacionesExternas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 13:36:20,535 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmCapacitacionesInternas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 13:36:20,539 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmHHCapacitadas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 13:36:20,542 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndCapacitaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 13:36:20,545 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndObservaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 13:36:20,550 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndResponsabilidades' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 13:36:20,553 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmNumeroCapacitaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 13:36:20,557 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmNumeroObservaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 13:36:20,864 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:36:20,864 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:36:20,864 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:36:23,218 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (268ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-03-01 13:36:23,781 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-03-01 13:36:23,785 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (140ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intEtapaZona], [d].[dtmFechaCarga], [d].[vchEtapaZona]
+FROM [ods].[Dim_Etapa_Zona] AS [d]
+2023-03-01 13:36:23,889 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:36:24,038 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (143ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intEtapaZona], [d].[dtmFechaCarga], [d].[vchEtapaZona]
+FROM [ods].[Dim_Etapa_Zona] AS [d]
+2023-03-01 13:36:25,781 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:36:25,783 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:36:26,283 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (189ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq21AP], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq21AP] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:36:26,284 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (196ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq22Ins], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq22Ins] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:43:50,837 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:43:50,837 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:43:50,839 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:43:52,133 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (131ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intEtapaZona], [d].[dtmFechaCarga], [d].[vchEtapaZona]
+FROM [ods].[Dim_Etapa_Zona] AS [d]
+2023-03-01 13:43:52,145 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:43:52,924 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (169ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-03-01 13:43:53,003 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intEtapaZona], [d].[dtmFechaCarga], [d].[vchEtapaZona]
+FROM [ods].[Dim_Etapa_Zona] AS [d]
+2023-03-01 13:43:53,708 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (152ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-03-01 13:43:58,728 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:43:58,730 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:43:58,895 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq22Ins], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq22Ins] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:43:59,750 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (153ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq21AP], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq21AP] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:47:52,969 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:47:52,970 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:47:52,972 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:47:53,119 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (143ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-03-01 13:47:53,139 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (164ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-03-01 13:47:53,830 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (130ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intEtapaZona], [d].[dtmFechaCarga], [d].[vchEtapaZona]
+FROM [ods].[Dim_Etapa_Zona] AS [d]
+2023-03-01 13:47:53,836 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:47:53,970 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (130ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intEtapaZona], [d].[dtmFechaCarga], [d].[vchEtapaZona]
+FROM [ods].[Dim_Etapa_Zona] AS [d]
+2023-03-01 13:48:22,773 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:48:22,778 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:48:22,919 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq22Ins], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq22Ins] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:48:22,940 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (158ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq21AP], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq21AP] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:49:16,898 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:49:17,983 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (161ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactAppBq22Ins] ([dtmFechaCarga], [dtmFechaFin], [dtmFechaInicio], [intProyecto], [intTiempo], [vchDescripcion], [vchEtapaZona], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [intFactAppBq22Ins]
+FROM [ods].[FactAppBq22Ins]
+WHERE @@ROWCOUNT = 1 AND [intFactAppBq22Ins] = scope_identity();
+2023-03-01 13:49:21,985 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:49:22,146 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (158ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq22Ins], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq22Ins] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:49:25,491 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:49:25,492 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:49:25,632 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (134ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq22Ins], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq22Ins] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:49:25,657 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (161ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq21AP], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq21AP] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:49:27,313 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:49:27,314 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:49:27,451 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (134ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq22Ins], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq22Ins] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:49:27,474 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (158ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq21AP], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq21AP] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:50:01,781 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:50:02,289 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (140ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactAppBq22Ins] ([dtmFechaCarga], [dtmFechaFin], [dtmFechaInicio], [intProyecto], [intTiempo], [vchDescripcion], [vchEtapaZona], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [intFactAppBq22Ins]
+FROM [ods].[FactAppBq22Ins]
+WHERE @@ROWCOUNT = 1 AND [intFactAppBq22Ins] = scope_identity();
+2023-03-01 13:51:00,555 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Domain.Services.FactAppBq22InsService - FacturaCarga Error try catch: {"ClassName":"System.ArgumentNullException","Message":"Value cannot be null.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at System.Int32.Parse(String s)\r\n   at ApiPortal_DataLake.Domain.Services.FactAppBq22InsService.Agregar(List`1 Datos) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Domain\\Services\\FactAppBq22InsService.cs:line 78","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2147467261,"Source":"System.Private.CoreLib","WatsonBuckets":null,"ParamName":"s"}
+2023-03-01 13:52:23,569 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-03-01 13:52:23,583 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-03-01 13:52:23,590 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-03-01 13:52:23,592 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-03-01 13:52:23,593 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-03-01 13:52:59,533 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmCapacitacionesExternas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 13:52:59,543 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmCapacitacionesInternas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 13:52:59,548 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmHHCapacitadas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 13:52:59,550 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndCapacitaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 13:52:59,552 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndObservaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 13:52:59,554 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndResponsabilidades' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 13:52:59,557 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmNumeroCapacitaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 13:52:59,559 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmNumeroObservaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-01 13:52:59,895 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:52:59,895 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:53:02,299 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:53:02,301 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:53:02,804 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (339ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq21AP], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq21AP] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:53:03,314 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (132ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq22Ins], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq22Ins] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:53:03,332 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (148ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq21AP], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq21AP] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:53:04,031 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (134ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq22Ins], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq22Ins] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:53:05,934 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:53:05,936 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:53:06,077 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq21AP], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq21AP] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:53:06,098 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (154ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq22Ins], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq22Ins] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:53:35,740 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:53:36,459 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (147ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactAppBq22Ins] ([dtmFechaCarga], [dtmFechaFin], [dtmFechaInicio], [intProyecto], [intTiempo], [vchDescripcion], [vchEtapaZona], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [intFactAppBq22Ins]
+FROM [ods].[FactAppBq22Ins]
+WHERE @@ROWCOUNT = 1 AND [intFactAppBq22Ins] = scope_identity();
+2023-03-01 13:53:41,107 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (159ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [f].[intFactAppBq22Ins], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq22Ins] AS [f]
+WHERE [f].[intFactAppBq22Ins] = @__p_0
+2023-03-01 13:53:44,842 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (154ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ods].[FactAppBq22Ins] SET [dtmFechaCarga] = @p0, [dtmFechaFin] = @p1, [dtmFechaInicio] = @p2, [intProyecto] = @p3, [intTiempo] = @p4, [vchDescripcion] = @p5, [vchEtapaZona] = @p6, [vchUsuario] = @p7
+WHERE [intFactAppBq22Ins] = @p8;
+SELECT @@ROWCOUNT;
+2023-03-01 13:53:45,146 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (145ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [f].[intFactAppBq22Ins], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq22Ins] AS [f]
+WHERE [f].[intFactAppBq22Ins] = @__p_0
+2023-03-01 13:53:45,443 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (144ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ods].[FactAppBq22Ins] SET [dtmFechaCarga] = @p0, [dtmFechaFin] = @p1, [dtmFechaInicio] = @p2, [intProyecto] = @p3, [intTiempo] = @p4, [vchDescripcion] = @p5, [vchEtapaZona] = @p6, [vchUsuario] = @p7
+WHERE [intFactAppBq22Ins] = @p8;
+SELECT @@ROWCOUNT;
+2023-03-01 13:53:45,614 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:53:45,765 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (146ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq22Ins], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq22Ins] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:54:53,199 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:54:53,205 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:54:53,210 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:54:53,366 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (139ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-03-01 13:54:53,404 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (153ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intEtapaZona], [d].[dtmFechaCarga], [d].[vchEtapaZona]
+FROM [ods].[Dim_Etapa_Zona] AS [d]
+2023-03-01 13:54:53,411 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (175ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-03-01 13:54:53,443 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:54:53,580 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (131ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intEtapaZona], [d].[dtmFechaCarga], [d].[vchEtapaZona]
+FROM [ods].[Dim_Etapa_Zona] AS [d]
+2023-03-01 13:56:03,770 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:56:03,773 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:56:03,776 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:56:03,913 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intEtapaZona], [d].[dtmFechaCarga], [d].[vchEtapaZona]
+FROM [ods].[Dim_Etapa_Zona] AS [d]
+2023-03-01 13:56:03,921 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (139ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-03-01 13:56:03,926 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:56:03,937 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (154ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-03-01 13:56:04,072 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (137ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intEtapaZona], [d].[dtmFechaCarga], [d].[vchEtapaZona]
+FROM [ods].[Dim_Etapa_Zona] AS [d]
+2023-03-01 13:56:07,781 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:56:07,782 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:56:07,924 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (134ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq21AP], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq21AP] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:56:07,937 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (149ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq22Ins], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq22Ins] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:57:00,672 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:57:00,675 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:57:00,676 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:57:00,815 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (134ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-03-01 13:57:00,817 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (137ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intEtapaZona], [d].[dtmFechaCarga], [d].[vchEtapaZona]
+FROM [ods].[Dim_Etapa_Zona] AS [d]
+2023-03-01 13:57:00,819 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (141ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-03-01 13:57:00,824 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:57:00,960 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (134ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intEtapaZona], [d].[dtmFechaCarga], [d].[vchEtapaZona]
+FROM [ods].[Dim_Etapa_Zona] AS [d]
+2023-03-01 13:57:05,077 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:57:05,080 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-03-01 13:57:05,224 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (139ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq22Ins], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq22Ins] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 13:57:05,230 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (139ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactAppBq21AP], [f].[dtmFechaCarga], [f].[dtmFechaFin], [f].[dtmFechaInicio], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchEtapaZona], [f].[vchUsuario]
+FROM [ods].[FactAppBq21AP] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-03-01 21:24:21,094 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-03-01 21:24:21,131 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-03-01 21:24:21,146 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-03-01 21:24:21,149 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-03-01 21:24:21,163 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\

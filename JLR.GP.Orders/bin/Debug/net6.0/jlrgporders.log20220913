@@ -1,0 +1,844 @@
+2022-09-13 17:45:25,341 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2022-09-13 17:45:25,368 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2022-09-13 17:45:25,382 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2022-09-13 17:45:25,385 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2022-09-13 17:45:25,389 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\yimsc\Documents\NET CORE\PUBLIC\V2\JLR.GP.Orders\JLR.GP.Orders\
+2022-09-13 17:46:31,439 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Application.Controllers.AuthController - Controller GetToken started
+2022-09-13 17:46:31,441 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Application.Controllers.AuthController - Controller GetToken started
+2022-09-13 17:46:31,475 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjJaUXBKM1VwYmpBWVhZR2FYRUpsOGxWMFRPSSJ9.eyJhdWQiOiJjMWYzZTUyMy01ZDFiLTQzNzQtYThjOS1lNjZkZTU4Y2JmOTciLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE2NjMxMDg4OTAsIm5iZiI6MTY2MzEwODg5MCwiZXhwIjoxNjYzMTEyNzkwLCJhaW8iOiJBVFFBeS84VEFBQUF0Y004L1FFK3lHdlBPQVRaWHdxZ0pYOVQrMU1IaDRoY3lpMVp3aEV1bm9rSGZiTkJlTTFqaXJHZ09WRUJWK1o5IiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiZjk1N2Q4MWItYjhhNC00ZDM3LThiNGYtYjE2N2ZjZWJiNTg3Iiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVmlQbDg4RWJYWFJEcU1ubWJlV012NWNsQUdBLiIsInN1YiI6Im02MW5HZEp6ZlhLd3ZZYUNRNmNwdS1WOEl5SEM5bGJCS1JWWEdlc0xXUGciLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiIzRmh0UExTeTIwMm15QVBNVE80S0FnIiwidmVyIjoiMi4wIn0.ECI3okAYvev3beQbwq7hXdLZ-L0nrnHAy1JlXHXYZLXxvHuhpeXws8DSwW5-4KfzOucyIOzEHY0EaxR1jHs_m9fVitLvDL__2LIOYvPEle9hy09EakK5ExiPehWmyLf3RGDA6XzZpLU4miG6Pcp6o-1XnAiPd482Z5WAlzeXvvrkhrT58PaxtWCu2Qg_QqJrDr805VkWT_8zTK6ZLJ1-c-zvYVQbwv1VfagHAIxncapV_sZaBx1feXwjg2ra8VTI7zYH_fFnFDUnKkuk1wapRJy7SGZlBuJd-MZaAXBVjpLkXm60Rzv1DAoJpYMDYm2BRN4_WFbbo5Bfm1nqezWRWA
+2022-09-13 17:46:31,476 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjJaUXBKM1VwYmpBWVhZR2FYRUpsOGxWMFRPSSJ9.eyJhdWQiOiJjMWYzZTUyMy01ZDFiLTQzNzQtYThjOS1lNjZkZTU4Y2JmOTciLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE2NjMxMDg4OTAsIm5iZiI6MTY2MzEwODg5MCwiZXhwIjoxNjYzMTEyNzkwLCJhaW8iOiJBVFFBeS84VEFBQUF0Y004L1FFK3lHdlBPQVRaWHdxZ0pYOVQrMU1IaDRoY3lpMVp3aEV1bm9rSGZiTkJlTTFqaXJHZ09WRUJWK1o5IiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiZjk1N2Q4MWItYjhhNC00ZDM3LThiNGYtYjE2N2ZjZWJiNTg3Iiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVmlQbDg4RWJYWFJEcU1ubWJlV012NWNsQUdBLiIsInN1YiI6Im02MW5HZEp6ZlhLd3ZZYUNRNmNwdS1WOEl5SEM5bGJCS1JWWEdlc0xXUGciLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiIzRmh0UExTeTIwMm15QVBNVE80S0FnIiwidmVyIjoiMi4wIn0.ECI3okAYvev3beQbwq7hXdLZ-L0nrnHAy1JlXHXYZLXxvHuhpeXws8DSwW5-4KfzOucyIOzEHY0EaxR1jHs_m9fVitLvDL__2LIOYvPEle9hy09EakK5ExiPehWmyLf3RGDA6XzZpLU4miG6Pcp6o-1XnAiPd482Z5WAlzeXvvrkhrT58PaxtWCu2Qg_QqJrDr805VkWT_8zTK6ZLJ1-c-zvYVQbwv1VfagHAIxncapV_sZaBx1feXwjg2ra8VTI7zYH_fFnFDUnKkuk1wapRJy7SGZlBuJd-MZaAXBVjpLkXm60Rzv1DAoJpYMDYm2BRN4_WFbbo5Bfm1nqezWRWA
+2022-09-13 17:46:32,351 [.NET ThreadPool Worker] ERROR JLR.GP.Orders.Domain.Services.Jwt - ValidateToken error: IDX10223: Lifetime validation failed. The token is expired. ValidTo: 'System.DateTime', Current time: 'System.DateTime'.    at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at JLR.GP.Orders.Domain.Services.Jwt.ValidateToken(String authorization) in C:\Users\yimsc\Documents\NET CORE\PUBLIC\V2\JLR.GP.Orders\JLR.GP.Orders\Domain\Services\Jwt.cs:line 96
+2022-09-13 17:46:32,616 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Application.Controllers.AuthController - Controller GetToken started
+2022-09-13 17:46:32,620 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjJaUXBKM1VwYmpBWVhZR2FYRUpsOGxWMFRPSSJ9.eyJhdWQiOiJjMWYzZTUyMy01ZDFiLTQzNzQtYThjOS1lNjZkZTU4Y2JmOTciLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE2NjMxMDg4OTAsIm5iZiI6MTY2MzEwODg5MCwiZXhwIjoxNjYzMTEyNzkwLCJhaW8iOiJBVFFBeS84VEFBQUF0Y004L1FFK3lHdlBPQVRaWHdxZ0pYOVQrMU1IaDRoY3lpMVp3aEV1bm9rSGZiTkJlTTFqaXJHZ09WRUJWK1o5IiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiZjk1N2Q4MWItYjhhNC00ZDM3LThiNGYtYjE2N2ZjZWJiNTg3Iiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVmlQbDg4RWJYWFJEcU1ubWJlV012NWNsQUdBLiIsInN1YiI6Im02MW5HZEp6ZlhLd3ZZYUNRNmNwdS1WOEl5SEM5bGJCS1JWWEdlc0xXUGciLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiIzRmh0UExTeTIwMm15QVBNVE80S0FnIiwidmVyIjoiMi4wIn0.ECI3okAYvev3beQbwq7hXdLZ-L0nrnHAy1JlXHXYZLXxvHuhpeXws8DSwW5-4KfzOucyIOzEHY0EaxR1jHs_m9fVitLvDL__2LIOYvPEle9hy09EakK5ExiPehWmyLf3RGDA6XzZpLU4miG6Pcp6o-1XnAiPd482Z5WAlzeXvvrkhrT58PaxtWCu2Qg_QqJrDr805VkWT_8zTK6ZLJ1-c-zvYVQbwv1VfagHAIxncapV_sZaBx1feXwjg2ra8VTI7zYH_fFnFDUnKkuk1wapRJy7SGZlBuJd-MZaAXBVjpLkXm60Rzv1DAoJpYMDYm2BRN4_WFbbo5Bfm1nqezWRWA
+2022-09-13 17:46:33,144 [17] WARN JLR.GP.Orders.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2022-09-13 17:46:33,144 [23] WARN JLR.GP.Orders.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2022-09-13 17:46:33,273 [7] WARN JLR.GP.Orders.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2022-09-13 17:46:34,489 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:46:34,489 [23] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:46:34,489 [17] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:46:34,489 [7] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:46:37,887 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (294ms) [Parameters=[@__refreshTokenRequest_RefreshToken_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[RefreshToken] = @__refreshTokenRequest_RefreshToken_0
+2022-09-13 17:46:37,944 [.NET ThreadPool Worker] WARN JLR.GP.Orders.Domain.Services.AuthService - GetRefreshToken : Invalid access token or refresh token S7PHbInbYLjWgICygTyL2FoVwp1jxR/3FdPkKzk/H3o=
+2022-09-13 17:46:38,496 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (223ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2022-09-13 17:46:38,500 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (219ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2022-09-13 17:46:39,040 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sbmFtZSI6IkFkbWluaXN0cmFkb3IiLCJuYmYiOjE2NjMxMDkxOTksImV4cCI6MTY2MzExMjc5OSwiaWF0IjoxNjYzMTA5MTk5LCJpc3MiOiJodHRwOi8vamxyLmdwLm9yZGVycy5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL2psci5ncC5vcmRlcnMuY29tIn0.x4aAO_SaDWxW-SpE7nsqv14rkVsAXJLuH8rWzXxpqtc
+2022-09-13 17:46:39,044 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sbmFtZSI6IkFkbWluaXN0cmFkb3IiLCJuYmYiOjE2NjMxMDkxOTksImV4cCI6MTY2MzExMjc5OSwiaWF0IjoxNjYzMTA5MTk5LCJpc3MiOiJodHRwOi8vamxyLmdwLm9yZGVycy5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL2psci5ncC5vcmRlcnMuY29tIn0.x4aAO_SaDWxW-SpE7nsqv14rkVsAXJLuH8rWzXxpqtc
+2022-09-13 17:46:39,050 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken refreshToken: 4DTdbTf/ZHaEpAoO/PCFGIXAZDp+t1QQtNt6DaGkIFc=
+2022-09-13 17:46:39,056 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken refreshToken: rarHv3vHYrHaTs6CHcZ0m9M85pU3AF4M4/PF13hsHiA=
+2022-09-13 17:46:39,091 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (162ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2022-09-13 17:46:39,103 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sbmFtZSI6IkFkbWluaXN0cmFkb3IiLCJuYmYiOjE2NjMxMDkxOTksImV4cCI6MTY2MzExMjc5OSwiaWF0IjoxNjYzMTA5MTk5LCJpc3MiOiJodHRwOi8vamxyLmdwLm9yZGVycy5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL2psci5ncC5vcmRlcnMuY29tIn0.x4aAO_SaDWxW-SpE7nsqv14rkVsAXJLuH8rWzXxpqtc
+2022-09-13 17:46:39,109 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken refreshToken: zAPaYU8kCezbLwkQzUB/WMMyjzo/1z9MWM7amMhjvOM=
+2022-09-13 17:46:39,302 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (164ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-09-13 17:46:39,326 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (168ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-09-13 17:46:39,333 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (176ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-09-13 17:46:39,478 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (156ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2022-09-13 17:46:39,492 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (157ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2022-09-13 17:46:39,506 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (165ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2022-09-13 17:46:40,230 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (164ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-09-13 17:46:40,434 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (160ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-09-13 17:46:40,673 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (605ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-09-13 17:46:40,848 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (782ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-09-13 17:46:41,175 [.NET ThreadPool Worker] ERROR JLR.GP.Orders.Domain.Services.AuthService - GetToken Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException","Message":"The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagationAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at JLR.GP.Orders.Domain.Services.AuthService.GetToken(String tokenAD) in C:\\Users\\yimsc\\Documents\\NET CORE\\PUBLIC\\V2\\JLR.GP.Orders\\JLR.GP.Orders\\Domain\\Services\\AuthService.cs:line 104","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2022-09-13 17:46:41,176 [.NET ThreadPool Worker] ERROR JLR.GP.Orders.Domain.Services.AuthService - GetToken Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException","Message":"The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagationAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at JLR.GP.Orders.Domain.Services.AuthService.GetToken(String tokenAD) in C:\\Users\\yimsc\\Documents\\NET CORE\\PUBLIC\\V2\\JLR.GP.Orders\\JLR.GP.Orders\\Domain\\Services\\AuthService.cs:line 104","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2022-09-13 17:46:42,407 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Application.Controllers.AuthController - Controller GetToken started
+2022-09-13 17:46:42,410 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Application.Controllers.AuthController - Controller GetToken started
+2022-09-13 17:46:42,413 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjJaUXBKM1VwYmpBWVhZR2FYRUpsOGxWMFRPSSJ9.eyJhdWQiOiJjMWYzZTUyMy01ZDFiLTQzNzQtYThjOS1lNjZkZTU4Y2JmOTciLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE2NjMxMDg4OTAsIm5iZiI6MTY2MzEwODg5MCwiZXhwIjoxNjYzMTEyNzkwLCJhaW8iOiJBVFFBeS84VEFBQUF0Y004L1FFK3lHdlBPQVRaWHdxZ0pYOVQrMU1IaDRoY3lpMVp3aEV1bm9rSGZiTkJlTTFqaXJHZ09WRUJWK1o5IiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiZjk1N2Q4MWItYjhhNC00ZDM3LThiNGYtYjE2N2ZjZWJiNTg3Iiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVmlQbDg4RWJYWFJEcU1ubWJlV012NWNsQUdBLiIsInN1YiI6Im02MW5HZEp6ZlhLd3ZZYUNRNmNwdS1WOEl5SEM5bGJCS1JWWEdlc0xXUGciLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiIzRmh0UExTeTIwMm15QVBNVE80S0FnIiwidmVyIjoiMi4wIn0.ECI3okAYvev3beQbwq7hXdLZ-L0nrnHAy1JlXHXYZLXxvHuhpeXws8DSwW5-4KfzOucyIOzEHY0EaxR1jHs_m9fVitLvDL__2LIOYvPEle9hy09EakK5ExiPehWmyLf3RGDA6XzZpLU4miG6Pcp6o-1XnAiPd482Z5WAlzeXvvrkhrT58PaxtWCu2Qg_QqJrDr805VkWT_8zTK6ZLJ1-c-zvYVQbwv1VfagHAIxncapV_sZaBx1feXwjg2ra8VTI7zYH_fFnFDUnKkuk1wapRJy7SGZlBuJd-MZaAXBVjpLkXm60Rzv1DAoJpYMDYm2BRN4_WFbbo5Bfm1nqezWRWA
+2022-09-13 17:46:42,417 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjJaUXBKM1VwYmpBWVhZR2FYRUpsOGxWMFRPSSJ9.eyJhdWQiOiJjMWYzZTUyMy01ZDFiLTQzNzQtYThjOS1lNjZkZTU4Y2JmOTciLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE2NjMxMDg4OTAsIm5iZiI6MTY2MzEwODg5MCwiZXhwIjoxNjYzMTEyNzkwLCJhaW8iOiJBVFFBeS84VEFBQUF0Y004L1FFK3lHdlBPQVRaWHdxZ0pYOVQrMU1IaDRoY3lpMVp3aEV1bm9rSGZiTkJlTTFqaXJHZ09WRUJWK1o5IiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiZjk1N2Q4MWItYjhhNC00ZDM3LThiNGYtYjE2N2ZjZWJiNTg3Iiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVmlQbDg4RWJYWFJEcU1ubWJlV012NWNsQUdBLiIsInN1YiI6Im02MW5HZEp6ZlhLd3ZZYUNRNmNwdS1WOEl5SEM5bGJCS1JWWEdlc0xXUGciLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiIzRmh0UExTeTIwMm15QVBNVE80S0FnIiwidmVyIjoiMi4wIn0.ECI3okAYvev3beQbwq7hXdLZ-L0nrnHAy1JlXHXYZLXxvHuhpeXws8DSwW5-4KfzOucyIOzEHY0EaxR1jHs_m9fVitLvDL__2LIOYvPEle9hy09EakK5ExiPehWmyLf3RGDA6XzZpLU4miG6Pcp6o-1XnAiPd482Z5WAlzeXvvrkhrT58PaxtWCu2Qg_QqJrDr805VkWT_8zTK6ZLJ1-c-zvYVQbwv1VfagHAIxncapV_sZaBx1feXwjg2ra8VTI7zYH_fFnFDUnKkuk1wapRJy7SGZlBuJd-MZaAXBVjpLkXm60Rzv1DAoJpYMDYm2BRN4_WFbbo5Bfm1nqezWRWA
+2022-09-13 17:46:42,837 [23] WARN JLR.GP.Orders.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2022-09-13 17:46:42,891 [18] WARN JLR.GP.Orders.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2022-09-13 17:46:42,917 [23] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:46:42,919 [18] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:46:43,094 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (168ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2022-09-13 17:46:43,097 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (172ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2022-09-13 17:46:43,101 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sbmFtZSI6IkFkbWluaXN0cmFkb3IiLCJuYmYiOjE2NjMxMDkyMDMsImV4cCI6MTY2MzExMjgwMywiaWF0IjoxNjYzMTA5MjAzLCJpc3MiOiJodHRwOi8vamxyLmdwLm9yZGVycy5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL2psci5ncC5vcmRlcnMuY29tIn0.smG3pbr-bjE7OsTEMcpEdNnfBgBjk3mcM0uNbGuwnzc
+2022-09-13 17:46:43,111 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sbmFtZSI6IkFkbWluaXN0cmFkb3IiLCJuYmYiOjE2NjMxMDkyMDMsImV4cCI6MTY2MzExMjgwMywiaWF0IjoxNjYzMTA5MjAzLCJpc3MiOiJodHRwOi8vamxyLmdwLm9yZGVycy5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL2psci5ncC5vcmRlcnMuY29tIn0.smG3pbr-bjE7OsTEMcpEdNnfBgBjk3mcM0uNbGuwnzc
+2022-09-13 17:46:43,113 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken refreshToken: DAhRdoV6INJ9ezkhQc4JpT5zplkHsEHfHClPeNYf9cw=
+2022-09-13 17:46:43,117 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken refreshToken: GfYMSfz0b1e8VB1aU/75eoF/5cWNJOJ7GuPFUiYaXyk=
+2022-09-13 17:46:43,279 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (158ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-09-13 17:46:43,284 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (166ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-09-13 17:46:43,329 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Application.Controllers.AuthController - Controller GetToken started
+2022-09-13 17:46:43,333 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjJaUXBKM1VwYmpBWVhZR2FYRUpsOGxWMFRPSSJ9.eyJhdWQiOiJjMWYzZTUyMy01ZDFiLTQzNzQtYThjOS1lNjZkZTU4Y2JmOTciLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE2NjMxMDg5MDMsIm5iZiI6MTY2MzEwODkwMywiZXhwIjoxNjYzMTEyODAzLCJhaW8iOiJBVFFBeS84VEFBQUFDTjZrL3AvMFZGK0FsREIrd0hxMDlxVjI4ZjJIanNQb0tiR3JrQzFRMmMySnFwa3VNTkdKWDk5MFo0VCtJQXhoIiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiNGY5ZjI0NGMtZDI1OC00MjhmLWI5MmEtODAxMDQ3MDA5YTA4Iiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVmlQbDg4RWJYWFJEcU1ubWJlV012NWNsQUdBLiIsInN1YiI6Im02MW5HZEp6ZlhLd3ZZYUNRNmNwdS1WOEl5SEM5bGJCS1JWWEdlc0xXUGciLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiJPV2NKY2dTTnhVS0VGMHRXR2NXWEFRIiwidmVyIjoiMi4wIn0.qnwFihSDkvsZ9nTCYZ1GeE2A5MVhD81N2FH52pMDCwiZPpmfNzaiK9-xT6jRk4mPl5JfTedeu0WhGruYDm9kfOW2WeMqct7Qsg203w40-I9aZWH3wHJb2eojziEjlfgAtkWVP2_eqKMRsax76VQY76pO3IchDvxkNYdUig4Wb3_oC353cEBDef3NtHycrXDJXMkvUZ66A8UYNkLLlyeLCQFvUnwt4ZINm6LgERcu-2ljt-yUQz722sGCJqewrZD5XIX_oE-FKgqdaz9MuEq5wf36hYCAiL86LGwyLUL1zVd2lZTUpWk7eMMVrdlxINCG7T3936oE5cafSRdoECj9pA
+2022-09-13 17:46:43,336 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Application.Controllers.AuthController - Controller GetToken started
+2022-09-13 17:46:43,347 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjJaUXBKM1VwYmpBWVhZR2FYRUpsOGxWMFRPSSJ9.eyJhdWQiOiJjMWYzZTUyMy01ZDFiLTQzNzQtYThjOS1lNjZkZTU4Y2JmOTciLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE2NjMxMDg5MDMsIm5iZiI6MTY2MzEwODkwMywiZXhwIjoxNjYzMTEyODAzLCJhaW8iOiJBVFFBeS84VEFBQUFDTjZrL3AvMFZGK0FsREIrd0hxMDlxVjI4ZjJIanNQb0tiR3JrQzFRMmMySnFwa3VNTkdKWDk5MFo0VCtJQXhoIiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiNGY5ZjI0NGMtZDI1OC00MjhmLWI5MmEtODAxMDQ3MDA5YTA4Iiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVmlQbDg4RWJYWFJEcU1ubWJlV012NWNsQUdBLiIsInN1YiI6Im02MW5HZEp6ZlhLd3ZZYUNRNmNwdS1WOEl5SEM5bGJCS1JWWEdlc0xXUGciLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiJPV2NKY2dTTnhVS0VGMHRXR2NXWEFRIiwidmVyIjoiMi4wIn0.qnwFihSDkvsZ9nTCYZ1GeE2A5MVhD81N2FH52pMDCwiZPpmfNzaiK9-xT6jRk4mPl5JfTedeu0WhGruYDm9kfOW2WeMqct7Qsg203w40-I9aZWH3wHJb2eojziEjlfgAtkWVP2_eqKMRsax76VQY76pO3IchDvxkNYdUig4Wb3_oC353cEBDef3NtHycrXDJXMkvUZ66A8UYNkLLlyeLCQFvUnwt4ZINm6LgERcu-2ljt-yUQz722sGCJqewrZD5XIX_oE-FKgqdaz9MuEq5wf36hYCAiL86LGwyLUL1zVd2lZTUpWk7eMMVrdlxINCG7T3936oE5cafSRdoECj9pA
+2022-09-13 17:46:43,444 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (159ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2022-09-13 17:46:43,461 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (168ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2022-09-13 17:46:43,776 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (173ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-09-13 17:46:43,784 [17] WARN JLR.GP.Orders.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2022-09-13 17:46:43,791 [17] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:46:43,846 [17] WARN JLR.GP.Orders.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2022-09-13 17:46:43,853 [17] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:46:43,928 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Application.Controllers.AuthController - Controller GetToken started
+2022-09-13 17:46:43,945 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Application.Controllers.AuthController - Controller GetToken started
+2022-09-13 17:46:43,956 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjJaUXBKM1VwYmpBWVhZR2FYRUpsOGxWMFRPSSJ9.eyJhdWQiOiJjMWYzZTUyMy01ZDFiLTQzNzQtYThjOS1lNjZkZTU4Y2JmOTciLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE2NjMxMDg5MDMsIm5iZiI6MTY2MzEwODkwMywiZXhwIjoxNjYzMTEyODAzLCJhaW8iOiJBVFFBeS84VEFBQUFDTjZrL3AvMFZGK0FsREIrd0hxMDlxVjI4ZjJIanNQb0tiR3JrQzFRMmMySnFwa3VNTkdKWDk5MFo0VCtJQXhoIiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiNGY5ZjI0NGMtZDI1OC00MjhmLWI5MmEtODAxMDQ3MDA5YTA4Iiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVmlQbDg4RWJYWFJEcU1ubWJlV012NWNsQUdBLiIsInN1YiI6Im02MW5HZEp6ZlhLd3ZZYUNRNmNwdS1WOEl5SEM5bGJCS1JWWEdlc0xXUGciLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiJPV2NKY2dTTnhVS0VGMHRXR2NXWEFRIiwidmVyIjoiMi4wIn0.qnwFihSDkvsZ9nTCYZ1GeE2A5MVhD81N2FH52pMDCwiZPpmfNzaiK9-xT6jRk4mPl5JfTedeu0WhGruYDm9kfOW2WeMqct7Qsg203w40-I9aZWH3wHJb2eojziEjlfgAtkWVP2_eqKMRsax76VQY76pO3IchDvxkNYdUig4Wb3_oC353cEBDef3NtHycrXDJXMkvUZ66A8UYNkLLlyeLCQFvUnwt4ZINm6LgERcu-2ljt-yUQz722sGCJqewrZD5XIX_oE-FKgqdaz9MuEq5wf36hYCAiL86LGwyLUL1zVd2lZTUpWk7eMMVrdlxINCG7T3936oE5cafSRdoECj9pA
+2022-09-13 17:46:43,975 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (173ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-09-13 17:46:43,980 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (169ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2022-09-13 17:46:43,966 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjJaUXBKM1VwYmpBWVhZR2FYRUpsOGxWMFRPSSJ9.eyJhdWQiOiJjMWYzZTUyMy01ZDFiLTQzNzQtYThjOS1lNjZkZTU4Y2JmOTciLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE2NjMxMDg5MDMsIm5iZiI6MTY2MzEwODkwMywiZXhwIjoxNjYzMTEyODAzLCJhaW8iOiJBVFFBeS84VEFBQUFDTjZrL3AvMFZGK0FsREIrd0hxMDlxVjI4ZjJIanNQb0tiR3JrQzFRMmMySnFwa3VNTkdKWDk5MFo0VCtJQXhoIiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiNGY5ZjI0NGMtZDI1OC00MjhmLWI5MmEtODAxMDQ3MDA5YTA4Iiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVmlQbDg4RWJYWFJEcU1ubWJlV012NWNsQUdBLiIsInN1YiI6Im02MW5HZEp6ZlhLd3ZZYUNRNmNwdS1WOEl5SEM5bGJCS1JWWEdlc0xXUGciLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiJPV2NKY2dTTnhVS0VGMHRXR2NXWEFRIiwidmVyIjoiMi4wIn0.qnwFihSDkvsZ9nTCYZ1GeE2A5MVhD81N2FH52pMDCwiZPpmfNzaiK9-xT6jRk4mPl5JfTedeu0WhGruYDm9kfOW2WeMqct7Qsg203w40-I9aZWH3wHJb2eojziEjlfgAtkWVP2_eqKMRsax76VQY76pO3IchDvxkNYdUig4Wb3_oC353cEBDef3NtHycrXDJXMkvUZ66A8UYNkLLlyeLCQFvUnwt4ZINm6LgERcu-2ljt-yUQz722sGCJqewrZD5XIX_oE-FKgqdaz9MuEq5wf36hYCAiL86LGwyLUL1zVd2lZTUpWk7eMMVrdlxINCG7T3936oE5cafSRdoECj9pA
+2022-09-13 17:46:44,013 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sbmFtZSI6IkFkbWluaXN0cmFkb3IiLCJuYmYiOjE2NjMxMDkyMDMsImV4cCI6MTY2MzExMjgwMywiaWF0IjoxNjYzMTA5MjAzLCJpc3MiOiJodHRwOi8vamxyLmdwLm9yZGVycy5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL2psci5ncC5vcmRlcnMuY29tIn0.smG3pbr-bjE7OsTEMcpEdNnfBgBjk3mcM0uNbGuwnzc
+2022-09-13 17:46:44,027 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken refreshToken: Y+4npEaduSXODhTciZDDdqJHNLBeo9sda3xO80/6NpY=
+2022-09-13 17:46:44,212 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (552ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-09-13 17:46:44,285 [.NET ThreadPool Worker] ERROR JLR.GP.Orders.Domain.Services.Jwt - ValidateToken error: IDX12741: JWT: 'System.String' must have three segments (JWS) or five segments (JWE).    at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at JLR.GP.Orders.Domain.Services.Jwt.ValidateToken(String authorization) in C:\Users\yimsc\Documents\NET CORE\PUBLIC\V2\JLR.GP.Orders\JLR.GP.Orders\Domain\Services\Jwt.cs:line 96
+2022-09-13 17:46:44,411 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:46:44,443 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (406ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-09-13 17:46:44,585 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (168ms) [Parameters=[@__refreshTokenRequest_RefreshToken_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[RefreshToken] = @__refreshTokenRequest_RefreshToken_0
+2022-09-13 17:46:44,598 [23] WARN JLR.GP.Orders.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2022-09-13 17:46:44,602 [.NET ThreadPool Worker] ERROR JLR.GP.Orders.Domain.Services.AuthService - GetToken Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException","Message":"The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagationAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at JLR.GP.Orders.Domain.Services.AuthService.GetToken(String tokenAD) in C:\\Users\\yimsc\\Documents\\NET CORE\\PUBLIC\\V2\\JLR.GP.Orders\\JLR.GP.Orders\\Domain\\Services\\AuthService.cs:line 104","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2022-09-13 17:46:44,615 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (165ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2022-09-13 17:46:44,618 [23] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:46:44,747 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (158ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2022-09-13 17:46:44,753 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sbmFtZSI6IkFkbWluaXN0cmFkb3IiLCJuYmYiOjE2NjMxMDkyMDQsImV4cCI6MTY2MzExMjgwNCwiaWF0IjoxNjYzMTA5MjA0LCJpc3MiOiJodHRwOi8vamxyLmdwLm9yZGVycy5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL2psci5ncC5vcmRlcnMuY29tIn0.UM6P3xd11GSrBDIZCwsS8Ltzn5PlHppNjrUgLa3uKpo
+2022-09-13 17:46:44,757 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken refreshToken: 7PDDq0ET+hfIeVCdIXQUa/wpt9K8lf8otK5J2xnjcUQ=
+2022-09-13 17:46:44,794 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (160ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2022-09-13 17:46:44,811 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sbmFtZSI6IkFkbWluaXN0cmFkb3IiLCJuYmYiOjE2NjMxMDkyMDQsImV4cCI6MTY2MzExMjgwNCwiaWF0IjoxNjYzMTA5MjA0LCJpc3MiOiJodHRwOi8vamxyLmdwLm9yZGVycy5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL2psci5ncC5vcmRlcnMuY29tIn0.UM6P3xd11GSrBDIZCwsS8Ltzn5PlHppNjrUgLa3uKpo
+2022-09-13 17:46:44,819 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken refreshToken: llz+2hQRC24lyH1GL1XWCJEtd5ygAKbPCiFHGFuaOmw=
+2022-09-13 17:46:44,929 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (161ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-09-13 17:46:44,941 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (155ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-09-13 17:46:45,108 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (161ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-09-13 17:46:45,279 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (471ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-09-13 17:46:45,441 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (503ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2022-09-13 17:46:45,445 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (617ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-09-13 17:46:45,547 [.NET ThreadPool Worker] ERROR JLR.GP.Orders.Domain.Services.AuthService - GetRefreshToken Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException","Message":"The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagationAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at JLR.GP.Orders.Domain.Services.AuthService.GetRefreshToken(RefreshTokenRequest refreshTokenRequest) in C:\\Users\\yimsc\\Documents\\NET CORE\\PUBLIC\\V2\\JLR.GP.Orders\\JLR.GP.Orders\\Domain\\Services\\AuthService.cs:line 150","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2022-09-13 17:46:45,619 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (164ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2022-09-13 17:46:45,756 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (156ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-09-13 17:46:45,925 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (160ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-09-13 17:46:45,952 [7] WARN JLR.GP.Orders.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2022-09-13 17:46:45,958 [7] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:46:46,084 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (307ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-09-13 17:46:46,128 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (164ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2022-09-13 17:46:46,142 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sbmFtZSI6IkFkbWluaXN0cmFkb3IiLCJuYmYiOjE2NjMxMDkyMDYsImV4cCI6MTY2MzExMjgwNiwiaWF0IjoxNjYzMTA5MjA2LCJpc3MiOiJodHRwOi8vamxyLmdwLm9yZGVycy5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL2psci5ncC5vcmRlcnMuY29tIn0.Pq04jPxUs926q2Vc_xcnMAcDXwejF1HMSU7fOspsxmk
+2022-09-13 17:46:46,148 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken refreshToken: 6061GbKSSsxsYVjqQNatXCC51W+CtoZORCRjOBK2E3Y=
+2022-09-13 17:46:46,369 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (215ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-09-13 17:46:46,377 [.NET ThreadPool Worker] ERROR JLR.GP.Orders.Domain.Services.AuthService - GetToken Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException","Message":"The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagationAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at JLR.GP.Orders.Domain.Services.AuthService.GetToken(String tokenAD) in C:\\Users\\yimsc\\Documents\\NET CORE\\PUBLIC\\V2\\JLR.GP.Orders\\JLR.GP.Orders\\Domain\\Services\\AuthService.cs:line 104","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2022-09-13 17:46:46,547 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (167ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2022-09-13 17:46:46,883 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (165ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-09-13 17:46:46,927 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Application.Controllers.AuthController - Controller GetToken started
+2022-09-13 17:46:46,931 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Application.Controllers.AuthController - Controller GetToken started
+2022-09-13 17:46:46,934 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjJaUXBKM1VwYmpBWVhZR2FYRUpsOGxWMFRPSSJ9.eyJhdWQiOiJjMWYzZTUyMy01ZDFiLTQzNzQtYThjOS1lNjZkZTU4Y2JmOTciLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE2NjMxMDg5MDMsIm5iZiI6MTY2MzEwODkwMywiZXhwIjoxNjYzMTEyODAzLCJhaW8iOiJBVFFBeS84VEFBQUFDTjZrL3AvMFZGK0FsREIrd0hxMDlxVjI4ZjJIanNQb0tiR3JrQzFRMmMySnFwa3VNTkdKWDk5MFo0VCtJQXhoIiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiNGY5ZjI0NGMtZDI1OC00MjhmLWI5MmEtODAxMDQ3MDA5YTA4Iiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVmlQbDg4RWJYWFJEcU1ubWJlV012NWNsQUdBLiIsInN1YiI6Im02MW5HZEp6ZlhLd3ZZYUNRNmNwdS1WOEl5SEM5bGJCS1JWWEdlc0xXUGciLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiJPV2NKY2dTTnhVS0VGMHRXR2NXWEFRIiwidmVyIjoiMi4wIn0.qnwFihSDkvsZ9nTCYZ1GeE2A5MVhD81N2FH52pMDCwiZPpmfNzaiK9-xT6jRk4mPl5JfTedeu0WhGruYDm9kfOW2WeMqct7Qsg203w40-I9aZWH3wHJb2eojziEjlfgAtkWVP2_eqKMRsax76VQY76pO3IchDvxkNYdUig4Wb3_oC353cEBDef3NtHycrXDJXMkvUZ66A8UYNkLLlyeLCQFvUnwt4ZINm6LgERcu-2ljt-yUQz722sGCJqewrZD5XIX_oE-FKgqdaz9MuEq5wf36hYCAiL86LGwyLUL1zVd2lZTUpWk7eMMVrdlxINCG7T3936oE5cafSRdoECj9pA
+2022-09-13 17:46:46,944 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjJaUXBKM1VwYmpBWVhZR2FYRUpsOGxWMFRPSSJ9.eyJhdWQiOiJjMWYzZTUyMy01ZDFiLTQzNzQtYThjOS1lNjZkZTU4Y2JmOTciLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE2NjMxMDg5MDMsIm5iZiI6MTY2MzEwODkwMywiZXhwIjoxNjYzMTEyODAzLCJhaW8iOiJBVFFBeS84VEFBQUFDTjZrL3AvMFZGK0FsREIrd0hxMDlxVjI4ZjJIanNQb0tiR3JrQzFRMmMySnFwa3VNTkdKWDk5MFo0VCtJQXhoIiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiNGY5ZjI0NGMtZDI1OC00MjhmLWI5MmEtODAxMDQ3MDA5YTA4Iiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVmlQbDg4RWJYWFJEcU1ubWJlV012NWNsQUdBLiIsInN1YiI6Im02MW5HZEp6ZlhLd3ZZYUNRNmNwdS1WOEl5SEM5bGJCS1JWWEdlc0xXUGciLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiJPV2NKY2dTTnhVS0VGMHRXR2NXWEFRIiwidmVyIjoiMi4wIn0.qnwFihSDkvsZ9nTCYZ1GeE2A5MVhD81N2FH52pMDCwiZPpmfNzaiK9-xT6jRk4mPl5JfTedeu0WhGruYDm9kfOW2WeMqct7Qsg203w40-I9aZWH3wHJb2eojziEjlfgAtkWVP2_eqKMRsax76VQY76pO3IchDvxkNYdUig4Wb3_oC353cEBDef3NtHycrXDJXMkvUZ66A8UYNkLLlyeLCQFvUnwt4ZINm6LgERcu-2ljt-yUQz722sGCJqewrZD5XIX_oE-FKgqdaz9MuEq5wf36hYCAiL86LGwyLUL1zVd2lZTUpWk7eMMVrdlxINCG7T3936oE5cafSRdoECj9pA
+2022-09-13 17:46:47,056 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (166ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-09-13 17:46:47,385 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Application.Controllers.AuthController - Controller GetToken started
+2022-09-13 17:46:47,396 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Application.Controllers.AuthController - Controller GetToken started
+2022-09-13 17:46:47,403 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjJaUXBKM1VwYmpBWVhZR2FYRUpsOGxWMFRPSSJ9.eyJhdWQiOiJjMWYzZTUyMy01ZDFiLTQzNzQtYThjOS1lNjZkZTU4Y2JmOTciLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE2NjMxMDg5MDcsIm5iZiI6MTY2MzEwODkwNywiZXhwIjoxNjYzMTEyODA3LCJhaW8iOiJBVFFBeS84VEFBQUFiNDdLUDZhdmlrZU5MU3hacm9uZjZjeG1BK3FLSk9pa2psUjlPbTRyNHBISXdlblJxdXJJVXJUZUVEZmM5SzNRIiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiY2FjNjk2OWYtNGUxMS00ZjNhLTg4NDgtNjI3MGIyNDdmOTRiIiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVmlQbDg4RWJYWFJEcU1ubWJlV012NWNsQUdBLiIsInN1YiI6Im02MW5HZEp6ZlhLd3ZZYUNRNmNwdS1WOEl5SEM5bGJCS1JWWEdlc0xXUGciLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiJWSXJFek9DengwQ3ZxNV9LZzJLeUFRIiwidmVyIjoiMi4wIn0.Cr8ZyPwMvVoRgCe9WS8yLDBCEZ7wJnRx15J1gCD1Pj6FBtKLOkg_uuUL9gCn4T_JxdoZjuhrUs7ThiQj7r78GZLPUpRpTh8zsineq8p1kYuN6AbRFE9H_y2XesF4OeelNsD8mUgfN9a75U16v0YZm8LYeZJGD-oU44VmU0J81eot_h65FX0P92Z4FtdcIvarmalDtcFC9Nb5BFcUT4ZKvL2_WI30CAfD68AG0UFwFFxHh6jx0RX3dXbYScggNKtVES0p2e1l5zizqhPLLgAzpEf2UpJC7Zz3rWW2jeQ_lDOzUr2BVqTXj45fVkhqcGwq-o4vZpxFzT6Ae-GE7rIzmA
+2022-09-13 17:46:47,426 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjJaUXBKM1VwYmpBWVhZR2FYRUpsOGxWMFRPSSJ9.eyJhdWQiOiJjMWYzZTUyMy01ZDFiLTQzNzQtYThjOS1lNjZkZTU4Y2JmOTciLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE2NjMxMDg5MDcsIm5iZiI6MTY2MzEwODkwNywiZXhwIjoxNjYzMTEyODA3LCJhaW8iOiJBVFFBeS84VEFBQUFiNDdLUDZhdmlrZU5MU3hacm9uZjZjeG1BK3FLSk9pa2psUjlPbTRyNHBISXdlblJxdXJJVXJUZUVEZmM5SzNRIiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiY2FjNjk2OWYtNGUxMS00ZjNhLTg4NDgtNjI3MGIyNDdmOTRiIiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVmlQbDg4RWJYWFJEcU1ubWJlV012NWNsQUdBLiIsInN1YiI6Im02MW5HZEp6ZlhLd3ZZYUNRNmNwdS1WOEl5SEM5bGJCS1JWWEdlc0xXUGciLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiJWSXJFek9DengwQ3ZxNV9LZzJLeUFRIiwidmVyIjoiMi4wIn0.Cr8ZyPwMvVoRgCe9WS8yLDBCEZ7wJnRx15J1gCD1Pj6FBtKLOkg_uuUL9gCn4T_JxdoZjuhrUs7ThiQj7r78GZLPUpRpTh8zsineq8p1kYuN6AbRFE9H_y2XesF4OeelNsD8mUgfN9a75U16v0YZm8LYeZJGD-oU44VmU0J81eot_h65FX0P92Z4FtdcIvarmalDtcFC9Nb5BFcUT4ZKvL2_WI30CAfD68AG0UFwFFxHh6jx0RX3dXbYScggNKtVES0p2e1l5zizqhPLLgAzpEf2UpJC7Zz3rWW2jeQ_lDOzUr2BVqTXj45fVkhqcGwq-o4vZpxFzT6Ae-GE7rIzmA
+2022-09-13 17:46:47,485 [18] WARN JLR.GP.Orders.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2022-09-13 17:46:47,507 [17] WARN JLR.GP.Orders.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2022-09-13 17:46:47,523 [18] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:46:47,533 [17] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:46:47,736 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (178ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2022-09-13 17:46:47,769 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (183ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2022-09-13 17:46:47,902 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sbmFtZSI6IkFkbWluaXN0cmFkb3IiLCJuYmYiOjE2NjMxMDkyMDcsImV4cCI6MTY2MzExMjgwNywiaWF0IjoxNjYzMTA5MjA3LCJpc3MiOiJodHRwOi8vamxyLmdwLm9yZGVycy5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL2psci5ncC5vcmRlcnMuY29tIn0.S5_2ZhHTMoRMPBiReQY3N8962dTxS_MQq_ru8pVe13Q
+2022-09-13 17:46:48,019 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sbmFtZSI6IkFkbWluaXN0cmFkb3IiLCJuYmYiOjE2NjMxMDkyMDcsImV4cCI6MTY2MzExMjgwNywiaWF0IjoxNjYzMTA5MjA3LCJpc3MiOiJodHRwOi8vamxyLmdwLm9yZGVycy5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL2psci5ncC5vcmRlcnMuY29tIn0.S5_2ZhHTMoRMPBiReQY3N8962dTxS_MQq_ru8pVe13Q
+2022-09-13 17:46:48,064 [17] WARN JLR.GP.Orders.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2022-09-13 17:46:48,069 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken refreshToken: IEtA85o5ZToJo6gdMZvE/kFeLBB/pAc0aKgBamiJmOY=
+2022-09-13 17:46:48,169 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken refreshToken: VgaXNSPh8DDB9MObfiFpfFI7ShAARIUn7QKod3Us38Q=
+2022-09-13 17:46:48,180 [.NET ThreadPool Worker] ERROR JLR.GP.Orders.Domain.Services.Jwt - ValidateToken error: IDX12741: JWT: 'System.String' must have three segments (JWS) or five segments (JWE).    at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at JLR.GP.Orders.Domain.Services.Jwt.ValidateToken(String authorization) in C:\Users\yimsc\Documents\NET CORE\PUBLIC\V2\JLR.GP.Orders\JLR.GP.Orders\Domain\Services\Jwt.cs:line 96
+2022-09-13 17:46:48,186 [17] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:46:48,214 [18] WARN JLR.GP.Orders.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2022-09-13 17:46:48,219 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Application.Controllers.AuthController - Controller GetToken started
+2022-09-13 17:46:48,227 [18] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:46:48,235 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjJaUXBKM1VwYmpBWVhZR2FYRUpsOGxWMFRPSSJ9.eyJhdWQiOiJjMWYzZTUyMy01ZDFiLTQzNzQtYThjOS1lNjZkZTU4Y2JmOTciLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE2NjMxMDg5MDcsIm5iZiI6MTY2MzEwODkwNywiZXhwIjoxNjYzMTEyODA3LCJhaW8iOiJBVFFBeS84VEFBQUFiNDdLUDZhdmlrZU5MU3hacm9uZjZjeG1BK3FLSk9pa2psUjlPbTRyNHBISXdlblJxdXJJVXJUZUVEZmM5SzNRIiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiY2FjNjk2OWYtNGUxMS00ZjNhLTg4NDgtNjI3MGIyNDdmOTRiIiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVmlQbDg4RWJYWFJEcU1ubWJlV012NWNsQUdBLiIsInN1YiI6Im02MW5HZEp6ZlhLd3ZZYUNRNmNwdS1WOEl5SEM5bGJCS1JWWEdlc0xXUGciLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiJWSXJFek9DengwQ3ZxNV9LZzJLeUFRIiwidmVyIjoiMi4wIn0.Cr8ZyPwMvVoRgCe9WS8yLDBCEZ7wJnRx15J1gCD1Pj6FBtKLOkg_uuUL9gCn4T_JxdoZjuhrUs7ThiQj7r78GZLPUpRpTh8zsineq8p1kYuN6AbRFE9H_y2XesF4OeelNsD8mUgfN9a75U16v0YZm8LYeZJGD-oU44VmU0J81eot_h65FX0P92Z4FtdcIvarmalDtcFC9Nb5BFcUT4ZKvL2_WI30CAfD68AG0UFwFFxHh6jx0RX3dXbYScggNKtVES0p2e1l5zizqhPLLgAzpEf2UpJC7Zz3rWW2jeQ_lDOzUr2BVqTXj45fVkhqcGwq-o4vZpxFzT6Ae-GE7rIzmA
+2022-09-13 17:46:48,246 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Application.Controllers.AuthController - Controller GetToken started
+2022-09-13 17:46:48,274 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjJaUXBKM1VwYmpBWVhZR2FYRUpsOGxWMFRPSSJ9.eyJhdWQiOiJjMWYzZTUyMy01ZDFiLTQzNzQtYThjOS1lNjZkZTU4Y2JmOTciLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE2NjMxMDg5MDcsIm5iZiI6MTY2MzEwODkwNywiZXhwIjoxNjYzMTEyODA3LCJhaW8iOiJBVFFBeS84VEFBQUFiNDdLUDZhdmlrZU5MU3hacm9uZjZjeG1BK3FLSk9pa2psUjlPbTRyNHBISXdlblJxdXJJVXJUZUVEZmM5SzNRIiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiY2FjNjk2OWYtNGUxMS00ZjNhLTg4NDgtNjI3MGIyNDdmOTRiIiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVmlQbDg4RWJYWFJEcU1ubWJlV012NWNsQUdBLiIsInN1YiI6Im02MW5HZEp6ZlhLd3ZZYUNRNmNwdS1WOEl5SEM5bGJCS1JWWEdlc0xXUGciLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiJWSXJFek9DengwQ3ZxNV9LZzJLeUFRIiwidmVyIjoiMi4wIn0.Cr8ZyPwMvVoRgCe9WS8yLDBCEZ7wJnRx15J1gCD1Pj6FBtKLOkg_uuUL9gCn4T_JxdoZjuhrUs7ThiQj7r78GZLPUpRpTh8zsineq8p1kYuN6AbRFE9H_y2XesF4OeelNsD8mUgfN9a75U16v0YZm8LYeZJGD-oU44VmU0J81eot_h65FX0P92Z4FtdcIvarmalDtcFC9Nb5BFcUT4ZKvL2_WI30CAfD68AG0UFwFFxHh6jx0RX3dXbYScggNKtVES0p2e1l5zizqhPLLgAzpEf2UpJC7Zz3rWW2jeQ_lDOzUr2BVqTXj45fVkhqcGwq-o4vZpxFzT6Ae-GE7rIzmA
+2022-09-13 17:46:48,329 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (160ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-09-13 17:46:48,358 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (174ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-09-13 17:46:48,375 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (168ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2022-09-13 17:46:48,380 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sbmFtZSI6IkFkbWluaXN0cmFkb3IiLCJuYmYiOjE2NjMxMDkyMDgsImV4cCI6MTY2MzExMjgwOCwiaWF0IjoxNjYzMTA5MjA4LCJpc3MiOiJodHRwOi8vamxyLmdwLm9yZGVycy5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL2psci5ncC5vcmRlcnMuY29tIn0.t6-2wISYwPE8B6aAQk9iLc8DTKe6oFSvNsL9smKY6VY
+2022-09-13 17:46:48,386 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken refreshToken: aNjqtdfG755PU/uWFEc9ZZH//UTZnMmOZPHBNiKXhRY=
+2022-09-13 17:46:48,392 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (156ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2022-09-13 17:46:48,400 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sbmFtZSI6IkFkbWluaXN0cmFkb3IiLCJuYmYiOjE2NjMxMDkyMDgsImV4cCI6MTY2MzExMjgwOCwiaWF0IjoxNjYzMTA5MjA4LCJpc3MiOiJodHRwOi8vamxyLmdwLm9yZGVycy5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL2psci5ncC5vcmRlcnMuY29tIn0.t6-2wISYwPE8B6aAQk9iLc8DTKe6oFSvNsL9smKY6VY
+2022-09-13 17:46:48,417 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken refreshToken: /pFPuOE1PkYcyeUuVr90+Ngc3KJoIIWJ+qlPciJRLTY=
+2022-09-13 17:46:48,497 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (158ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2022-09-13 17:46:48,528 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (165ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2022-09-13 17:46:48,547 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (157ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-09-13 17:46:48,584 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (163ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-09-13 17:46:48,677 [7] WARN JLR.GP.Orders.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2022-09-13 17:46:48,681 [7] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:46:48,715 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (160ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2022-09-13 17:46:48,728 [7] WARN JLR.GP.Orders.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2022-09-13 17:46:48,732 [7] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:46:48,744 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (155ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2022-09-13 17:46:48,823 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (158ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-09-13 17:46:48,987 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (160ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-09-13 17:46:49,153 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (459ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-09-13 17:46:49,246 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Application.Controllers.AuthController - Controller GetToken started
+2022-09-13 17:46:49,253 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjJaUXBKM1VwYmpBWVhZR2FYRUpsOGxWMFRPSSJ9.eyJhdWQiOiJjMWYzZTUyMy01ZDFiLTQzNzQtYThjOS1lNjZkZTU4Y2JmOTciLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vZDlkZDJkOGItYTAzMi00ZWY1LTg4NWYtZjllN2ZhNjc4OTU2L3YyLjAiLCJpYXQiOjE2NjMxMDg5MDcsIm5iZiI6MTY2MzEwODkwNywiZXhwIjoxNjYzMTEyODA3LCJhaW8iOiJBVFFBeS84VEFBQUFiNDdLUDZhdmlrZU5MU3hacm9uZjZjeG1BK3FLSk9pa2psUjlPbTRyNHBISXdlblJxdXJJVXJUZUVEZmM5SzNRIiwibmFtZSI6IlJQQSIsIm5vbmNlIjoiY2FjNjk2OWYtNGUxMS00ZjNhLTg4NDgtNjI3MGIyNDdmOTRiIiwib2lkIjoiNWEzNzczOTctNTU4MS00NTY0LWE3MTktNjBlNzgwMmJjZjRmIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnBhQGdydXBvcGFuYS5jb20ucGUiLCJyaCI6IjAuQVNVQWl5M2QyVEtnOVU2SVhfbm4tbWVKVmlQbDg4RWJYWFJEcU1ubWJlV012NWNsQUdBLiIsInN1YiI6Im02MW5HZEp6ZlhLd3ZZYUNRNmNwdS1WOEl5SEM5bGJCS1JWWEdlc0xXUGciLCJ0aWQiOiJkOWRkMmQ4Yi1hMDMyLTRlZjUtODg1Zi1mOWU3ZmE2Nzg5NTYiLCJ1dGkiOiJWSXJFek9DengwQ3ZxNV9LZzJLeUFRIiwidmVyIjoiMi4wIn0.Cr8ZyPwMvVoRgCe9WS8yLDBCEZ7wJnRx15J1gCD1Pj6FBtKLOkg_uuUL9gCn4T_JxdoZjuhrUs7ThiQj7r78GZLPUpRpTh8zsineq8p1kYuN6AbRFE9H_y2XesF4OeelNsD8mUgfN9a75U16v0YZm8LYeZJGD-oU44VmU0J81eot_h65FX0P92Z4FtdcIvarmalDtcFC9Nb5BFcUT4ZKvL2_WI30CAfD68AG0UFwFFxHh6jx0RX3dXbYScggNKtVES0p2e1l5zizqhPLLgAzpEf2UpJC7Zz3rWW2jeQ_lDOzUr2BVqTXj45fVkhqcGwq-o4vZpxFzT6Ae-GE7rIzmA
+2022-09-13 17:46:49,311 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (440ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-09-13 17:46:49,480 [.NET ThreadPool Worker] ERROR JLR.GP.Orders.Domain.Services.AuthService - GetToken Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException","Message":"The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagationAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at JLR.GP.Orders.Domain.Services.AuthService.GetToken(String tokenAD) in C:\\Users\\yimsc\\Documents\\NET CORE\\PUBLIC\\V2\\JLR.GP.Orders\\JLR.GP.Orders\\Domain\\Services\\AuthService.cs:line 104","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2022-09-13 17:46:49,694 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (640ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-09-13 17:46:49,716 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (316ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2022-09-13 17:46:49,727 [.NET ThreadPool Worker] ERROR JLR.GP.Orders.Domain.Services.AuthService - GetToken Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException","Message":"The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagationAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at JLR.GP.Orders.Domain.Services.AuthService.GetToken(String tokenAD) in C:\\Users\\yimsc\\Documents\\NET CORE\\PUBLIC\\V2\\JLR.GP.Orders\\JLR.GP.Orders\\Domain\\Services\\AuthService.cs:line 104","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2022-09-13 17:46:49,729 [23] WARN JLR.GP.Orders.Domain.Services.AuthService - GetToken preferred_username: rpa@grupopana.com.pe
+2022-09-13 17:46:49,730 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (316ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2022-09-13 17:46:49,737 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sbmFtZSI6IkFkbWluaXN0cmFkb3IiLCJuYmYiOjE2NjMxMDkyMDksImV4cCI6MTY2MzExMjgwOSwiaWF0IjoxNjYzMTA5MjA5LCJpc3MiOiJodHRwOi8vamxyLmdwLm9yZGVycy5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL2psci5ncC5vcmRlcnMuY29tIn0.xxiaoSlJqn0iTFGf4IEubh0uwlv0vYo4Tmkjbq6_ikA
+2022-09-13 17:46:49,750 [23] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:46:49,755 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sbmFtZSI6IkFkbWluaXN0cmFkb3IiLCJuYmYiOjE2NjMxMDkyMDksImV4cCI6MTY2MzExMjgwOSwiaWF0IjoxNjYzMTA5MjA5LCJpc3MiOiJodHRwOi8vamxyLmdwLm9yZGVycy5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL2psci5ncC5vcmRlcnMuY29tIn0.xxiaoSlJqn0iTFGf4IEubh0uwlv0vYo4Tmkjbq6_ikA
+2022-09-13 17:46:49,760 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken refreshToken: 6cfWaua+qwBluZunCa1DpFNL1iHn/Vyh5RIDsbvs0/0=
+2022-09-13 17:46:49,768 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken refreshToken: UNthqS/rGMP5yB50ZzVR8zw1CVPYnd6O2yX/4Miqnks=
+2022-09-13 17:46:49,965 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (157ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-09-13 17:46:49,970 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (201ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-09-13 17:46:49,974 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (207ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2022-09-13 17:46:49,977 [.NET ThreadPool Worker] ERROR JLR.GP.Orders.Domain.Services.AuthService - GetToken Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException","Message":"The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagationAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at JLR.GP.Orders.Domain.Services.AuthService.GetToken(String tokenAD) in C:\\Users\\yimsc\\Documents\\NET CORE\\PUBLIC\\V2\\JLR.GP.Orders\\JLR.GP.Orders\\Domain\\Services\\AuthService.cs:line 104","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2022-09-13 17:46:49,991 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJwYUBncnVwb3BhbmEuY29tLnBlIiwidXNlck5hbWUiOiJycGFAZ3J1cG9wYW5hLmNvbS5wZSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9qbHIuZ3Aub3JkZXJzLmNvbS9jbGFpbXMvcm9sbmFtZSI6IkFkbWluaXN0cmFkb3IiLCJuYmYiOjE2NjMxMDkyMDksImV4cCI6MTY2MzExMjgwOSwiaWF0IjoxNjYzMTA5MjA5LCJpc3MiOiJodHRwOi8vamxyLmdwLm9yZGVycy5pc3N1ZXIuY29tIiwiYXVkIjoiaHR0cDovL2psci5ncC5vcmRlcnMuY29tIn0.xxiaoSlJqn0iTFGf4IEubh0uwlv0vYo4Tmkjbq6_ikA
+2022-09-13 17:46:50,001 [.NET ThreadPool Worker] INFO JLR.GP.Orders.Domain.Services.AuthService - GetToken refreshToken: 0mv43mrgR5t5yvvqHoMV6gYAjlrh0VsOkagZgAiM55U=
+2022-09-13 17:46:50,135 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (160ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2022-09-13 17:46:50,146 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (160ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2022-09-13 17:46:50,176 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (163ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-09-13 17:46:50,346 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (165ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2022-09-13 17:46:50,468 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (161ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-09-13 17:46:50,842 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (176ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-09-13 17:46:51,008 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (697ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-09-13 17:46:51,176 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (667ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-09-13 17:46:51,314 [.NET ThreadPool Worker] ERROR JLR.GP.Orders.Domain.Services.AuthService - GetToken Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException","Message":"The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagationAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at JLR.GP.Orders.Domain.Services.AuthService.GetToken(String tokenAD) in C:\\Users\\yimsc\\Documents\\NET CORE\\PUBLIC\\V2\\JLR.GP.Orders\\JLR.GP.Orders\\Domain\\Services\\AuthService.cs:line 104","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2022-09-13 17:46:51,584 [.NET ThreadPool Worker] ERROR JLR.GP.Orders.Domain.Services.AuthService - GetToken Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException","Message":"The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagationAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at JLR.GP.Orders.Domain.Services.AuthService.GetToken(String tokenAD) in C:\\Users\\yimsc\\Documents\\NET CORE\\PUBLIC\\V2\\JLR.GP.Orders\\JLR.GP.Orders\\Domain\\Services\\AuthService.cs:line 104","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2022-09-13 17:46:53,173 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:46:53,499 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (184ms) [Parameters=[@__solicitudSearchRequest_FechaDeSolicitudInicio_0='?' (DbType = DateTime2), @__solicitudSearchRequest_FechaDeSolicitudFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[NumeroDocumentoSap], [s].[CentroDeCosto], [s].[Cerrado], [s].[DocStatus], [s].[FechaCreacion], [s].[FechaDeSolicitud], [s].[FechaModificacion], [s].[IdDocumento], [s].[NroAvisoTdp], [s].[NroPlaca], [s].[Procedencia], [s].[Solicitante], [s].[Tienda], [s].[Tienda2], [s].[Tipo], [s].[TipoDeCompra], [s].[TipoDeCompraDes], [s].[UnidadNegocio], [s].[UsuarioCreacion], [s].[UsuarioModificacion]
+FROM [Solicitud] AS [s]
+WHERE ([s].[FechaDeSolicitud] >= @__solicitudSearchRequest_FechaDeSolicitudInicio_0) AND ([s].[FechaDeSolicitud] <= @__solicitudSearchRequest_FechaDeSolicitudFin_1)
+ORDER BY [s].[FechaCreacion] DESC, [s].[NumeroDocumentoSap]
+2022-09-13 17:46:53,952 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (182ms) [Parameters=[@__solicitudSearchRequest_FechaDeSolicitudInicio_0='?' (DbType = DateTime2), @__solicitudSearchRequest_FechaDeSolicitudFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[Accion], [a].[AccionRPA], [a].[Cantidad], [a].[CodPedido], [a].[CodPedidoA], [a].[CodPedidoM], [a].[CodTraslado], [a].[CodigoAlmacen], [a].[CodigoArticulo], [a].[Concesionario], [a].[Descripcion], [a].[DescripcionArticulo], [a].[ErrTraslado], [a].[FechaCreacion], [a].[FechaModificacion], [a].[FechaPedido], [a].[Icc], [a].[NumPedido], [a].[NumPedidoA], [a].[NumPedidoM], [a].[NumeroDocumentoSap], [a].[Observacion], [a].[SaldoPedido], [a].[StockProcesado], [a].[SubAccionRPA], [a].[UsuarioCreacion], [a].[UsuarioModificacion], [s].[NumeroDocumentoSap]
+FROM [Solicitud] AS [s]
+INNER JOIN [ArticuloSolicitud] AS [a] ON [s].[NumeroDocumentoSap] = [a].[NumeroDocumentoSap]
+WHERE ([s].[FechaDeSolicitud] >= @__solicitudSearchRequest_FechaDeSolicitudInicio_0) AND ([s].[FechaDeSolicitud] <= @__solicitudSearchRequest_FechaDeSolicitudFin_1)
+ORDER BY [s].[FechaCreacion] DESC, [s].[NumeroDocumentoSap], [a].[Id]
+2022-09-13 17:46:54,440 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (184ms) [Parameters=[@__solicitudSearchRequest_FechaDeSolicitudInicio_0='?' (DbType = DateTime2), @__solicitudSearchRequest_FechaDeSolicitudFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[ArticuloSolicitudId], [s0].[CodigoAlmacen], [s0].[EnStock], [s0].[FechaCreacion], [s0].[FechaModificacion], [s0].[NombreAlmacen], [s0].[Selected], [s0].[UsuarioCreacion], [s0].[UsuarioModificacion], [s].[NumeroDocumentoSap], [a].[Id]
+FROM [Solicitud] AS [s]
+INNER JOIN [ArticuloSolicitud] AS [a] ON [s].[NumeroDocumentoSap] = [a].[NumeroDocumentoSap]
+INNER JOIN [StockArticuloSolicitud] AS [s0] ON [a].[Id] = [s0].[ArticuloSolicitudId]
+WHERE ([s].[FechaDeSolicitud] >= @__solicitudSearchRequest_FechaDeSolicitudInicio_0) AND ([s].[FechaDeSolicitud] <= @__solicitudSearchRequest_FechaDeSolicitudFin_1)
+ORDER BY [s].[FechaCreacion] DESC, [s].[NumeroDocumentoSap], [a].[Id]
+2022-09-13 17:52:38,803 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2022-09-13 17:52:38,883 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2022-09-13 17:52:38,910 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2022-09-13 17:52:38,921 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2022-09-13 17:52:38,924 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\yimsc\Documents\NET CORE\PUBLIC\V2\JLR.GP.Orders\JLR.GP.Orders\
+2022-09-13 17:55:26,620 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:55:29,398 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (297ms) [Parameters=[@__solicitudSearchRequest_FechaDeSolicitudInicio_0='?' (DbType = DateTime2), @__solicitudSearchRequest_FechaDeSolicitudFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[NumeroDocumentoSap], [s].[CentroDeCosto], [s].[Cerrado], [s].[DocStatus], [s].[FechaCreacion], [s].[FechaDeSolicitud], [s].[FechaModificacion], [s].[IdDocumento], [s].[NroAvisoTdp], [s].[NroPlaca], [s].[Procedencia], [s].[Solicitante], [s].[Tienda], [s].[Tienda2], [s].[Tipo], [s].[TipoDeCompra], [s].[TipoDeCompraDes], [s].[UnidadNegocio], [s].[UsuarioCreacion], [s].[UsuarioModificacion]
+FROM [Solicitud] AS [s]
+WHERE ([s].[FechaDeSolicitud] >= @__solicitudSearchRequest_FechaDeSolicitudInicio_0) AND ([s].[FechaDeSolicitud] <= @__solicitudSearchRequest_FechaDeSolicitudFin_1)
+ORDER BY [s].[FechaCreacion] DESC, [s].[NumeroDocumentoSap]
+2022-09-13 17:55:29,919 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (204ms) [Parameters=[@__solicitudSearchRequest_CodigoAlmacen_2='?' (Size = 4000), @__solicitudSearchRequest_FechaDeSolicitudInicio_0='?' (DbType = DateTime2), @__solicitudSearchRequest_FechaDeSolicitudFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Accion], [t].[AccionRPA], [t].[Cantidad], [t].[CodPedido], [t].[CodPedidoA], [t].[CodPedidoM], [t].[CodTraslado], [t].[CodigoAlmacen], [t].[CodigoArticulo], [t].[Concesionario], [t].[Descripcion], [t].[DescripcionArticulo], [t].[ErrTraslado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[FechaPedido], [t].[Icc], [t].[NumPedido], [t].[NumPedidoA], [t].[NumPedidoM], [t].[NumeroDocumentoSap], [t].[Observacion], [t].[SaldoPedido], [t].[StockProcesado], [t].[SubAccionRPA], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [s].[NumeroDocumentoSap]
+FROM [Solicitud] AS [s]
+INNER JOIN (
+    SELECT [a].[Id], [a].[Accion], [a].[AccionRPA], [a].[Cantidad], [a].[CodPedido], [a].[CodPedidoA], [a].[CodPedidoM], [a].[CodTraslado], [a].[CodigoAlmacen], [a].[CodigoArticulo], [a].[Concesionario], [a].[Descripcion], [a].[DescripcionArticulo], [a].[ErrTraslado], [a].[FechaCreacion], [a].[FechaModificacion], [a].[FechaPedido], [a].[Icc], [a].[NumPedido], [a].[NumPedidoA], [a].[NumPedidoM], [a].[NumeroDocumentoSap], [a].[Observacion], [a].[SaldoPedido], [a].[StockProcesado], [a].[SubAccionRPA], [a].[UsuarioCreacion], [a].[UsuarioModificacion]
+    FROM [ArticuloSolicitud] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [StockArticuloSolicitud] AS [s0]
+        WHERE ([a].[Id] = [s0].[ArticuloSolicitudId]) AND (([s0].[CodigoAlmacen] = @__solicitudSearchRequest_CodigoAlmacen_2) AND ([s0].[ArticuloSolicitudId] = [a].[Id])))
+) AS [t] ON [s].[NumeroDocumentoSap] = [t].[NumeroDocumentoSap]
+WHERE ([s].[FechaDeSolicitud] >= @__solicitudSearchRequest_FechaDeSolicitudInicio_0) AND ([s].[FechaDeSolicitud] <= @__solicitudSearchRequest_FechaDeSolicitudFin_1)
+ORDER BY [s].[FechaCreacion] DESC, [s].[NumeroDocumentoSap], [t].[Id]
+2022-09-13 17:55:30,314 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (214ms) [Parameters=[@__solicitudSearchRequest_CodigoAlmacen_2='?' (Size = 4000), @__solicitudSearchRequest_FechaDeSolicitudInicio_0='?' (DbType = DateTime2), @__solicitudSearchRequest_FechaDeSolicitudFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [s1].[Id], [s1].[ArticuloSolicitudId], [s1].[CodigoAlmacen], [s1].[EnStock], [s1].[FechaCreacion], [s1].[FechaModificacion], [s1].[NombreAlmacen], [s1].[Selected], [s1].[UsuarioCreacion], [s1].[UsuarioModificacion], [s].[NumeroDocumentoSap], [t].[Id]
+FROM [Solicitud] AS [s]
+INNER JOIN (
+    SELECT [a].[Id], [a].[NumeroDocumentoSap]
+    FROM [ArticuloSolicitud] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [StockArticuloSolicitud] AS [s0]
+        WHERE ([a].[Id] = [s0].[ArticuloSolicitudId]) AND (([s0].[CodigoAlmacen] = @__solicitudSearchRequest_CodigoAlmacen_2) AND ([s0].[ArticuloSolicitudId] = [a].[Id])))
+) AS [t] ON [s].[NumeroDocumentoSap] = [t].[NumeroDocumentoSap]
+INNER JOIN [StockArticuloSolicitud] AS [s1] ON [t].[Id] = [s1].[ArticuloSolicitudId]
+WHERE ([s].[FechaDeSolicitud] >= @__solicitudSearchRequest_FechaDeSolicitudInicio_0) AND ([s].[FechaDeSolicitud] <= @__solicitudSearchRequest_FechaDeSolicitudFin_1)
+ORDER BY [s].[FechaCreacion] DESC, [s].[NumeroDocumentoSap], [t].[Id]
+2022-09-13 17:56:54,174 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:56:54,396 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (189ms) [Parameters=[@__solicitudSearchRequest_FechaDeSolicitudInicio_0='?' (DbType = DateTime2), @__solicitudSearchRequest_FechaDeSolicitudFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[NumeroDocumentoSap], [s].[CentroDeCosto], [s].[Cerrado], [s].[DocStatus], [s].[FechaCreacion], [s].[FechaDeSolicitud], [s].[FechaModificacion], [s].[IdDocumento], [s].[NroAvisoTdp], [s].[NroPlaca], [s].[Procedencia], [s].[Solicitante], [s].[Tienda], [s].[Tienda2], [s].[Tipo], [s].[TipoDeCompra], [s].[TipoDeCompraDes], [s].[UnidadNegocio], [s].[UsuarioCreacion], [s].[UsuarioModificacion]
+FROM [Solicitud] AS [s]
+WHERE ([s].[FechaDeSolicitud] >= @__solicitudSearchRequest_FechaDeSolicitudInicio_0) AND ([s].[FechaDeSolicitud] <= @__solicitudSearchRequest_FechaDeSolicitudFin_1)
+ORDER BY [s].[FechaCreacion] DESC, [s].[NumeroDocumentoSap]
+2022-09-13 17:56:54,593 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (186ms) [Parameters=[@__solicitudSearchRequest_FechaDeSolicitudInicio_0='?' (DbType = DateTime2), @__solicitudSearchRequest_FechaDeSolicitudFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[Accion], [a].[AccionRPA], [a].[Cantidad], [a].[CodPedido], [a].[CodPedidoA], [a].[CodPedidoM], [a].[CodTraslado], [a].[CodigoAlmacen], [a].[CodigoArticulo], [a].[Concesionario], [a].[Descripcion], [a].[DescripcionArticulo], [a].[ErrTraslado], [a].[FechaCreacion], [a].[FechaModificacion], [a].[FechaPedido], [a].[Icc], [a].[NumPedido], [a].[NumPedidoA], [a].[NumPedidoM], [a].[NumeroDocumentoSap], [a].[Observacion], [a].[SaldoPedido], [a].[StockProcesado], [a].[SubAccionRPA], [a].[UsuarioCreacion], [a].[UsuarioModificacion], [s].[NumeroDocumentoSap]
+FROM [Solicitud] AS [s]
+INNER JOIN [ArticuloSolicitud] AS [a] ON [s].[NumeroDocumentoSap] = [a].[NumeroDocumentoSap]
+WHERE ([s].[FechaDeSolicitud] >= @__solicitudSearchRequest_FechaDeSolicitudInicio_0) AND ([s].[FechaDeSolicitud] <= @__solicitudSearchRequest_FechaDeSolicitudFin_1)
+ORDER BY [s].[FechaCreacion] DESC, [s].[NumeroDocumentoSap], [a].[Id]
+2022-09-13 17:56:54,812 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (181ms) [Parameters=[@__solicitudSearchRequest_FechaDeSolicitudInicio_0='?' (DbType = DateTime2), @__solicitudSearchRequest_FechaDeSolicitudFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[ArticuloSolicitudId], [s0].[CodigoAlmacen], [s0].[EnStock], [s0].[FechaCreacion], [s0].[FechaModificacion], [s0].[NombreAlmacen], [s0].[Selected], [s0].[UsuarioCreacion], [s0].[UsuarioModificacion], [s].[NumeroDocumentoSap], [a].[Id]
+FROM [Solicitud] AS [s]
+INNER JOIN [ArticuloSolicitud] AS [a] ON [s].[NumeroDocumentoSap] = [a].[NumeroDocumentoSap]
+INNER JOIN [StockArticuloSolicitud] AS [s0] ON [a].[Id] = [s0].[ArticuloSolicitudId]
+WHERE ([s].[FechaDeSolicitud] >= @__solicitudSearchRequest_FechaDeSolicitudInicio_0) AND ([s].[FechaDeSolicitud] <= @__solicitudSearchRequest_FechaDeSolicitudFin_1)
+ORDER BY [s].[FechaCreacion] DESC, [s].[NumeroDocumentoSap], [a].[Id]
+2022-09-13 17:57:27,275 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:57:27,468 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (180ms) [Parameters=[@__solicitudSearchRequest_FechaDeSolicitudInicio_0='?' (DbType = DateTime2), @__solicitudSearchRequest_FechaDeSolicitudFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[NumeroDocumentoSap], [s].[CentroDeCosto], [s].[Cerrado], [s].[DocStatus], [s].[FechaCreacion], [s].[FechaDeSolicitud], [s].[FechaModificacion], [s].[IdDocumento], [s].[NroAvisoTdp], [s].[NroPlaca], [s].[Procedencia], [s].[Solicitante], [s].[Tienda], [s].[Tienda2], [s].[Tipo], [s].[TipoDeCompra], [s].[TipoDeCompraDes], [s].[UnidadNegocio], [s].[UsuarioCreacion], [s].[UsuarioModificacion]
+FROM [Solicitud] AS [s]
+WHERE ([s].[FechaDeSolicitud] >= @__solicitudSearchRequest_FechaDeSolicitudInicio_0) AND ([s].[FechaDeSolicitud] <= @__solicitudSearchRequest_FechaDeSolicitudFin_1)
+ORDER BY [s].[FechaCreacion] DESC, [s].[NumeroDocumentoSap]
+2022-09-13 17:57:27,707 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (203ms) [Parameters=[@__solicitudSearchRequest_CodigoAlmacen_2='?' (Size = 4000), @__solicitudSearchRequest_FechaDeSolicitudInicio_0='?' (DbType = DateTime2), @__solicitudSearchRequest_FechaDeSolicitudFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Accion], [t].[AccionRPA], [t].[Cantidad], [t].[CodPedido], [t].[CodPedidoA], [t].[CodPedidoM], [t].[CodTraslado], [t].[CodigoAlmacen], [t].[CodigoArticulo], [t].[Concesionario], [t].[Descripcion], [t].[DescripcionArticulo], [t].[ErrTraslado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[FechaPedido], [t].[Icc], [t].[NumPedido], [t].[NumPedidoA], [t].[NumPedidoM], [t].[NumeroDocumentoSap], [t].[Observacion], [t].[SaldoPedido], [t].[StockProcesado], [t].[SubAccionRPA], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [s].[NumeroDocumentoSap]
+FROM [Solicitud] AS [s]
+INNER JOIN (
+    SELECT [a].[Id], [a].[Accion], [a].[AccionRPA], [a].[Cantidad], [a].[CodPedido], [a].[CodPedidoA], [a].[CodPedidoM], [a].[CodTraslado], [a].[CodigoAlmacen], [a].[CodigoArticulo], [a].[Concesionario], [a].[Descripcion], [a].[DescripcionArticulo], [a].[ErrTraslado], [a].[FechaCreacion], [a].[FechaModificacion], [a].[FechaPedido], [a].[Icc], [a].[NumPedido], [a].[NumPedidoA], [a].[NumPedidoM], [a].[NumeroDocumentoSap], [a].[Observacion], [a].[SaldoPedido], [a].[StockProcesado], [a].[SubAccionRPA], [a].[UsuarioCreacion], [a].[UsuarioModificacion]
+    FROM [ArticuloSolicitud] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [StockArticuloSolicitud] AS [s0]
+        WHERE ([a].[Id] = [s0].[ArticuloSolicitudId]) AND (([s0].[CodigoAlmacen] = @__solicitudSearchRequest_CodigoAlmacen_2) AND ([s0].[ArticuloSolicitudId] = [a].[Id])))
+) AS [t] ON [s].[NumeroDocumentoSap] = [t].[NumeroDocumentoSap]
+WHERE ([s].[FechaDeSolicitud] >= @__solicitudSearchRequest_FechaDeSolicitudInicio_0) AND ([s].[FechaDeSolicitud] <= @__solicitudSearchRequest_FechaDeSolicitudFin_1)
+ORDER BY [s].[FechaCreacion] DESC, [s].[NumeroDocumentoSap], [t].[Id]
+2022-09-13 17:57:27,968 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (249ms) [Parameters=[@__solicitudSearchRequest_CodigoAlmacen_2='?' (Size = 4000), @__solicitudSearchRequest_FechaDeSolicitudInicio_0='?' (DbType = DateTime2), @__solicitudSearchRequest_FechaDeSolicitudFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [s1].[Id], [s1].[ArticuloSolicitudId], [s1].[CodigoAlmacen], [s1].[EnStock], [s1].[FechaCreacion], [s1].[FechaModificacion], [s1].[NombreAlmacen], [s1].[Selected], [s1].[UsuarioCreacion], [s1].[UsuarioModificacion], [s].[NumeroDocumentoSap], [t].[Id]
+FROM [Solicitud] AS [s]
+INNER JOIN (
+    SELECT [a].[Id], [a].[NumeroDocumentoSap]
+    FROM [ArticuloSolicitud] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [StockArticuloSolicitud] AS [s0]
+        WHERE ([a].[Id] = [s0].[ArticuloSolicitudId]) AND (([s0].[CodigoAlmacen] = @__solicitudSearchRequest_CodigoAlmacen_2) AND ([s0].[ArticuloSolicitudId] = [a].[Id])))
+) AS [t] ON [s].[NumeroDocumentoSap] = [t].[NumeroDocumentoSap]
+INNER JOIN [StockArticuloSolicitud] AS [s1] ON [t].[Id] = [s1].[ArticuloSolicitudId]
+WHERE ([s].[FechaDeSolicitud] >= @__solicitudSearchRequest_FechaDeSolicitudInicio_0) AND ([s].[FechaDeSolicitud] <= @__solicitudSearchRequest_FechaDeSolicitudFin_1)
+ORDER BY [s].[FechaCreacion] DESC, [s].[NumeroDocumentoSap], [t].[Id]
+2022-09-13 17:59:34,466 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2022-09-13 17:59:34,483 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2022-09-13 17:59:34,494 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2022-09-13 17:59:34,498 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2022-09-13 17:59:34,501 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\yimsc\Documents\NET CORE\PUBLIC\V2\JLR.GP.Orders\JLR.GP.Orders\
+2022-09-13 17:59:51,937 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 17:59:54,728 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (302ms) [Parameters=[@__solicitudSearchRequest_FechaDeSolicitudInicio_0='?' (DbType = DateTime2), @__solicitudSearchRequest_FechaDeSolicitudFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[NumeroDocumentoSap], [s].[CentroDeCosto], [s].[Cerrado], [s].[DocStatus], [s].[FechaCreacion], [s].[FechaDeSolicitud], [s].[FechaModificacion], [s].[IdDocumento], [s].[NroAvisoTdp], [s].[NroPlaca], [s].[Procedencia], [s].[Solicitante], [s].[Tienda], [s].[Tienda2], [s].[Tipo], [s].[TipoDeCompra], [s].[TipoDeCompraDes], [s].[UnidadNegocio], [s].[UsuarioCreacion], [s].[UsuarioModificacion]
+FROM [Solicitud] AS [s]
+WHERE ([s].[FechaDeSolicitud] >= @__solicitudSearchRequest_FechaDeSolicitudInicio_0) AND ([s].[FechaDeSolicitud] <= @__solicitudSearchRequest_FechaDeSolicitudFin_1)
+ORDER BY [s].[FechaCreacion] DESC, [s].[NumeroDocumentoSap]
+2022-09-13 17:59:55,316 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (231ms) [Parameters=[@__solicitudSearchRequest_CodigoAlmacen_2='?' (Size = 4000), @__solicitudSearchRequest_FechaDeSolicitudInicio_0='?' (DbType = DateTime2), @__solicitudSearchRequest_FechaDeSolicitudFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Accion], [t].[AccionRPA], [t].[Cantidad], [t].[CodPedido], [t].[CodPedidoA], [t].[CodPedidoM], [t].[CodTraslado], [t].[CodigoAlmacen], [t].[CodigoArticulo], [t].[Concesionario], [t].[Descripcion], [t].[DescripcionArticulo], [t].[ErrTraslado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[FechaPedido], [t].[Icc], [t].[NumPedido], [t].[NumPedidoA], [t].[NumPedidoM], [t].[NumeroDocumentoSap], [t].[Observacion], [t].[SaldoPedido], [t].[StockProcesado], [t].[SubAccionRPA], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [s].[NumeroDocumentoSap]
+FROM [Solicitud] AS [s]
+INNER JOIN (
+    SELECT [a].[Id], [a].[Accion], [a].[AccionRPA], [a].[Cantidad], [a].[CodPedido], [a].[CodPedidoA], [a].[CodPedidoM], [a].[CodTraslado], [a].[CodigoAlmacen], [a].[CodigoArticulo], [a].[Concesionario], [a].[Descripcion], [a].[DescripcionArticulo], [a].[ErrTraslado], [a].[FechaCreacion], [a].[FechaModificacion], [a].[FechaPedido], [a].[Icc], [a].[NumPedido], [a].[NumPedidoA], [a].[NumPedidoM], [a].[NumeroDocumentoSap], [a].[Observacion], [a].[SaldoPedido], [a].[StockProcesado], [a].[SubAccionRPA], [a].[UsuarioCreacion], [a].[UsuarioModificacion]
+    FROM [ArticuloSolicitud] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [StockArticuloSolicitud] AS [s0]
+        WHERE ([a].[Id] = [s0].[ArticuloSolicitudId]) AND ((([s0].[CodigoAlmacen] = @__solicitudSearchRequest_CodigoAlmacen_2) AND ([s0].[ArticuloSolicitudId] = [a].[Id])) AND ([s0].[Selected] = N'1')))
+) AS [t] ON [s].[NumeroDocumentoSap] = [t].[NumeroDocumentoSap]
+WHERE ([s].[FechaDeSolicitud] >= @__solicitudSearchRequest_FechaDeSolicitudInicio_0) AND ([s].[FechaDeSolicitud] <= @__solicitudSearchRequest_FechaDeSolicitudFin_1)
+ORDER BY [s].[FechaCreacion] DESC, [s].[NumeroDocumentoSap], [t].[Id]
+2022-09-13 17:59:55,666 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (211ms) [Parameters=[@__solicitudSearchRequest_CodigoAlmacen_2='?' (Size = 4000), @__solicitudSearchRequest_FechaDeSolicitudInicio_0='?' (DbType = DateTime2), @__solicitudSearchRequest_FechaDeSolicitudFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [s1].[Id], [s1].[ArticuloSolicitudId], [s1].[CodigoAlmacen], [s1].[EnStock], [s1].[FechaCreacion], [s1].[FechaModificacion], [s1].[NombreAlmacen], [s1].[Selected], [s1].[UsuarioCreacion], [s1].[UsuarioModificacion], [s].[NumeroDocumentoSap], [t].[Id]
+FROM [Solicitud] AS [s]
+INNER JOIN (
+    SELECT [a].[Id], [a].[NumeroDocumentoSap]
+    FROM [ArticuloSolicitud] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [StockArticuloSolicitud] AS [s0]
+        WHERE ([a].[Id] = [s0].[ArticuloSolicitudId]) AND ((([s0].[CodigoAlmacen] = @__solicitudSearchRequest_CodigoAlmacen_2) AND ([s0].[ArticuloSolicitudId] = [a].[Id])) AND ([s0].[Selected] = N'1')))
+) AS [t] ON [s].[NumeroDocumentoSap] = [t].[NumeroDocumentoSap]
+INNER JOIN [StockArticuloSolicitud] AS [s1] ON [t].[Id] = [s1].[ArticuloSolicitudId]
+WHERE ([s].[FechaDeSolicitud] >= @__solicitudSearchRequest_FechaDeSolicitudInicio_0) AND ([s].[FechaDeSolicitud] <= @__solicitudSearchRequest_FechaDeSolicitudFin_1)
+ORDER BY [s].[FechaCreacion] DESC, [s].[NumeroDocumentoSap], [t].[Id]
+2022-09-13 18:00:24,225 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-09-13 18:00:24,421 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (186ms) [Parameters=[@__solicitudSearchRequest_FechaDeSolicitudInicio_0='?' (DbType = DateTime2), @__solicitudSearchRequest_FechaDeSolicitudFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[NumeroDocumentoSap], [s].[CentroDeCosto], [s].[Cerrado], [s].[DocStatus], [s].[FechaCreacion], [s].[FechaDeSolicitud], [s].[FechaModificacion], [s].[IdDocumento], [s].[NroAvisoTdp], [s].[NroPlaca], [s].[Procedencia], [s].[Solicitante], [s].[Tienda], [s].[Tienda2], [s].[Tipo], [s].[TipoDeCompra], [s].[TipoDeCompraDes], [s].[UnidadNegocio], [s].[UsuarioCreacion], [s].[UsuarioModificacion]
+FROM [Solicitud] AS [s]
+WHERE ([s].[FechaDeSolicitud] >= @__solicitudSearchRequest_FechaDeSolicitudInicio_0) AND ([s].[FechaDeSolicitud] <= @__solicitudSearchRequest_FechaDeSolicitudFin_1)
+ORDER BY [s].[FechaCreacion] DESC, [s].[NumeroDocumentoSap]
+2022-09-13 18:00:24,642 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (200ms) [Parameters=[@__solicitudSearchRequest_CodigoAlmacen_2='?' (Size = 4000), @__solicitudSearchRequest_FechaDeSolicitudInicio_0='?' (DbType = DateTime2), @__solicitudSearchRequest_FechaDeSolicitudFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Accion], [t].[AccionRPA], [t].[Cantidad], [t].[CodPedido], [t].[CodPedidoA], [t].[CodPedidoM], [t].[CodTraslado], [t].[CodigoAlmacen], [t].[CodigoArticulo], [t].[Concesionario], [t].[Descripcion], [t].[DescripcionArticulo], [t].[ErrTraslado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[FechaPedido], [t].[Icc], [t].[NumPedido], [t].[NumPedidoA], [t].[NumPedidoM], [t].[NumeroDocumentoSap], [t].[Observacion], [t].[SaldoPedido], [t].[StockProcesado], [t].[SubAccionRPA], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [s].[NumeroDocumentoSap]
+FROM [Solicitud] AS [s]
+INNER JOIN (
+    SELECT [a].[Id], [a].[Accion], [a].[AccionRPA], [a].[Cantidad], [a].[CodPedido], [a].[CodPedidoA], [a].[CodPedidoM], [a].[CodTraslado], [a].[CodigoAlmacen], [a].[CodigoArticulo], [a].[Concesionario], [a].[Descripcion], [a].[DescripcionArticulo], [a].[ErrTraslado], [a].[FechaCreacion], [a].[FechaModificacion], [a].[FechaPedido], [a].[Icc], [a].[NumPedido], [a].[NumPedidoA], [a].[NumPedidoM], [a].[NumeroDocumentoSap], [a].[Observacion], [a].[SaldoPedido], [a].[StockProcesado], [a].[SubAccionRPA], [a].[UsuarioCreacion], [a].[UsuarioModificacion]
+    FROM [ArticuloSolicitud] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [StockArticuloSolicitud] AS [s0]
+        WHERE ([a].[Id] = [s0].[ArticuloSolicitudId]) AND ((([s0].[CodigoAlmacen] = @__solicitudSearchRequest_CodigoAlmacen_2) AND ([s0].[ArticuloSolicitudId] = [a].[Id])) AND ([s0].[Selected] = N'1')))
+) AS [t] ON [s].[NumeroDocumentoSap] = [t].[NumeroDocumentoSap]
+WHERE ([s].[FechaDeSolicitud] >= @__solicitudSearchRequest_FechaDeSolicitudInicio_0) AND ([s].[FechaDeSolicitud] <= @__solicitudSearchRequest_FechaDeSolicitudFin_1)
+ORDER BY [s].[FechaCreacion] DESC, [s].[NumeroDocumentoSap], [t].[Id]
+2022-09-13 18:00:24,840 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (189ms) [Parameters=[@__solicitudSearchRequest_CodigoAlmacen_2='?' (Size = 4000), @__solicitudSearchRequest_FechaDeSolicitudInicio_0='?' (DbType = DateTime2), @__solicitudSearchRequest_FechaDeSolicitudFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [s1].[Id], [s1].[ArticuloSolicitudId], [s1].[CodigoAlmacen], [s1].[EnStock], [s1].[FechaCreacion], [s1].[FechaModificacion], [s1].[NombreAlmacen], [s1].[Selected], [s1].[UsuarioCreacion], [s1].[UsuarioModificacion], [s].[NumeroDocumentoSap], [t].[Id]
+FROM [Solicitud] AS [s]
+INNER JOIN (
+    SELECT [a].[Id], [a].[NumeroDocumentoSap]
+    FROM [ArticuloSolicitud] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [StockArticuloSolicitud] AS [s0]
+        WHERE ([a].[Id] = [s0].[ArticuloSolicitudId]) AND ((([s0].[CodigoAlmacen] = @__solicitudSearchRequest_CodigoAlmacen_2) AND ([s0].[ArticuloSolicitudId] = [a].[Id])) AND ([s0].[Selected] = N'1')))
+) AS [t] ON [s].[NumeroDocumentoSap] = [t].[NumeroDocumentoSap]
+INNER JOIN [StockArticuloSolicitud] AS [s1] ON [t].[Id] = [s1].[ArticuloSolicitudId]
+WHERE ([s].[FechaDeSolicitud] >= @__solicitudSearchRequest_FechaDeSolicitudInicio_0) AND ([s].[FechaDeSolicitud] <= @__solicitudSearchRequest_FechaDeSolicitudFin_1)
+ORDER BY [s].[FechaCreacion] DESC, [s].[NumeroDocumentoSap], [t].[Id]

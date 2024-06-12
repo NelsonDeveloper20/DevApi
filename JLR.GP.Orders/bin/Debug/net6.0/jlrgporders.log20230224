@@ -1,0 +1,932 @@
+2023-02-24 09:29:16,284 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-02-24 09:29:16,322 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-02-24 09:29:16,345 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-02-24 09:29:16,358 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-02-24 09:29:16,364 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-02-24 09:32:56,048 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmCapacitacionesExternas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 09:32:56,070 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmCapacitacionesInternas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 09:32:56,075 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmHHCapacitadas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 09:32:56,081 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndCapacitaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 09:32:56,085 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndObservaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 09:32:56,091 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndResponsabilidades' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 09:32:56,096 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmNumeroCapacitaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 09:32:56,102 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmNumeroObservaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 09:32:56,660 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:32:56,660 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:33:01,427 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (388ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-02-24 09:33:04,179 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (719ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-02-24 09:35:37,543 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:35:37,545 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:35:38,098 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (542ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-02-24 09:35:38,103 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (542ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-02-24 09:38:56,019 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:38:56,023 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:38:56,161 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (134ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-02-24 09:38:56,169 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (141ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-02-24 09:39:23,730 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:39:23,734 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:39:23,870 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (133ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-02-24 09:39:23,878 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (140ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-02-24 09:40:23,697 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:40:23,699 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:40:24,172 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (467ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-02-24 09:40:24,176 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (465ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-02-24 09:40:53,434 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:40:53,437 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:40:53,662 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (219ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-02-24 09:40:53,664 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (220ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-02-24 09:40:57,319 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:40:57,323 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:40:57,326 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:40:57,329 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:40:57,334 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:40:57,340 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:40:58,073 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (221ms) [Parameters=[@__proyecto_0='?' (DbType = Int32), @__periodo_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactPanelFotoGrafico], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchMotivoFoto], [f].[vchUsuario]
+FROM [ods].[FactPanelFotoGrafico] AS [f]
+WHERE (([f].[intProyecto] = @__proyecto_0) AND ([f].[intTiempo] = @__periodo_1)) AND ([f].[vchArea] = @__tipoArea_2)
+2023-02-24 09:41:11,699 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Database.Command - Failed executing DbCommand (13,872ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactGTCIndicadoresCalidad], [f].[dcmCapacitacionesExternas], [f].[dcmCapacitacionesInternas], [f].[dcmHHCapacitadas], [f].[dcmIndCapacitaciones], [f].[dcmIndObservaciones], [f].[dcmIndResponsabilidades], [f].[dcmNumeroCapacitaciones], [f].[dcmNumeroObservaciones], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchCumplimientoRespon], [f].[vchDescripcionCumplim], [f].[vhcLink]
+FROM [ods].[FactGTCIndicadoresCalidad] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-02-24 09:41:11,726 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Database.Connection - An error occurred using the connection to database 'Besco_BI' on server 'besco.database.windows.net'.
+2023-02-24 09:41:11,840 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Query - An exception occurred while iterating over the results of a query for context type 'ApiPortal_DataLake.Domain.Models.JlrGpOrdersContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'vhcLink'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:a8f2775c-9c52-4f26-98a7-dc17449b11b2
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'vhcLink'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:a8f2775c-9c52-4f26-98a7-dc17449b11b2
+Error Number:207,State:1,Class:16
+2023-02-24 09:41:11,841 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Query - An exception occurred while iterating over the results of a query for context type 'ApiPortal_DataLake.Domain.Models.JlrGpOrdersContext'.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The client was unable to establish a connection because of an error during connection initialization process before login. Possible causes include the following:  the client tried to connect to an unsupported version of SQL Server; the server was too busy to accept new connections; or there was a resource limitation (insufficient memory or maximum allowed connections) on the server. (provider: TCP Provider, error: 0 - Se ha forzado la interrupción de una conexión existente por el host remoto.)
+ ---> System.ComponentModel.Win32Exception (10054): Se ha forzado la interrupción de una conexión existente por el host remoto.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CheckPoolBlockingPeriod(Exception e)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+ClientConnectionId:c7e8ee30-531b-477e-9b86-2b75e4b22944
+Error Number:10054,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The client was unable to establish a connection because of an error during connection initialization process before login. Possible causes include the following:  the client tried to connect to an unsupported version of SQL Server; the server was too busy to accept new connections; or there was a resource limitation (insufficient memory or maximum allowed connections) on the server. (provider: TCP Provider, error: 0 - Se ha forzado la interrupción de una conexión existente por el host remoto.)
+ ---> System.ComponentModel.Win32Exception (10054): Se ha forzado la interrupción de una conexión existente por el host remoto.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CheckPoolBlockingPeriod(Exception e)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+ClientConnectionId:c7e8ee30-531b-477e-9b86-2b75e4b22944
+Error Number:10054,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2023-02-24 09:41:11,902 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (146ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000), @__tipoFormulario_3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProcesoCarga], [d].[Resultado], [d].[TipoFormulario], [d].[dtmFechaFin], [d].[dtmFechaInicio], [d].[intEstado], [d].[intProyecto], [d].[intTiempo], [d].[intUsuario], [d].[vchNombreArchivo], [d].[vchTipoArea], [d0].[intUsuario], [d0].[dtmFechaActualizacion], [d0].[dtmFechaRegistro], [d0].[intProyecto], [d0].[vchClave], [d0].[vchEstado], [d0].[vchUsuario], [d0].[vchUsuarioRegistro]
+FROM [ods].[Dim_ProcesoCarga] AS [d]
+LEFT JOIN [ods].[Dim_Usuarios] AS [d0] ON [d].[intProcesoCarga] = [d0].[intUsuario]
+WHERE ((([d].[intTiempo] = @__periodo_0) AND ([d].[intProyecto] = @__proyecto_1)) AND ([d].[vchTipoArea] = @__tipoArea_2)) AND ([d].[TipoFormulario] = @__tipoFormulario_3)
+ORDER BY [d].[intProcesoCarga]
+2023-02-24 09:41:11,899 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (146ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000), @__tipoFormulario_3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProcesoCarga], [d].[Resultado], [d].[TipoFormulario], [d].[dtmFechaFin], [d].[dtmFechaInicio], [d].[intEstado], [d].[intProyecto], [d].[intTiempo], [d].[intUsuario], [d].[vchNombreArchivo], [d].[vchTipoArea], [d0].[intUsuario], [d0].[dtmFechaActualizacion], [d0].[dtmFechaRegistro], [d0].[intProyecto], [d0].[vchClave], [d0].[vchEstado], [d0].[vchUsuario], [d0].[vchUsuarioRegistro]
+FROM [ods].[Dim_ProcesoCarga] AS [d]
+LEFT JOIN [ods].[Dim_Usuarios] AS [d0] ON [d].[intProcesoCarga] = [d0].[intUsuario]
+WHERE ((([d].[intTiempo] = @__periodo_0) AND ([d].[intProyecto] = @__proyecto_1)) AND ([d].[vchTipoArea] = @__tipoArea_2)) AND ([d].[TipoFormulario] = @__tipoFormulario_3)
+ORDER BY [d].[intProcesoCarga]
+2023-02-24 09:41:12,133 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Controllers.ProcesoCargaController - Error Listar Proyectos : {"ClassName":"System.InvalidOperationException","Message":"An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.","Data":null,"InnerException":{"ClassName":"Microsoft.Data.SqlClient.SqlException","Message":"The client was unable to establish a connection because of an error during connection initialization process before login. Possible causes include the following:  the client tried to connect to an unsupported version of SQL Server; the server was too busy to accept new connections; or there was a resource limitation (insufficient memory or maximum allowed connections) on the server. (provider: TCP Provider, error: 0 - Se ha forzado la interrupción de una conexión existente por el host remoto.)","Data":{"HelpLink.ProdName":"Microsoft SQL Server","HelpLink.EvtSrc":"MSSQLServer","HelpLink.EvtID":"10054","HelpLink.BaseHelpUrl":"https://go.microsoft.com/fwlink","HelpLink.LinkId":"20476","SqlError 1":"Microsoft.Data.SqlClient.SqlError: The client was unable to establish a connection because of an error during connection initialization process before login. Possible causes include the following:  the client tried to connect to an unsupported version of SQL Server; the server was too busy to accept new connections; or there was a resource limitation (insufficient memory or maximum allowed connections) on the server. (provider: TCP Provider, error: 0 - Se ha forzado la interrupción de una conexión existente por el host remoto.)"},"InnerException":{"ClassName":"System.ComponentModel.Win32Exception","Message":"Se ha forzado la interrupción de una conexión existente por el host remoto.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":null,"RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2147467259,"Source":null,"WatsonBuckets":null,"NativeErrorCode":10054},"HelpURL":null,"StackTraceString":"   at Microsoft.Data.ProviderBase.DbConnectionPool.CheckPoolBlockingPeriod(Exception e)\r\n   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)\r\n   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)\r\n   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)\r\n   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146232060,"Source":"Core Microsoft SqlClient Data Provider","WatsonBuckets":null,"Errors":null,"ClientConnectionId":"c7e8ee30-531b-477e-9b86-2b75e4b22944"},"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\r\n   at ApiPortal_DataLake.Domain.Services.ProcesoCargaService.GetAllAsync(Int32 id_user, Int32 periodo, Int32 proyecto, String tipoArea, String tipoFormulario) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Domain\\Services\\ProcesoCargaService.cs:line 47\r\n   at ApiPortal_DataLake.Application.Controllers.ProcesoCargaController.Get(Int32 id_user, Int32 periodo, Int32 proyecto, String tipoArea, String tipoFormulario) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Application\\Controllers\\ProcesoCargaController.cs:line 41","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233079,"Source":"Microsoft.EntityFrameworkCore.SqlServer","WatsonBuckets":null}
+2023-02-24 09:41:12,133 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Controllers.FactGTCIndicadoresCalidadController - Error Listar Proyectos : {"ClassName":"Microsoft.Data.SqlClient.SqlException","Message":"Invalid column name 'vhcLink'.","Data":{"HelpLink.ProdName":"Microsoft SQL Server","HelpLink.ProdVer":"12.00.0937","HelpLink.EvtSrc":"MSSQLServer","HelpLink.EvtID":"207","HelpLink.BaseHelpUrl":"https://go.microsoft.com/fwlink","HelpLink.LinkId":"20476","SqlError 1":"Microsoft.Data.SqlClient.SqlError: Invalid column name 'vhcLink'."},"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)\r\n   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()\r\n   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n--- End of stack trace from previous location ---\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\r\n   at ApiPortal_DataLake.Domain.Services.FactGTCIndicadoresCalidadService.GetAllAsync(Int32 id_user, Int32 periodo, Int32 proyecto) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Domain\\Services\\FactGTCIndicadoresCalidadService.cs:line 40\r\n   at ApiPortal_DataLake.Application.Controllers.FactGTCIndicadoresCalidadController.Get(Int32 id_user, Int32 periodo, Int32 proyecto) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Application\\Controllers\\FactGTCIndicadoresCalidadController.cs:line 41","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146232060,"Source":"Core Microsoft SqlClient Data Provider","WatsonBuckets":null,"Errors":null,"ClientConnectionId":"a8f2775c-9c52-4f26-98a7-dc17449b11b2"}
+2023-02-24 09:41:12,446 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (263ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:41:12,451 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (266ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:41:12,832 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (362ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:41:12,833 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (362ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:41:15,168 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (702ms) [Parameters=[@__proyecto_0='?' (DbType = Int32), @__periodo_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactLeccionesApre], [f].[dtmFecha], [f].[dtmFechaCarga], [f].[intIndice], [f].[intProyectos], [f].[intTiempo], [f].[vchArea], [f].[vchElaboradoNombre], [f].[vchElaboradoPorEmail], [f].[vchElaboradoPorPuesto], [f].[vchNombreUsuario], [f].[vchPartidaProceso], [f].[vchPregunta1QuePaso], [f].[vchPregunta2ComoSeSoluciono], [f].[vchPregunta3QueSeAprendio], [f].[vchUsuario], [d].[intDetalleLecApren], [d].[dtmFechaCarga], [d].[intFactLeccionesApre], [d].[vchFotos]
+FROM [ods].[FactLeccionesAprendidas] AS [f]
+LEFT JOIN [ods].[DetalleLeccionesAprendidas] AS [d] ON [f].[intFactLeccionesApre] = [d].[intFactLeccionesApre]
+WHERE (([f].[intProyectos] = @__proyecto_0) AND ([f].[intTiempo] = @__periodo_1)) AND ([f].[vchArea] = @__tipoArea_2)
+ORDER BY [f].[intFactLeccionesApre]
+2023-02-24 09:41:46,105 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:41:47,141 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (205ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactPanelFotoGrafico] ([dtmFechaCarga], [intProyecto], [intTiempo], [vchArea], [vchDescripcion], [vchMotivoFoto], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [intFactPanelFotoGrafico]
+FROM [ods].[FactPanelFotoGrafico]
+WHERE @@ROWCOUNT = 1 AND [intFactPanelFotoGrafico] = scope_identity();
+2023-02-24 09:41:50,415 [7] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (608ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[DetallePanelFotoGrafico] ([intFactPanelFotoGrafico], [dtmFechaCarga], [vchArchivo])
+VALUES (@p0, @p1, @p2);
+2023-02-24 09:41:51,947 [7] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (510ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[DetallePanelFotoGrafico] ([intFactPanelFotoGrafico], [dtmFechaCarga], [vchArchivo])
+VALUES (@p0, @p1, @p2);
+2023-02-24 09:41:52,597 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:41:53,282 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (678ms) [Parameters=[@__proyecto_0='?' (DbType = Int32), @__periodo_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactPanelFotoGrafico], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchMotivoFoto], [f].[vchUsuario]
+FROM [ods].[FactPanelFotoGrafico] AS [f]
+WHERE (([f].[intProyecto] = @__proyecto_0) AND ([f].[intTiempo] = @__periodo_1)) AND ([f].[vchArea] = @__tipoArea_2)
+2023-02-24 09:41:53,789 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (479ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intFactPanelFotoGrafico], [d].[dtmFechaCarga], [d].[vchArchivo]
+FROM [ods].[DetallePanelFotoGrafico] AS [d]
+WHERE [d].[intFactPanelFotoGrafico] = @__id_0
+2023-02-24 09:41:53,820 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:41:54,302 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (477ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-02-24 09:42:39,375 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:42:39,956 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (553ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [f].[intFactPanelFotoGrafico], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchMotivoFoto], [f].[vchUsuario]
+FROM [ods].[FactPanelFotoGrafico] AS [f]
+WHERE [f].[intFactPanelFotoGrafico] = @__Parse_0
+2023-02-24 09:42:40,726 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (228ms) [Parameters=[@p7='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ods].[FactPanelFotoGrafico] SET [dtmFechaCarga] = @p0, [intProyecto] = @p1, [intTiempo] = @p2, [vchArea] = @p3, [vchDescripcion] = @p4, [vchMotivoFoto] = @p5, [vchUsuario] = @p6
+WHERE [intFactPanelFotoGrafico] = @p7;
+SELECT @@ROWCOUNT;
+2023-02-24 09:42:41,318 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (237ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [d].[intFactPanelFotoGrafico], [d].[dtmFechaCarga], [d].[vchArchivo]
+FROM [ods].[DetallePanelFotoGrafico] AS [d]
+WHERE [d].[intFactPanelFotoGrafico] = @__Parse_0
+2023-02-24 09:42:42,576 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (601ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [ods].[DetallePanelFotoGrafico]
+WHERE [intFactPanelFotoGrafico] = @p0;
+SELECT @@ROWCOUNT;
+2023-02-24 09:42:43,035 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Domain.Services.FactPanelFotoGraficoService - FactPanelFotoGrafico Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException","Message":"The database operation was expected to affect 1 row(s), but actually affected 2 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagationAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at ApiPortal_DataLake.Domain.Services.FactPanelFotoGraficoService.Modificar(ModificarFactPanelFotoGraficoRequest agregar, IFormFileCollection files) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Domain\\Services\\FactPanelFotoGraficoService.cs:line 171","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2023-02-24 09:42:55,333 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:42:55,352 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:42:55,522 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (181ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-02-24 09:42:55,885 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (525ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-02-24 09:43:00,736 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:43:00,740 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:43:00,744 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:43:00,764 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:43:00,770 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:43:01,040 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (287ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000), @__tipoFormulario_3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProcesoCarga], [d].[Resultado], [d].[TipoFormulario], [d].[dtmFechaFin], [d].[dtmFechaInicio], [d].[intEstado], [d].[intProyecto], [d].[intTiempo], [d].[intUsuario], [d].[vchNombreArchivo], [d].[vchTipoArea], [d0].[intUsuario], [d0].[dtmFechaActualizacion], [d0].[dtmFechaRegistro], [d0].[intProyecto], [d0].[vchClave], [d0].[vchEstado], [d0].[vchUsuario], [d0].[vchUsuarioRegistro]
+FROM [ods].[Dim_ProcesoCarga] AS [d]
+LEFT JOIN [ods].[Dim_Usuarios] AS [d0] ON [d].[intProcesoCarga] = [d0].[intUsuario]
+WHERE ((([d].[intTiempo] = @__periodo_0) AND ([d].[intProyecto] = @__proyecto_1)) AND ([d].[vchTipoArea] = @__tipoArea_2)) AND ([d].[TipoFormulario] = @__tipoFormulario_3)
+ORDER BY [d].[intProcesoCarga]
+2023-02-24 09:43:01,047 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (293ms) [Parameters=[@__proyecto_0='?' (DbType = Int32), @__periodo_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactPanelFotoGrafico], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchMotivoFoto], [f].[vchUsuario]
+FROM [ods].[FactPanelFotoGrafico] AS [f]
+WHERE (([f].[intProyecto] = @__proyecto_0) AND ([f].[intTiempo] = @__periodo_1)) AND ([f].[vchArea] = @__tipoArea_2)
+2023-02-24 09:43:01,055 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (285ms) [Parameters=[@__proyecto_0='?' (DbType = Int32), @__periodo_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactLeccionesApre], [f].[dtmFecha], [f].[dtmFechaCarga], [f].[intIndice], [f].[intProyectos], [f].[intTiempo], [f].[vchArea], [f].[vchElaboradoNombre], [f].[vchElaboradoPorEmail], [f].[vchElaboradoPorPuesto], [f].[vchNombreUsuario], [f].[vchPartidaProceso], [f].[vchPregunta1QuePaso], [f].[vchPregunta2ComoSeSoluciono], [f].[vchPregunta3QueSeAprendio], [f].[vchUsuario], [d].[intDetalleLecApren], [d].[dtmFechaCarga], [d].[intFactLeccionesApre], [d].[vchFotos]
+FROM [ods].[FactLeccionesAprendidas] AS [f]
+LEFT JOIN [ods].[DetalleLeccionesAprendidas] AS [d] ON [f].[intFactLeccionesApre] = [d].[intFactLeccionesApre]
+WHERE (([f].[intProyectos] = @__proyecto_0) AND ([f].[intTiempo] = @__periodo_1)) AND ([f].[vchArea] = @__tipoArea_2)
+ORDER BY [f].[intFactLeccionesApre]
+2023-02-24 09:43:01,306 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (237ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intFactPanelFotoGrafico], [d].[dtmFechaCarga], [d].[vchArchivo]
+FROM [ods].[DetallePanelFotoGrafico] AS [d]
+WHERE [d].[intFactPanelFotoGrafico] = @__id_0
+2023-02-24 09:43:01,311 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (242ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:43:01,668 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (348ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:43:01,674 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (349ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intFactPanelFotoGrafico], [d].[dtmFechaCarga], [d].[vchArchivo]
+FROM [ods].[DetallePanelFotoGrafico] AS [d]
+WHERE [d].[intFactPanelFotoGrafico] = @__id_0
+2023-02-24 09:43:01,709 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:43:02,000 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (283ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-02-24 09:43:02,006 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (147ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactOTResultadoGenerales], [f].[dcmCriterioMax], [f].[dcmCriterioMin], [f].[dcmPonderado], [f].[dcmResultado], [f].[dtmFechaCarga], [f].[intIndicadores], [f].[intProyecto], [f].[intTiempo], [f].[vchAccionPreventiva], [f].[vchArea], [f].[vchFrecuencia], [f].[vchUsuario]
+FROM [ods].[FactOtResultadosGenerales] AS [f]
+WHERE (([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)) AND ([f].[vchArea] = @__tipoArea_2)
+2023-02-24 09:43:02,049 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (198ms) [Parameters=[@__id_proyecto_0='?' (DbType = Int32), @__tiempo_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactBSData], [f].[dtmFechaCarga], [f].[intEncuestados], [f].[intFecha], [f].[intPoblacion], [f].[intProyecto], [f].[intQEncuestados], [f].[vchFechaActualizada], [f].[vchIsatisfaccion], [f].[vchSatisfaccionDeseada], [f].[vchSatisfaccionLaboral], [f].[vchSatisfaccionModerada], [f].[vchSustentos]
+FROM [ods].[FactBSData] AS [f]
+WHERE ([f].[intProyecto] = @__id_proyecto_0) AND ([f].[intFecha] = @__tiempo_1)
+2023-02-24 09:43:02,113 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:43:02,303 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (181ms) [Parameters=[@__id_proyecto_0='?' (DbType = Int32), @__tiempo_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactBSData], [f].[dtmFechaCarga], [f].[intEncuestados], [f].[intFecha], [f].[intPoblacion], [f].[intProyecto], [f].[intQEncuestados], [f].[vchFechaActualizada], [f].[vchIsatisfaccion], [f].[vchSatisfaccionDeseada], [f].[vchSatisfaccionLaboral], [f].[vchSatisfaccionModerada], [f].[vchSustentos]
+FROM [ods].[FactBSData] AS [f]
+WHERE ([f].[intProyecto] = @__id_proyecto_0) AND ([f].[intFecha] = @__tiempo_1)
+2023-02-24 09:43:19,013 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:43:19,018 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:43:19,471 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (447ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-02-24 09:43:19,476 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (448ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-02-24 09:43:24,474 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:43:24,477 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:43:24,481 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:43:24,486 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:43:24,489 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:43:24,495 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:43:24,646 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (163ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000), @__tipoFormulario_3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProcesoCarga], [d].[Resultado], [d].[TipoFormulario], [d].[dtmFechaFin], [d].[dtmFechaInicio], [d].[intEstado], [d].[intProyecto], [d].[intTiempo], [d].[intUsuario], [d].[vchNombreArchivo], [d].[vchTipoArea], [d0].[intUsuario], [d0].[dtmFechaActualizacion], [d0].[dtmFechaRegistro], [d0].[intProyecto], [d0].[vchClave], [d0].[vchEstado], [d0].[vchUsuario], [d0].[vchUsuarioRegistro]
+FROM [ods].[Dim_ProcesoCarga] AS [d]
+LEFT JOIN [ods].[Dim_Usuarios] AS [d0] ON [d].[intProcesoCarga] = [d0].[intUsuario]
+WHERE ((([d].[intTiempo] = @__periodo_0) AND ([d].[intProyecto] = @__proyecto_1)) AND ([d].[vchTipoArea] = @__tipoArea_2)) AND ([d].[TipoFormulario] = @__tipoFormulario_3)
+ORDER BY [d].[intProcesoCarga]
+2023-02-24 09:43:24,649 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (160ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000), @__tipoFormulario_3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProcesoCarga], [d].[Resultado], [d].[TipoFormulario], [d].[dtmFechaFin], [d].[dtmFechaInicio], [d].[intEstado], [d].[intProyecto], [d].[intTiempo], [d].[intUsuario], [d].[vchNombreArchivo], [d].[vchTipoArea], [d0].[intUsuario], [d0].[dtmFechaActualizacion], [d0].[dtmFechaRegistro], [d0].[intProyecto], [d0].[vchClave], [d0].[vchEstado], [d0].[vchUsuario], [d0].[vchUsuarioRegistro]
+FROM [ods].[Dim_ProcesoCarga] AS [d]
+LEFT JOIN [ods].[Dim_Usuarios] AS [d0] ON [d].[intProcesoCarga] = [d0].[intUsuario]
+WHERE ((([d].[intTiempo] = @__periodo_0) AND ([d].[intProyecto] = @__proyecto_1)) AND ([d].[vchTipoArea] = @__tipoArea_2)) AND ([d].[TipoFormulario] = @__tipoFormulario_3)
+ORDER BY [d].[intProcesoCarga]
+2023-02-24 09:43:24,652 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (154ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000), @__tipoFormulario_3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProcesoCarga], [d].[Resultado], [d].[TipoFormulario], [d].[dtmFechaFin], [d].[dtmFechaInicio], [d].[intEstado], [d].[intProyecto], [d].[intTiempo], [d].[intUsuario], [d].[vchNombreArchivo], [d].[vchTipoArea], [d0].[intUsuario], [d0].[dtmFechaActualizacion], [d0].[dtmFechaRegistro], [d0].[intProyecto], [d0].[vchClave], [d0].[vchEstado], [d0].[vchUsuario], [d0].[vchUsuarioRegistro]
+FROM [ods].[Dim_ProcesoCarga] AS [d]
+LEFT JOIN [ods].[Dim_Usuarios] AS [d0] ON [d].[intProcesoCarga] = [d0].[intUsuario]
+WHERE ((([d].[intTiempo] = @__periodo_0) AND ([d].[intProyecto] = @__proyecto_1)) AND ([d].[vchTipoArea] = @__tipoArea_2)) AND ([d].[TipoFormulario] = @__tipoFormulario_3)
+ORDER BY [d].[intProcesoCarga]
+2023-02-24 09:43:24,660 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Database.Command - Failed executing DbCommand (166ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactGTCIndicadoresCalidad], [f].[dcmCapacitacionesExternas], [f].[dcmCapacitacionesInternas], [f].[dcmHHCapacitadas], [f].[dcmIndCapacitaciones], [f].[dcmIndObservaciones], [f].[dcmIndResponsabilidades], [f].[dcmNumeroCapacitaciones], [f].[dcmNumeroObservaciones], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchCumplimientoRespon], [f].[vchDescripcionCumplim], [f].[vhcLink]
+FROM [ods].[FactGTCIndicadoresCalidad] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-02-24 09:43:24,685 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Query - An exception occurred while iterating over the results of a query for context type 'ApiPortal_DataLake.Domain.Models.JlrGpOrdersContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'vhcLink'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ae2d6b00-e3ce-42d0-a314-ec4517b981fd
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'vhcLink'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ae2d6b00-e3ce-42d0-a314-ec4517b981fd
+Error Number:207,State:1,Class:16
+2023-02-24 09:43:24,800 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Controllers.FactGTCIndicadoresCalidadController - Error Listar Proyectos : {"ClassName":"Microsoft.Data.SqlClient.SqlException","Message":"Invalid column name 'vhcLink'.","Data":{"HelpLink.ProdName":"Microsoft SQL Server","HelpLink.ProdVer":"12.00.0937","HelpLink.EvtSrc":"MSSQLServer","HelpLink.EvtID":"207","HelpLink.BaseHelpUrl":"https://go.microsoft.com/fwlink","HelpLink.LinkId":"20476","SqlError 1":"Microsoft.Data.SqlClient.SqlError: Invalid column name 'vhcLink'."},"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)\r\n   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()\r\n   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n--- End of stack trace from previous location ---\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\r\n   at ApiPortal_DataLake.Domain.Services.FactGTCIndicadoresCalidadService.GetAllAsync(Int32 id_user, Int32 periodo, Int32 proyecto) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Domain\\Services\\FactGTCIndicadoresCalidadService.cs:line 40\r\n   at ApiPortal_DataLake.Application.Controllers.FactGTCIndicadoresCalidadController.Get(Int32 id_user, Int32 periodo, Int32 proyecto) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Application\\Controllers\\FactGTCIndicadoresCalidadController.cs:line 41","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146232060,"Source":"Core Microsoft SqlClient Data Provider","WatsonBuckets":null,"Errors":null,"ClientConnectionId":"ae2d6b00-e3ce-42d0-a314-ec4517b981fd"}
+2023-02-24 09:43:24,872 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (208ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:43:24,877 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (204ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:43:24,880 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (214ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:43:25,266 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (380ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:43:25,270 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (380ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:43:25,273 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (383ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:43:27,260 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (379ms) [Parameters=[@__proyecto_0='?' (DbType = Int32), @__periodo_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactPanelFotoGrafico], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchMotivoFoto], [f].[vchUsuario]
+FROM [ods].[FactPanelFotoGrafico] AS [f]
+WHERE (([f].[intProyecto] = @__proyecto_0) AND ([f].[intTiempo] = @__periodo_1)) AND ([f].[vchArea] = @__tipoArea_2)
+2023-02-24 09:43:27,265 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (379ms) [Parameters=[@__proyecto_0='?' (DbType = Int32), @__periodo_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactLeccionesApre], [f].[dtmFecha], [f].[dtmFechaCarga], [f].[intIndice], [f].[intProyectos], [f].[intTiempo], [f].[vchArea], [f].[vchElaboradoNombre], [f].[vchElaboradoPorEmail], [f].[vchElaboradoPorPuesto], [f].[vchNombreUsuario], [f].[vchPartidaProceso], [f].[vchPregunta1QuePaso], [f].[vchPregunta2ComoSeSoluciono], [f].[vchPregunta3QueSeAprendio], [f].[vchUsuario], [d].[intDetalleLecApren], [d].[dtmFechaCarga], [d].[intFactLeccionesApre], [d].[vchFotos]
+FROM [ods].[FactLeccionesAprendidas] AS [f]
+LEFT JOIN [ods].[DetalleLeccionesAprendidas] AS [d] ON [f].[intFactLeccionesApre] = [d].[intFactLeccionesApre]
+WHERE (([f].[intProyectos] = @__proyecto_0) AND ([f].[intTiempo] = @__periodo_1)) AND ([f].[vchArea] = @__tipoArea_2)
+ORDER BY [f].[intFactLeccionesApre]
+2023-02-24 09:43:27,557 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (282ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intFactPanelFotoGrafico], [d].[dtmFechaCarga], [d].[vchArchivo]
+FROM [ods].[DetallePanelFotoGrafico] AS [d]
+WHERE [d].[intFactPanelFotoGrafico] = @__id_0
+2023-02-24 09:43:27,572 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:43:27,794 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (214ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-02-24 09:48:39,902 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:48:39,937 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:48:40,079 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (134ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-02-24 09:48:40,116 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (172ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-02-24 09:49:01,081 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:49:01,082 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:49:01,108 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:49:01,114 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:49:01,119 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:49:01,123 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:49:01,260 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[@__proyecto_0='?' (DbType = Int32), @__periodo_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactPanelFotoGrafico], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchMotivoFoto], [f].[vchUsuario]
+FROM [ods].[FactPanelFotoGrafico] AS [f]
+WHERE (([f].[intProyecto] = @__proyecto_0) AND ([f].[intTiempo] = @__periodo_1)) AND ([f].[vchArea] = @__tipoArea_2)
+2023-02-24 09:49:01,262 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (141ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000), @__tipoFormulario_3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProcesoCarga], [d].[Resultado], [d].[TipoFormulario], [d].[dtmFechaFin], [d].[dtmFechaInicio], [d].[intEstado], [d].[intProyecto], [d].[intTiempo], [d].[intUsuario], [d].[vchNombreArchivo], [d].[vchTipoArea], [d0].[intUsuario], [d0].[dtmFechaActualizacion], [d0].[dtmFechaRegistro], [d0].[intProyecto], [d0].[vchClave], [d0].[vchEstado], [d0].[vchUsuario], [d0].[vchUsuarioRegistro]
+FROM [ods].[Dim_ProcesoCarga] AS [d]
+LEFT JOIN [ods].[Dim_Usuarios] AS [d0] ON [d].[intProcesoCarga] = [d0].[intUsuario]
+WHERE ((([d].[intTiempo] = @__periodo_0) AND ([d].[intProyecto] = @__proyecto_1)) AND ([d].[vchTipoArea] = @__tipoArea_2)) AND ([d].[TipoFormulario] = @__tipoFormulario_3)
+ORDER BY [d].[intProcesoCarga]
+2023-02-24 09:49:01,398 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (132ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intFactPanelFotoGrafico], [d].[dtmFechaCarga], [d].[vchArchivo]
+FROM [ods].[DetallePanelFotoGrafico] AS [d]
+WHERE [d].[intFactPanelFotoGrafico] = @__id_0
+2023-02-24 09:49:01,400 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (131ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:49:01,409 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:49:01,533 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (129ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:49:01,567 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (154ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-02-24 09:49:02,529 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (131ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000), @__tipoFormulario_3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProcesoCarga], [d].[Resultado], [d].[TipoFormulario], [d].[dtmFechaFin], [d].[dtmFechaInicio], [d].[intEstado], [d].[intProyecto], [d].[intTiempo], [d].[intUsuario], [d].[vchNombreArchivo], [d].[vchTipoArea], [d0].[intUsuario], [d0].[dtmFechaActualizacion], [d0].[dtmFechaRegistro], [d0].[intProyecto], [d0].[vchClave], [d0].[vchEstado], [d0].[vchUsuario], [d0].[vchUsuarioRegistro]
+FROM [ods].[Dim_ProcesoCarga] AS [d]
+LEFT JOIN [ods].[Dim_Usuarios] AS [d0] ON [d].[intProcesoCarga] = [d0].[intUsuario]
+WHERE ((([d].[intTiempo] = @__periodo_0) AND ([d].[intProyecto] = @__proyecto_1)) AND ([d].[vchTipoArea] = @__tipoArea_2)) AND ([d].[TipoFormulario] = @__tipoFormulario_3)
+ORDER BY [d].[intProcesoCarga]
+2023-02-24 09:49:02,531 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (131ms) [Parameters=[@__proyecto_0='?' (DbType = Int32), @__periodo_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactLeccionesApre], [f].[dtmFecha], [f].[dtmFechaCarga], [f].[intIndice], [f].[intProyectos], [f].[intTiempo], [f].[vchArea], [f].[vchElaboradoNombre], [f].[vchElaboradoPorEmail], [f].[vchElaboradoPorPuesto], [f].[vchNombreUsuario], [f].[vchPartidaProceso], [f].[vchPregunta1QuePaso], [f].[vchPregunta2ComoSeSoluciono], [f].[vchPregunta3QueSeAprendio], [f].[vchUsuario], [d].[intDetalleLecApren], [d].[dtmFechaCarga], [d].[intFactLeccionesApre], [d].[vchFotos]
+FROM [ods].[FactLeccionesAprendidas] AS [f]
+LEFT JOIN [ods].[DetalleLeccionesAprendidas] AS [d] ON [f].[intFactLeccionesApre] = [d].[intFactLeccionesApre]
+WHERE (([f].[intProyectos] = @__proyecto_0) AND ([f].[intTiempo] = @__periodo_1)) AND ([f].[vchArea] = @__tipoArea_2)
+ORDER BY [f].[intFactLeccionesApre]
+2023-02-24 09:49:02,541 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Database.Command - Failed executing DbCommand (1,413ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactGTCIndicadoresCalidad], [f].[dcmCapacitacionesExternas], [f].[dcmCapacitacionesInternas], [f].[dcmHHCapacitadas], [f].[dcmIndCapacitaciones], [f].[dcmIndObservaciones], [f].[dcmIndResponsabilidades], [f].[dcmNumeroCapacitaciones], [f].[dcmNumeroObservaciones], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchCumplimientoRespon], [f].[vchDescripcionCumplim], [f].[vhcLink]
+FROM [ods].[FactGTCIndicadoresCalidad] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-02-24 09:49:02,555 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Query - An exception occurred while iterating over the results of a query for context type 'ApiPortal_DataLake.Domain.Models.JlrGpOrdersContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'vhcLink'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:abaa337c-4c5d-4530-a3f6-d96f72e87276
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'vhcLink'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:abaa337c-4c5d-4530-a3f6-d96f72e87276
+Error Number:207,State:1,Class:16
+2023-02-24 09:49:02,663 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Controllers.FactGTCIndicadoresCalidadController - Error Listar Proyectos : {"ClassName":"Microsoft.Data.SqlClient.SqlException","Message":"Invalid column name 'vhcLink'.","Data":{"HelpLink.ProdName":"Microsoft SQL Server","HelpLink.ProdVer":"12.00.0937","HelpLink.EvtSrc":"MSSQLServer","HelpLink.EvtID":"207","HelpLink.BaseHelpUrl":"https://go.microsoft.com/fwlink","HelpLink.LinkId":"20476","SqlError 1":"Microsoft.Data.SqlClient.SqlError: Invalid column name 'vhcLink'."},"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)\r\n   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()\r\n   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n--- End of stack trace from previous location ---\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\r\n   at ApiPortal_DataLake.Domain.Services.FactGTCIndicadoresCalidadService.GetAllAsync(Int32 id_user, Int32 periodo, Int32 proyecto) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Domain\\Services\\FactGTCIndicadoresCalidadService.cs:line 40\r\n   at ApiPortal_DataLake.Application.Controllers.FactGTCIndicadoresCalidadController.Get(Int32 id_user, Int32 periodo, Int32 proyecto) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Application\\Controllers\\FactGTCIndicadoresCalidadController.cs:line 41","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146232060,"Source":"Core Microsoft SqlClient Data Provider","WatsonBuckets":null,"Errors":null,"ClientConnectionId":"abaa337c-4c5d-4530-a3f6-d96f72e87276"}
+2023-02-24 09:49:02,668 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (131ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:49:02,804 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (131ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:49:03,309 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (141ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000), @__tipoFormulario_3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProcesoCarga], [d].[Resultado], [d].[TipoFormulario], [d].[dtmFechaFin], [d].[dtmFechaInicio], [d].[intEstado], [d].[intProyecto], [d].[intTiempo], [d].[intUsuario], [d].[vchNombreArchivo], [d].[vchTipoArea], [d0].[intUsuario], [d0].[dtmFechaActualizacion], [d0].[dtmFechaRegistro], [d0].[intProyecto], [d0].[vchClave], [d0].[vchEstado], [d0].[vchUsuario], [d0].[vchUsuarioRegistro]
+FROM [ods].[Dim_ProcesoCarga] AS [d]
+LEFT JOIN [ods].[Dim_Usuarios] AS [d0] ON [d].[intProcesoCarga] = [d0].[intUsuario]
+WHERE ((([d].[intTiempo] = @__periodo_0) AND ([d].[intProyecto] = @__proyecto_1)) AND ([d].[vchTipoArea] = @__tipoArea_2)) AND ([d].[TipoFormulario] = @__tipoFormulario_3)
+ORDER BY [d].[intProcesoCarga]
+2023-02-24 09:49:03,455 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (139ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:49:03,600 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (139ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:51:22,318 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:51:22,320 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:51:22,322 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:51:22,323 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:51:22,325 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:51:22,328 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:51:22,462 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__proyecto_0='?' (DbType = Int32), @__periodo_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactLeccionesApre], [f].[dtmFecha], [f].[dtmFechaCarga], [f].[intIndice], [f].[intProyectos], [f].[intTiempo], [f].[vchArea], [f].[vchElaboradoNombre], [f].[vchElaboradoPorEmail], [f].[vchElaboradoPorPuesto], [f].[vchNombreUsuario], [f].[vchPartidaProceso], [f].[vchPregunta1QuePaso], [f].[vchPregunta2ComoSeSoluciono], [f].[vchPregunta3QueSeAprendio], [f].[vchUsuario], [d].[intDetalleLecApren], [d].[dtmFechaCarga], [d].[intFactLeccionesApre], [d].[vchFotos]
+FROM [ods].[FactLeccionesAprendidas] AS [f]
+LEFT JOIN [ods].[DetalleLeccionesAprendidas] AS [d] ON [f].[intFactLeccionesApre] = [d].[intFactLeccionesApre]
+WHERE (([f].[intProyectos] = @__proyecto_0) AND ([f].[intTiempo] = @__periodo_1)) AND ([f].[vchArea] = @__tipoArea_2)
+ORDER BY [f].[intFactLeccionesApre]
+2023-02-24 09:51:22,464 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (139ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000), @__tipoFormulario_3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProcesoCarga], [d].[Resultado], [d].[TipoFormulario], [d].[dtmFechaFin], [d].[dtmFechaInicio], [d].[intEstado], [d].[intProyecto], [d].[intTiempo], [d].[intUsuario], [d].[vchNombreArchivo], [d].[vchTipoArea], [d0].[intUsuario], [d0].[dtmFechaActualizacion], [d0].[dtmFechaRegistro], [d0].[intProyecto], [d0].[vchClave], [d0].[vchEstado], [d0].[vchUsuario], [d0].[vchUsuarioRegistro]
+FROM [ods].[Dim_ProcesoCarga] AS [d]
+LEFT JOIN [ods].[Dim_Usuarios] AS [d0] ON [d].[intProcesoCarga] = [d0].[intUsuario]
+WHERE ((([d].[intTiempo] = @__periodo_0) AND ([d].[intProyecto] = @__proyecto_1)) AND ([d].[vchTipoArea] = @__tipoArea_2)) AND ([d].[TipoFormulario] = @__tipoFormulario_3)
+ORDER BY [d].[intProcesoCarga]
+2023-02-24 09:51:22,473 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (148ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000), @__tipoFormulario_3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProcesoCarga], [d].[Resultado], [d].[TipoFormulario], [d].[dtmFechaFin], [d].[dtmFechaInicio], [d].[intEstado], [d].[intProyecto], [d].[intTiempo], [d].[intUsuario], [d].[vchNombreArchivo], [d].[vchTipoArea], [d0].[intUsuario], [d0].[dtmFechaActualizacion], [d0].[dtmFechaRegistro], [d0].[intProyecto], [d0].[vchClave], [d0].[vchEstado], [d0].[vchUsuario], [d0].[vchUsuarioRegistro]
+FROM [ods].[Dim_ProcesoCarga] AS [d]
+LEFT JOIN [ods].[Dim_Usuarios] AS [d0] ON [d].[intProcesoCarga] = [d0].[intUsuario]
+WHERE ((([d].[intTiempo] = @__periodo_0) AND ([d].[intProyecto] = @__proyecto_1)) AND ([d].[vchTipoArea] = @__tipoArea_2)) AND ([d].[TipoFormulario] = @__tipoFormulario_3)
+ORDER BY [d].[intProcesoCarga]
+2023-02-24 09:51:22,485 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Database.Command - Failed executing DbCommand (155ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactGTCIndicadoresCalidad], [f].[dcmCapacitacionesExternas], [f].[dcmCapacitacionesInternas], [f].[dcmHHCapacitadas], [f].[dcmIndCapacitaciones], [f].[dcmIndObservaciones], [f].[dcmIndResponsabilidades], [f].[dcmNumeroCapacitaciones], [f].[dcmNumeroObservaciones], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchCumplimientoRespon], [f].[vchDescripcionCumplim], [f].[vhcLink]
+FROM [ods].[FactGTCIndicadoresCalidad] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-02-24 09:51:22,500 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Query - An exception occurred while iterating over the results of a query for context type 'ApiPortal_DataLake.Domain.Models.JlrGpOrdersContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'vhcLink'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ae2d6b00-e3ce-42d0-a314-ec4517b981fd
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'vhcLink'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ae2d6b00-e3ce-42d0-a314-ec4517b981fd
+Error Number:207,State:1,Class:16
+2023-02-24 09:51:22,563 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Controllers.FactGTCIndicadoresCalidadController - Error Listar Proyectos : {"ClassName":"Microsoft.Data.SqlClient.SqlException","Message":"Invalid column name 'vhcLink'.","Data":{"HelpLink.ProdName":"Microsoft SQL Server","HelpLink.ProdVer":"12.00.0937","HelpLink.EvtSrc":"MSSQLServer","HelpLink.EvtID":"207","HelpLink.BaseHelpUrl":"https://go.microsoft.com/fwlink","HelpLink.LinkId":"20476","SqlError 1":"Microsoft.Data.SqlClient.SqlError: Invalid column name 'vhcLink'."},"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)\r\n   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()\r\n   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n--- End of stack trace from previous location ---\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\r\n   at ApiPortal_DataLake.Domain.Services.FactGTCIndicadoresCalidadService.GetAllAsync(Int32 id_user, Int32 periodo, Int32 proyecto) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Domain\\Services\\FactGTCIndicadoresCalidadService.cs:line 40\r\n   at ApiPortal_DataLake.Application.Controllers.FactGTCIndicadoresCalidadController.Get(Int32 id_user, Int32 periodo, Int32 proyecto) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Application\\Controllers\\FactGTCIndicadoresCalidadController.cs:line 41","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146232060,"Source":"Core Microsoft SqlClient Data Provider","WatsonBuckets":null,"Errors":null,"ClientConnectionId":"ae2d6b00-e3ce-42d0-a314-ec4517b981fd"}
+2023-02-24 09:51:23,223 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (143ms) [Parameters=[@__proyecto_0='?' (DbType = Int32), @__periodo_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactPanelFotoGrafico], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchMotivoFoto], [f].[vchUsuario]
+FROM [ods].[FactPanelFotoGrafico] AS [f]
+WHERE (([f].[intProyecto] = @__proyecto_0) AND ([f].[intTiempo] = @__periodo_1)) AND ([f].[vchArea] = @__tipoArea_2)
+2023-02-24 09:51:23,235 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (156ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000), @__tipoFormulario_3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProcesoCarga], [d].[Resultado], [d].[TipoFormulario], [d].[dtmFechaFin], [d].[dtmFechaInicio], [d].[intEstado], [d].[intProyecto], [d].[intTiempo], [d].[intUsuario], [d].[vchNombreArchivo], [d].[vchTipoArea], [d0].[intUsuario], [d0].[dtmFechaActualizacion], [d0].[dtmFechaRegistro], [d0].[intProyecto], [d0].[vchClave], [d0].[vchEstado], [d0].[vchUsuario], [d0].[vchUsuarioRegistro]
+FROM [ods].[Dim_ProcesoCarga] AS [d]
+LEFT JOIN [ods].[Dim_Usuarios] AS [d0] ON [d].[intProcesoCarga] = [d0].[intUsuario]
+WHERE ((([d].[intTiempo] = @__periodo_0) AND ([d].[intProyecto] = @__proyecto_1)) AND ([d].[vchTipoArea] = @__tipoArea_2)) AND ([d].[TipoFormulario] = @__tipoFormulario_3)
+ORDER BY [d].[intProcesoCarga]
+2023-02-24 09:51:31,909 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:51:31,912 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:51:35,366 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:51:35,383 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:51:35,412 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3,471ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000), @__tipoFormulario_3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProcesoCarga], [d].[Resultado], [d].[TipoFormulario], [d].[dtmFechaFin], [d].[dtmFechaInicio], [d].[intEstado], [d].[intProyecto], [d].[intTiempo], [d].[intUsuario], [d].[vchNombreArchivo], [d].[vchTipoArea], [d0].[intUsuario], [d0].[dtmFechaActualizacion], [d0].[dtmFechaRegistro], [d0].[intProyecto], [d0].[vchClave], [d0].[vchEstado], [d0].[vchUsuario], [d0].[vchUsuarioRegistro]
+FROM [ods].[Dim_ProcesoCarga] AS [d]
+LEFT JOIN [ods].[Dim_Usuarios] AS [d0] ON [d].[intProcesoCarga] = [d0].[intUsuario]
+WHERE ((([d].[intTiempo] = @__periodo_0) AND ([d].[intProyecto] = @__proyecto_1)) AND ([d].[vchTipoArea] = @__tipoArea_2)) AND ([d].[TipoFormulario] = @__tipoFormulario_3)
+ORDER BY [d].[intProcesoCarga]
+2023-02-24 09:51:35,415 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:51:36,710 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Database.Command - Failed executing DbCommand (3,540ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactGTCIndicadoresCalidad], [f].[dcmCapacitacionesExternas], [f].[dcmCapacitacionesInternas], [f].[dcmHHCapacitadas], [f].[dcmIndCapacitaciones], [f].[dcmIndObservaciones], [f].[dcmIndResponsabilidades], [f].[dcmNumeroCapacitaciones], [f].[dcmNumeroObservaciones], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchCumplimientoRespon], [f].[vchDescripcionCumplim], [f].[vhcLink]
+FROM [ods].[FactGTCIndicadoresCalidad] AS [f]
+WHERE ([f].[intTiempo] = @__periodo_0) AND ([f].[intProyecto] = @__proyecto_1)
+2023-02-24 09:51:36,947 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1,315ms) [Parameters=[@__proyecto_0='?' (DbType = Int32), @__periodo_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactLeccionesApre], [f].[dtmFecha], [f].[dtmFechaCarga], [f].[intIndice], [f].[intProyectos], [f].[intTiempo], [f].[vchArea], [f].[vchElaboradoNombre], [f].[vchElaboradoPorEmail], [f].[vchElaboradoPorPuesto], [f].[vchNombreUsuario], [f].[vchPartidaProceso], [f].[vchPregunta1QuePaso], [f].[vchPregunta2ComoSeSoluciono], [f].[vchPregunta3QueSeAprendio], [f].[vchUsuario], [d].[intDetalleLecApren], [d].[dtmFechaCarga], [d].[intFactLeccionesApre], [d].[vchFotos]
+FROM [ods].[FactLeccionesAprendidas] AS [f]
+LEFT JOIN [ods].[DetalleLeccionesAprendidas] AS [d] ON [f].[intFactLeccionesApre] = [d].[intFactLeccionesApre]
+WHERE (([f].[intProyectos] = @__proyecto_0) AND ([f].[intTiempo] = @__periodo_1)) AND ([f].[vchArea] = @__tipoArea_2)
+ORDER BY [f].[intFactLeccionesApre]
+2023-02-24 09:51:36,950 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1,293ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:51:36,961 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1,328ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000), @__tipoFormulario_3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProcesoCarga], [d].[Resultado], [d].[TipoFormulario], [d].[dtmFechaFin], [d].[dtmFechaInicio], [d].[intEstado], [d].[intProyecto], [d].[intTiempo], [d].[intUsuario], [d].[vchNombreArchivo], [d].[vchTipoArea], [d0].[intUsuario], [d0].[dtmFechaActualizacion], [d0].[dtmFechaRegistro], [d0].[intProyecto], [d0].[vchClave], [d0].[vchEstado], [d0].[vchUsuario], [d0].[vchUsuarioRegistro]
+FROM [ods].[Dim_ProcesoCarga] AS [d]
+LEFT JOIN [ods].[Dim_Usuarios] AS [d0] ON [d].[intProcesoCarga] = [d0].[intUsuario]
+WHERE ((([d].[intTiempo] = @__periodo_0) AND ([d].[intProyecto] = @__proyecto_1)) AND ([d].[vchTipoArea] = @__tipoArea_2)) AND ([d].[TipoFormulario] = @__tipoFormulario_3)
+ORDER BY [d].[intProcesoCarga]
+2023-02-24 09:51:36,971 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1,297ms) [Parameters=[@__periodo_0='?' (DbType = Int32), @__proyecto_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000), @__tipoFormulario_3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProcesoCarga], [d].[Resultado], [d].[TipoFormulario], [d].[dtmFechaFin], [d].[dtmFechaInicio], [d].[intEstado], [d].[intProyecto], [d].[intTiempo], [d].[intUsuario], [d].[vchNombreArchivo], [d].[vchTipoArea], [d0].[intUsuario], [d0].[dtmFechaActualizacion], [d0].[dtmFechaRegistro], [d0].[intProyecto], [d0].[vchClave], [d0].[vchEstado], [d0].[vchUsuario], [d0].[vchUsuarioRegistro]
+FROM [ods].[Dim_ProcesoCarga] AS [d]
+LEFT JOIN [ods].[Dim_Usuarios] AS [d0] ON [d].[intProcesoCarga] = [d0].[intUsuario]
+WHERE ((([d].[intTiempo] = @__periodo_0) AND ([d].[intProyecto] = @__proyecto_1)) AND ([d].[vchTipoArea] = @__tipoArea_2)) AND ([d].[TipoFormulario] = @__tipoFormulario_3)
+ORDER BY [d].[intProcesoCarga]
+2023-02-24 09:51:36,988 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Query - An exception occurred while iterating over the results of a query for context type 'ApiPortal_DataLake.Domain.Models.JlrGpOrdersContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'vhcLink'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ae2d6b00-e3ce-42d0-a314-ec4517b981fd
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'vhcLink'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ae2d6b00-e3ce-42d0-a314-ec4517b981fd
+Error Number:207,State:1,Class:16
+2023-02-24 09:51:36,990 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:51:37,107 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Controllers.FactGTCIndicadoresCalidadController - Error Listar Proyectos : {"ClassName":"Microsoft.Data.SqlClient.SqlException","Message":"Invalid column name 'vhcLink'.","Data":{"HelpLink.ProdName":"Microsoft SQL Server","HelpLink.ProdVer":"12.00.0937","HelpLink.EvtSrc":"MSSQLServer","HelpLink.EvtID":"207","HelpLink.BaseHelpUrl":"https://go.microsoft.com/fwlink","HelpLink.LinkId":"20476","SqlError 1":"Microsoft.Data.SqlClient.SqlError: Invalid column name 'vhcLink'."},"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)\r\n   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()\r\n   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n--- End of stack trace from previous location ---\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\r\n   at ApiPortal_DataLake.Domain.Services.FactGTCIndicadoresCalidadService.GetAllAsync(Int32 id_user, Int32 periodo, Int32 proyecto) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Domain\\Services\\FactGTCIndicadoresCalidadService.cs:line 40\r\n   at ApiPortal_DataLake.Application.Controllers.FactGTCIndicadoresCalidadController.Get(Int32 id_user, Int32 periodo, Int32 proyecto) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Application\\Controllers\\FactGTCIndicadoresCalidadController.cs:line 41","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146232060,"Source":"Core Microsoft SqlClient Data Provider","WatsonBuckets":null,"Errors":null,"ClientConnectionId":"ae2d6b00-e3ce-42d0-a314-ec4517b981fd"}
+2023-02-24 09:51:37,108 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (132ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:51:37,118 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (141ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:51:37,123 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (148ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:51:37,144 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (135ms) [Parameters=[@__proyecto_0='?' (DbType = Int32), @__periodo_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactPanelFotoGrafico], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchMotivoFoto], [f].[vchUsuario]
+FROM [ods].[FactPanelFotoGrafico] AS [f]
+WHERE (([f].[intProyecto] = @__proyecto_0) AND ([f].[intTiempo] = @__periodo_1)) AND ([f].[vchArea] = @__tipoArea_2)
+2023-02-24 09:51:37,809 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (456ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:51:38,494 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (451ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+WHERE [d].[intProyectos] = @__id_0
+2023-02-24 09:51:50,143 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (139ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intFactPanelFotoGrafico], [d].[dtmFechaCarga], [d].[vchArchivo]
+FROM [ods].[DetallePanelFotoGrafico] AS [d]
+WHERE [d].[intFactPanelFotoGrafico] = @__id_0
+2023-02-24 09:52:07,468 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:52:07,620 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (144ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-02-24 09:52:19,566 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:52:20,617 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1,029ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [f].[intFactPanelFotoGrafico], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchMotivoFoto], [f].[vchUsuario]
+FROM [ods].[FactPanelFotoGrafico] AS [f]
+WHERE [f].[intFactPanelFotoGrafico] = @__Parse_0
+2023-02-24 09:52:21,874 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (496ms) [Parameters=[@p7='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ods].[FactPanelFotoGrafico] SET [dtmFechaCarga] = @p0, [intProyecto] = @p1, [intTiempo] = @p2, [vchArea] = @p3, [vchDescripcion] = @p4, [vchMotivoFoto] = @p5, [vchUsuario] = @p6
+WHERE [intFactPanelFotoGrafico] = @p7;
+SELECT @@ROWCOUNT;
+2023-02-24 09:52:25,094 [59] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (155ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[DetallePanelFotoGrafico] ([intFactPanelFotoGrafico], [dtmFechaCarga], [vchArchivo])
+VALUES (@p0, @p1, @p2);
+2023-02-24 09:52:32,611 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:52:32,772 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (158ms) [Parameters=[@__proyecto_0='?' (DbType = Int32), @__periodo_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactPanelFotoGrafico], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchMotivoFoto], [f].[vchUsuario]
+FROM [ods].[FactPanelFotoGrafico] AS [f]
+WHERE (([f].[intProyecto] = @__proyecto_0) AND ([f].[intTiempo] = @__periodo_1)) AND ([f].[vchArea] = @__tipoArea_2)
+2023-02-24 09:52:37,535 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (152ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intFactPanelFotoGrafico], [d].[dtmFechaCarga], [d].[vchArchivo]
+FROM [ods].[DetallePanelFotoGrafico] AS [d]
+WHERE [d].[intFactPanelFotoGrafico] = @__id_0
+2023-02-24 09:52:48,929 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:52:49,092 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (153ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-02-24 09:56:10,843 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:56:10,999 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [f].[intFactPanelFotoGrafico], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchMotivoFoto], [f].[vchUsuario]
+FROM [ods].[FactPanelFotoGrafico] AS [f]
+WHERE [f].[intFactPanelFotoGrafico] = @__Parse_0
+2023-02-24 09:56:11,308 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (151ms) [Parameters=[@p7='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ods].[FactPanelFotoGrafico] SET [dtmFechaCarga] = @p0, [intProyecto] = @p1, [intTiempo] = @p2, [vchArea] = @p3, [vchDescripcion] = @p4, [vchMotivoFoto] = @p5, [vchUsuario] = @p6
+WHERE [intFactPanelFotoGrafico] = @p7;
+SELECT @@ROWCOUNT;
+2023-02-24 09:56:11,635 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (147ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [d].[intFactPanelFotoGrafico], [d].[dtmFechaCarga], [d].[vchArchivo]
+FROM [ods].[DetallePanelFotoGrafico] AS [d]
+WHERE [d].[intFactPanelFotoGrafico] = @__Parse_0
+2023-02-24 09:56:11,941 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (147ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [ods].[DetallePanelFotoGrafico]
+WHERE [intFactPanelFotoGrafico] = @p0;
+SELECT @@ROWCOUNT;
+2023-02-24 09:56:12,188 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Domain.Services.FactPanelFotoGraficoService - FactPanelFotoGrafico Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException","Message":"The database operation was expected to affect 1 row(s), but actually affected 3 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagationAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at ApiPortal_DataLake.Domain.Services.FactPanelFotoGraficoService.Modificar(ModificarFactPanelFotoGraficoRequest agregar, IFormFileCollection files) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Domain\\Services\\FactPanelFotoGraficoService.cs:line 171","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2023-02-24 09:56:22,848 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:56:23,003 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (150ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [f].[intFactPanelFotoGrafico], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchMotivoFoto], [f].[vchUsuario]
+FROM [ods].[FactPanelFotoGrafico] AS [f]
+WHERE [f].[intFactPanelFotoGrafico] = @__Parse_0
+2023-02-24 09:56:23,317 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (156ms) [Parameters=[@p7='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ods].[FactPanelFotoGrafico] SET [dtmFechaCarga] = @p0, [intProyecto] = @p1, [intTiempo] = @p2, [vchArea] = @p3, [vchDescripcion] = @p4, [vchMotivoFoto] = @p5, [vchUsuario] = @p6
+WHERE [intFactPanelFotoGrafico] = @p7;
+SELECT @@ROWCOUNT;
+2023-02-24 09:56:23,630 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (148ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [d].[intFactPanelFotoGrafico], [d].[dtmFechaCarga], [d].[vchArchivo]
+FROM [ods].[DetallePanelFotoGrafico] AS [d]
+WHERE [d].[intFactPanelFotoGrafico] = @__Parse_0
+2023-02-24 09:56:23,933 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (147ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [ods].[DetallePanelFotoGrafico]
+WHERE [intFactPanelFotoGrafico] = @p0;
+SELECT @@ROWCOUNT;
+2023-02-24 09:56:24,137 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Domain.Services.FactPanelFotoGraficoService - FactPanelFotoGrafico Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException","Message":"The database operation was expected to affect 1 row(s), but actually affected 3 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagationAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at ApiPortal_DataLake.Domain.Services.FactPanelFotoGraficoService.Modificar(ModificarFactPanelFotoGraficoRequest agregar, IFormFileCollection files) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Domain\\Services\\FactPanelFotoGraficoService.cs:line 171","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2023-02-24 09:56:29,817 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 09:56:29,974 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (150ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [f].[intFactPanelFotoGrafico], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchMotivoFoto], [f].[vchUsuario]
+FROM [ods].[FactPanelFotoGrafico] AS [f]
+WHERE [f].[intFactPanelFotoGrafico] = @__Parse_0
+2023-02-24 09:56:30,289 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (150ms) [Parameters=[@p7='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ods].[FactPanelFotoGrafico] SET [dtmFechaCarga] = @p0, [intProyecto] = @p1, [intTiempo] = @p2, [vchArea] = @p3, [vchDescripcion] = @p4, [vchMotivoFoto] = @p5, [vchUsuario] = @p6
+WHERE [intFactPanelFotoGrafico] = @p7;
+SELECT @@ROWCOUNT;
+2023-02-24 09:56:30,617 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (152ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [d].[intFactPanelFotoGrafico], [d].[dtmFechaCarga], [d].[vchArchivo]
+FROM [ods].[DetallePanelFotoGrafico] AS [d]
+WHERE [d].[intFactPanelFotoGrafico] = @__Parse_0
+2023-02-24 09:56:30,923 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (151ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [ods].[DetallePanelFotoGrafico]
+WHERE [intFactPanelFotoGrafico] = @p0;
+SELECT @@ROWCOUNT;
+2023-02-24 09:56:31,141 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Domain.Services.FactPanelFotoGraficoService - FactPanelFotoGrafico Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException","Message":"The database operation was expected to affect 1 row(s), but actually affected 3 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagationAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at ApiPortal_DataLake.Domain.Services.FactPanelFotoGraficoService.Modificar(ModificarFactPanelFotoGraficoRequest agregar, IFormFileCollection files) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Domain\\Services\\FactPanelFotoGraficoService.cs:line 171","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2023-02-24 10:06:36,558 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 10:06:37,842 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (133ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [f].[intFactPanelFotoGrafico], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchMotivoFoto], [f].[vchUsuario]
+FROM [ods].[FactPanelFotoGrafico] AS [f]
+WHERE [f].[intFactPanelFotoGrafico] = @__Parse_0
+2023-02-24 10:06:47,670 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (138ms) [Parameters=[@p7='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ods].[FactPanelFotoGrafico] SET [dtmFechaCarga] = @p0, [intProyecto] = @p1, [intTiempo] = @p2, [vchArea] = @p3, [vchDescripcion] = @p4, [vchMotivoFoto] = @p5, [vchUsuario] = @p6
+WHERE [intFactPanelFotoGrafico] = @p7;
+SELECT @@ROWCOUNT;
+2023-02-24 10:06:55,179 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [d].[intFactPanelFotoGrafico], [d].[dtmFechaCarga], [d].[vchArchivo]
+FROM [ods].[DetallePanelFotoGrafico] AS [d]
+WHERE [d].[intFactPanelFotoGrafico] = @__Parse_0
+2023-02-24 10:06:56,806 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (133ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [ods].[DetallePanelFotoGrafico]
+WHERE [intFactPanelFotoGrafico] = @p0;
+SELECT @@ROWCOUNT;
+2023-02-24 10:07:28,187 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Domain.Services.FactPanelFotoGraficoService - FactPanelFotoGrafico Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException","Message":"The database operation was expected to affect 1 row(s), but actually affected 3 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagationAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at ApiPortal_DataLake.Domain.Services.FactPanelFotoGraficoService.Modificar(ModificarFactPanelFotoGraficoRequest agregar, IFormFileCollection files) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Domain\\Services\\FactPanelFotoGraficoService.cs:line 171","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2023-02-24 10:08:12,185 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 10:08:12,340 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (137ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [f].[intFactPanelFotoGrafico], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchMotivoFoto], [f].[vchUsuario]
+FROM [ods].[FactPanelFotoGrafico] AS [f]
+WHERE [f].[intFactPanelFotoGrafico] = @__Parse_0
+2023-02-24 10:08:14,745 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (133ms) [Parameters=[@p7='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ods].[FactPanelFotoGrafico] SET [dtmFechaCarga] = @p0, [intProyecto] = @p1, [intTiempo] = @p2, [vchArea] = @p3, [vchDescripcion] = @p4, [vchMotivoFoto] = @p5, [vchUsuario] = @p6
+WHERE [intFactPanelFotoGrafico] = @p7;
+SELECT @@ROWCOUNT;
+2023-02-24 10:08:23,671 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 10:08:23,812 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__proyecto_0='?' (DbType = Int32), @__periodo_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactPanelFotoGrafico], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchMotivoFoto], [f].[vchUsuario]
+FROM [ods].[FactPanelFotoGrafico] AS [f]
+WHERE (([f].[intProyecto] = @__proyecto_0) AND ([f].[intTiempo] = @__periodo_1)) AND ([f].[vchArea] = @__tipoArea_2)
+2023-02-24 10:08:23,958 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (139ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intFactPanelFotoGrafico], [d].[dtmFechaCarga], [d].[vchArchivo]
+FROM [ods].[DetallePanelFotoGrafico] AS [d]
+WHERE [d].[intFactPanelFotoGrafico] = @__id_0
+2023-02-24 10:08:23,975 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 10:08:24,111 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (132ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-02-24 10:09:13,826 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 10:09:13,976 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (133ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [f].[intFactPanelFotoGrafico], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchMotivoFoto], [f].[vchUsuario]
+FROM [ods].[FactPanelFotoGrafico] AS [f]
+WHERE [f].[intFactPanelFotoGrafico] = @__Parse_0
+2023-02-24 10:09:19,015 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (132ms) [Parameters=[@p7='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ods].[FactPanelFotoGrafico] SET [dtmFechaCarga] = @p0, [intProyecto] = @p1, [intTiempo] = @p2, [vchArea] = @p3, [vchDescripcion] = @p4, [vchMotivoFoto] = @p5, [vchUsuario] = @p6
+WHERE [intFactPanelFotoGrafico] = @p7;
+SELECT @@ROWCOUNT;
+2023-02-24 10:10:49,950 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (131ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [d].[intFactPanelFotoGrafico], [d].[dtmFechaCarga], [d].[vchArchivo]
+FROM [ods].[DetallePanelFotoGrafico] AS [d]
+WHERE [d].[intFactPanelFotoGrafico] = @__Parse_0
+2023-02-24 10:10:50,216 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (130ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [ods].[DetallePanelFotoGrafico]
+WHERE [intFactPanelFotoGrafico] = @p0;
+SELECT @@ROWCOUNT;
+2023-02-24 10:10:50,404 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Domain.Services.FactPanelFotoGraficoService - FactPanelFotoGrafico Error try catch: {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException","Message":"The database operation was expected to affect 1 row(s), but actually affected 3 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagationAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at ApiPortal_DataLake.Domain.Services.FactPanelFotoGraficoService.Modificar(ModificarFactPanelFotoGraficoRequest agregar, IFormFileCollection files) in C:\\Users\\NelsonR\\Documents\\ApiPortal_DataLake\\JLR.GP.Orders\\Domain\\Services\\FactPanelFotoGraficoService.cs:line 171","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2023-02-24 10:11:45,785 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-02-24 10:11:45,797 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-02-24 10:11:45,804 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-02-24 10:11:45,805 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-02-24 10:11:45,807 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-02-24 10:14:38,258 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmCapacitacionesExternas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 10:14:38,266 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmCapacitacionesInternas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 10:14:38,271 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmHHCapacitadas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 10:14:38,276 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndCapacitaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 10:14:38,280 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndObservaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 10:14:38,285 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndResponsabilidades' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 10:14:38,289 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmNumeroCapacitaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 10:14:38,293 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmNumeroObservaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 10:14:38,591 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 10:14:42,755 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (263ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[FactPanelFotoGrafico] ([dtmFechaCarga], [intProyecto], [intTiempo], [vchArea], [vchDescripcion], [vchMotivoFoto], [vchUsuario])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [intFactPanelFotoGrafico]
+FROM [ods].[FactPanelFotoGrafico]
+WHERE @@ROWCOUNT = 1 AND [intFactPanelFotoGrafico] = scope_identity();
+2023-02-24 10:15:44,079 [6] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (131ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[DetallePanelFotoGrafico] ([intFactPanelFotoGrafico], [dtmFechaCarga], [vchArchivo])
+VALUES (@p0, @p1, @p2);
+2023-02-24 10:16:31,897 [6] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (132ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ods].[DetallePanelFotoGrafico] ([intFactPanelFotoGrafico], [dtmFechaCarga], [vchArchivo])
+VALUES (@p0, @p1, @p2);
+2023-02-24 10:16:44,715 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 10:16:45,449 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (134ms) [Parameters=[@__proyecto_0='?' (DbType = Int32), @__periodo_1='?' (DbType = Int32), @__tipoArea_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[intFactPanelFotoGrafico], [f].[dtmFechaCarga], [f].[intProyecto], [f].[intTiempo], [f].[vchArea], [f].[vchDescripcion], [f].[vchMotivoFoto], [f].[vchUsuario]
+FROM [ods].[FactPanelFotoGrafico] AS [f]
+WHERE (([f].[intProyecto] = @__proyecto_0) AND ([f].[intTiempo] = @__periodo_1)) AND ([f].[vchArea] = @__tipoArea_2)
+2023-02-24 10:16:45,642 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (133ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intFactPanelFotoGrafico], [d].[dtmFechaCarga], [d].[vchArchivo]
+FROM [ods].[DetallePanelFotoGrafico] AS [d]
+WHERE [d].[intFactPanelFotoGrafico] = @__id_0
+2023-02-24 10:16:45,787 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (130ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intFactPanelFotoGrafico], [d].[dtmFechaCarga], [d].[vchArchivo]
+FROM [ods].[DetallePanelFotoGrafico] AS [d]
+WHERE [d].[intFactPanelFotoGrafico] = @__id_0
+2023-02-24 10:16:45,981 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 10:16:46,146 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (156ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-02-24 10:17:38,393 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-02-24 10:17:38,407 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-02-24 10:17:38,414 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-02-24 10:17:38,415 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-02-24 10:17:38,417 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-02-24 10:19:03,875 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-02-24 10:19:03,887 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-02-24 10:19:03,894 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-02-24 10:19:03,896 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-02-24 10:19:03,897 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-02-24 10:22:21,680 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-02-24 10:22:21,693 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-02-24 10:22:21,699 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-02-24 10:22:21,701 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-02-24 10:22:21,703 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-02-24 16:47:37,355 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmCapacitacionesExternas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 16:47:37,369 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmCapacitacionesInternas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 16:47:37,376 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmHHCapacitadas' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 16:47:37,381 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndCapacitaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 16:47:37,385 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndObservaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 16:47:37,390 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmIndResponsabilidades' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 16:47:37,395 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmNumeroCapacitaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 16:47:37,400 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'dcmNumeroObservaciones' on entity type 'FactGTCIndicadoresCalidad'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-02-24 16:47:37,866 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 16:47:37,866 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 16:47:40,619 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (270ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-02-24 16:47:41,223 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (154ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]
+2023-02-24 17:00:18,767 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 17:00:18,791 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-02-24 17:00:20,316 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (185ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intProyectos], [d].[dcmPorcentajeUtilidadC], [d].[dmlMetrosCuadrados], [d].[dtmFechaCarga], [d].[intEmpresa], [d].[intEtapas], [d].[intProyectoCategoria], [d].[intProyectoGeneral], [d].[vchCoordenadas], [d].[vchFechaFin], [d].[vchFechaInicio], [d].[vchFechaModificada], [d].[vchNombreProyecto]
+FROM [ods].[Dim_Proyectos] AS [d]
+2023-02-24 17:00:20,980 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (155ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[intTiempo], [d].[dtmFecha], [d].[intAnio], [d].[intDia], [d].[intMes], [d].[intPeriodo], [d].[intTrismestre], [d].[vchDescripcionMes], [d].[vchNDia], [d].[vchNMNes3L], [d].[vchNombreDia]
+FROM [ods].[Dim_Tiempo] AS [d]

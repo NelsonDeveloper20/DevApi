@@ -1,0 +1,12 @@
+2023-05-05 11:55:14,258 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-05-05 11:55:14,324 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-05-05 11:55:14,365 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-05-05 11:55:14,430 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-05-05 11:55:14,440 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\ApiPortal_DataLake\JLR.GP.Orders\
+2023-05-05 11:55:21,918 [.NET ThreadPool Worker] ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware - An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET api/listas" for actions - ApiPortal_DataLake.Application.Controllers.ListasController.GetUsuarios (ApiPortal_DataLake),ApiPortal_DataLake.Application.Controllers.ListasController.GetDim_Etapas (ApiPortal_DataLake),ApiPortal_DataLake.Application.Controllers.ListasController.GetDim_ProyectoGeneral (ApiPortal_DataLake),ApiPortal_DataLake.Application.Controllers.ListasController.GetDim_Empresa (ApiPortal_DataLake). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)

@@ -1,0 +1,90 @@
+2023-06-18 23:54:32,541 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2023-06-18 23:54:32,561 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2023-06-18 23:54:32,571 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2023-06-18 23:54:32,573 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2023-06-18 23:54:32,575 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Documents\GRUPO PANA WORKFLOW\VERSION - 11-05-2023\ApiPortal_DataLake\JLR.GP.Orders\
+2023-06-18 23:55:36,258 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Application.Controllers.AuthController - Controller GetToken started
+2023-06-18 23:55:36,287 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken started: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiJiOTE5OTYxMy00ZTE3LTQ4MGQtYWEyYy1hMmFhNmRhMjc2N2IiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vMjMxZmM4NDUtZmZiYi00MGU3LWEyZGYtMjdmNGRiOGZjY2EwL3YyLjAiLCJpYXQiOjE2ODcxNDk5NDcsIm5iZiI6MTY4NzE0OTk0NywiZXhwIjoxNjg3MTUzODQ3LCJuYW1lIjoiTmVsc29uICBSb2RyaWd1ZXogSHVhbGxwYSIsIm5vbmNlIjoiMWM5OGMwNDQtNjdjMy00N2YxLThmNTUtOWExNjU5NGJkOGZmIiwib2lkIjoiYjc0Zjk5OWYtMjIzNS00ZjQ3LThiMGQtYzc1YjhmYjY5NmEyIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZGVzYXJyb2xsYWRvcjRAamxyYW5hbHl0aWNzLmNvbSIsInJoIjoiMC5BU1lBUmNnZkk3dl81MENpM3lmMDI0X01vQk9XR2JrWFRnMUlxaXlpcW0yaWRuc21BTFUuIiwic3ViIjoiU3g0cGh0bTR2OWpQX3VOcW9FQnljZ0JCdG12d3ozOGtxTllnOEsyY2JYWSIsInRpZCI6IjIzMWZjODQ1LWZmYmItNDBlNy1hMmRmLTI3ZjRkYjhmY2NhMCIsInV0aSI6InFGYXItRUdmY2ttRFpqa2tzOHRtQUEiLCJ2ZXIiOiIyLjAifQ.Xcz-CT55yErrXxo1xLROgWM3GRx1V7hl7nceSXuc3miWqtWAci44IF9Pt-g67V_tULeiyM0VSJRNJvkf2YuInQMMDEeU_4QLhnPMUDaaRlCxZU5TiG8jctY3HhQuz67gfBC9oqKJxUcVSah1H0gX6hSa_l6yTshXnQeTHxGTM3lc1_VXmdmy50PiCjU29cqGEHXk5_snBE53Xxt3-1MPokbvwcY6Cu7jUJmSFh4Xr3QPiLFJ5JTCOIqLxwDwTZ1sHcWbUjvSC4bV0Owj3Dd9ah3R-6Mzqzln0WN_MFv8fc89OWKUV5hX-WO0ZTJ1z_xW828v0gj2PoK_PkcfDdRthQ
+2023-06-18 23:55:36,851 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.AuthService - GetToken preferred_username: desarrollador4@jlranalytics.com
+2023-06-18 23:55:39,226 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-06-18 23:55:42,465 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (359ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Correo], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUnidadNegocio], [t].[Nombre], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t0].[Id], [t0].[FechaCreacion], [t0].[FechaModificacion], [t0].[IdSede], [t0].[IdUnidadNegocio], [t0].[RolId], [t0].[UsuarioCreacion], [t0].[UsuarioId], [t0].[UsuarioModificacion], [t0].[Id0], [t0].[Nombre]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[IdUnidadNegocio], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+    FROM [Usuario] AS [u]
+    WHERE [u].[Correo] = @__correo_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[IdSede], [r].[IdUnidadNegocio], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsuarioId]
+ORDER BY [t].[Id], [t0].[Id]
+2023-06-18 23:55:42,929 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJ1c2VyTmFtZSI6ImRlc2Fycm9sbGFkb3I0QGpscmFuYWx5dGljcy5jb20iLCJodHRwOi8vQXBpUG9ydGFsX0RhdGFMYWtlLmNvbS9jbGFpbXMvcm9sIjoiMSIsImh0dHA6Ly9BcGlQb3J0YWxfRGF0YUxha2UuY29tL2NsYWltcy9yb2xuYW1lIjoiQWRtaW4iLCJuYmYiOjE2ODcxNTA1NDIsImV4cCI6MTY4NzE1NDE0MiwiaWF0IjoxNjg3MTUwNTQyLCJpc3MiOiJodHRwOi8vQXBpUG9ydGFsX0RhdGFMYWtlLmlzc3Vlci5jb20iLCJhdWQiOiJodHRwOi8vQXBpUG9ydGFsX0RhdGFMYWtlLmNvbSJ9.QI1t3NjzBK9M-AWu0hKWd5g1f3rlcSuqwWheWHawiPw
+2023-06-18 23:55:42,934 [.NET ThreadPool Worker] INFO ApiPortal_DataLake.Domain.Services.AuthService - GetToken refreshToken: W2EYgTQRG5ScRj2QCC4/ITsklzYq40zNvPuZ7Wmqh74=
+2023-06-18 23:55:43,136 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (140ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TokenSecurity] AS [t]
+        WHERE [t].[UsuarioCreacion] = @__correo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-06-18 23:55:43,293 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (130ms) [Parameters=[@__correo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[FechaCreacion], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UsuarioCreacion]
+FROM [TokenSecurity] AS [t]
+WHERE [t].[UsuarioCreacion] = @__correo_0
+2023-06-18 23:55:43,500 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (133ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion]
+FROM [TblUnidadNegocio] AS [t]
+WHERE [t].[Id] = @__p_0
+2023-06-18 23:55:44,085 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (130ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [TokenSecurity]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2023-06-18 23:55:44,258 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (131ms) [Parameters=[@p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TokenSecurity] ([FechaCreacion], [RefreshToken], [RefreshTokenExpiryTime], [UsuarioCreacion])
+VALUES (@p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [TokenSecurity]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-06-18 23:57:41,253 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-06-18 23:57:41,432 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-06-18 23:57:41,456 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (146ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[IdUnidadNegocio], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t1].[Id], [t1].[FechaCreacion], [t1].[FechaModificacion], [t1].[IdSede], [t1].[IdUnidadNegocio], [t1].[RolId], [t1].[UsuarioCreacion], [t1].[UsuarioId], [t1].[UsuarioModificacion], [t1].[Id0], [t1].[Nombre], [t1].[Id1], [t1].[Descripcion], [t1].[Estado], [t1].[FechaCreacion0], [t1].[FechaModificacion0], [t1].[UsuarioCreacion0], [t1].[Id2], [t1].[Descripcion0], [t1].[Estado0], [t1].[FechaCreacion1], [t1].[FechaModificacion1], [t1].[UsuarioCreacion1]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[IdSede], [r].[IdUnidadNegocio], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre], [t].[Id] AS [Id1], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion] AS [FechaCreacion0], [t].[FechaModificacion] AS [FechaModificacion0], [t].[UsuarioCreacion] AS [UsuarioCreacion0], [t0].[Id] AS [Id2], [t0].[Descripcion] AS [Descripcion0], [t0].[Estado] AS [Estado0], [t0].[FechaCreacion] AS [FechaCreacion1], [t0].[FechaModificacion] AS [FechaModificacion1], [t0].[UsuarioCreacion] AS [UsuarioCreacion1]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+    INNER JOIN [TblUnidadNegocio] AS [t] ON [r].[IdUnidadNegocio] = [t].[Id]
+    INNER JOIN [TblSede] AS [t0] ON [r].[IdSede] = [t0].[Id]
+) AS [t1] ON [u].[Id] = [t1].[UsuarioId]
+ORDER BY [u].[Id], [t1].[Id], [t1].[Id0], [t1].[Id1]
+2023-06-18 23:57:42,193 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (143ms) [Parameters=[@__fechaFiltro_0='?' (DbType = DateTime2), @__fechaFiltroFin_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[ArchivoFactura], [t].[ArchivoNotaCredito], [t].[ArchivoTesoreria], [t].[Area], [t].[Asesor], [t].[Banco], [t].[CentroCosto], [t].[ClienteRazonSocial], [t].[ClienteRealiza], [t].[Comentario], [t].[ComentarioAprobacion], [t].[ComprobanteOrigen], [t].[DescripcionArticuloSap], [t].[DniClienteRuc], [t].[DniclienteRealiza], [t].[EntidadBancaria], [t].[EstadoSolicitud], [t].[FechSolicitud], [t].[FechaAplicacion], [t].[FechaCreacion], [t].[FechaModificacion], [t].[FormaPago], [t].[IdTipoSolicitud], [t].[IdUnidadNegocio], [t].[Importe], [t].[Local], [t].[Moneda], [t].[Motivo], [t].[NroFacturaSunat], [t].[NroSap], [t].[NroSapTesoreria], [t].[NumNotaCredito], [t].[NumOperacion], [t].[NumeroArticuloSap], [t].[NumeroCuentaBancaria], [t].[NumeroCuentaInterbancaria], [t].[PjudicialPnatural], [t].[Proveedor], [t].[Proyecto], [t].[Solicitante], [t].[SubEstadoSolicitud], [t].[Tienda], [t].[Tipo], [t].[TipoCarta], [t].[TipoDocumento], [t].[TipoPago], [t].[UnidadNegocio], [t].[UsuarioCreacion], [t].[UsuarioModificacion], [t].[ValidacionContabilidad], [t].[Vinculo]
+FROM [TblSolicitud] AS [t]
+WHERE ([t].[FechaModificacion] >= @__fechaFiltro_0) AND ([t].[FechaModificacion] <= @__fechaFiltroFin_1)
+2023-06-18 23:57:42,352 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (145ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[UsuarioCreacion]
+FROM [TblTipoSolicitud] AS [t]
+2023-06-18 23:57:42,526 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (143ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[idadjunto], [a].[Nombre], [a].[fecharegistro], [a].[idsolicitud], [a].[idtipoadjunto], [a].[nombrearchivo], [a].[nombrestorage], [a].[nrodococumento], [a].[observacion]
+FROM [adjunto] AS [a]
+2023-06-18 23:57:42,704 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (146ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[IdUnidadNegocio], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion]
+FROM [Usuario] AS [u]
+2023-06-18 23:57:44,328 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2023-06-18 23:57:44,480 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (142ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Correo], [u].[Estado], [u].[FechaCreacion], [u].[FechaModificacion], [u].[IdUnidadNegocio], [u].[Nombre], [u].[UsuarioCreacion], [u].[UsuarioModificacion], [t1].[Id], [t1].[FechaCreacion], [t1].[FechaModificacion], [t1].[IdSede], [t1].[IdUnidadNegocio], [t1].[RolId], [t1].[UsuarioCreacion], [t1].[UsuarioId], [t1].[UsuarioModificacion], [t1].[Id0], [t1].[Nombre], [t1].[Id1], [t1].[Descripcion], [t1].[Estado], [t1].[FechaCreacion0], [t1].[FechaModificacion0], [t1].[UsuarioCreacion0], [t1].[Id2], [t1].[Descripcion0], [t1].[Estado0], [t1].[FechaCreacion1], [t1].[FechaModificacion1], [t1].[UsuarioCreacion1]
+FROM [Usuario] AS [u]
+LEFT JOIN (
+    SELECT [r].[Id], [r].[FechaCreacion], [r].[FechaModificacion], [r].[IdSede], [r].[IdUnidadNegocio], [r].[RolId], [r].[UsuarioCreacion], [r].[UsuarioId], [r].[UsuarioModificacion], [r0].[Id] AS [Id0], [r0].[Nombre], [t].[Id] AS [Id1], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion] AS [FechaCreacion0], [t].[FechaModificacion] AS [FechaModificacion0], [t].[UsuarioCreacion] AS [UsuarioCreacion0], [t0].[Id] AS [Id2], [t0].[Descripcion] AS [Descripcion0], [t0].[Estado] AS [Estado0], [t0].[FechaCreacion] AS [FechaCreacion1], [t0].[FechaModificacion] AS [FechaModificacion1], [t0].[UsuarioCreacion] AS [UsuarioCreacion1]
+    FROM [RolUsuario] AS [r]
+    INNER JOIN [Rol] AS [r0] ON [r].[RolId] = [r0].[Id]
+    INNER JOIN [TblUnidadNegocio] AS [t] ON [r].[IdUnidadNegocio] = [t].[Id]
+    INNER JOIN [TblSede] AS [t0] ON [r].[IdSede] = [t0].[Id]
+) AS [t1] ON [u].[Id] = [t1].[UsuarioId]
+ORDER BY [u].[Id], [t1].[Id], [t1].[Id0], [t1].[Id1]

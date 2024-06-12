@@ -1,0 +1,131 @@
+2022-11-21 16:34:52,167 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2022-11-21 16:34:52,432 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2022-11-21 16:34:52,441 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2022-11-21 16:34:52,444 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2022-11-21 16:34:52,448 [1] INFO Microsoft.Hosting.Lifetime - Content root path: F:\NET CORE\PUBLIC\V2\JLR.GP.Orders\JLR.GP.Orders\
+2022-11-21 17:16:33,571 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2022-11-21 17:16:33,597 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2022-11-21 17:16:33,608 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2022-11-21 17:16:33,610 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2022-11-21 17:16:33,612 [1] INFO Microsoft.Hosting.Lifetime - Content root path: F:\NET CORE\PUBLIC\V2\JLR.GP.Orders\JLR.GP.Orders\
+2022-11-21 17:16:49,428 [.NET ThreadPool Worker] WARN JLR.GP.Orders.Domain.Services.cron.CronTransferRequestService - CronTransferRequest Initialice : 21/11/2022 17:16:49
+2022-11-21 17:16:51,564 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-11-21 17:17:09,144 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Query - An exception occurred while iterating over the results of a query for context type 'JLR.GP.Orders.Domain.Models.JlrGpOrdersContext'.
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2022-11-21 17:17:50,317 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2022-11-21 17:17:50,502 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2022-11-21 17:17:50,795 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2022-11-21 17:17:50,852 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2022-11-21 17:17:50,870 [1] INFO Microsoft.Hosting.Lifetime - Content root path: F:\NET CORE\PUBLIC\V2\JLR.GP.Orders\JLR.GP.Orders\
+2022-11-21 17:18:04,927 [.NET ThreadPool Worker] WARN JLR.GP.Orders.Domain.Services.cron.CronTransferRequestService - CronTransferRequest Initialice : 21/11/2022 17:18:04
+2022-11-21 17:18:06,903 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-11-21 17:18:08,890 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (240ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[Accion], [a].[AccionRPA], [a].[Cantidad], [a].[CodPedido], [a].[CodPedidoA], [a].[CodPedidoM], [a].[CodTraslado], [a].[CodigoAlmacen], [a].[CodigoArticulo], [a].[Concesionario], [a].[Descripcion], [a].[DescripcionArticulo], [a].[ErrSinStock], [a].[ErrTraslado], [a].[FechaCreacion], [a].[FechaModificacion], [a].[FechaPedido], [a].[Icc], [a].[NumPedido], [a].[NumPedidoA], [a].[NumPedidoM], [a].[NumeroDocumentoSap], [a].[Observacion], [a].[SaldoPedido], [a].[StockProcesado], [a].[SubAccionRPA], [a].[UsuarioCreacion], [a].[UsuarioModificacion], [s].[NumeroDocumentoSap], [s].[CentroDeCosto], [s].[Cerrado], [s].[DocStatus], [s].[FechaCreacion], [s].[FechaDeSolicitud], [s].[FechaModificacion], [s].[IdDocumento], [s].[NroAvisoTdp], [s].[NroPlaca], [s].[Procedencia], [s].[Solicitante], [s].[Tienda], [s].[Tienda2], [s].[Tipo], [s].[TipoDeCompra], [s].[TipoDeCompraDes], [s].[UnidadNegocio], [s].[UsuarioCreacion], [s].[UsuarioModificacion], [s0].[Id], [s0].[ArticuloSolicitudId], [s0].[CodigoAlmacen], [s0].[EnStock], [s0].[FechaCreacion], [s0].[FechaModificacion], [s0].[NombreAlmacen], [s0].[Selected], [s0].[UsuarioCreacion], [s0].[UsuarioModificacion]
+FROM [ArticuloSolicitud] AS [a]
+INNER JOIN [Solicitud] AS [s] ON [a].[NumeroDocumentoSap] = [s].[NumeroDocumentoSap]
+LEFT JOIN [StockArticuloSolicitud] AS [s0] ON [a].[Id] = [s0].[ArticuloSolicitudId]
+WHERE (([a].[AccionRPA] = N'I') AND ([a].[Accion] = N'T')) AND ([a].[ErrTraslado] < 5)
+ORDER BY [a].[Id], [s].[NumeroDocumentoSap]
+2022-11-21 17:18:58,914 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2022-11-21 17:18:58,935 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2022-11-21 17:18:58,947 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2022-11-21 17:18:58,950 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2022-11-21 17:18:58,952 [1] INFO Microsoft.Hosting.Lifetime - Content root path: F:\NET CORE\PUBLIC\V2\JLR.GP.Orders\JLR.GP.Orders\
+2022-11-21 17:19:03,496 [.NET ThreadPool Worker] WARN JLR.GP.Orders.Domain.Services.cron.CronTransferRequestService - CronTransferRequest Initialice : 21/11/2022 17:19:03
+2022-11-21 17:19:06,559 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-11-21 17:19:08,764 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (140ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[Accion], [a].[AccionRPA], [a].[Cantidad], [a].[CodPedido], [a].[CodPedidoA], [a].[CodPedidoM], [a].[CodTraslado], [a].[CodigoAlmacen], [a].[CodigoArticulo], [a].[Concesionario], [a].[Descripcion], [a].[DescripcionArticulo], [a].[ErrSinStock], [a].[ErrTraslado], [a].[FechaCreacion], [a].[FechaModificacion], [a].[FechaPedido], [a].[Icc], [a].[NumPedido], [a].[NumPedidoA], [a].[NumPedidoM], [a].[NumeroDocumentoSap], [a].[Observacion], [a].[SaldoPedido], [a].[StockProcesado], [a].[SubAccionRPA], [a].[UsuarioCreacion], [a].[UsuarioModificacion], [s].[NumeroDocumentoSap], [s].[CentroDeCosto], [s].[Cerrado], [s].[DocStatus], [s].[FechaCreacion], [s].[FechaDeSolicitud], [s].[FechaModificacion], [s].[IdDocumento], [s].[NroAvisoTdp], [s].[NroPlaca], [s].[Procedencia], [s].[Solicitante], [s].[Tienda], [s].[Tienda2], [s].[Tipo], [s].[TipoDeCompra], [s].[TipoDeCompraDes], [s].[UnidadNegocio], [s].[UsuarioCreacion], [s].[UsuarioModificacion], [s0].[Id], [s0].[ArticuloSolicitudId], [s0].[CodigoAlmacen], [s0].[EnStock], [s0].[FechaCreacion], [s0].[FechaModificacion], [s0].[NombreAlmacen], [s0].[Selected], [s0].[UsuarioCreacion], [s0].[UsuarioModificacion]
+FROM [ArticuloSolicitud] AS [a]
+INNER JOIN [Solicitud] AS [s] ON [a].[NumeroDocumentoSap] = [s].[NumeroDocumentoSap]
+LEFT JOIN [StockArticuloSolicitud] AS [s0] ON [a].[Id] = [s0].[ArticuloSolicitudId]
+WHERE ((([a].[AccionRPA] = N'I') AND ([a].[Accion] = N'T')) AND ([a].[ErrTraslado] < 5)) AND ([a].[NumeroDocumentoSap] = CAST(220901670 AS bigint))
+ORDER BY [a].[Id], [s].[NumeroDocumentoSap]
+2022-11-21 17:55:56,139 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2022-11-21 17:55:56,180 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2022-11-21 17:55:56,208 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2022-11-21 17:55:56,212 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2022-11-21 17:55:56,215 [1] INFO Microsoft.Hosting.Lifetime - Content root path: F:\NET CORE\PUBLIC\V2\JLR.GP.Orders\JLR.GP.Orders\
+2022-11-21 17:56:00,690 [.NET ThreadPool Worker] WARN JLR.GP.Orders.Domain.Services.cron.CronTransferRequestService - CronTransferRequest Initialice : 21/11/2022 17:56:00
+2022-11-21 17:56:03,818 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-11-21 17:56:06,467 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (243ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[Accion], [a].[AccionRPA], [a].[Cantidad], [a].[CodPedido], [a].[CodPedidoA], [a].[CodPedidoM], [a].[CodTraslado], [a].[CodigoAlmacen], [a].[CodigoArticulo], [a].[Concesionario], [a].[Descripcion], [a].[DescripcionArticulo], [a].[ErrSinStock], [a].[ErrTraslado], [a].[FechaCreacion], [a].[FechaModificacion], [a].[FechaPedido], [a].[Icc], [a].[NumPedido], [a].[NumPedidoA], [a].[NumPedidoM], [a].[NumeroDocumentoSap], [a].[Observacion], [a].[SaldoPedido], [a].[StockProcesado], [a].[SubAccionRPA], [a].[UsuarioCreacion], [a].[UsuarioModificacion], [s].[NumeroDocumentoSap], [s].[CentroDeCosto], [s].[Cerrado], [s].[DocStatus], [s].[FechaCreacion], [s].[FechaDeSolicitud], [s].[FechaModificacion], [s].[IdDocumento], [s].[NroAvisoTdp], [s].[NroPlaca], [s].[Procedencia], [s].[Solicitante], [s].[Tienda], [s].[Tienda2], [s].[Tipo], [s].[TipoDeCompra], [s].[TipoDeCompraDes], [s].[UnidadNegocio], [s].[UsuarioCreacion], [s].[UsuarioModificacion], [s0].[Id], [s0].[ArticuloSolicitudId], [s0].[CodigoAlmacen], [s0].[EnStock], [s0].[FechaCreacion], [s0].[FechaModificacion], [s0].[NombreAlmacen], [s0].[Selected], [s0].[UsuarioCreacion], [s0].[UsuarioModificacion]
+FROM [ArticuloSolicitud] AS [a]
+INNER JOIN [Solicitud] AS [s] ON [a].[NumeroDocumentoSap] = [s].[NumeroDocumentoSap]
+LEFT JOIN [StockArticuloSolicitud] AS [s0] ON [a].[Id] = [s0].[ArticuloSolicitudId]
+WHERE ((([a].[AccionRPA] = N'I') AND ([a].[Accion] = N'T')) AND ([a].[ErrTraslado] < 5)) AND ([a].[NumeroDocumentoSap] = CAST(220901670 AS bigint))
+ORDER BY [a].[Id], [s].[NumeroDocumentoSap]
+2022-11-21 17:56:06,927 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[Accion], [a].[AccionRPA], [a].[Cantidad], [a].[CodPedido], [a].[CodPedidoA], [a].[CodPedidoM], [a].[CodTraslado], [a].[CodigoAlmacen], [a].[CodigoArticulo], [a].[Concesionario], [a].[Descripcion], [a].[DescripcionArticulo], [a].[ErrSinStock], [a].[ErrTraslado], [a].[FechaCreacion], [a].[FechaModificacion], [a].[FechaPedido], [a].[Icc], [a].[NumPedido], [a].[NumPedidoA], [a].[NumPedidoM], [a].[NumeroDocumentoSap], [a].[Observacion], [a].[SaldoPedido], [a].[StockProcesado], [a].[SubAccionRPA], [a].[UsuarioCreacion], [a].[UsuarioModificacion], [s].[NumeroDocumentoSap], [s].[CentroDeCosto], [s].[Cerrado], [s].[DocStatus], [s].[FechaCreacion], [s].[FechaDeSolicitud], [s].[FechaModificacion], [s].[IdDocumento], [s].[NroAvisoTdp], [s].[NroPlaca], [s].[Procedencia], [s].[Solicitante], [s].[Tienda], [s].[Tienda2], [s].[Tipo], [s].[TipoDeCompra], [s].[TipoDeCompraDes], [s].[UnidadNegocio], [s].[UsuarioCreacion], [s].[UsuarioModificacion], [s0].[Id], [s0].[ArticuloSolicitudId], [s0].[CodigoAlmacen], [s0].[EnStock], [s0].[FechaCreacion], [s0].[FechaModificacion], [s0].[NombreAlmacen], [s0].[Selected], [s0].[UsuarioCreacion], [s0].[UsuarioModificacion]
+FROM [ArticuloSolicitud] AS [a]
+INNER JOIN [Solicitud] AS [s] ON [a].[NumeroDocumentoSap] = [s].[NumeroDocumentoSap]
+LEFT JOIN [StockArticuloSolicitud] AS [s0] ON [a].[Id] = [s0].[ArticuloSolicitudId]
+WHERE ((([a].[AccionRPA] = N'I') AND ([a].[Accion] = N'T')) AND ([a].[ErrTraslado] < 5)) AND ([a].[NumeroDocumentoSap] = CAST(220901670 AS bigint))
+ORDER BY [a].[Id], [s].[NumeroDocumentoSap]
+2022-11-21 18:05:10,059 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2022-11-21 18:05:10,081 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2022-11-21 18:05:10,090 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2022-11-21 18:05:10,093 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2022-11-21 18:05:10,095 [1] INFO Microsoft.Hosting.Lifetime - Content root path: F:\NET CORE\PUBLIC\V2\JLR.GP.Orders\JLR.GP.Orders\
+2022-11-21 18:05:15,387 [.NET ThreadPool Worker] WARN JLR.GP.Orders.Domain.Services.cron.CronTransferRequestService - CronTransferRequest Initialice : 21/11/2022 18:05:15
+2022-11-21 18:05:18,747 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-11-21 18:05:21,315 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (510ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[Accion], [a].[AccionRPA], [a].[Cantidad], [a].[CodPedido], [a].[CodPedidoA], [a].[CodPedidoM], [a].[CodTraslado], [a].[CodigoAlmacen], [a].[CodigoArticulo], [a].[Concesionario], [a].[Descripcion], [a].[DescripcionArticulo], [a].[ErrSinStock], [a].[ErrTraslado], [a].[FechaCreacion], [a].[FechaModificacion], [a].[FechaPedido], [a].[Icc], [a].[NumPedido], [a].[NumPedidoA], [a].[NumPedidoM], [a].[NumeroDocumentoSap], [a].[Observacion], [a].[SaldoPedido], [a].[StockProcesado], [a].[SubAccionRPA], [a].[UsuarioCreacion], [a].[UsuarioModificacion], [s].[NumeroDocumentoSap], [s].[CentroDeCosto], [s].[Cerrado], [s].[DocStatus], [s].[FechaCreacion], [s].[FechaDeSolicitud], [s].[FechaModificacion], [s].[IdDocumento], [s].[NroAvisoTdp], [s].[NroPlaca], [s].[Procedencia], [s].[Solicitante], [s].[Tienda], [s].[Tienda2], [s].[Tipo], [s].[TipoDeCompra], [s].[TipoDeCompraDes], [s].[UnidadNegocio], [s].[UsuarioCreacion], [s].[UsuarioModificacion], [s0].[Id], [s0].[ArticuloSolicitudId], [s0].[CodigoAlmacen], [s0].[EnStock], [s0].[FechaCreacion], [s0].[FechaModificacion], [s0].[NombreAlmacen], [s0].[Selected], [s0].[UsuarioCreacion], [s0].[UsuarioModificacion]
+FROM [ArticuloSolicitud] AS [a]
+INNER JOIN [Solicitud] AS [s] ON [a].[NumeroDocumentoSap] = [s].[NumeroDocumentoSap]
+LEFT JOIN [StockArticuloSolicitud] AS [s0] ON [a].[Id] = [s0].[ArticuloSolicitudId]
+WHERE ((([a].[AccionRPA] = N'I') AND ([a].[Accion] = N'T')) AND ([a].[ErrTraslado] < 5)) AND ([a].[NumeroDocumentoSap] = CAST(220901670 AS bigint))
+ORDER BY [a].[Id], [s].[NumeroDocumentoSap]
+2022-11-21 18:05:21,895 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[Accion], [a].[AccionRPA], [a].[Cantidad], [a].[CodPedido], [a].[CodPedidoA], [a].[CodPedidoM], [a].[CodTraslado], [a].[CodigoAlmacen], [a].[CodigoArticulo], [a].[Concesionario], [a].[Descripcion], [a].[DescripcionArticulo], [a].[ErrSinStock], [a].[ErrTraslado], [a].[FechaCreacion], [a].[FechaModificacion], [a].[FechaPedido], [a].[Icc], [a].[NumPedido], [a].[NumPedidoA], [a].[NumPedidoM], [a].[NumeroDocumentoSap], [a].[Observacion], [a].[SaldoPedido], [a].[StockProcesado], [a].[SubAccionRPA], [a].[UsuarioCreacion], [a].[UsuarioModificacion], [s].[NumeroDocumentoSap], [s].[CentroDeCosto], [s].[Cerrado], [s].[DocStatus], [s].[FechaCreacion], [s].[FechaDeSolicitud], [s].[FechaModificacion], [s].[IdDocumento], [s].[NroAvisoTdp], [s].[NroPlaca], [s].[Procedencia], [s].[Solicitante], [s].[Tienda], [s].[Tienda2], [s].[Tipo], [s].[TipoDeCompra], [s].[TipoDeCompraDes], [s].[UnidadNegocio], [s].[UsuarioCreacion], [s].[UsuarioModificacion], [s0].[Id], [s0].[ArticuloSolicitudId], [s0].[CodigoAlmacen], [s0].[EnStock], [s0].[FechaCreacion], [s0].[FechaModificacion], [s0].[NombreAlmacen], [s0].[Selected], [s0].[UsuarioCreacion], [s0].[UsuarioModificacion]
+FROM [ArticuloSolicitud] AS [a]
+INNER JOIN [Solicitud] AS [s] ON [a].[NumeroDocumentoSap] = [s].[NumeroDocumentoSap]
+LEFT JOIN [StockArticuloSolicitud] AS [s0] ON [a].[Id] = [s0].[ArticuloSolicitudId]
+WHERE ((([a].[AccionRPA] = N'I') AND ([a].[Accion] = N'T')) AND ([a].[ErrTraslado] < 5)) AND ([a].[NumeroDocumentoSap] = CAST(220901670 AS bigint))
+ORDER BY [a].[Id], [s].[NumeroDocumentoSap]
+2022-11-21 18:17:14,031 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2022-11-21 18:17:14,062 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2022-11-21 18:17:14,086 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2022-11-21 18:17:14,094 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2022-11-21 18:17:14,103 [1] INFO Microsoft.Hosting.Lifetime - Content root path: F:\NET CORE\PUBLIC\V2\JLR.GP.Orders\JLR.GP.Orders\
+2022-11-21 18:17:18,211 [.NET ThreadPool Worker] WARN JLR.GP.Orders.Domain.Services.cron.CronTransferRequestService - CronTransferRequest Initialice : 21/11/2022 18:17:18
+2022-11-21 18:17:21,917 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-11-21 18:17:24,436 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (144ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[Accion], [a].[AccionRPA], [a].[Cantidad], [a].[CodPedido], [a].[CodPedidoA], [a].[CodPedidoM], [a].[CodTraslado], [a].[CodigoAlmacen], [a].[CodigoArticulo], [a].[Concesionario], [a].[Descripcion], [a].[DescripcionArticulo], [a].[ErrSinStock], [a].[ErrTraslado], [a].[FechaCreacion], [a].[FechaModificacion], [a].[FechaPedido], [a].[Icc], [a].[NumPedido], [a].[NumPedidoA], [a].[NumPedidoM], [a].[NumeroDocumentoSap], [a].[Observacion], [a].[SaldoPedido], [a].[StockProcesado], [a].[SubAccionRPA], [a].[UsuarioCreacion], [a].[UsuarioModificacion], [s].[NumeroDocumentoSap], [s].[CentroDeCosto], [s].[Cerrado], [s].[DocStatus], [s].[FechaCreacion], [s].[FechaDeSolicitud], [s].[FechaModificacion], [s].[IdDocumento], [s].[NroAvisoTdp], [s].[NroPlaca], [s].[Procedencia], [s].[Solicitante], [s].[Tienda], [s].[Tienda2], [s].[Tipo], [s].[TipoDeCompra], [s].[TipoDeCompraDes], [s].[UnidadNegocio], [s].[UsuarioCreacion], [s].[UsuarioModificacion], [s0].[Id], [s0].[ArticuloSolicitudId], [s0].[CodigoAlmacen], [s0].[EnStock], [s0].[FechaCreacion], [s0].[FechaModificacion], [s0].[NombreAlmacen], [s0].[Selected], [s0].[UsuarioCreacion], [s0].[UsuarioModificacion]
+FROM [ArticuloSolicitud] AS [a]
+INNER JOIN [Solicitud] AS [s] ON [a].[NumeroDocumentoSap] = [s].[NumeroDocumentoSap]
+LEFT JOIN [StockArticuloSolicitud] AS [s0] ON [a].[Id] = [s0].[ArticuloSolicitudId]
+WHERE ((([a].[AccionRPA] = N'I') AND ([a].[Accion] = N'T')) AND ([a].[ErrTraslado] < 5)) AND ([a].[NumeroDocumentoSap] = CAST(220901670 AS bigint))
+ORDER BY [a].[Id], [s].[NumeroDocumentoSap]
+2022-11-21 18:17:25,146 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[Accion], [a].[AccionRPA], [a].[Cantidad], [a].[CodPedido], [a].[CodPedidoA], [a].[CodPedidoM], [a].[CodTraslado], [a].[CodigoAlmacen], [a].[CodigoArticulo], [a].[Concesionario], [a].[Descripcion], [a].[DescripcionArticulo], [a].[ErrSinStock], [a].[ErrTraslado], [a].[FechaCreacion], [a].[FechaModificacion], [a].[FechaPedido], [a].[Icc], [a].[NumPedido], [a].[NumPedidoA], [a].[NumPedidoM], [a].[NumeroDocumentoSap], [a].[Observacion], [a].[SaldoPedido], [a].[StockProcesado], [a].[SubAccionRPA], [a].[UsuarioCreacion], [a].[UsuarioModificacion], [s].[NumeroDocumentoSap], [s].[CentroDeCosto], [s].[Cerrado], [s].[DocStatus], [s].[FechaCreacion], [s].[FechaDeSolicitud], [s].[FechaModificacion], [s].[IdDocumento], [s].[NroAvisoTdp], [s].[NroPlaca], [s].[Procedencia], [s].[Solicitante], [s].[Tienda], [s].[Tienda2], [s].[Tipo], [s].[TipoDeCompra], [s].[TipoDeCompraDes], [s].[UnidadNegocio], [s].[UsuarioCreacion], [s].[UsuarioModificacion], [s0].[Id], [s0].[ArticuloSolicitudId], [s0].[CodigoAlmacen], [s0].[EnStock], [s0].[FechaCreacion], [s0].[FechaModificacion], [s0].[NombreAlmacen], [s0].[Selected], [s0].[UsuarioCreacion], [s0].[UsuarioModificacion]
+FROM [ArticuloSolicitud] AS [a]
+INNER JOIN [Solicitud] AS [s] ON [a].[NumeroDocumentoSap] = [s].[NumeroDocumentoSap]
+LEFT JOIN [StockArticuloSolicitud] AS [s0] ON [a].[Id] = [s0].[ArticuloSolicitudId]
+WHERE ((([a].[AccionRPA] = N'I') AND ([a].[Accion] = N'T')) AND ([a].[ErrTraslado] < 5)) AND ([a].[NumeroDocumentoSap] = CAST(220901670 AS bigint))
+ORDER BY [a].[Id], [s].[NumeroDocumentoSap]
+2022-11-21 18:19:08,853 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2022-11-21 18:19:08,896 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2022-11-21 18:19:08,905 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2022-11-21 18:19:08,907 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2022-11-21 18:19:08,909 [1] INFO Microsoft.Hosting.Lifetime - Content root path: F:\NET CORE\PUBLIC\V2\JLR.GP.Orders\JLR.GP.Orders\
+2022-11-21 18:19:18,579 [.NET ThreadPool Worker] WARN JLR.GP.Orders.Domain.Services.cron.CronTransferRequestService - CronTransferRequest Initialice : 21/11/2022 18:19:18
+2022-11-21 18:19:20,100 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'JlrGpOrdersContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2022-11-21 18:19:21,996 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (97ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[Accion], [a].[AccionRPA], [a].[Cantidad], [a].[CodPedido], [a].[CodPedidoA], [a].[CodPedidoM], [a].[CodTraslado], [a].[CodigoAlmacen], [a].[CodigoArticulo], [a].[Concesionario], [a].[Descripcion], [a].[DescripcionArticulo], [a].[ErrSinStock], [a].[ErrTraslado], [a].[FechaCreacion], [a].[FechaModificacion], [a].[FechaPedido], [a].[Icc], [a].[NumPedido], [a].[NumPedidoA], [a].[NumPedidoM], [a].[NumeroDocumentoSap], [a].[Observacion], [a].[SaldoPedido], [a].[StockProcesado], [a].[SubAccionRPA], [a].[UsuarioCreacion], [a].[UsuarioModificacion], [s].[NumeroDocumentoSap], [s].[CentroDeCosto], [s].[Cerrado], [s].[DocStatus], [s].[FechaCreacion], [s].[FechaDeSolicitud], [s].[FechaModificacion], [s].[IdDocumento], [s].[NroAvisoTdp], [s].[NroPlaca], [s].[Procedencia], [s].[Solicitante], [s].[Tienda], [s].[Tienda2], [s].[Tipo], [s].[TipoDeCompra], [s].[TipoDeCompraDes], [s].[UnidadNegocio], [s].[UsuarioCreacion], [s].[UsuarioModificacion], [s0].[Id], [s0].[ArticuloSolicitudId], [s0].[CodigoAlmacen], [s0].[EnStock], [s0].[FechaCreacion], [s0].[FechaModificacion], [s0].[NombreAlmacen], [s0].[Selected], [s0].[UsuarioCreacion], [s0].[UsuarioModificacion]
+FROM [ArticuloSolicitud] AS [a]
+INNER JOIN [Solicitud] AS [s] ON [a].[NumeroDocumentoSap] = [s].[NumeroDocumentoSap]
+LEFT JOIN [StockArticuloSolicitud] AS [s0] ON [a].[Id] = [s0].[ArticuloSolicitudId]
+WHERE ((([a].[AccionRPA] = N'I') AND ([a].[Accion] = N'T')) AND ([a].[ErrTraslado] < 5)) AND ([a].[NumeroDocumentoSap] = CAST(220901670 AS bigint))
+ORDER BY [a].[Id], [s].[NumeroDocumentoSap]
+2022-11-21 18:19:22,485 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[Accion], [a].[AccionRPA], [a].[Cantidad], [a].[CodPedido], [a].[CodPedidoA], [a].[CodPedidoM], [a].[CodTraslado], [a].[CodigoAlmacen], [a].[CodigoArticulo], [a].[Concesionario], [a].[Descripcion], [a].[DescripcionArticulo], [a].[ErrSinStock], [a].[ErrTraslado], [a].[FechaCreacion], [a].[FechaModificacion], [a].[FechaPedido], [a].[Icc], [a].[NumPedido], [a].[NumPedidoA], [a].[NumPedidoM], [a].[NumeroDocumentoSap], [a].[Observacion], [a].[SaldoPedido], [a].[StockProcesado], [a].[SubAccionRPA], [a].[UsuarioCreacion], [a].[UsuarioModificacion], [s].[NumeroDocumentoSap], [s].[CentroDeCosto], [s].[Cerrado], [s].[DocStatus], [s].[FechaCreacion], [s].[FechaDeSolicitud], [s].[FechaModificacion], [s].[IdDocumento], [s].[NroAvisoTdp], [s].[NroPlaca], [s].[Procedencia], [s].[Solicitante], [s].[Tienda], [s].[Tienda2], [s].[Tipo], [s].[TipoDeCompra], [s].[TipoDeCompraDes], [s].[UnidadNegocio], [s].[UsuarioCreacion], [s].[UsuarioModificacion], [s0].[Id], [s0].[ArticuloSolicitudId], [s0].[CodigoAlmacen], [s0].[EnStock], [s0].[FechaCreacion], [s0].[FechaModificacion], [s0].[NombreAlmacen], [s0].[Selected], [s0].[UsuarioCreacion], [s0].[UsuarioModificacion]
+FROM [ArticuloSolicitud] AS [a]
+INNER JOIN [Solicitud] AS [s] ON [a].[NumeroDocumentoSap] = [s].[NumeroDocumentoSap]
+LEFT JOIN [StockArticuloSolicitud] AS [s0] ON [a].[Id] = [s0].[ArticuloSolicitudId]
+WHERE ((([a].[AccionRPA] = N'I') AND ([a].[Accion] = N'T')) AND ([a].[ErrTraslado] < 5)) AND ([a].[NumeroDocumentoSap] = CAST(220901670 AS bigint))
+ORDER BY [a].[Id], [s].[NumeroDocumentoSap]
