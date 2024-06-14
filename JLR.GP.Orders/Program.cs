@@ -53,6 +53,8 @@ builder.Services.AddTransient<IRol, RolService>();
 builder.Services.AddTransient<IPerfilService, PerfilService>();
 builder.Services.AddTransient<IComponentes, ComponentesService>();
 builder.Services.AddTransient<IMonitoreo, MonitoreoService>();
+builder.Services.AddTransient<ISupervision, SupervisionOpService>();
+
 
 builder.Services.AddTransient<ILineaProd, LineaProdService>();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
