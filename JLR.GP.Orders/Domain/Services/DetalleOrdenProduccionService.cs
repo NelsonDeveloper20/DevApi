@@ -234,8 +234,8 @@ namespace ApiPortal_DataLake.Domain.Services
                                     decimal decimalValue;
                                     //decimal? decimalValue = null; 
                                     // Convert.ToDecimal(value.Replace(",", "."), CultureInfo.InvariantCulture);
-                                    decimal.TryParse(value.Replace(",", "."), NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out decimalValue);
-                                    propInfo.SetValue(dataFila, decimalValue, null);
+                                    //decimal.TryParse(value.Replace(",", "."), NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out decimalValue);
+                                    propInfo.SetValue(dataFila, Convert.ToDecimal(value.Replace(".", ",")), null);
 
                                 }// Verificar si el tipo de datos es DateTime
                                 else if (propInfo.PropertyType == typeof(DateTime) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(DateTime))
