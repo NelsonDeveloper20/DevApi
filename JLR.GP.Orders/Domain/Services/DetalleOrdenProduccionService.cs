@@ -225,15 +225,17 @@ namespace ApiPortal_DataLake.Domain.Services
                                 if (propInfo.PropertyType == typeof(decimal) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(decimal))
                                 {
                                     // Reemplazar las comas por puntos para que el método de conversión funcione correctamente
-                                    value = value.Replace(",", ".");
+                                    //  value = value.Replace(",", ".");
                                     // Convertir el valor a decimal
-                                    var decimalValue = Convert.ToDecimal(value);
+                                    // var decimalValue = Convert.ToDouble(value);
 
                                     // Asignar el valor convertido a la propiedad correspondiente
+                                    //propInfo.SetValue(dataFila, decimalValue, null);
+                                    decimal decimalValue;
+                                    //decimal? decimalValue = null; 
+                                    // Convert.ToDecimal(value.Replace(",", "."), CultureInfo.InvariantCulture);
+                                    decimal.TryParse(value.Replace(",", "."), NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out decimalValue);
                                     propInfo.SetValue(dataFila, decimalValue, null);
-
-                                    
-
 
                                 }// Verificar si el tipo de datos es DateTime
                                 else if (propInfo.PropertyType == typeof(DateTime) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(DateTime))
@@ -280,7 +282,7 @@ namespace ApiPortal_DataLake.Domain.Services
                     { 
                         dataFila.Tipo = "Producto"; 
                     }
-                    var Productos=  this._context.TBL_DetalleOrdenProduccion.AddAsync(dataFila);
+                    
                     if (escuadra != null)
                     {
                         foreach (var _item in escuadra)
@@ -295,7 +297,13 @@ namespace ApiPortal_DataLake.Domain.Services
                             };
                             this._context.Tbl_Escuadra.Add(_escuadra);
                         }
+                        dataFila.Escuadra = "SI";
                     }
+                    else
+                    {
+                        dataFila.Escuadra = "NO";
+                    }
+                    var Productos = this._context.TBL_DetalleOrdenProduccion.AddAsync(dataFila);
                 }
                 else
                 {
@@ -319,7 +327,7 @@ namespace ApiPortal_DataLake.Domain.Services
                                 propInfo.SetValue(existingDataFila, convertedValue, null);
                             }
                         }
-                        _context.TBL_DetalleOrdenProduccion.Update(existingDataFila);
+                        
 
                         if (escuadra != null)
                         {
@@ -338,7 +346,13 @@ namespace ApiPortal_DataLake.Domain.Services
                                 };
                                 _context.Tbl_Escuadra.Add(_escuadra);
                             }
+                            existingDataFila.Escuadra = "SI";
                         }
+                        else
+                        {
+                            existingDataFila.Escuadra = "NO";
+                        }
+                        _context.TBL_DetalleOrdenProduccion.Update(existingDataFila);
                     }
                 }
 

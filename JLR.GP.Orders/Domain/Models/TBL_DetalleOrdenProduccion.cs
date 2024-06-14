@@ -52,6 +52,7 @@ namespace Api_Dc.Domain.Models
         public string? TipoSoporteCentral { get; set; }
         public string? Caida { get; set; }
         public string? Accionamiento { get; set; }
+        public string? CodigoTubo { get; set; }
         public string? NombreTubo { get; set; }
         public string? Mando { get; set; }
         public string? TipoMecanismo { get; set; }

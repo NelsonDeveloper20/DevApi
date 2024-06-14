@@ -188,6 +188,36 @@ namespace ApiPortal_DataLake.Domain.Services
             }
         }
 
+        public async Task<GeneralResponse<Object>> AplicarCentral(int id, string valor)
+
+        {
+            try
+            {
+                var _grupo=this._context.TBL_DetalleOrdenProduccion.Find(id);
+                _grupo.Central = valor.ToUpper();
+                _grupo.CentralIndex = valor.ToUpper();
+                this._context.TBL_DetalleOrdenProduccion.Update(_grupo);
+                this._context.SaveChanges();
+                var jsonresponse = new
+                {
+                    Respuesta = "OK",
+                    idModulo = id,
+                };
+
+                return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
+            }
+            catch (Exception ex)
+            {
+                this._logger.LogError($"Insertar ModuloRol Error try catch: {JsonConvert.SerializeObject(ex)}");
+                var jsonresponse = new
+                {
+                    Respuesta = ex.Message,
+                    idModulo = 0
+                };
+                return new GeneralResponse<Object>(HttpStatusCode.InternalServerError, jsonresponse);
+            }
+        }
+
 
     }
 }

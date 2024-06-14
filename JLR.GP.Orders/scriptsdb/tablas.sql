@@ -309,27 +309,13 @@ IdEstado int default 1);
     Igv  varchar(50),
 	Lote varchar(10),
 	---pendientes -agregados
-	TuboMedida  NUMERIC (10,3),
-	TelaMedida NUMERIC (10,3),
+	TuboMedida  NUMERIC (10,3),--ok
+	TelaMedida NUMERIC (10,3),--ok
 	AlturaMedida NUMERIC (10,3), --ok 
-	Central VARCHAR(50),-- no se sabe de donde viene la data 
-	CentralIndex VARCHAR(50), -- no se sabe 
-	IndexDetalle VARCHAR(50), 
-	--  OBS -- el index  esta en listado de productos para identificar buscar => $("#id_btnpreviewPdf").val(resGetDetOPByOp.id_lista_op);
-	/*
-	 var index_count=0;
-                           $("#id_btnpreviewPdf").val(resGetDetOPByOp.id_lista_op);
-                          // console.log('ID_OPS: '+resGetDetOPByOp.id_lista_op);
-                        for( let i=0; i<data.length; i++ ){
-                            //PRTRS PRTSH
-                            var cod_prod=data[i].CodProducto;                            
-                            cod_prod=cod_prod.substring(0,5);
-                            if(cod_prod=='PRTRS' || cod_prod=='PRTSH'){
-                                index_count++;
-                            }else{
-                               // index_count='';
-                            }
-							*/
+	Central VARCHAR(50),-- ok es el check al registrar producto
+	CentralIndex VARCHAR(50), -- depende de la logixa del central
+	IndexDetalle VARCHAR(50), --EL INCREMENTAL ++
+	
 
 	---
 	Escuadra varchar(50), -- ESCUDRA ES EL SI O EL NO DEL POPUP DONDE GUARDA EL PRODUCTO

@@ -89,6 +89,22 @@ namespace ApiPortal_DataLake.Application.Controllers
                 return Conflict();
             }
         }
+        [HttpPost("AplicarCentral")]
+        public async Task<ActionResult<GeneralResponse<Object>>> AplicarCentral(int id,string valor)
+        {
+            try
+            {
+                var response = await this._usuarioService.AplicarCentral(id, valor);
+                return response;
+
+            }
+            catch (Exception ex)
+            {
+
+                this._logger.LogError($"Error Agregar Perfil : {JsonConvert.SerializeObject(ex)}");
+                return Conflict();
+            }
+        }
 
     }
 }
