@@ -1,4 +1,5 @@
-﻿using Api_Dc.Domain.Models;
+﻿using Api_Dc.Application.Models.Request;
+using Api_Dc.Domain.Models;
 using Api_Dc.Domain.Request;
 using ApiPortal_DataLake.Application.Models.Request;
 using ApiPortal_DataLake.Domain.Contracts;
@@ -62,8 +63,47 @@ namespace ApiPortal_DataLake.Domain.Services
                 throw new Exception(ex.Message);
             }
         }
-        ///AQUI ESTOY EDITANDO.
-       
+        public async Task<GeneralResponse<Object>> Aprobacion(SuperAprobacionRequest item)
+
+        {
+            try
+            {
+                var idModulo = 1;
+                var newRow = new Tbl_SupervisorAprobacion()
+                {
+                    CotizacionGrupo = item.CotizacionGrupo,
+
+                    TurnoInicial = item.TurnoInicial,
+                    TurnoCambio = item.TurnoCambio,
+                    FechProdInicial = DateTime.Parse(item.FechProdInicial.ToString()),
+                    FechaProdCambio = DateTime.Parse(item.FechaProdCambio.ToString()),
+                    FechaCreacion = DateTime.Now,
+                    IdUsuario = item.IdUsuario,
+                    IdUsuarioSolicita = item.IdUsuarioSolicita,
+
+                };
+                this._context.Tbl_SupervisorAprobacion.Add(newRow);
+                this._context.SaveChanges();
+                var jsonresponse = new
+                {
+                    Respuesta = "Operacion realizada correctamente",
+                    idModulo = idModulo,
+                };
+
+                return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
+            }
+            catch (Exception ex)
+            {
+                this._logger.LogError($"Insertar ModuloRol Error try catch: {JsonConvert.SerializeObject(ex)}");
+                var jsonresponse = new
+                {
+                    Respuesta = ex.Message,
+                    idModulo = 0
+                };
+                return new GeneralResponse<Object>(HttpStatusCode.InternalServerError, jsonresponse);
+            }
+        }
+        //ee
     }
 }
 
