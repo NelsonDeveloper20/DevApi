@@ -5,6 +5,17 @@ DROP DATABASE DC_VN;
 create   database DC_VN;
 use DC_VN;
 
+CREATE TABLE Tbl_SupervisorAprobacion (
+    NumeroCotizacion INT PRIMARY KEY identity,   -- Suponiendo que es una clave primaria única
+    CotizacionGrupo VARCHAR(50),        -- Ajusta el tamaño del VARCHAR según sea necesario
+    TurnoInicial varchar(10),                   -- Suponiendo que es un número entero
+    FechProdInicial  datetime,               -- Fecha de producción inicial
+    TurnoCambio varchar,                    -- Suponiendo que es un número entero
+    FechaProdCambio datetime,               -- Fecha de cambio de producción
+    IdUsuario INT,                      -- SUPERVISOR
+    IdUsuarioSolicita INT,              -- EK QUE CREA
+    FechaCreacion DATETIME              -- Fecha de aprobación
+);
 
 Create Table Tbl_TipoCliente(
 Id int primary key identity,
@@ -227,17 +238,17 @@ FechaCotizacion varchar(10),
 FechaVenta varchar(10),
 TipoMoneda varchar(10),
 TipoCambio varchar(10),
-Monto numeric,
-SubTotal numeric,
-TotalIgv numeric,
-Total numeric,
+Monto numeric(10,3),
+SubTotal numeric(10,3),
+TotalIgv numeric(10,3),
+Total numeric(10,3),
 
 Observacion varchar(100),
 Observacion2 varchar(100),
 
 IdTipoCliente int,
-RucCliente varchar(25),
-Cliente varchar(50),
+RucCliente varchar(35),
+Cliente varchar(190),
 Departamento varchar(50),
 Provincia varchar(50),
 Distrito varchar(50),
@@ -416,16 +427,22 @@ FechaModifica datetime,
 IdEstado int  
 );
  
-Create     table Tbl_Escuadra(
-Id int primary key identity,
-CotizacionGrupo VARCHAR(10),--IdTBLDetalleOrdenProduccion int,
-Codigo varchar(100),
-Descripcion varchar(100),
-Cantidad int,
-IdUsuarioCrea int,
-IdUsuarioModifica int,
-FechaCreacion datetime default getdate(),
-FechaModifica datetime);
+CREATE TABLE dbo.Tbl_Escuadra
+	(
+	Id                INT IDENTITY NOT NULL,
+	IdProducto INT,
+	CotizacionGrupo   VARCHAR (10) NULL,
+	Codigo            VARCHAR (100) NULL,
+	Descripcion       VARCHAR (100) NULL,
+	Cantidad          INT NULL,
+	IdUsuarioCrea     INT NULL,
+	IdUsuarioModifica INT NULL,
+	FechaCreacion     DATETIME DEFAULT (getdate()) NULL,
+	FechaModifica     DATETIME NULL,
+	PRIMARY KEY (Id)
+	)
+GO
+
 
 create table Tbl_Estacion(
 Id int PRIMARY KEY IDENTITY,

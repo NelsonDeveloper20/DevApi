@@ -6,6 +6,7 @@ namespace Api_Dc.Domain.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        public int IdProducto { get; set; }
 
         //public int Id_TBL_DetalleOrdenProduccion { get; set; }
         public string? CotizacionGrupo { get; set; }

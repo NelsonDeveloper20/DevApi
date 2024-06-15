@@ -37,7 +37,7 @@ namespace ApiPortal_DataLake.Domain.Services
             this._context = context;
             this._logger = logger;
         }
-        public async Task<IEnumerable<TBL_DetalleOrdenProduccion>> GetAllAsync(string NumeroCotizacion )
+      /*  public async Task<IEnumerable<TBL_DetalleOrdenProduccion>> GetAllAsync(string NumeroCotizacion )
         {
 
             try
@@ -53,89 +53,31 @@ namespace ApiPortal_DataLake.Domain.Services
                 throw;
             }
 
-        }
+        }*/
+        public async Task<IEnumerable<Tbl_Escuadra>> GetAllAsync(string id)
+        {
 
+            try
+            {
+
+                var query = await this._context.Tbl_Escuadra
+             .Where(o => o.IdProducto == Convert.ToInt32(id)).ToListAsync();
+                return query;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+        }
         public async Task<GeneralResponse<Object>> AgregarOrden(AgregarOrdenProduccionRequest _ordeRequest, IFormFile? Archivo)
         {
             try
             {
                 int idOrden = 0;
 
-                /*
-                if (_ordeRequest.Id== "undefined" || _ordeRequest.Id=="null" || _ordeRequest.Id == "" || _ordeRequest.Id==null)
-                {
-
-                    decimal Monto, SubTotal, TotalIgv, Total; 
-                    decimal.TryParse(_ordeRequest.Monto, out Monto);
-                    decimal.TryParse(_ordeRequest.SubTotal, out SubTotal);
-                    decimal.TryParse(_ordeRequest.TotalIgv, out TotalIgv);
-                    decimal.TryParse(_ordeRequest.Total, out Total);
-                    var newOrden = new Tbl_Producto()
-                    {
- 
-                    //FechSolicitud = fechaSoli.ToString("dd/MM/yyyy"),//agregarSolicitudE.fechsolicitud, 
-                    NumeroCotizacion=_ordeRequest.NumeroCotizacion,
-                    CodigoSisgeco=_ordeRequest.CodigoSisgeco,
-                    NumdoCref=_ordeRequest.NumdoCref,
-                    FechaSap=FechaSap,
-                    // Datos de Sisgeco
-                    FechaCotizacion=_ordeRequest.FechaCotizacion,
-                    FechaVenta=_ordeRequest.FechaVenta,
-                    TipoMoneda=_ordeRequest.TipoMoneda,
-                    TipoCambio= _ordeRequest.TipoCambio,
-                    Monto= Monto,
-                    SubTotal = SubTotal,
-                    TotalIgv = TotalIgv,
-                    Total = Total,
-                    Observacion=_ordeRequest.Observacion,
-                    Observacion2=_ordeRequest.Observacion2,
-
-                    IdTipoCliente= int.Parse(_ordeRequest.IdTipoCliente),
-                    RucCliente=_ordeRequest.RucCliente,
-                    Cliente=_ordeRequest.Cliente,
-                    Departamento=_ordeRequest.Departamento,
-                    Provincia=_ordeRequest.Provincia,
-                    Distrito=_ordeRequest.Distrito,
-                    Direccion=_ordeRequest.Direccion,
-                    Telefono=_ordeRequest.Telefono,
-
-                    IdDestino= int.Parse(_ordeRequest.IdDestino),
-                    IdTipoPeracion= int.Parse(_ordeRequest.IdTipoPeracion),
-                    IdProyecto= int.Parse(_ordeRequest.IdProyecto),
-                    Nivel= _ordeRequest.Nivel,
-                    SubNivel=_ordeRequest.SubNivel,
-
-                    CodigoVendedor=_ordeRequest.CodigoVendedor,
-                    NombreVendedor=_ordeRequest.NombreVendedor,
-
-                    Archivo= NombreArchivo,
-                    //estado
-                    IdEstado=1,
-                    FechaRegistro =DateTime.Now,
-                    IdUsuarioCreacion=int.Parse( _ordeRequest.IdUsuarioCreacion) 
-                     };
-                    await this._context.Tbl_Producto.AddAsync(newOrden);
-                    await this._context.SaveChangesAsync();
-                    idOrden = newOrden.Id;
-
-
-                }
-                else
-                {
-                    idOrden = int.Parse(_ordeRequest.Id); 
-                    var _orden = this._context.Tbl_Producto.Find(idOrden);      
-                    if(_orden!= null) {
-                       
-                    
-                        _orden.IdUsuarioModifica = int.Parse(_ordeRequest.IdUsuarioCreacion);
-                        _orden.FechaModificacion = DateTime.Now;
-                        this._context.Tbl_Producto.Update(_orden);
-                        await this._context.SaveChangesAsync();
-                    }
-
-
-
-                }*/
+              
                 var jsonresponse = new
                 {
                     Respuesta="Ok",

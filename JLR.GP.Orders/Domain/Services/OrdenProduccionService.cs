@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Data.SqlClient.Server;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Globalization;
@@ -105,11 +106,12 @@ namespace ApiPortal_DataLake.Domain.Services
                 if (_ordeRequest.Id== "undefined" || _ordeRequest.Id=="null" || _ordeRequest.Id == "" || _ordeRequest.Id==null)
                 {
 
-                    decimal Monto, SubTotal, TotalIgv, Total; 
-                    decimal.TryParse(_ordeRequest.Monto, out Monto);
-                    decimal.TryParse(_ordeRequest.SubTotal, out SubTotal);
-                    decimal.TryParse(_ordeRequest.TotalIgv, out TotalIgv);
-                    decimal.TryParse(_ordeRequest.Total, out Total);
+                    //decimal Monto, SubTotal, TotalIgv, Total; 
+                    //decimal.TryParse(_ordeRequest.Monto, out Monto);
+                    //decimal.TryParse(_ordeRequest.SubTotal, out SubTotal);
+                    //decimal.TryParse(_ordeRequest.TotalIgv, out TotalIgv);
+                    //decimal.TryParse(_ordeRequest.Total, out Total);
+                   
                     var newOrden = new Tbl_OrdenProduccion()
                     {
  
@@ -123,10 +125,10 @@ namespace ApiPortal_DataLake.Domain.Services
                     FechaVenta=_ordeRequest.FechaVenta,
                     TipoMoneda=_ordeRequest.TipoMoneda,
                     TipoCambio= _ordeRequest.TipoCambio,
-                    Monto= Monto,
-                    SubTotal = SubTotal,
-                    TotalIgv = TotalIgv,
-                    Total = Total,
+                    Monto= Convert.ToDecimal(_ordeRequest.Monto.Replace(".", ",")),
+                    SubTotal = Convert.ToDecimal(_ordeRequest.SubTotal.Replace(".", ",")),
+                    TotalIgv = Convert.ToDecimal(_ordeRequest.TotalIgv.Replace(".", ",")),
+                    Total = Convert.ToDecimal(_ordeRequest.Total.Replace(".", ",")),
                     Observacion=_ordeRequest.Observacion,
                     Observacion2=_ordeRequest.Observacion2,
 
@@ -197,6 +199,7 @@ namespace ApiPortal_DataLake.Domain.Services
                         _orden.IdProyecto = int.Parse(_ordeRequest.IdProyecto);
                         _orden.Nivel = _ordeRequest.Nivel;
                         _orden.SubNivel = _ordeRequest.SubNivel;
+                        _orden.Archivo = NombreArchivo;
                         /*
                         _orden.CodigoVendedor = _ordeRequest.CodigoVendedor;
                         _orden.NombreVendedor = _ordeRequest.NombreVendedor;*/

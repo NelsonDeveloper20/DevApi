@@ -60,9 +60,8 @@ namespace ApiPortal_DataLake.Domain.Services
                 throw;
             }
 
-        } 
- 
-        public async Task<GeneralResponse<object>> AgregarProducto(dynamic formData, dynamic escuadra,string tipo)
+        }
+        public async Task<GeneralResponse<object>> AgregarProducto(dynamic formData, dynamic escuadra, string tipo)
         {
             try
             {
@@ -70,222 +69,176 @@ namespace ApiPortal_DataLake.Domain.Services
                 string numeroCotizacion = formData.NumeroCotizacion;
                 string codigosisgeco = formData.CodigoSisgeco;
                 string cotizacionGrupo = "";
-
-                // Buscar grupo existente para la cotización, turno y fecha de producción especificados
-               //var grupoExistente = this._context.Tbl_DetalleOpGrupo
-               //     .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion && g.Turno == turno && g.FechaProduccion == fechaProduccion);
+                int estadoInicial = 2;
+                // Método para crear un nuevo grupo
+                void CrearNuevoGrupo(string cotizacionGrupo, string tipo, DateTime? fechaProduccion = null, string turno = null)
+                {
+                    var filagrupo = new Tbl_DetalleOpGrupo()
+                    {
+                        NumeroCotizacion = numeroCotizacion,
+                        CotizacionGrupo = cotizacionGrupo,
+                        CodigoSisgeco = codigosisgeco,
+                        Tipo = tipo,
+                        FechaProduccion = fechaProduccion,
+                        Turno = turno,
+                        FechaCreacion = DateTime.Now,
+                        IdEstado = estadoInicial,
+                        IdUsuarioCrea = Convert.ToInt32(formData.IdUsuarioCrea)
+                    };
+                    this._context.Add(filagrupo);
+                }
+                if (string.IsNullOrEmpty(formData.Id)) { 
+                // Buscar grupo existente para la cotización 
                 var grupoExistente = this._context.Tbl_DetalleOpGrupo
                     .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion);
-                int estadoInicial = 2;
-                if (grupoExistente != null)//EXISTE
+                if (grupoExistente != null) // EXISTE
                 {
-
                     if (tipo == "Componente")
                     {
                         var grupoExiste = this._context.Tbl_DetalleOpGrupo
-                   .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion && g.CotizacionGrupo == numeroCotizacion + "-0");
+                            .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion && g.CotizacionGrupo == numeroCotizacion + "-0");
 
-                        if (grupoExiste != null)
+                        if (grupoExiste != null) // EXISTE
                         {
                             cotizacionGrupo = grupoExiste.CotizacionGrupo;
                         }
                         else
                         {
                             cotizacionGrupo = $"{numeroCotizacion}-0";
-                            var filagrupo = new Tbl_DetalleOpGrupo()
-                            {
-                                //IdTbl_OrdenProduccion
-                                NumeroCotizacion = numeroCotizacion,
-                                CotizacionGrupo = cotizacionGrupo,
-                                CodigoSisgeco = codigosisgeco, 
-                                Tipo="Componente",
-                                FechaCreacion = DateTime.Now,
-                                IdEstado = estadoInicial
-                            };
-                            this._context.Add(filagrupo);
+                            CrearNuevoGrupo(cotizacionGrupo, "Componente");
                         }
-
                     }
                     else
                     {
-
                         string turno = formData.Turno;
                         DateTime fechaProduccion = DateTime.Parse(formData.FechaProduccion);
                         var grupoExistente2 = this._context.Tbl_DetalleOpGrupo
-                    .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion && g.Turno == turno && g.FechaProduccion == fechaProduccion);
-                    if (grupoExistente2 != null)//EXISTE
-                    {
-                        cotizacionGrupo = grupoExistente2.CotizacionGrupo;
-                    }
-                    else
-                    {
-                        var ultimoGrupo = this._context.Tbl_DetalleOpGrupo
-                       .Where(g => g.NumeroCotizacion == numeroCotizacion)
-                       .OrderByDescending(g => g.CotizacionGrupo)
-                       .FirstOrDefault();
-                        if (ultimoGrupo != null)
+                            .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion && g.Turno == turno && g.FechaProduccion == fechaProduccion);
+
+                        if (grupoExistente2 != null) // EXISTE
                         {
-                            // Obtener el último número de grupo y agregar 1
-                            int numeracion = int.Parse(ultimoGrupo.CotizacionGrupo.Split("-")[1]) + 1;
-                            cotizacionGrupo = $"{numeroCotizacion}-{numeracion}";
-                            var filagrupo = new Tbl_DetalleOpGrupo()
-                            {
-                                //IdTbl_OrdenProduccion
-                                NumeroCotizacion = numeroCotizacion,
-                                CotizacionGrupo = cotizacionGrupo,
-                                CodigoSisgeco = codigosisgeco,
-                                FechaProduccion = fechaProduccion,
-                                Turno = turno,
-                                Tipo="Producto",
-                                FechaCreacion = DateTime.Now,
-                                IdEstado = estadoInicial
-                            };
-                            this._context.Add(filagrupo);
+                            cotizacionGrupo = grupoExistente2.CotizacionGrupo;
                         }
                         else
                         {
-                            // Si no hay grupos existentes para la cotización, asignar el primer número de grupo
-                            cotizacionGrupo = $"{numeroCotizacion}-0";
+                            var ultimoGrupo = this._context.Tbl_DetalleOpGrupo
+                                .Where(g => g.NumeroCotizacion == numeroCotizacion)
+                                .OrderByDescending(g => g.CotizacionGrupo)
+                                .FirstOrDefault();
+
+                            if (ultimoGrupo != null)
+                            {
+                                // Obtener el último número de grupo y agregar 1
+                                int numeracion = int.Parse(ultimoGrupo.CotizacionGrupo.Split('-')[1]) + 1;
+                                cotizacionGrupo = $"{numeroCotizacion}-{numeracion}";
+                                CrearNuevoGrupo(cotizacionGrupo, "Producto", fechaProduccion, turno);
+                            }
+                            else
+                            {
+                                // Si no hay grupos existentes para la cotización, asignar el primer número de grupo
+                                cotizacionGrupo = $"{numeroCotizacion}-0";
+                                CrearNuevoGrupo(cotizacionGrupo, "Producto", fechaProduccion, turno);
+                            }
                         }
                     }
-                    }
-                     
                 }
                 else
-                {                   
-                        // Si no hay grupos existentes para la cotización, asignar el primer número de grupo
+                {
+                    // Si no hay grupos existentes para la cotización, asignar el primer número de grupo
                     if (tipo == "Componente")
                     {
                         cotizacionGrupo = $"{numeroCotizacion}-0";
-                        var filagrupo = new Tbl_DetalleOpGrupo()
-                        {
-                            //IdTbl_OrdenProduccion
-                            NumeroCotizacion = numeroCotizacion,
-                            CotizacionGrupo = cotizacionGrupo,
-                            CodigoSisgeco = codigosisgeco,
-                            Tipo = "Componente",
-                            FechaCreacion = DateTime.Now,
-                            IdEstado = estadoInicial
-                        };
-                        this._context.Add(filagrupo);
+                        CrearNuevoGrupo(cotizacionGrupo, "Componente");
                     }
                     else
                     {
                         string turno = formData.Turno;
                         DateTime fechaProduccion = DateTime.Parse(formData.FechaProduccion);
                         cotizacionGrupo = $"{numeroCotizacion}-1";
-                        var filagrupo = new Tbl_DetalleOpGrupo()
-                        {
-                            //IdTbl_OrdenProduccion
-                            NumeroCotizacion = numeroCotizacion,
-                            CotizacionGrupo = cotizacionGrupo,
-                            CodigoSisgeco = codigosisgeco,
-                            FechaProduccion = fechaProduccion,
-                            Turno = turno,
-                            Tipo = "Producto",
-                            FechaCreacion = DateTime.Now,
-                            IdEstado = estadoInicial
-                        };
-                        this._context.Add(filagrupo);
+                        CrearNuevoGrupo(cotizacionGrupo, "Producto", fechaProduccion, turno);
                     }
                 }
-
+                 }
                 TBL_DetalleOrdenProduccion dataFila = new TBL_DetalleOrdenProduccion();
                 int Id = 0;
-
                 // Lista de propiedades que no deseas modificar
-                var propiedadesNoModificables = new List<string> { "FechaCreacion", "UsuarioCreador" };
+                var propiedadesNoModificables = new List<string> { "FechaCreacion", "UsuarioCreador","Cantidad","Alto","Ancho", "TuboMedida", "TelaMedida", "AlturaMedida" };
 
-                foreach (var kvp in formData)
-                {
-                    var key = kvp.Key;
-                    var value = kvp.Value;
-                    if (key == "Id")
-                    { // Manejo especial para el campo "Id"
-                        if (value != null && value.ToString() != "")
-                            {
-                                Id = (int)value;
-                            }
-                            else
-                            {
-                                Id = 0;
-                            } 
-                    }
-                    else
+
+                if (Id == 0)
+                {   // Convertir los datos del formData a propiedades del objeto dataFila
+                    foreach (var kvp in formData)
                     {
-                        if (value != "")
+                        var key = kvp.Key;
+                        var value = kvp.Value;
+                        if (key == "Id")
+                        { // Manejo especial para el campo "Id"                            
+                            Id = value != null && value.ToString() != "" ? Convert.ToInt32(value) : 0;
+                        }
+                        else
                         {
-
-                            // Obtener el tipo de datos de la propiedad
-                            var propInfo = typeof(TBL_DetalleOrdenProduccion).GetProperty(key, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
-
-                            if (propInfo != null)
+                            if (value != "")
                             {
-                                // Verificar si el tipo de datos es decimal
-                                if (propInfo.PropertyType == typeof(decimal) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(decimal))
-                                {
-                                    // Reemplazar las comas por puntos para que el método de conversión funcione correctamente
-                                    //  value = value.Replace(",", ".");
-                                    // Convertir el valor a decimal
-                                    // var decimalValue = Convert.ToDouble(value);
 
-                                    // Asignar el valor convertido a la propiedad correspondiente
-                                    //propInfo.SetValue(dataFila, decimalValue, null);
-                                    decimal decimalValue;
-                                    //decimal? decimalValue = null; 
-                                    // Convert.ToDecimal(value.Replace(",", "."), CultureInfo.InvariantCulture);
-                                    //decimal.TryParse(value.Replace(",", "."), NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out decimalValue);
-                                    propInfo.SetValue(dataFila, Convert.ToDecimal(value.Replace(".", ",")), null);
+                                // Obtener el tipo de datos de la propiedad
+                                var propInfo = typeof(TBL_DetalleOrdenProduccion).GetProperty(key, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
 
-                                }// Verificar si el tipo de datos es DateTime
-                                else if (propInfo.PropertyType == typeof(DateTime) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(DateTime))
+                                if (propInfo != null)
                                 {
-                                    // Convertir el valor a DateTime
-                                    var dateTimeValue = DateTime.Parse(value.ToString());
-                                    // Asignar el valor convertido a la propiedad correspondiente
-                                    propInfo.SetValue(dataFila, dateTimeValue, null);
+                                    // Verificar si el tipo de datos es decimal
+                                    if (propInfo.PropertyType == typeof(decimal) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(decimal))
+                                    {
+                                        propInfo.SetValue(dataFila, Convert.ToDecimal(value.Replace(".", ",")), null);
 
-                                }// Verificar si el tipo de datos es int
-                                else if (propInfo.PropertyType == typeof(int) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(int))
-                                {
-                                    // Convertir el valor a int
-                                    var intvalue = int.Parse(value.ToString());
-                                    // Asignar el valor convertido a la propiedad correspondiente
-                                    propInfo.SetValue(dataFila, intvalue, null);
-                                }
-                                else
-                                {
-                                    // Convertir el valor al tipo de datos de la propiedad y asignarlo
-                                    var convertedValue = Convert.ChangeType(value.ToString(), propInfo.PropertyType);
-                                    propInfo.SetValue(dataFila, convertedValue, null);
+                                    }// Verificar si el tipo de datos es DateTime
+                                    else if (propInfo.PropertyType == typeof(DateTime) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(DateTime))
+                                    {
+                                        // Convertir el valor a DateTime
+                                        var dateTimeValue = DateTime.Parse(value.ToString());
+                                        // Asignar el valor convertido a la propiedad correspondiente
+                                        propInfo.SetValue(dataFila, dateTimeValue, null);
+
+                                    }// Verificar si el tipo de datos es int
+                                    else if (propInfo.PropertyType == typeof(int) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(int))
+                                    {
+                                        // Convertir el valor a int
+                                        var intvalue = int.Parse(value.ToString());
+                                        // Asignar el valor convertido a la propiedad correspondiente
+                                        propInfo.SetValue(dataFila, intvalue, null);
+                                    }
+                                    else
+                                    {
+                                        // Convertir el valor al tipo de datos de la propiedad y asignarlo
+                                        var convertedValue = Convert.ChangeType(value.ToString(), propInfo.PropertyType);
+                                        propInfo.SetValue(dataFila, convertedValue, null);
+                                    }
                                 }
                             }
                         }
                     }
-                }
-                //agregar valor al grupo numeracion
-                
-        //var CotizacionGrupo_propInfo = typeof(TBL_DetalleOrdenProduccion).GetProperty("CotizacionGrupo", BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
-        //        var CotizacionGrupo_value = Convert.ChangeType(cotizacionGrupo.ToString(), CotizacionGrupo_propInfo.PropertyType);
-        //        CotizacionGrupo_propInfo.SetValue(dataFila, CotizacionGrupo_value, null);
-         
-                dataFila.CotizacionGrupo = cotizacionGrupo.ToString();
-                dataFila.FechaCreacion = DateTime.Now;
-                dataFila.IdEstado = estadoInicial;
+                    //agregar valor al grupo numeracion
 
-                if (Id == 0)
-                {
+                    dataFila.CotizacionGrupo = cotizacionGrupo.ToString();
+                    dataFila.FechaCreacion = DateTime.Now;
+                    dataFila.IdEstado = estadoInicial;
                     if (tipo == "Componente")
                     { 
                         dataFila.Tipo = "Componente";
+                        dataFila.Escuadra = "NO";
                     }
                     else
                     { 
-                        dataFila.Tipo = "Producto"; 
+                        dataFila.Tipo = "Producto";
+                        dataFila.Escuadra = "NO";
+                        if (escuadra != null)
+                        {
+                            dataFila.Escuadra = "SI"; 
+                        }
                     }
-                    
+                    dataFila.IdUsuarioCrea = Convert.ToInt32(formData.IdUsuarioCrea);
+                    var Productos =   this._context.TBL_DetalleOrdenProduccion.AddAsync(dataFila);
                     if (escuadra != null)
-                    {
+                    { 
                         foreach (var _item in escuadra)
                         {
                             var _cant = _item.Cantidad ?? 0; // Si _item.Cantidad es null, asigna 0, de lo contrario, asigna el valor de _item.Cantidad
@@ -293,18 +246,13 @@ namespace ApiPortal_DataLake.Domain.Services
                             {
                                 CotizacionGrupo = cotizacionGrupo,
                                 Codigo = _item.Codigo,
+                                IdProducto = dataFila.Id,
                                 Descripcion = _item.Descripcion,
                                 Cantidad = _cant
                             };
-                            this._context.Tbl_Escuadra.Add(_escuadra);
+                            this._context.Tbl_Escuadra.Add(_escuadra); 
                         }
-                        dataFila.Escuadra = "SI";
                     }
-                    else
-                    {
-                        dataFila.Escuadra = "NO";
-                    }
-                    var Productos = this._context.TBL_DetalleOrdenProduccion.AddAsync(dataFila);
                 }
                 else
                 {
@@ -315,22 +263,54 @@ namespace ApiPortal_DataLake.Domain.Services
                         foreach (var kvp in formData)
                         {
                             var key = kvp.Key;
+                            var value = kvp.Value;
                             if (propiedadesNoModificables.Contains(key))
                             {
                                 continue; // Omite las propiedades que no deseas modificar
                             }
 
-                            var propInfo = typeof(TBL_DetalleOrdenProduccion).GetProperty(key, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
-
-                            if (propInfo != null)
+                            if (value != "")
                             {
-                                var convertedValue = Convert.ChangeType(kvp.Value.ToString(), propInfo.PropertyType);
-                                propInfo.SetValue(existingDataFila, convertedValue, null);
-                            }
-                        }
-                        
 
-                        if (escuadra != null)
+                                // Obtener el tipo de datos de la propiedad
+                                var propInfo = typeof(TBL_DetalleOrdenProduccion).GetProperty(key, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);                               
+                                if (propInfo != null)
+                                {
+                                    // Verificar si el tipo de datos es decimal
+                                    if (propInfo.PropertyType == typeof(decimal) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(decimal))
+                                    {
+                                        propInfo.SetValue(existingDataFila, Convert.ToDecimal(value.Replace(".", ",")), null);
+
+                                    }// Verificar si el tipo de datos es DateTime
+                                    else if (propInfo.PropertyType == typeof(DateTime) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(DateTime))
+                                    {
+                                        // Convertir el valor a DateTime
+                                        var dateTimeValue = DateTime.Parse(value.ToString());
+                                        // Asignar el valor convertido a la propiedad correspondiente
+                                        propInfo.SetValue(existingDataFila, dateTimeValue, null);
+
+                                    }// Verificar si el tipo de datos es int
+                                    else if (propInfo.PropertyType == typeof(int) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(int))
+                                    {
+                                        // Convertir el valor a int
+                                        var intvalue = int.Parse(value.ToString());
+                                        // Asignar el valor convertido a la propiedad correspondiente
+                                        propInfo.SetValue(existingDataFila, intvalue, null);
+                                    }
+                                    else
+                                    {
+                                        // Convertir el valor al tipo de datos de la propiedad y asignarlo
+                                        var convertedValue = Convert.ChangeType(value.ToString(), propInfo.PropertyType);
+                                        propInfo.SetValue(existingDataFila, convertedValue, null);
+                                    }
+                                }
+                            }
+
+                        }
+
+
+                        existingDataFila.Escuadra = "NO";
+                        if ( escuadra != null)
                         {
                             var _listEscuadra = _context.Tbl_Escuadra.Where(ee => ee.CotizacionGrupo == cotizacionGrupo);
                             _context.Tbl_Escuadra.RemoveRange(_listEscuadra);
@@ -342,17 +322,15 @@ namespace ApiPortal_DataLake.Domain.Services
                                 {
                                     CotizacionGrupo = cotizacionGrupo,
                                     Codigo = _item.Codigo,
+                                    IdProducto= existingDataFila.Id,
                                     Descripcion = _item.Descripcion,
                                     Cantidad = _cant
                                 };
                                 _context.Tbl_Escuadra.Add(_escuadra);
+                                existingDataFila.Escuadra = "SI";
                             }
-                            existingDataFila.Escuadra = "SI";
                         }
-                        else
-                        {
-                            existingDataFila.Escuadra = "NO";
-                        }
+                        existingDataFila.IdUsuarioModifica = Convert.ToInt32(formData.IdUsuarioCrea);
                         _context.TBL_DetalleOrdenProduccion.Update(existingDataFila);
                     }
                 }

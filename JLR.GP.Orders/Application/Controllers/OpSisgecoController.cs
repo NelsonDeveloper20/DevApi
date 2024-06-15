@@ -264,7 +264,8 @@ namespace ApiPortal_DataLake.Application.Controllers
                 '' as IdEstado,
                 '' as CotizacionGrupo,
                 '' as Tipo,
-                '1' as EstadoOp
+                '2' as EstadoOp,
+                '' as Escuadra
             FROM
                 [dbo].[CotizacionDet] AS CD
                 INNER JOIN [dbo].[CotizacionCab] AS CC ON CD.numero = CC.numero
@@ -380,7 +381,8 @@ namespace ApiPortal_DataLake.Application.Controllers
                 IdEstado,
                 CotizacionGrupo,
                 Tipo,                
-                (SELECT IdEstado FROM Tbl_DetalleOpGrupo GRD where GRD.CotizacionGrupo=DOP.CotizacionGrupo) AS EstadoOp
+                (SELECT IdEstado FROM Tbl_DetalleOpGrupo GRD where GRD.CotizacionGrupo=DOP.CotizacionGrupo) AS EstadoOp,
+                Escuadra
             FROM
                 TBL_DetalleOrdenProduccion DOP
             WHERE
@@ -493,8 +495,9 @@ namespace ApiPortal_DataLake.Application.Controllers
                     IdEstado = reader["IdEstado"].ToString(),
                     CotizacionGrupo = reader["CotizacionGrupo"].ToString(),
                     Tipo = reader["Tipo"].ToString(),
-                    EstadoOp = reader["EstadoOp"].ToString()
-                }); ;
+                    EstadoOp = reader["EstadoOp"].ToString(),
+                    Escuadra = reader["Escuadra"].ToString()
+                }); ; ;
             }
             return list;
         }

@@ -9,7 +9,7 @@ namespace Api_Dc.Domain.Contracts
     public interface IProducto
     {
         
-        Task<IEnumerable<TBL_DetalleOrdenProduccion>> GetAllAsync(string NumeroCotizacion);
+        Task<IEnumerable<Tbl_Escuadra>> GetAllAsync(string NumeroCotizacion);
         Task<GeneralResponse<Object>> AgregarOrden(AgregarOrdenProduccionRequest _orden, IFormFile? Archivo); 
     }
 }
