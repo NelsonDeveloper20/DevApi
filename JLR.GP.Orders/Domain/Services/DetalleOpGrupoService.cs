@@ -88,23 +88,23 @@ namespace ApiPortal_DataLake.Domain.Services
                     switch(destino)
                     {
                         case "Venta":
-                            _Grupo.IdEstado = 1;//Pendiente Venta
+                            _Grupo.IdEstado = 2;//Pendiente Venta
                             this._context.Tbl_DetalleOpGrupo.Update(_Grupo);
                             break;
                         case "Operaciones":
-                            _Grupo.IdEstado = 2; //Pendiente Operaciones
+                            _Grupo.IdEstado = 3; //Pendiente Operaciones
                             this._context.Tbl_DetalleOpGrupo.Update(_Grupo);
                             break;
                         case "Construccion":
-                            _Grupo.IdEstado = 3;//Pendiente Construccion
+                            _Grupo.IdEstado = 4;//Pendiente Construccion
                             this._context.Tbl_DetalleOpGrupo.Update(_Grupo);
                             break;
                         case "Construccion Terminada":
-                            _Grupo.IdEstado = 4;//Construccion Terminada
+                            _Grupo.IdEstado = 5;//Construccion Terminada
                             this._context.Tbl_DetalleOpGrupo.Update(_Grupo);
                             break;
                         case "Terminado":
-                            _Grupo.IdEstado = 5;//Terminado
+                            _Grupo.IdEstado = 6;//Terminado
                             this._context.Tbl_DetalleOpGrupo.Update(_Grupo);
                             break;
                     }                    

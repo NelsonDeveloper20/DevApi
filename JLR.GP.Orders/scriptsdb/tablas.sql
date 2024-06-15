@@ -176,13 +176,14 @@ Id int primary key identity,
 IdUsuario int,
 IdRol int,
 Estado int default 1 );
-
+ 
 Create  Table Tbl_Estado(
 Id int primary key identity,
 CodigoEstado varchar(20),
 Nombre varchar(100),
 Descripcion VARCHAR(500)
 );
+insert into Tbl_Estado values('PS', 'Pendiente Supervisor', 'Grupos de ootizacion perdientes por aprobacion del supervisor');
 insert into Tbl_Estado values('PV', 'Pendiente Venta', 'Cotización registrada en el sistema');
 
 insert into Tbl_Estado values('PO', 'Pendiente Operaciones', 'Cotización aprobada por ventas y enviada a Operaciones para la planificación y ejecución de la construcción.');
@@ -190,6 +191,7 @@ insert into Tbl_Estado values('PO', 'Pendiente Operaciones', 'Cotización aprobad
 insert into Tbl_Estado values('PC', 'En Construcción', 'El proceso de construcción en las estaciones ha comenzado.');
 
 insert into Tbl_Estado values('CT', 'Construcción Terminada', 'La construcción ha sido completada y está pendiente de exploción.');
+insert into Tbl_Estado values('CT', 'Terminad', 'OP Finalizada, Todas las operaciones relacionadas han sido completadas y se encuentra lista para su entrega al cliente.');
 
 -- insert into Tbl_Estado values('EC','Entregado Cliente','');
 -- Esta línea está comentada ya que la descripción está pendiente de ser definida.

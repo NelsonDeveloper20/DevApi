@@ -76,7 +76,7 @@ namespace ApiPortal_DataLake.Domain.Services
                //     .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion && g.Turno == turno && g.FechaProduccion == fechaProduccion);
                 var grupoExistente = this._context.Tbl_DetalleOpGrupo
                     .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion);
-
+                int estadoInicial = 2;
                 if (grupoExistente != null)//EXISTE
                 {
 
@@ -100,7 +100,7 @@ namespace ApiPortal_DataLake.Domain.Services
                                 CodigoSisgeco = codigosisgeco, 
                                 Tipo="Componente",
                                 FechaCreacion = DateTime.Now,
-                                IdEstado = 1
+                                IdEstado = estadoInicial
                             };
                             this._context.Add(filagrupo);
                         }
@@ -138,7 +138,7 @@ namespace ApiPortal_DataLake.Domain.Services
                                 Turno = turno,
                                 Tipo="Producto",
                                 FechaCreacion = DateTime.Now,
-                                IdEstado = 1
+                                IdEstado = estadoInicial
                             };
                             this._context.Add(filagrupo);
                         }
@@ -165,7 +165,7 @@ namespace ApiPortal_DataLake.Domain.Services
                             CodigoSisgeco = codigosisgeco,
                             Tipo = "Componente",
                             FechaCreacion = DateTime.Now,
-                            IdEstado = 1
+                            IdEstado = estadoInicial
                         };
                         this._context.Add(filagrupo);
                     }
@@ -184,7 +184,7 @@ namespace ApiPortal_DataLake.Domain.Services
                             Turno = turno,
                             Tipo = "Producto",
                             FechaCreacion = DateTime.Now,
-                            IdEstado = 1
+                            IdEstado = estadoInicial
                         };
                         this._context.Add(filagrupo);
                     }
@@ -271,6 +271,7 @@ namespace ApiPortal_DataLake.Domain.Services
          
                 dataFila.CotizacionGrupo = cotizacionGrupo.ToString();
                 dataFila.FechaCreacion = DateTime.Now;
+                dataFila.IdEstado = estadoInicial;
 
                 if (Id == 0)
                 {
