@@ -36,8 +36,8 @@ namespace Api_Dc.Domain.Models
         public int? IdDestino { get; set; }
         public int? IdTipoPeracion { get; set; }
         public int? IdProyecto { get; set; }
-        public string? Matriz { get; set; }
-        public string? SubMatriz { get; set; }
+        public string? Nivel { get; set; }
+        public string? SubNivel { get; set; }
 
         public string? CodigoVendedor { get; set; }
         public string? NombreVendedor { get; set; }

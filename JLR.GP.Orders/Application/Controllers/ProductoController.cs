@@ -93,8 +93,8 @@ namespace ApiPortal_DataLake.Application.Controllers
                     IdDestino = Request.Form["IdDestino"],
                     IdTipoPeracion = Request.Form["IdTipoPeracion"],
                     IdProyecto = Request.Form["IdProyecto"],
-                    Matriz = Request.Form["Matriz"],
-                    SubMatriz = Request.Form["SubMatriz"],
+                    Nivel = Request.Form["Nivel"],
+                    SubNivel = Request.Form["SubNivel"],
 
                     CodigoVendedor = Request.Form["CodigoVendedor"],
                     NombreVendedor = Request.Form["NombreVendedor"],

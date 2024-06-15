@@ -142,8 +142,8 @@ namespace ApiPortal_DataLake.Domain.Services
                     IdDestino= int.Parse(_ordeRequest.IdDestino),
                     IdTipoPeracion= int.Parse(_ordeRequest.IdTipoPeracion),
                     IdProyecto= int.Parse(_ordeRequest.IdProyecto),
-                    Matriz= _ordeRequest.Matriz,
-                    SubMatriz=_ordeRequest.SubMatriz,
+                    Nivel= _ordeRequest.Nivel,
+                    SubNivel=_ordeRequest.SubNivel,
 
                     CodigoVendedor=_ordeRequest.CodigoVendedor,
                     NombreVendedor=_ordeRequest.NombreVendedor,
@@ -195,8 +195,8 @@ namespace ApiPortal_DataLake.Domain.Services
                         _orden.IdDestino = int.Parse(_ordeRequest.IdDestino);
                         _orden.IdTipoPeracion = int.Parse(_ordeRequest.IdTipoPeracion);
                         _orden.IdProyecto = int.Parse(_ordeRequest.IdProyecto);
-                        _orden.Matriz = _ordeRequest.Matriz;
-                        _orden.SubMatriz = _ordeRequest.SubMatriz;
+                        _orden.Nivel = _ordeRequest.Nivel;
+                        _orden.SubNivel = _ordeRequest.SubNivel;
                         /*
                         _orden.CodigoVendedor = _ordeRequest.CodigoVendedor;
                         _orden.NombreVendedor = _ordeRequest.NombreVendedor;*/

@@ -247,8 +247,8 @@ Telefono varchar(20),
 IdDestino int,
 IdTipoPeracion int,
 IdProyecto int,
-Matriz varchar(10),
-SubMatriz varchar(10),
+Nivel varchar(10),
+SubNivel varchar(10),
 
 
 CodigoVendedor varchar(20),

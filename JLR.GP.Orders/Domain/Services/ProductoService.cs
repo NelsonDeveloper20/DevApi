@@ -102,8 +102,8 @@ namespace ApiPortal_DataLake.Domain.Services
                     IdDestino= int.Parse(_ordeRequest.IdDestino),
                     IdTipoPeracion= int.Parse(_ordeRequest.IdTipoPeracion),
                     IdProyecto= int.Parse(_ordeRequest.IdProyecto),
-                    Matriz= _ordeRequest.Matriz,
-                    SubMatriz=_ordeRequest.SubMatriz,
+                    Nivel= _ordeRequest.Nivel,
+                    SubNivel=_ordeRequest.SubNivel,
 
                     CodigoVendedor=_ordeRequest.CodigoVendedor,
                     NombreVendedor=_ordeRequest.NombreVendedor,
