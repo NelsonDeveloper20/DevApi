@@ -164,7 +164,8 @@ namespace ApiPortal_DataLake.Domain.Services
                 // Lista de propiedades que no deseas modificar
                 var propiedadesNoModificables = new List<string> { "FechaCreacion", "UsuarioCreador","Cantidad","Alto","Ancho", "TuboMedida", "TelaMedida", "AlturaMedida" };
 
-
+                
+                    Id = formData.Id != null && formData.Id.ToString() != "" ? Convert.ToInt32(formData.Id) : 0;
                 if (Id == 0)
                 {   // Convertir los datos del formData a propiedades del objeto dataFila
                     foreach (var kvp in formData)
@@ -235,24 +236,11 @@ namespace ApiPortal_DataLake.Domain.Services
                             dataFila.Escuadra = "SI"; 
                         }
                     }
+                   
                     dataFila.IdUsuarioCrea = Convert.ToInt32(formData.IdUsuarioCrea);
-                    var Productos =   this._context.TBL_DetalleOrdenProduccion.AddAsync(dataFila);
-                    if (escuadra != null)
-                    { 
-                        foreach (var _item in escuadra)
-                        {
-                            var _cant = _item.Cantidad ?? 0; // Si _item.Cantidad es null, asigna 0, de lo contrario, asigna el valor de _item.Cantidad
-                            var _escuadra = new Tbl_Escuadra()
-                            {
-                                CotizacionGrupo = cotizacionGrupo,
-                                Codigo = _item.Codigo,
-                                IdProducto = dataFila.Id,
-                                Descripcion = _item.Descripcion,
-                                Cantidad = _cant
-                            };
-                            this._context.Tbl_Escuadra.Add(_escuadra); 
-                        }
-                    }
+                    this._context.TBL_DetalleOrdenProduccion.AddAsync(dataFila); ;
+
+
                 }
                 else
                 {
@@ -310,31 +298,60 @@ namespace ApiPortal_DataLake.Domain.Services
 
 
                         existingDataFila.Escuadra = "NO";
-                        if ( escuadra != null)
-                        {
-                            var _listEscuadra = _context.Tbl_Escuadra.Where(ee => ee.CotizacionGrupo == cotizacionGrupo);
-                            _context.Tbl_Escuadra.RemoveRange(_listEscuadra);
-
-                            foreach (var _item in escuadra)
-                            {
-                                var _cant = _item.Cantidad ?? 0; // Si _item.Cantidad es null, asigna 0, de lo contrario, asigna el valor de _item.Cantidad
-                                var _escuadra = new Tbl_Escuadra()
-                                {
-                                    CotizacionGrupo = cotizacionGrupo,
-                                    Codigo = _item.Codigo,
-                                    IdProducto= existingDataFila.Id,
-                                    Descripcion = _item.Descripcion,
-                                    Cantidad = _cant
-                                };
-                                _context.Tbl_Escuadra.Add(_escuadra);
-                                existingDataFila.Escuadra = "SI";
-                            }
-                        }
+                        
                         existingDataFila.IdUsuarioModifica = Convert.ToInt32(formData.IdUsuarioCrea);
                         _context.TBL_DetalleOrdenProduccion.Update(existingDataFila);
                     }
                 }
 
+                await _context.SaveChangesAsync(); // Guardar los cambios en la base de datos
+                if (escuadra != null && Id==0)
+                {
+                    foreach (var _item in escuadra)
+                    {
+                        int _cant;
+                        bool conversionExitosa = int.TryParse(_item.Cantidad.ToString(), out _cant);
+                        if (!conversionExitosa)
+                        {
+                            _cant = 0; // Si la conversión falla, asigna 0.
+                        }
+                        var _escuadra = new Tbl_Escuadra()
+                        {
+                            CotizacionGrupo = cotizacionGrupo,
+                            Codigo = _item.Codigo,
+                            IdProducto = dataFila.Id,
+                            Descripcion = _item.Descripcion,
+                            IdUsuarioCrea= Convert.ToInt32(formData.IdUsuarioCrea),
+                        Cantidad = _cant
+                        };
+                        this._context.Tbl_Escuadra.Add(_escuadra);
+                    }
+                }
+                if (escuadra != null && Id!=0)
+                {
+                    var _listEscuadra = _context.Tbl_Escuadra.Where(ee => ee.IdProducto == Id);
+                    _context.Tbl_Escuadra.RemoveRange(_listEscuadra);
+
+                    foreach (var _item in escuadra)
+                    {
+                        int _cant;
+                        bool conversionExitosa = int.TryParse(_item.Cantidad.ToString(), out _cant);
+                        if (!conversionExitosa)
+                        {
+                            _cant = 0; // Si la conversión falla, asigna 0.
+                        }
+                        var _escuadra = new Tbl_Escuadra()
+                        {
+                            CotizacionGrupo = cotizacionGrupo,
+                            Codigo = _item.Codigo,
+                            IdProducto = Id,
+                            IdUsuarioCrea = Convert.ToInt32(formData.IdUsuarioCrea),
+                            Descripcion = _item.Descripcion,
+                            Cantidad = _cant
+                        };
+                        _context.Tbl_Escuadra.Add(_escuadra); 
+                    }
+                }
                 await _context.SaveChangesAsync(); // Guardar los cambios en la base de datos
 
                 var jsonresponse = new
