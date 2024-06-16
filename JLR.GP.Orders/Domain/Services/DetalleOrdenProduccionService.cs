@@ -87,85 +87,86 @@ namespace ApiPortal_DataLake.Domain.Services
                     };
                     this._context.Add(filagrupo);
                 }
-                if (string.IsNullOrEmpty(formData.Id)) { 
-                // Buscar grupo existente para la cotización 
-                var grupoExistente = this._context.Tbl_DetalleOpGrupo
-                    .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion);
-                if (grupoExistente != null) // EXISTE
+                if (string.IsNullOrEmpty(formData.Id))
                 {
-                    if (tipo == "Componente")
+                    // Buscar grupo existente para la cotización 
+                    var grupoExistente = this._context.Tbl_DetalleOpGrupo
+                        .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion);
+                    if (grupoExistente != null) // EXISTE
                     {
-                        var grupoExiste = this._context.Tbl_DetalleOpGrupo
-                            .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion && g.CotizacionGrupo == numeroCotizacion + "-0");
-
-                        if (grupoExiste != null) // EXISTE
+                        if (tipo == "Componente")
                         {
-                            cotizacionGrupo = grupoExiste.CotizacionGrupo;
+                            var grupoExiste = this._context.Tbl_DetalleOpGrupo
+                                .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion && g.CotizacionGrupo == numeroCotizacion + "-0");
+
+                            if (grupoExiste != null) // EXISTE
+                            {
+                                cotizacionGrupo = grupoExiste.CotizacionGrupo;
+                            }
+                            else
+                            {
+                                cotizacionGrupo = $"{numeroCotizacion}-0";
+                                CrearNuevoGrupo(cotizacionGrupo, "Componente");
+                            }
                         }
                         else
+                        {
+                            string turno = formData.Turno;
+                            DateTime fechaProduccion = DateTime.Parse(formData.FechaProduccion);
+                            var grupoExistente2 = this._context.Tbl_DetalleOpGrupo
+                                .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion && g.Turno == turno && g.FechaProduccion == fechaProduccion);
+
+                            if (grupoExistente2 != null) // EXISTE
+                            {
+                                cotizacionGrupo = grupoExistente2.CotizacionGrupo;
+                            }
+                            else
+                            {
+                                var ultimoGrupo = this._context.Tbl_DetalleOpGrupo
+                                    .Where(g => g.NumeroCotizacion == numeroCotizacion)
+                                    .OrderByDescending(g => g.CotizacionGrupo)
+                                    .FirstOrDefault();
+
+                                if (ultimoGrupo != null)
+                                {
+                                    // Obtener el último número de grupo y agregar 1
+                                    int numeracion = int.Parse(ultimoGrupo.CotizacionGrupo.Split('-')[1]) + 1;
+                                    cotizacionGrupo = $"{numeroCotizacion}-{numeracion}";
+                                    CrearNuevoGrupo(cotizacionGrupo, "Producto", fechaProduccion, turno);
+                                }
+                                else
+                                {
+                                    // Si no hay grupos existentes para la cotización, asignar el primer número de grupo
+                                    cotizacionGrupo = $"{numeroCotizacion}-0";
+                                    CrearNuevoGrupo(cotizacionGrupo, "Producto", fechaProduccion, turno);
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // Si no hay grupos existentes para la cotización, asignar el primer número de grupo
+                        if (tipo == "Componente")
                         {
                             cotizacionGrupo = $"{numeroCotizacion}-0";
                             CrearNuevoGrupo(cotizacionGrupo, "Componente");
                         }
-                    }
-                    else
-                    {
-                        string turno = formData.Turno;
-                        DateTime fechaProduccion = DateTime.Parse(formData.FechaProduccion);
-                        var grupoExistente2 = this._context.Tbl_DetalleOpGrupo
-                            .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion && g.Turno == turno && g.FechaProduccion == fechaProduccion);
-
-                        if (grupoExistente2 != null) // EXISTE
-                        {
-                            cotizacionGrupo = grupoExistente2.CotizacionGrupo;
-                        }
                         else
                         {
-                            var ultimoGrupo = this._context.Tbl_DetalleOpGrupo
-                                .Where(g => g.NumeroCotizacion == numeroCotizacion)
-                                .OrderByDescending(g => g.CotizacionGrupo)
-                                .FirstOrDefault();
-
-                            if (ultimoGrupo != null)
-                            {
-                                // Obtener el último número de grupo y agregar 1
-                                int numeracion = int.Parse(ultimoGrupo.CotizacionGrupo.Split('-')[1]) + 1;
-                                cotizacionGrupo = $"{numeroCotizacion}-{numeracion}";
-                                CrearNuevoGrupo(cotizacionGrupo, "Producto", fechaProduccion, turno);
-                            }
-                            else
-                            {
-                                // Si no hay grupos existentes para la cotización, asignar el primer número de grupo
-                                cotizacionGrupo = $"{numeroCotizacion}-0";
-                                CrearNuevoGrupo(cotizacionGrupo, "Producto", fechaProduccion, turno);
-                            }
+                            string turno = formData.Turno;
+                            DateTime fechaProduccion = DateTime.Parse(formData.FechaProduccion);
+                            cotizacionGrupo = $"{numeroCotizacion}-1";
+                            CrearNuevoGrupo(cotizacionGrupo, "Producto", fechaProduccion, turno);
                         }
                     }
                 }
-                else
-                {
-                    // Si no hay grupos existentes para la cotización, asignar el primer número de grupo
-                    if (tipo == "Componente")
-                    {
-                        cotizacionGrupo = $"{numeroCotizacion}-0";
-                        CrearNuevoGrupo(cotizacionGrupo, "Componente");
-                    }
-                    else
-                    {
-                        string turno = formData.Turno;
-                        DateTime fechaProduccion = DateTime.Parse(formData.FechaProduccion);
-                        cotizacionGrupo = $"{numeroCotizacion}-1";
-                        CrearNuevoGrupo(cotizacionGrupo, "Producto", fechaProduccion, turno);
-                    }
-                }
-                 }
                 TBL_DetalleOrdenProduccion dataFila = new TBL_DetalleOrdenProduccion();
                 int Id = 0;
                 // Lista de propiedades que no deseas modificar
-                var propiedadesNoModificables = new List<string> { "FechaCreacion", "UsuarioCreador","Cantidad","Alto","Ancho", "TuboMedida", "TelaMedida", "AlturaMedida" };
+                var propiedadesNoModificables = new List<string> { "FechaCreacion", "UsuarioCreador", "Cantidad", "Alto", "Ancho", "TuboMedida", "TelaMedida", "AlturaMedida" };
 
-                
-                    Id = formData.Id != null && formData.Id.ToString() != "" ? Convert.ToInt32(formData.Id) : 0;
+
+                Id = formData.Id != null && formData.Id.ToString() != "" ? Convert.ToInt32(formData.Id) : 0;
                 if (Id == 0)
                 {   // Convertir los datos del formData a propiedades del objeto dataFila
                     foreach (var kvp in formData)
@@ -223,21 +224,21 @@ namespace ApiPortal_DataLake.Domain.Services
                     dataFila.FechaCreacion = DateTime.Now;
                     dataFila.IdEstado = estadoInicial;
                     if (tipo == "Componente")
-                    { 
+                    {
                         dataFila.Tipo = "Componente";
                         dataFila.Escuadra = "NO";
                     }
                     else
-                    { 
+                    {
 
                         dataFila.Tipo = "Producto";
-                        dataFila.Escuadra = "NO"; 
-                        IEnumerable<object> escuadraEnumerable = escuadra as IEnumerable<object>;
-                        if (escuadraEnumerable != null && escuadraEnumerable.Any())
+                        dataFila.Escuadra = "NO";
+                        IEnumerable<object> escuadraEnumerable0 = escuadra as IEnumerable<object>;
+                        if (escuadraEnumerable0 != null && escuadraEnumerable0.Any())
                         {
                             dataFila.Escuadra = "SI";
                         }
-                    }                   
+                    }
                     dataFila.IdUsuarioCrea = Convert.ToInt32(formData.IdUsuarioCrea);
                     this._context.TBL_DetalleOrdenProduccion.AddAsync(dataFila); ;
 
@@ -262,7 +263,7 @@ namespace ApiPortal_DataLake.Domain.Services
                             {
 
                                 // Obtener el tipo de datos de la propiedad
-                                var propInfo = typeof(TBL_DetalleOrdenProduccion).GetProperty(key, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);                               
+                                var propInfo = typeof(TBL_DetalleOrdenProduccion).GetProperty(key, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
                                 if (propInfo != null)
                                 {
                                     // Verificar si el tipo de datos es decimal
@@ -296,63 +297,79 @@ namespace ApiPortal_DataLake.Domain.Services
                             }
 
                         }
-
-
+                        // Validar si escuadra tiene datos
                         existingDataFila.Escuadra = "NO";
-                        
+                        if (escuadra != null)
+                        {
+                            // Intentar convertir escuadra a una lista de objetos
+                            var escuadraList = JsonConvert.DeserializeObject<List<object>>(JsonConvert.SerializeObject(escuadra));
+                            if (escuadraList != null && escuadraList.Count > 0)
+                            {
+                                existingDataFila.Escuadra = "SI";
+                            }
+                        }
+
                         existingDataFila.IdUsuarioModifica = Convert.ToInt32(formData.IdUsuarioCrea);
                         _context.TBL_DetalleOrdenProduccion.Update(existingDataFila);
                     }
                 }
 
                 await _context.SaveChangesAsync(); // Guardar los cambios en la base de datos
-                if (escuadra != null && Id==0)
+                if (escuadra != null)
                 {
-                    
-                    foreach (var _item in escuadra)
+                    // Intentar convertir escuadra a una lista de objetos
+                    var escuadraList = JsonConvert.DeserializeObject<List<object>>(JsonConvert.SerializeObject(escuadra));
+                    if (escuadraList != null && escuadraList.Count > 0 && Id==0)
                     {
-                        int _cant;
-                        bool conversionExitosa = int.TryParse(_item.Cantidad.ToString(), out _cant);
-                        if (!conversionExitosa)
+                        foreach (var _item in escuadra)
                         {
-                            _cant = 0; // Si la conversión falla, asigna 0.
+                            int _cant;
+                            bool conversionExitosa = int.TryParse(_item.Cantidad.ToString(), out _cant);
+                            if (!conversionExitosa)
+                            {
+                                _cant = 0; // Si la conversión falla, asigna 0.
+                            }
+                            var _escuadra = new Tbl_Escuadra()
+                            {
+                                CotizacionGrupo = cotizacionGrupo,
+                                Codigo = _item.Codigo,
+                                IdProducto = dataFila.Id,
+                                Descripcion = _item.Descripcion,
+                                IdUsuarioCrea = Convert.ToInt32(formData.IdUsuarioCrea),
+                                Cantidad = _cant
+                            };
+                            this._context.Tbl_Escuadra.Add(_escuadra);
                         }
-                        var _escuadra = new Tbl_Escuadra()
-                        {
-                            CotizacionGrupo = cotizacionGrupo,
-                            Codigo = _item.Codigo,
-                            IdProducto = dataFila.Id,
-                            Descripcion = _item.Descripcion,
-                            IdUsuarioCrea= Convert.ToInt32(formData.IdUsuarioCrea),
-                        Cantidad = _cant
-                        };
-                       this._context.Tbl_Escuadra.Add(_escuadra);
                     }
-                }
-                if (escuadra != null && Id!=0)
-                {
-                    var _listEscuadra = _context.Tbl_Escuadra.Where(ee => ee.IdProducto == Id);
-                    _context.Tbl_Escuadra.RemoveRange(_listEscuadra);
-
-                    foreach (var _item in escuadra)
+                    // Intentar convertir escuadra a una lista de objetos
+                    if (Id != 0)
                     {
-                        int _cant;
-                        bool conversionExitosa = int.TryParse(_item.Cantidad.ToString(), out _cant);
-                        if (!conversionExitosa)
+                        var _listEscuadra = _context.Tbl_Escuadra.Where(ee => ee.IdProducto == Id);
+                        _context.Tbl_Escuadra.RemoveRange(_listEscuadra);
+                        if (escuadraList != null && escuadraList.Count > 0 && Id != 0)
                         {
-                            _cant = 0; // Si la conversión falla, asigna 0.
+                            foreach (var _item in escuadra)
+                            {
+                                int _cant;
+                                bool conversionExitosa = int.TryParse(_item.Cantidad.ToString(), out _cant);
+                                if (!conversionExitosa)
+                                {
+                                    _cant = 0; // Si la conversión falla, asigna 0.
+                                }
+                                var _escuadra = new Tbl_Escuadra()
+                                {
+                                    CotizacionGrupo = cotizacionGrupo,
+                                    Codigo = _item.Codigo,
+                                    IdProducto = Id,
+                                    IdUsuarioCrea = Convert.ToInt32(formData.IdUsuarioCrea),
+                                    Descripcion = _item.Descripcion,
+                                    Cantidad = _cant
+                                };
+                                _context.Tbl_Escuadra.Add(_escuadra);
+                            }
                         }
-                        var _escuadra = new Tbl_Escuadra()
-                        {
-                            CotizacionGrupo = cotizacionGrupo,
-                            Codigo = _item.Codigo,
-                            IdProducto = Id,
-                            IdUsuarioCrea = Convert.ToInt32(formData.IdUsuarioCrea),
-                            Descripcion = _item.Descripcion,
-                            Cantidad = _cant
-                        };
-                        _context.Tbl_Escuadra.Add(_escuadra); 
                     }
+                       
                 }
                 await _context.SaveChangesAsync(); // Guardar los cambios en la base de datos
 
