@@ -229,14 +229,15 @@ namespace ApiPortal_DataLake.Domain.Services
                     }
                     else
                     { 
+
                         dataFila.Tipo = "Producto";
-                        dataFila.Escuadra = "NO";
-                        if (escuadra != null)
+                        dataFila.Escuadra = "NO"; 
+                        IEnumerable<object> escuadraEnumerable = escuadra as IEnumerable<object>;
+                        if (escuadraEnumerable != null && escuadraEnumerable.Any())
                         {
-                            dataFila.Escuadra = "SI"; 
+                            dataFila.Escuadra = "SI";
                         }
-                    }
-                   
+                    }                   
                     dataFila.IdUsuarioCrea = Convert.ToInt32(formData.IdUsuarioCrea);
                     this._context.TBL_DetalleOrdenProduccion.AddAsync(dataFila); ;
 
@@ -307,6 +308,7 @@ namespace ApiPortal_DataLake.Domain.Services
                 await _context.SaveChangesAsync(); // Guardar los cambios en la base de datos
                 if (escuadra != null && Id==0)
                 {
+                    
                     foreach (var _item in escuadra)
                     {
                         int _cant;
@@ -324,7 +326,7 @@ namespace ApiPortal_DataLake.Domain.Services
                             IdUsuarioCrea= Convert.ToInt32(formData.IdUsuarioCrea),
                         Cantidad = _cant
                         };
-                        this._context.Tbl_Escuadra.Add(_escuadra);
+                       this._context.Tbl_Escuadra.Add(_escuadra);
                     }
                 }
                 if (escuadra != null && Id!=0)
