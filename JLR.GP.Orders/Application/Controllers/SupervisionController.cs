@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 using System.Net;
 using Api_Dc.Domain.Models;
 using Api_Dc.Domain.Request;
+using Api_Dc.Application.Models.Request;
 
 namespace ApiPortal_DataLake.Application.Controllers
 {
@@ -48,7 +49,23 @@ namespace ApiPortal_DataLake.Application.Controllers
                 return StatusCode((int)response.Status, response);
             }
         }
-         
+        [HttpPost]
+        public async Task<ActionResult<GeneralResponse<Object>>> AplicarAprobacion([FromBody] SuperAprobacionRequest item)
+        {
+            try
+            {
+                var response = await this._usuarioService.Aprobacion( item);
+                return response;
+
+            }
+            catch (Exception ex)
+            {
+
+                this._logger.LogError($"Error Agregar Perfil : {JsonConvert.SerializeObject(ex)}");
+                return Conflict();
+            }
+        }
+
 
     }
 }

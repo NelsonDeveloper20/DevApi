@@ -16,6 +16,6 @@ namespace Api_Dc.Domain.Models
         public int? IdUsuario { get; set; }
         public int? IdUsuarioSolicita { get; set; }
         public int? NumeroCotizacion { get; set; }
-
+        public string Estado { get; set; }
     }
 }

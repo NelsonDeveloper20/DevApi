@@ -5,16 +5,18 @@ DROP DATABASE DC_VN;
 create   database DC_VN;
 use DC_VN;
 
-CREATE TABLE Tbl_SupervisorAprobacion (
-    NumeroCotizacion INT PRIMARY KEY identity,   -- Suponiendo que es una clave primaria única
-    CotizacionGrupo VARCHAR(50),        -- Ajusta el tamaño del VARCHAR según sea necesario
-    TurnoInicial varchar(10),                   -- Suponiendo que es un número entero
+CREATE      TABLE Tbl_SupervisorAprobacion (
+Id INT PRIMARY KEY IDENTITY,
+    NumeroCotizacion  VARCHAR(20),   -- Suponiendo que es una clave primaria única
+    CotizacionGrupo VARCHAR(20),        -- Ajusta el tamaño del VARCHAR según sea necesario
+    TurnoInicial varchar(30),                   -- Suponiendo que es un número entero
     FechProdInicial  datetime,               -- Fecha de producción inicial
-    TurnoCambio varchar,                    -- Suponiendo que es un número entero
+    TurnoCambio varchar(30), ,                    -- Suponiendo que es un número entero
     FechaProdCambio datetime,               -- Fecha de cambio de producción
     IdUsuario INT,                      -- SUPERVISOR
     IdUsuarioSolicita INT,              -- EK QUE CREA
-    FechaCreacion DATETIME              -- Fecha de aprobación
+    FechaCreacion DATETIME,              -- Fecha de aprobación
+    Estado VARCHAR(20)
 );
 
 Create Table Tbl_TipoCliente(
@@ -208,7 +210,7 @@ insert into Tbl_Estado values('CT', 'Terminad', 'OP Finalizada, Todas las operac
 -- Esta línea está comentada ya que la descripción está pendiente de ser definida.
 
 insert into Tbl_Estado values('T', 'Terminado', 'OP Finalizada, Todas las operaciones relacionadas han sido completadas y se encuentra lista para su entrega al cliente.');
---insert into Tbl_Estado values('F', 'Finalizado', 'OP Finalizada, Todas las operaciones relacionadas han sido completadas y se encuentra lista para su entrega al cliente.');
+insert into Tbl_Estado values('R', 'Rechazado', 'Rechazado por supervisor');
 
 CREATE  TABLE Tbl_Componentes (
     Id INT PRIMARY KEY IDENTITY,           

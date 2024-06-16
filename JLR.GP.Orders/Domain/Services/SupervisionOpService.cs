@@ -67,8 +67,7 @@ namespace ApiPortal_DataLake.Domain.Services
 
         {
             try
-            {
-                var idModulo = 1;
+            { 
                 var newRow = new Tbl_SupervisorAprobacion()
                 {
                     CotizacionGrupo = item.CotizacionGrupo,
@@ -80,14 +79,29 @@ namespace ApiPortal_DataLake.Domain.Services
                     FechaCreacion = DateTime.Now,
                     IdUsuario = item.IdUsuario,
                     IdUsuarioSolicita = item.IdUsuarioSolicita,
+                    Estado=item.Estado,
+                    NumeroCotizacion=item.NumeroCotizacion
 
                 };
                 this._context.Tbl_SupervisorAprobacion.Add(newRow);
+                var grupo = this._context.Tbl_DetalleOpGrupo.Find(item.id);
+                if (item.Estado == "Aprobado")
+                {
+                    grupo.IdEstado = 2;//PENDIENTE EN VENTA
+                }
+                else
+                {
+                    grupo.IdEstado = 7;//Rechazado por supervisor
+                }
+                grupo.IdUsuarioModifica = item.IdUsuario;
+                grupo.FechaModifica = DateTime.Now;
+                this._context.Tbl_DetalleOpGrupo.Update(grupo);
+
                 this._context.SaveChanges();
                 var jsonresponse = new
                 {
-                    Respuesta = "Operacion realizada correctamente",
-                    idModulo = idModulo,
+                    Respuesta = "OK",
+                    idModulo = 1,
                 };
 
                 return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
