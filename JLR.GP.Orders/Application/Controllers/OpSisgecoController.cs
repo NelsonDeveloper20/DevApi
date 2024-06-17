@@ -180,7 +180,7 @@ namespace ApiPortal_DataLake.Application.Controllers
                 CD.linea AS Linea,
                 CD.[des] AS NombreProducto,
                 A.codunidad AS UnidadMedida,
-                CD.cantventa AS Cantidad,
+                CD.cantidad AS Cantidad,
                 CD.alto AS Alto,
                 CD.ancho AS Ancho,
                 '' AS IndiceAgrupacion,

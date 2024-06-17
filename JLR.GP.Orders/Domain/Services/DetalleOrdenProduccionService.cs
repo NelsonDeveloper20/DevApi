@@ -295,7 +295,6 @@ namespace ApiPortal_DataLake.Domain.Services
                                     }
                                 }
                             }
-
                         }
                         // Validar si escuadra tiene datos
                         existingDataFila.Escuadra = "NO";
