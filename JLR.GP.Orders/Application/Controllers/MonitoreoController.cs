@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 using System.Net;
 using Api_Dc.Domain.Models;
 using Api_Dc.Domain.Request;
+using Microsoft.AspNetCore.StaticFiles;
 
 namespace ApiPortal_DataLake.Application.Controllers
 {
@@ -72,6 +73,44 @@ namespace ApiPortal_DataLake.Application.Controllers
                 return Conflict();
             }
         }
+
+        [HttpGet("downloadPlantilla")]
+        public IActionResult DownloadFile()
+        {
+            try
+            {
+               
+                var builder = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+                var configuration = builder.Build();
+                var rutaArchivo = configuration["Archivos:rutaPlantilla"];
+
+                var filePath = Path.Combine(rutaArchivo, "Plantilla_Carga.xlsx");
+                if (!System.IO.File.Exists(filePath))
+                {
+                    return NotFound(); // Devuelve 404 si el archivo no existe
+                }
+
+                var fileBytes = System.IO.File.ReadAllBytes(filePath);
+
+                // Determinar el tipo MIME
+                var provider = new FileExtensionContentTypeProvider();
+                if (!provider.TryGetContentType(filePath, out var contentType))
+                {
+                    contentType = "application/octet-stream"; // Tipo MIME por defecto si no se encuentra uno específico
+                }
+
+                return File(fileBytes, contentType, "Plantilla_Carga.xlsx");
+            }
+            catch (Exception ex)
+            {
+                // Logging the exception can be useful for debugging purposes.
+                // Logger.LogError(ex, "Error al descargar el archivo");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error al descargar el archivo.");
+            }
+        }
+
 
     }
 }

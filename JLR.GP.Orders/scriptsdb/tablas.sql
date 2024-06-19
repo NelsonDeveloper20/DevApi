@@ -163,16 +163,43 @@ Icono varchar(50),
 Orden INT,
 Estado int default 1 
 );
-INSERT INTO dbo.Tbl_Modulos (Nombre, Descripcion, Ruta, Icono, Estado) VALUES 
---('Inicio', 'Inicio', 'Home-main', 'home', 1),
-('Ventas', 'Ventas', 'SolicitudPendiente', 'markunread_mailbox', 1),
-('Linea Prod', 'Linea Producción', 'linea-Prod', 'markunread_mailbox', 1),
-('Operacion Construccion', 'Operaciones Construcción', 'Op-Construccion', 'donut_small', 1),
-('Monitoreo Produccion', 'Monitoreo Producción', 'Monitoreo-Produccion', 'donut_small', 1),
-('Componentes', 'Mantenimiento Componentes', 'Mantenimiento-componente', 'confirmation_number', 1),
-('Mantenimiento OP', 'Mantenimiento de OP', 'Mantenimiento-OP', 'donut_small', 1),
-('Usuarios', 'Mantenimiento Usuarios', 'Usuarios', 'supervised_user_circle', 1),
-('Perfiles', 'Mantenimiento Perfiles', 'Mantenimiento-Perfil', 'donut_small', 1);
+
+INSERT INTO dbo.Tbl_Modulos (Nombre, Descripcion, Ruta, Icono, Estado, Orden)
+VALUES ('Ventas', 'Ventas', 'SolicitudPendiente', 'markunread_mailbox', 1, 1)
+GO
+
+INSERT INTO dbo.Tbl_Modulos (Nombre, Descripcion, Ruta, Icono, Estado, Orden)
+VALUES ('Linea Prod', 'Linea Producción', 'linea-Prod', 'poll', 1, 2)
+GO
+
+INSERT INTO dbo.Tbl_Modulos (Nombre, Descripcion, Ruta, Icono, Estado, Orden)
+VALUES ('Operacion Construccion', 'Operaciones Construcción', 'Op-Construccion', 'apps', 1, 3)
+GO
+
+INSERT INTO dbo.Tbl_Modulos (Nombre, Descripcion, Ruta, Icono, Estado, Orden)
+VALUES ('Monitoreo Produccion', 'Monitoreo Producción', 'Monitoreo-Produccion', 'donut_small', 1, 4)
+GO
+
+INSERT INTO dbo.Tbl_Modulos (Nombre, Descripcion, Ruta, Icono, Estado, Orden)
+VALUES ('Componentes', 'Mantenimeinto Componentes', 'Mantenimiento-componente', 'confirmation_number', 1, 6)
+GO
+
+INSERT INTO dbo.Tbl_Modulos (Nombre, Descripcion, Ruta, Icono, Estado, Orden)
+VALUES ('Mantenimiento OP', 'Mantenimiento de OP', 'Mantenimiento-OP', 'build', 1, 5)
+GO
+
+INSERT INTO dbo.Tbl_Modulos (Nombre, Descripcion, Ruta, Icono, Estado, Orden)
+VALUES ('Usuarios', 'Mantenimiento Usuarios', 'Usuarios', 'supervised_user_circle', 1, 7)
+GO
+
+INSERT INTO dbo.Tbl_Modulos (Nombre, Descripcion, Ruta, Icono, Estado, Orden)
+VALUES ('Perfiles', 'Mantenimiento Perfiles', 'Mantenimiento-Perfil', 'drag_indicator', 1, 8)
+GO
+
+INSERT INTO dbo.Tbl_Modulos (Nombre, Descripcion, Ruta, Icono, Estado, Orden)
+VALUES ('Supervision', 'Supervision', 'Supervision', 'library_books', 1, 9)
+GO
+
 Create   Table Tbl_ModuloRol(
 Id int primary key identity,
 IdModulo int,
