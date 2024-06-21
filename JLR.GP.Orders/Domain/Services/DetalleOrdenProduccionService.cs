@@ -69,7 +69,7 @@ namespace ApiPortal_DataLake.Domain.Services
                 string numeroCotizacion = formData.NumeroCotizacion;
                 string codigosisgeco = formData.CodigoSisgeco;
                 string cotizacionGrupo = "";
-                int estadoInicial = 2;
+                int estadoInicial = 2; 
                 // Método para crear un nuevo grupo
                 void CrearNuevoGrupo(string cotizacionGrupo, string tipo, DateTime? fechaProduccion = null, string turno = null)
                 {
@@ -212,7 +212,7 @@ namespace ApiPortal_DataLake.Domain.Services
                                     {
                                         // Convertir el valor al tipo de datos de la propiedad y asignarlo
                                         var convertedValue = Convert.ChangeType(value.ToString(), propInfo.PropertyType);
-                                        propInfo.SetValue(dataFila, convertedValue, null);
+                                        propInfo.SetValue(dataFila, convertedValue.Replace("--Seleccione--", ""), null);
                                     }
                                 }
                             }
@@ -291,7 +291,7 @@ namespace ApiPortal_DataLake.Domain.Services
                                     {
                                         // Convertir el valor al tipo de datos de la propiedad y asignarlo
                                         var convertedValue = Convert.ChangeType(value.ToString(), propInfo.PropertyType);
-                                        propInfo.SetValue(existingDataFila, convertedValue, null);
+                                        propInfo.SetValue(existingDataFila, convertedValue.Replace("--Seleccione--", ""), null);
                                     }
                                 }
                             }
