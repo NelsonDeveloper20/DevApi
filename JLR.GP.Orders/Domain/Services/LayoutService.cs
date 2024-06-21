@@ -50,7 +50,7 @@ namespace ApiPortal_DataLake.Domain.Services
                 using (SqlConnection cnm = new SqlConnection(CnDc_Blinds))
                 {
                     await cnm.OpenAsync();
-                    using (SqlCommand cmd = new SqlCommand("SP_GetLayoutGrupo", cnm))
+                    using (SqlCommand cmd = new SqlCommand("SP_GetLayoutGrupov2", cnm))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@NumeroCotizacionGrupo", NumeroCotizacionGrupo));

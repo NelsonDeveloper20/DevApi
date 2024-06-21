@@ -175,11 +175,11 @@ namespace ApiPortal_DataLake.Domain.Services
                 int estado = 0;
                 if (_request.IdEstacion == 1)
                 {
-                    estado = 3;//Pendiente Construccion
+                    estado = 4;//Pendiente Construccion
                 }
                 else
                 {
-                    estado = 4;//Termino Produccion
+                    estado = 5;//Termino Produccion
                 }
                 var newEstacion = new Tbl_ProduccionEstacion()
                 { 

@@ -2810,3 +2810,24 @@ AND  FORMAT(GRD.FechaProduccion, 'dd MMMM', 'es-ES')='04 mayo' AND GRD.Turno='Ta
 
 */
 END
+
+ALTER	 PROC Sp_ListarOpSupervisor    
+  @NumCotizacion VARCHAR(10)
+  AS
+  BEGIN	
+  
+  
+
+SELECT * FROM Tbl_DetalleOpGrupo WHERE CotizacionGrupo='024072-1'
+
+    
+    
+    
+    FROM Tbl_DetalleOpGrupo GRD
+    JOIN Tbl_usuario U ON U.Id=GRD.IdUsuarioCrea
+    JOIN Tbl_Estado E ON E.Id=GRD.IdEstado
+    WHERE GRD.tipo='Producto'
+	-- WHERE GRD.IdEstado=7
+
+END
+GO 
