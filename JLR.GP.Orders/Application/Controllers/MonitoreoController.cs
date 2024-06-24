@@ -46,6 +46,32 @@ namespace ApiPortal_DataLake.Application.Controllers
                 return StatusCode((int)response.Status, response);
             }
         }
+        [HttpGet("ListarReporteExplocion")]
+        public async Task<ActionResult> ListarReporteExplocion(string grupoCotizacion, string fechaInicio, string fechaFin) //OK
+        {
+            var response = await this._usuarioService.ListarReporteExplocion(grupoCotizacion, fechaInicio, fechaFin);
+            if (response.Status == HttpStatusCode.OK)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return StatusCode((int)response.Status, response);
+            }
+        }
+        [HttpGet("ListarMantenimientoExplocion")]
+        public async Task<ActionResult> ListarMantenimientoExplocion(string grupoCotizacion) //OK
+        {
+            var response = await this._usuarioService.ListarMantenimientoExplocion(grupoCotizacion);
+            if (response.Status == HttpStatusCode.OK)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return StatusCode((int)response.Status, response);
+            }
+        }
         [HttpGet("ListarComponenteProducto")]
         public async Task<ActionResult> listarComponentesProductoPorGrupo(string grupoCotizacion, string id) //OK
         {
@@ -112,5 +138,38 @@ namespace ApiPortal_DataLake.Application.Controllers
         }
 
 
+        [HttpPost("ExplocionarComponente")]
+        public async Task<ActionResult<GeneralResponse<Object>>> GuardarExplocion([FromBody] List<ExplocionComponentesRequest> request)
+        {
+            try
+            {
+                var response = await this._usuarioService.GuardarExplocion(request);
+                return response;
+
+            }
+            catch (Exception ex)
+            {
+
+                this._logger.LogError($"Error Agregar Perfil : {JsonConvert.SerializeObject(ex)}");
+                return Conflict();
+            }
+        }
+
+        [HttpPost("ExplocionarCompCargaExcel")]
+        public async Task<ActionResult<GeneralResponse<Object>>> CargaExcelExplocion([FromBody] List<ExplocionComCargaRequest> request)
+        {
+            try
+            {
+                var response = await this._usuarioService.CargaExcelExplocion(request);
+                return response;
+
+            }
+            catch (Exception ex)
+            {
+
+                this._logger.LogError($"Error Agregar Perfil : {JsonConvert.SerializeObject(ex)}");
+                return Conflict();
+            }
+        }
     }
 }

@@ -64,6 +64,63 @@ namespace ApiPortal_DataLake.Domain.Services
                 throw new Exception(ex.Message);
             }
         }
+
+        public async Task<GeneralResponse<dynamic>> ListarReporteExplocion(string grupoCotizacion, string fechaInicio, string fechaFin) //OK OK
+        {
+            try
+            {
+
+                DataTable result = new DataTable();
+                using (SqlConnection cnm = new SqlConnection(CnDc_Blinds))
+                {
+                    await cnm.OpenAsync();
+                    using (SqlCommand cmd = new SqlCommand("SP_listarReporteExplocion", cnm))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@NumeroCotizacion", grupoCotizacion));
+                        cmd.Parameters.Add(new SqlParameter("@FechaInicio", fechaInicio));
+                        cmd.Parameters.Add(new SqlParameter("@FechaFin ", fechaFin));
+                        using (SqlDataAdapter adp = new SqlDataAdapter(cmd))
+                        {
+                            adp.Fill(result);
+                        }
+                    }
+                }
+                return new GeneralResponse<object>(HttpStatusCode.OK, result);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
+        public async Task<GeneralResponse<dynamic>> ListarMantenimientoExplocion(string grupoCotizacion) //OK OK
+        {
+            try
+            {
+
+                DataTable result = new DataTable();
+                using (SqlConnection cnm = new SqlConnection(CnDc_Blinds))
+                {
+                    await cnm.OpenAsync();
+                    using (SqlCommand cmd = new SqlCommand("SP_ListarMantenimientoExplocion", cnm))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@NumeroCotizacion", grupoCotizacion)); 
+                        using (SqlDataAdapter adp = new SqlDataAdapter(cmd))
+                        {
+                            adp.Fill(result);
+                        }
+                    }
+                }
+                return new GeneralResponse<object>(HttpStatusCode.OK, result);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public async Task<GeneralResponse<dynamic>> listarComponentesProductoPorGrupo(string grupoCotizacion, string id) //OK OK
         {
             try
@@ -116,6 +173,100 @@ namespace ApiPortal_DataLake.Domain.Services
                 {
                     Respuesta = "Ok",
                     idOrden = newEstacion.Id,
+
+                };
+
+                return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
+            }
+            catch (Exception ex)
+            {
+                this._logger.LogError($"Insertar Orden produccion Error try catch: {JsonConvert.SerializeObject(ex)}");
+                var jsonresponse = new
+                {
+                    Respuesta = ex,
+                    idOrden = 0
+
+                };
+                return new GeneralResponse<Object>(HttpStatusCode.InternalServerError, jsonresponse);
+            }
+        }
+        public async Task<GeneralResponse<Object>> GuardarExplocion(List<ExplocionComponentesRequest> request)
+        {
+            try
+            {
+                foreach(var item in request)
+                {
+                    var nuevaFila = new Tbl_Explocion()
+                    {
+                        NumeroCotizacion = item.NumeroCotizacion,
+                        CotizacionGrupo = item.Grupo,
+                        Nombre_Producto = item.NombreProducto,
+                        Codigo_Producto = item.Codigo,
+                        Descrip_Componente = item.Componente,
+                        Cod_Componente = item.Codigo,
+                        Descripcion = item.Nombre,
+                        Color = item.Color,
+                        Unidad = item.UnidadMedida,
+                        Cantidad = item.CantidadUtilizada,
+                        Merma = item.Merma,
+                        Origen = "Explocion",
+                        //Adicional = item.Agregado,
+                        IdUsuarioCrea =Convert.ToInt32(item.Usuario),
+                        FechaCreacion = DateTime.Now
+                    };
+                    this._context.Tbl_Explocion.Add(nuevaFila);
+                }
+                // Actualizar el estado de grupo dentro de la transacción
+                var grupo = await this._context.Tbl_DetalleOpGrupo
+                                            .Where(g => g.CotizacionGrupo == request[0].Grupo)
+                                            .FirstOrDefaultAsync();
+                if (grupo != null)
+                {
+                    grupo.IdEstado = 6; // Estado TERMINADO
+                    this._context.Tbl_DetalleOpGrupo.Update(grupo);
+                }
+                else
+                {
+                    throw new Exception("No se encontró el grupo especificado.");
+                }
+
+                await this._context.SaveChangesAsync();
+
+
+                var jsonresponse = new
+            {
+                Respuesta = "OK",
+                idOrden = 1,
+
+            };
+
+            return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
+            }catch (Exception ex)
+            {
+                this._logger.LogError($"Insertar Orden produccion Error try catch: {JsonConvert.SerializeObject(ex)}");
+                var jsonresponse = new
+                {
+                    Respuesta = ex,
+                    idOrden = 0
+
+                };
+                return new GeneralResponse<Object>(HttpStatusCode.InternalServerError, jsonresponse);
+            }
+}
+        public async Task<GeneralResponse<Object>> CargaExcelExplocion(List<ExplocionComCargaRequest> request)
+        {
+            try
+            {
+                foreach (var item in request)
+                {
+                 
+
+                }
+
+                var jsonresponse = new
+                {
+                    Respuesta = "OK",
+                    idOrden = 1,
 
                 };
 

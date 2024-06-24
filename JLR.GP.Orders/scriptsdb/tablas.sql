@@ -231,7 +231,7 @@ insert into Tbl_Estado values('PO', 'Pendiente Operaciones', 'Cotización aprobad
 insert into Tbl_Estado values('PC', 'En Construcción', 'El proceso de construcción en las estaciones ha comenzado.');
 
 insert into Tbl_Estado values('CT', 'Construcción Terminada', 'La construcción ha sido completada y está pendiente de exploción.');
-insert into Tbl_Estado values('CT', 'Terminad', 'OP Finalizada, Todas las operaciones relacionadas han sido completadas y se encuentra lista para su entrega al cliente.');
+insert into Tbl_Estado values('CT', 'Terminado', 'OP Finalizada, Todas las operaciones relacionadas han sido completadas y se encuentra lista para su entrega al cliente.');
 
 -- insert into Tbl_Estado values('EC','Entregado Cliente','');
 -- Esta línea está comentada ya que la descripción está pendiente de ser definida.
@@ -2831,3 +2831,51 @@ SELECT * FROM Tbl_DetalleOpGrupo WHERE CotizacionGrupo='024072-1'
 
 END
 GO 
+
+CREATE TABLE Tbl_Explocion (
+Id INT IDENTITY PRIMARY KEY,
+NumeroCotizacion      VARCHAR (20),
+CotizacionGrupo       VARCHAR (20), 	
+Nombre_Producto VARCHAR(200),
+Codigo_Producto VARCHAR(100),
+Descrip_Componente VARCHAR(200),
+Cod_Componente VARCHAR(100),
+Descripcion VARCHAR(200),
+Color VARCHAR(50),  
+Unidad VARCHAR(50), 
+Cantidad VARCHAR(50),
+Merma VARCHAR(50),
+Origen VARCHAR(50), -- CARGA O EXPLOCION
+Adicional VARCHAR(50), -- SI (fue agregado), NO (Acesorio original)
+IdUsuarioCrea         INT NULL,
+IdUsuarioModifica     INT NULL,
+FechaCreacion         DATETIME DEFAULT (getdate()) NULL,
+FechaModifica         DATETIME NULL
+);
+ 
+
+SELECT * FROM TBL_DetalleOrdenProduccion DP WHERE DP.CotizacionGrupo='024083-1';
+SELECT  
+Max(GRD.Id )AS Id, 
+GRD.NumeroCotizacion,
+GRD.CotizacionGrupo, 
+Max(OP.NumeroCotizacion) AS Cotizacion, 
+Max(OP.CodigoSisgeco) AS CodigoSisgeco, 
+Max(OP.RucCliente) AS Ruc, 
+Max(OP.Cliente) AS RazonSocial,  
+DP.CodigoProducto,
+DP.NombreProducto,
+DP.Accionamiento, 
+SUM(DP.Cantidad) AS Cantidad, 
+Count(*) AS CantidadProductos,
+Max(E.Nombre) AS Estado
+FROM TBL_DetalleOrdenProduccion DP
+LEFT JOIN Tbl_DetalleOpGrupo GRD ON DP.NumeroCotizacion=GRD.NumeroCotizacion AND DP.CotizacionGrupo=GRD.CotizacionGrupo
+LEFT JOIN	Tbl_OrdenProduccion OP ON GRD.NumeroCotizacion=OP.NumeroCotizacion
+LEFT JOIN Tbl_estado E ON GRD.IdEstado=E.Id
+WHERE DP.CotizacionGrupo='024083-1'
+GROUP BY GRD.NumeroCotizacion,GRD.CotizacionGrupo,DP.CodigoProducto,DP.NombreProducto,DP.Accionamiento
+
+'024186-1'
+'025322-1'
+
