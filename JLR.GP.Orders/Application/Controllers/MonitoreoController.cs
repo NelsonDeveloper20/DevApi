@@ -84,7 +84,24 @@ namespace ApiPortal_DataLake.Application.Controllers
             {
                 return StatusCode((int)response.Status, response);
             }
-        } 
+        }
+
+        [HttpGet("ListarComponentesPorCodigosProducto")]
+        public async Task<ActionResult<IEnumerable<Tbl_Componentes>>> GetAll(string codigosProducto,string grupo)
+        {
+            try
+            {
+                var proyectos = await _usuarioService.ListarComponentesPorCodigosProducto(codigosProducto, grupo);
+                var response = this._mapper.Map<IEnumerable<Tbl_Componentes>>(proyectos);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                this._logger.LogError($"Error Listar Orden Produccion : {JsonConvert.SerializeObject(ex)}");
+                return Ok(ex);
+            }
+        }
         [HttpPost] 
         public async Task<ActionResult<GeneralResponse<Object>>> InsertarEstacionProducto([FromBody] EstacionProductoRequest _request)
         {

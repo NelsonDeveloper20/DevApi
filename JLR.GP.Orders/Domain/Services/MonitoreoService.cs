@@ -121,7 +121,7 @@ namespace ApiPortal_DataLake.Domain.Services
                 throw new Exception(ex.Message);
             }
         }
-        public async Task<GeneralResponse<dynamic>> listarComponentesProductoPorGrupo(string grupoCotizacion, string id) //OK OK
+        public async Task<GeneralResponse<dynamic>> listarComponentesProductoPorGrupo(string grupoCotizacion, string id) //MOSTRAR EN POPUP DETALLE
         {
             try
             {
@@ -147,8 +147,34 @@ namespace ApiPortal_DataLake.Domain.Services
             {
                 throw new Exception(ex.Message);
             }
-        } 
+        }
 
+        public async Task<IEnumerable<Tbl_Componentes>> ListarComponentesPorCodigosProducto(string codigosProducto, string grupo) //MOSTRAR COMPONENTES EN COMBOS DEL DETALLE DEL GRUPO
+        {
+
+            try
+            {
+                if (grupo.Contains("-0"))
+                {
+
+                    var query = await this._context.Tbl_Componentes.ToListAsync();
+                    return query;
+                }
+                else
+                {
+                    var query = await this._context.Tbl_Componentes
+                              .Where(o => codigosProducto.Contains(o.CodigoProducto))
+                              .ToListAsync();
+                    return query;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+        }
         public async Task<GeneralResponse<Object>> InsertarEstacionProducto(EstacionProductoRequest _request)
         {
             try
