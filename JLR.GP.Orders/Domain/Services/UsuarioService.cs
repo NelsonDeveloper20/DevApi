@@ -1,4 +1,5 @@
 ﻿using Api_Dc.Domain.Models;
+using Api_Dc.Domain.Shared.Constants;
 using ApiPortal_DataLake.Application.Models.Request;
 using ApiPortal_DataLake.Domain.Contracts;
 using ApiPortal_DataLake.Domain.Models;
@@ -6,6 +7,8 @@ using ApiPortal_DataLake.Domain.Response;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Net;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace ApiPortal_DataLake.Domain.Services
 {
@@ -14,7 +17,7 @@ namespace ApiPortal_DataLake.Domain.Services
         private readonly IConfiguration _configuration;
         private readonly DBContext _context;
         private readonly ILogger<UsuarioService> _logger;
-
+        
         public UsuarioService(
             IConfiguration configuration,
             DBContext context,
@@ -25,7 +28,7 @@ namespace ApiPortal_DataLake.Domain.Services
             this._context = context;
             this._logger = logger;
         }
-         
+       
         public async Task<GeneralResponse<Object>> AgregarUsuario(AgregarUsuarioRequest agregarUsuarioRequest)
         {
             try
@@ -74,7 +77,7 @@ namespace ApiPortal_DataLake.Domain.Services
                         Dni = agregarUsuarioRequest.Dni,
                         IdRol = agregarUsuarioRequest.IdRol,
                         Usuario = agregarUsuarioRequest.Usuario,
-                        Clave = agregarUsuarioRequest.Clave,
+                        Clave = Encriptacion.EncryptPassword(agregarUsuarioRequest.Clave.Trim().ToLower()), // Hash the password
                         CodigoUsuario = agregarUsuarioRequest.CodigoUsuario,
                         Estado = 1
                     };
@@ -91,7 +94,7 @@ namespace ApiPortal_DataLake.Domain.Services
                     usuarioExistente.Dni = agregarUsuarioRequest.Dni;
                     usuarioExistente.IdRol = agregarUsuarioRequest.IdRol;
                     usuarioExistente.Usuario = agregarUsuarioRequest.Usuario;
-                    usuarioExistente.Clave = agregarUsuarioRequest.Clave;
+                    usuarioExistente.Clave = Encriptacion.EncryptPassword(agregarUsuarioRequest.Clave.Trim().ToLower()); // Hash the password
                     usuarioExistente.CodigoUsuario = agregarUsuarioRequest.CodigoUsuario;
                     usuarioExistente.Estado = agregarUsuarioRequest.Estado;
 
@@ -293,7 +296,7 @@ namespace ApiPortal_DataLake.Domain.Services
             //var _user = this._context.Tbl_Usuario.Where(u=>u.Estado==1) .ToList();
             var result = await (from u in _context.Tbl_Usuario
                                 join r in _context.Tbl_Rol on u.IdRol equals r.Id
-                                where u.Estado==1
+                                where u.Estado == 1
                                 select new
                                 {
                                     u.Id,
@@ -303,7 +306,7 @@ namespace ApiPortal_DataLake.Domain.Services
                                     u.Dni,
                                     u.Correo,
                                     u.Usuario,
-                                    u.Clave,
+                                    Clave = Encriptacion.DecryptPassword(u.Clave), // Nombrar la propiedad como "Clave"
                                     u.CodigoUsuario,
                                     u.FechaCreacion,
                                     u.FechaModificacion,
@@ -312,7 +315,6 @@ namespace ApiPortal_DataLake.Domain.Services
                                     u.Estado,
                                     u.IdRol,
                                     NombreRol = r.Nombre
-
                                 }).ToListAsync();
 
             return result.Cast<dynamic>();
