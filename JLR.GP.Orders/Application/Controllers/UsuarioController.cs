@@ -51,7 +51,6 @@ namespace ApiPortal_DataLake.Application.Controllers
             }
             catch (Exception ex)
             {
-
                 this._logger.LogError($"Error Agregar usuario : {JsonConvert.SerializeObject(ex)}");
                 return Conflict();
             }

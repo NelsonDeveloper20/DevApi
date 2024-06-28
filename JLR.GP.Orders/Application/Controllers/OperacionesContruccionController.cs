@@ -47,9 +47,9 @@ namespace ApiPortal_DataLake.Application.Controllers
             }
         }
         [HttpGet("Estacion")]
-        public async Task<ActionResult> ValidarEstacion(string paso, string dato)
+        public async Task<ActionResult> ValidarEstacion(string paso, string codigoEstacion, string idusuario, string grupo)
         {
-            var response = await this._usuarioService.ValidarEstacion(paso,dato);
+            var response = await this._usuarioService.ValidarEstacion( paso,  codigoEstacion,  idusuario,  grupo);
             if (response.Status == HttpStatusCode.OK)
             {
                 return Ok(response);

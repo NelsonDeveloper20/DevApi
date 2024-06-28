@@ -186,7 +186,7 @@ namespace ApiPortal_DataLake.Domain.Services
          IdEstacion =_request.IdEstacion,
          NumeroCotizacion =_request.NumeroCotizacion,
          CotizacionGrupo =_request.CotizacionGrupo,
-         CodigoUsuario =_request.CodigoUsuario,
+         //CodigoUsuario =_request.CodigoUsuario,
          /*FechaInicio =_request.FechaInicio,
          FechaFin =_request.FechaFin,*/
          FechaCreacion =DateTime.Now,

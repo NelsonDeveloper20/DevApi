@@ -10,7 +10,7 @@ namespace ApiPortal_DataLake.Domain.Contracts
     {
         //Task<IEnumerable<Tbl_DetalleOpGrupo>> ListarDetalleOpGrupo();
         Task<GeneralResponse<dynamic>> ListarOperacionesConstruccion(string NumeroCotizacionGrupo);
-        Task<GeneralResponse<object>> ValidarEstacion(string paso, string dato);
+        Task<GeneralResponse<object>> ValidarEstacion(string paso, string codigoEstacion, string idusuario, string grupo);
         Task<GeneralResponse<dynamic>> ListarProductoXEstacionGrupo(string grupoCotizacion, string estacion);
         Task<GeneralResponse<dynamic>> ListarAvanceEstacion(string grupoCotizacion);
         Task<GeneralResponse<Object>> InsertarEstacionProducto(EstacionProductoRequest _request);

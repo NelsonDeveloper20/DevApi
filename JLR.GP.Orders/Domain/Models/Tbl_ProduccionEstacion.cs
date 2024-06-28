@@ -14,7 +14,7 @@ namespace Api_Dc.Domain.Models
     public int? IdEstacion { get; set; }
         public string? NumeroCotizacion { get; set; }
         public string? CotizacionGrupo { get; set; }
-        public string? CodigoUsuario { get; set; }
+        public int? IdUsuario { get; set; }
         public string? TipoProceso { get; set; }
         public DateTime? FechaInicio { get; set; }
 
