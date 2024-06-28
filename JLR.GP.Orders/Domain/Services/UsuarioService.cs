@@ -50,11 +50,11 @@ namespace ApiPortal_DataLake.Domain.Services
                 var existeDni = await this._context.Tbl_Usuario
                     .Where(u => u.Dni.Trim().ToUpper() == agregarUsuarioRequest.Dni.Trim().ToUpper() && u.Id != agregarUsuarioRequest.Id)
                     .ToListAsync();
-                var existeCodigoUsuario = await this._context.Tbl_Usuario
+               /* var existeCodigoUsuario = await this._context.Tbl_Usuario
                     .Where(u => u.CodigoUsuario.Trim().ToUpper() == agregarUsuarioRequest.CodigoUsuario.Trim().ToUpper() && u.Id != agregarUsuarioRequest.Id)
-                    .ToListAsync();
+                    .ToListAsync();*/
 
-                if (existeUsuario.Any() || existeDni.Any() || existeCodigoUsuario.Any())
+                if (existeUsuario.Any() || existeDni.Any() )
                 {
                     jsonresponse = new
                     {
