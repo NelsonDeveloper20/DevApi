@@ -169,8 +169,9 @@ namespace ApiPortal_DataLake.Domain.Services
                                    join grd in _context.Tbl_DetalleOpGrupo on dp.CotizacionGrupo equals grd.CotizacionGrupo
                                    where grd.Turno == turno
                                          && grd.FechaProduccion == fechaProduccion
-                                         && dp.Cadena == "Cassete"
-                                         && dp.CodigoProducto.Substring(0, 5) == codigoProducto
+                                         && grd.Tipo == "Producto"
+                                   //&& dp.Cadena == "Cassete"
+                                   //&& dp.CodigoProducto.Substring(0, 5) == codigoProducto
                                    select dp)
                                 .CountAsync() * equivalencia + additionalValue;
             }
@@ -180,7 +181,8 @@ namespace ApiPortal_DataLake.Domain.Services
                                    join grd in _context.Tbl_DetalleOpGrupo on dp.CotizacionGrupo equals grd.CotizacionGrupo
                                    where grd.Turno == turno
                                          && grd.FechaProduccion == fechaProduccion
-                                         && dp.CodigoProducto.Substring(0, 5) == codigoProducto
+                                         && grd.Tipo == "Producto"
+                                         //&& dp.CodigoProducto.Substring(0, 5) == codigoProducto
                                    select dp)
                                 .CountAsync() * equivalencia + additionalValue;
             }
@@ -194,8 +196,9 @@ namespace ApiPortal_DataLake.Domain.Services
                                    join grd in _context.Tbl_DetalleOpGrupo on dp.CotizacionGrupo equals grd.CotizacionGrupo
                                    where grd.Turno == turno
                                          && grd.FechaProduccion == fechaProduccion
-                                         && dp.Accionamiento == accionamiento
-                                         && dp.CodigoProducto.Substring(0, 5) == codigoProducto
+                                         && grd.Tipo=="Producto"
+                                         //&& dp.Accionamiento == accionamiento
+                                         //&& dp.CodigoProducto.Substring(0, 5) == codigoProducto
                                    select dp)
                                 .CountAsync() * equivalencia + additionalValue;
             }
