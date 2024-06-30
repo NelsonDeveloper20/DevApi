@@ -18,6 +18,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -61,6 +62,148 @@ namespace ApiPortal_DataLake.Domain.Services
             }
 
         }
+        #region VALIACION DE PRODUCTOS POR TURNO Y FECH PRODUCCION
+        public async Task<GeneralResponse<object>> ValidarRegistroProducto(string turno, string fechaProduccion, string codigoProducto, string accionamiento)
+        {
+            try
+            {
+                var jsonresponse = new
+                {
+                    Msj = "",
+                    Resultado = "OK"
+                };
+
+                DateTime _fechaProduccion = DateTime.Parse(fechaProduccion);
+                string _CodProducto = codigoProducto;
+
+                var listCargaProd = await this._context.Tbl_CargaProduccion
+                    .Where(cp => cp.CodigoProducto == _CodProducto)
+                    .ToListAsync();
+
+                if (!listCargaProd.Any())
+                {
+                    jsonresponse = new
+                    {
+                        Msj = "NO EXISTE VALIDACIÓN PARA EL PRODUCTO: " + _CodProducto,
+                        Resultado = "OK"
+                    };
+                    return new GeneralResponse<object>(HttpStatusCode.OK, jsonresponse);
+                }
+                int equivalencia = 0;
+                // Aplicar filtro de equivalencia solo para ciertos productos y accionamientos
+                if (_CodProducto == "PRTRS" || _CodProducto == "PRTRZ")
+                {
+                    equivalencia = listCargaProd
+                        .Where(ls => ls.Accionamiento == accionamiento && ls.CodigoProducto == _CodProducto)
+                        .Select(ls => ls.Equivalencia)
+                        .FirstOrDefault() ?? 0;
+                }
+                else
+                {
+                    equivalencia = listCargaProd
+                        .Where(ls => ls.CodigoProducto == _CodProducto)
+                        .Select(ls => ls.Equivalencia)
+                        .FirstOrDefault() ?? 0;
+                }
+
+                int productos = await CalculateProductos(turno, _fechaProduccion, _CodProducto, accionamiento, equivalencia);
+
+                if (productos >= 30)
+                {
+                    jsonresponse = new
+                    {
+                        Msj = $"Ha superado la cantidad de producción en el turno {turno} para la fecha de producción {fechaProduccion}",
+                        Resultado = "NO"
+                    };
+                }
+
+                return new GeneralResponse<object>(HttpStatusCode.OK, jsonresponse);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Insertar Orden producción Error: {JsonConvert.SerializeObject(ex)}");
+                var jsonresponse = new
+                {
+                    Respuesta = ex.Message,
+                    idOrden = 0
+                };
+                return new GeneralResponse<object>(HttpStatusCode.InternalServerError, jsonresponse);
+            }
+        }
+
+        private async Task<int> CalculateProductos(string turno, DateTime fechaProduccion, string codigoProducto, string accionamiento, int equivalencia)
+        {
+            int productos = 0;
+            int additionalValue = 0;
+
+            // Asignar valores adicionales según el producto y el accionamiento
+            if (codigoProducto == "PRTRS" && accionamiento == "Manual")
+            {
+                additionalValue = 1;
+            }
+            else if (codigoProducto == "PRTRZ" && accionamiento == "Manual")
+            {
+                additionalValue = 3;
+            }
+            else if (codigoProducto == "PRTRS" && accionamiento == "Motorizado")
+            {
+                additionalValue = 2;
+            }
+            else if (codigoProducto == "PRTRZ" && accionamiento == "Motorizado")
+            {
+                additionalValue = 4;
+            }
+            else if (codigoProducto == "PRTRS" && accionamiento == "Cassete")
+            {
+                additionalValue = 2;
+            }
+            else if (codigoProducto == "PRTRM" || codigoProducto == "PRTSH" || codigoProducto == "PRTRH")
+            {
+                additionalValue = equivalencia;
+            }
+
+            // Aplicar filtro por cadena específico para "PRTRS" y "Cassete"
+            if (codigoProducto == "PRTRS" && accionamiento == "Cassete")
+            {
+                productos = await (from dp in _context.TBL_DetalleOrdenProduccion
+                                   join grd in _context.Tbl_DetalleOpGrupo on dp.CotizacionGrupo equals grd.CotizacionGrupo
+                                   where grd.Turno == turno
+                                         && grd.FechaProduccion == fechaProduccion
+                                         && dp.Cadena == "Cassete"
+                                         && dp.CodigoProducto.Substring(0, 5) == codigoProducto
+                                   select dp)
+                                .CountAsync() * equivalencia + additionalValue;
+            }
+            else if (codigoProducto == "PRTRM" || codigoProducto == "PRTSH" || codigoProducto == "PRTRH") // No filtrar por accionamiento
+            {
+                productos = await (from dp in _context.TBL_DetalleOrdenProduccion
+                                   join grd in _context.Tbl_DetalleOpGrupo on dp.CotizacionGrupo equals grd.CotizacionGrupo
+                                   where grd.Turno == turno
+                                         && grd.FechaProduccion == fechaProduccion
+                                         && dp.CodigoProducto.Substring(0, 5) == codigoProducto
+                                   select dp)
+                                .CountAsync() * equivalencia + additionalValue;
+            }
+            else if (codigoProducto == "PRTCV" || codigoProducto == "PRTRF" || codigoProducto == "PRTPJ") // No validar estos productos
+            {
+                productos = 0;
+            }
+            else // Aplicar filtro por accionamiento para otros productos
+            {
+                productos = await (from dp in _context.TBL_DetalleOrdenProduccion
+                                   join grd in _context.Tbl_DetalleOpGrupo on dp.CotizacionGrupo equals grd.CotizacionGrupo
+                                   where grd.Turno == turno
+                                         && grd.FechaProduccion == fechaProduccion
+                                         && dp.Accionamiento == accionamiento
+                                         && dp.CodigoProducto.Substring(0, 5) == codigoProducto
+                                   select dp)
+                                .CountAsync() * equivalencia + additionalValue;
+            }
+
+            return productos;
+        }
+
+        #endregion
         public async Task<GeneralResponse<object>> AgregarProducto(dynamic formData, dynamic escuadra, string tipo)
         {
             try
@@ -68,6 +211,10 @@ namespace ApiPortal_DataLake.Domain.Services
                 // Extraer algunos campos específicos en variables  
                 string numeroCotizacion = formData.NumeroCotizacion;
                 string codigosisgeco = formData.CodigoSisgeco;
+                string turno = formData.Turno;
+                DateTime fechaProduccion = DateTime.Parse(formData.FechaProduccion);
+                 
+
                 string cotizacionGrupo = "";
                 int estadoInicial = 2; 
                 // Método para crear un nuevo grupo
@@ -112,8 +259,6 @@ namespace ApiPortal_DataLake.Domain.Services
                         }
                         else
                         {
-                            string turno = formData.Turno;
-                            DateTime fechaProduccion = DateTime.Parse(formData.FechaProduccion);
                             var grupoExistente2 = this._context.Tbl_DetalleOpGrupo
                                 .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion && g.Turno == turno && g.FechaProduccion == fechaProduccion);
 
@@ -154,8 +299,7 @@ namespace ApiPortal_DataLake.Domain.Services
                         }
                         else
                         {
-                            string turno = formData.Turno;
-                            DateTime fechaProduccion = DateTime.Parse(formData.FechaProduccion);
+                           
                             cotizacionGrupo = $"{numeroCotizacion}-1";
                             CrearNuevoGrupo(cotizacionGrupo, "Producto", fechaProduccion, turno);
                         }

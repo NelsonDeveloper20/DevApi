@@ -50,17 +50,17 @@ namespace ApiPortal_DataLake.Domain.Services
                 var existeDni = await this._context.Tbl_Usuario
                     .Where(u => u.Dni.Trim().ToUpper() == agregarUsuarioRequest.Dni.Trim().ToUpper() && u.Id != agregarUsuarioRequest.Id)
                     .ToListAsync();
-               /* var existeCodigoUsuario = await this._context.Tbl_Usuario
-                    .Where(u => u.CodigoUsuario.Trim().ToUpper() == agregarUsuarioRequest.CodigoUsuario.Trim().ToUpper() && u.Id != agregarUsuarioRequest.Id)
-                    .ToListAsync();*/
+               var existeCodigoUsuario = await this._context.Tbl_Usuario
+                    .Where(u => u.Correo.Trim().ToUpper() == agregarUsuarioRequest.Correo.Trim().ToUpper() && u.Id != agregarUsuarioRequest.Id)
+                    .ToListAsync(); 
 
-                if (existeUsuario.Any() || existeDni.Any() )
+                if (existeUsuario.Any() || existeDni.Any() || existeCodigoUsuario.Any())
                 {
                     jsonresponse = new
                     {
                         Respuesta = existeUsuario.Any() ? "Ya existe el nombre del usuario" :
                                     existeDni.Any() ? "Ya existe Dni" :
-                                    "Ya existe Codigo Usuario",
+                                    "Ya existe Correo",
                         idUsuario = 0,
                     };
                     return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
@@ -75,6 +75,7 @@ namespace ApiPortal_DataLake.Domain.Services
                         Nombre = agregarUsuarioRequest.Nombre,
                         Apellido = agregarUsuarioRequest.Apellido,
                         Dni = agregarUsuarioRequest.Dni,
+                        Correo=agregarUsuarioRequest.Correo,
                         IdRol = agregarUsuarioRequest.IdRol,
                         Usuario = agregarUsuarioRequest.Usuario,
                         Clave = Encriptacion.EncryptPassword(agregarUsuarioRequest.Clave.Trim().ToLower()), // Hash the password
@@ -92,6 +93,7 @@ namespace ApiPortal_DataLake.Domain.Services
                     usuarioExistente.Nombre = agregarUsuarioRequest.Nombre;
                     usuarioExistente.Apellido = agregarUsuarioRequest.Apellido;
                     usuarioExistente.Dni = agregarUsuarioRequest.Dni;
+                    usuarioExistente.Correo = agregarUsuarioRequest.Correo;
                     usuarioExistente.IdRol = agregarUsuarioRequest.IdRol;
                     usuarioExistente.Usuario = agregarUsuarioRequest.Usuario;
                     usuarioExistente.Clave = Encriptacion.EncryptPassword(agregarUsuarioRequest.Clave.Trim().ToLower()); // Hash the password
@@ -263,7 +265,6 @@ namespace ApiPortal_DataLake.Domain.Services
          
         public async Task<IEnumerable<Usuario>> GetAllAsync()
         {
-            
             var users  = this._context.Usuarios
                 .Include(u => u.Roles) // Carga la entidad Roles relacionada en Usuario
                 .ThenInclude(ru => ru.Rol) // Carga la entidad Rol relacionada en RolUsuario

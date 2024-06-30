@@ -10,5 +10,6 @@ namespace Api_Dc.Domain.Contracts
     {
         Task<GeneralResponse<object>> AgregarProducto(dynamic formData, dynamic escuadra,string tipo);
         Task<IEnumerable<TBL_DetalleOrdenProduccion>> GetAllAsync();
+        Task<GeneralResponse<object>> ValidarRegistroProducto(string turno, string fechaProduccion, string codigoProducto, string accionamiento);
     }
 }

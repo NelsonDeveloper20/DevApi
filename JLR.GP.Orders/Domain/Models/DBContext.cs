@@ -41,6 +41,8 @@ namespace ApiPortal_DataLake.Domain.Models
         public DbSet<Tbl_ProduccionEstacion> Tbl_ProduccionEstacion { get; set; }
         public DbSet<Tbl_SupervisorAprobacion> Tbl_SupervisorAprobacion { get; set; }
         public DbSet<Tbl_Explocion> Tbl_Explocion { get; set; }
+        public DbSet<Tbl_CargaProduccion> Tbl_CargaProduccion { get; set; }
+        public DbSet<Tbl_ProduccionPorTurno> Tbl_ProduccionPorTurno { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         { 
@@ -80,6 +82,8 @@ namespace ApiPortal_DataLake.Domain.Models
             modelBuilder.Entity<Tbl_ProduccionEstacion>().ToTable("Tbl_ProduccionEstacion");
             modelBuilder.Entity<Tbl_SupervisorAprobacion>().ToTable("Tbl_SupervisorAprobacion");
             modelBuilder.Entity<Tbl_Explocion>().ToTable("Tbl_Explocion");
+            modelBuilder.Entity<Tbl_CargaProduccion>().ToTable("Tbl_CargaProduccion");
+            modelBuilder.Entity<Tbl_ProduccionPorTurno>().ToTable("Tbl_ProduccionPorTurno");
             
 
 

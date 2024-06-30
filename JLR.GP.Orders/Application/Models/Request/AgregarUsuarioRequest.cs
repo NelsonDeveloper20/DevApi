@@ -9,6 +9,7 @@
         public string? Nombre { get; set; }
         public string? Apellido { get; set; }
         public string? Dni { get; set; }
+        public string? Correo { get; set; }
         public int?  IdRol { get; set; }
         public string? Usuario { get; set; }
         public string? Clave { get; set; }
