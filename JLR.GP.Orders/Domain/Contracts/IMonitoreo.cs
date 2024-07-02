@@ -17,5 +17,6 @@ namespace ApiPortal_DataLake.Domain.Contracts
         Task<GeneralResponse<dynamic>> ListarReporteExplocion(string grupoCotizacion, string fechaInicio, string fechaFin);
         Task<GeneralResponse<dynamic>> ListarMantenimientoExplocion(string grupoCotizacion);
         Task<IEnumerable<Tbl_Componentes>> ListarComponentesPorCodigosProducto(string codigosProducto,string grupo);
+        Task<GeneralResponse<Object>> GuardarExplocionMantenimiento(List<ExplocionComponentesMantRequest> request);
     }
 }

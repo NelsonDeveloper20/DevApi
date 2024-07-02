@@ -13,5 +13,6 @@
         public string Cantidad { get; set; }
         public string Merma { get; set; }
         public string Codigo_Producto { get; set; } 
+        public string Usuario { get; set;}
     }
 }

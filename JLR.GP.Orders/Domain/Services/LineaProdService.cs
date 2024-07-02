@@ -65,6 +65,33 @@ namespace ApiPortal_DataLake.Domain.Services
                 throw new Exception(ex.Message);
             }
         }
+        public async Task<GeneralResponse<dynamic>> DetalleListarLinaProduccion(string turno,string dia)
+        {
+            try
+            {
 
+                DataTable result = new DataTable();
+                using (SqlConnection cnm = new SqlConnection(CnDc_Blinds))
+                {
+                    await cnm.OpenAsync();
+                    using (SqlCommand cmd = new SqlCommand("Sp_ListDetalleLineaProd", cnm))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@Turno", turno));
+                        cmd.Parameters.Add(new SqlParameter("@Dia", dia));
+                        using (SqlDataAdapter adp = new SqlDataAdapter(cmd))
+                        {
+                            adp.Fill(result);
+                        }
+                    }
+                }
+
+                return new GeneralResponse<object>(HttpStatusCode.OK, result);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

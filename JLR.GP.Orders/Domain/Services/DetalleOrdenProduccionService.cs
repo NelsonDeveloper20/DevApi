@@ -112,7 +112,7 @@ namespace ApiPortal_DataLake.Domain.Services
                 {
                     jsonresponse = new
                     {
-                        Msj = $"Ha superado la cantidad de producción en el turno {turno} para la fecha de producción {fechaProduccion}",
+                        Msj = $"Ya está superando la cantidad de producción en el turno {turno} para la fecha de producción {fechaProduccion}",
                         Resultado = "NO"
                     };
                 }
@@ -213,10 +213,7 @@ namespace ApiPortal_DataLake.Domain.Services
             {
                 // Extraer algunos campos específicos en variables  
                 string numeroCotizacion = formData.NumeroCotizacion;
-                string codigosisgeco = formData.CodigoSisgeco;
-                string turno = formData.Turno;
-                DateTime fechaProduccion = DateTime.Parse(formData.FechaProduccion);
-                 
+                string codigosisgeco = formData.CodigoSisgeco;  
 
                 string cotizacionGrupo = "";
                 int estadoInicial = 2; 
@@ -262,6 +259,8 @@ namespace ApiPortal_DataLake.Domain.Services
                         }
                         else
                         {
+                            string turno = formData.Turno;
+                            DateTime fechaProduccion = DateTime.Parse(formData.FechaProduccion);
                             var grupoExistente2 = this._context.Tbl_DetalleOpGrupo
                                 .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion && g.Turno == turno && g.FechaProduccion == fechaProduccion);
 
@@ -274,8 +273,7 @@ namespace ApiPortal_DataLake.Domain.Services
                                 var ultimoGrupo = this._context.Tbl_DetalleOpGrupo
                                     .Where(g => g.NumeroCotizacion == numeroCotizacion)
                                     .OrderByDescending(g => g.CotizacionGrupo)
-                                    .FirstOrDefault();
-
+                                    .FirstOrDefault(); 
                                 if (ultimoGrupo != null)
                                 {
                                     // Obtener el último número de grupo y agregar 1
@@ -302,7 +300,9 @@ namespace ApiPortal_DataLake.Domain.Services
                         }
                         else
                         {
-                           
+                            string turno = formData.Turno;
+                            DateTime fechaProduccion = DateTime.Parse(formData.FechaProduccion);
+
                             cotizacionGrupo = $"{numeroCotizacion}-1";
                             CrearNuevoGrupo(cotizacionGrupo, "Producto", fechaProduccion, turno);
                         }

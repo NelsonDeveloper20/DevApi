@@ -172,6 +172,23 @@ namespace ApiPortal_DataLake.Application.Controllers
             }
         }
 
+
+        [HttpPost("ExplocionarMantenimiento")]
+        public async Task<ActionResult<GeneralResponse<Object>>> GuardarExplocionMantenimiento([FromBody] List<ExplocionComponentesMantRequest> request)
+        {
+            try
+            {
+                var response = await this._usuarioService.GuardarExplocionMantenimiento(request);
+                return response;
+
+            }
+            catch (Exception ex)
+            {
+
+                this._logger.LogError($"Error modificar explocion : {JsonConvert.SerializeObject(ex)}");
+                return Conflict();
+            }
+        }
         [HttpPost("ExplocionarCompCargaExcel")]
         public async Task<ActionResult<GeneralResponse<Object>>> CargaExcelExplocion([FromBody] List<ExplocionComCargaRequest> request)
         {

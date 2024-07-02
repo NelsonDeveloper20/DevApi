@@ -9,6 +9,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Data;
+using System.Drawing;
 using System.Net;
 
 namespace ApiPortal_DataLake.Domain.Services
@@ -227,7 +228,7 @@ namespace ApiPortal_DataLake.Domain.Services
                         NumeroCotizacion = item.NumeroCotizacion,
                         CotizacionGrupo = item.Grupo,
                         Nombre_Producto = item.NombreProducto,
-                        Codigo_Producto = item.Codigo,
+                        Codigo_Producto = item.CodigoProducto,
                         Descrip_Componente = item.Componente,
                         Cod_Componente = item.Codigo,
                         Descripcion = item.Nombre,
@@ -269,38 +270,7 @@ namespace ApiPortal_DataLake.Domain.Services
             return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
             }catch (Exception ex)
             {
-                this._logger.LogError($"Insertar Orden produccion Error try catch: {JsonConvert.SerializeObject(ex)}");
-                var jsonresponse = new
-                {
-                    Respuesta = ex,
-                    idOrden = 0
-
-                };
-                return new GeneralResponse<Object>(HttpStatusCode.InternalServerError, jsonresponse);
-            }
-}
-        public async Task<GeneralResponse<Object>> CargaExcelExplocion(List<ExplocionComCargaRequest> request)
-        {
-            try
-            {
-                foreach (var item in request)
-                {
-                 
-
-                }
-
-                var jsonresponse = new
-                {
-                    Respuesta = "OK",
-                    idOrden = 1,
-
-                };
-
-                return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
-            }
-            catch (Exception ex)
-            {
-                this._logger.LogError($"Insertar Orden produccion Error try catch: {JsonConvert.SerializeObject(ex)}");
+                this._logger.LogError($"Insertar   explocion mantenimiento Error try catch: {JsonConvert.SerializeObject(ex)}");
                 var jsonresponse = new
                 {
                     Respuesta = ex,
@@ -310,6 +280,219 @@ namespace ApiPortal_DataLake.Domain.Services
                 return new GeneralResponse<Object>(HttpStatusCode.InternalServerError, jsonresponse);
             }
         }
+        public async Task<GeneralResponse<Object>> GuardarExplocionMantenimiento(List<ExplocionComponentesMantRequest> request)
+        {
+            if (request == null || !request.Any())
+            {
+                var errorResponse = new
+                {
+                    Respuesta = "La solicitud no puede estar vacía",
+                    idOrden = 0
+                };
+                return new GeneralResponse<Object>(HttpStatusCode.BadRequest, errorResponse);
+            }
+
+            try
+            {
+                var firstRequest = request.FirstOrDefault(r => r.id != "0");
+                if (firstRequest == null)
+                {
+                    var errorResponse = new
+                    {
+                        Respuesta = "No se encontró un ID válido en la solicitud",
+                        idOrden = 0
+                    };
+                    return new GeneralResponse<Object>(HttpStatusCode.BadRequest, errorResponse);
+                }
+
+                var fechaExplocion = _context.Tbl_Explocion
+                    .Where(e => e.Id == Convert.ToInt32(firstRequest.id))
+                    .Select(e => e.FechaCreacion)
+                    .FirstOrDefault();
+
+                foreach (var item in request)
+                {
+                    if (item.id == "0")
+                    {
+                        var nuevaFila = new Tbl_Explocion
+                        {
+                            NumeroCotizacion = item.numeroCotizacion,
+                            CotizacionGrupo = item.cotizacionGrupo,
+                            Nombre_Producto = item.nombre_Producto,
+                            Codigo_Producto = item.codigo_Producto,
+                            Descrip_Componente = item.componente,
+                            Cod_Componente = item.cod_Componente,
+                            Descripcion = item.descripcion,
+                            Color = item.color,
+                            Unidad = item.unidad,
+                            Cantidad = item.cantidad,
+                            Merma = item.merma,
+                            Origen = "Explocion",
+                            IdUsuarioCrea = Convert.ToInt32(item.idUsuarioCrea),
+                            FechaCreacion = fechaExplocion
+                        };
+                        _context.Tbl_Explocion.Add(nuevaFila);
+                    }
+                    else
+                    {
+                        var _explocion = await _context.Tbl_Explocion.FindAsync(Convert.ToInt32(item.id));
+                        if (_explocion != null)
+                        {
+                            _explocion.Descrip_Componente = item.componente;
+                            _explocion.Cod_Componente = item.cod_Componente;
+                            _explocion.Descripcion = item.descripcion;
+                            _explocion.Color = item.color;
+                            _explocion.Unidad = item.unidad;
+                            _explocion.Cantidad = item.cantidad;
+                            _explocion.Merma = item.merma;
+                            _explocion.IdUsuarioModifica = Convert.ToInt32(item.idUsuarioCrea);
+                            _explocion.FechaModifica = DateTime.Now;
+                            _context.Tbl_Explocion.Update(_explocion);
+                        }
+                    }
+                }
+
+                await _context.SaveChangesAsync();
+
+                var jsonresponse = new
+                {
+                    Respuesta = "OK",
+                    idOrden = 1
+                };
+                return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Insertar Orden produccion Error try catch: {JsonConvert.SerializeObject(ex)}");
+                var jsonresponse = new
+                {
+                    Respuesta = ex.Message,
+                    idOrden = 0
+                };
+                return new GeneralResponse<Object>(HttpStatusCode.InternalServerError, jsonresponse);
+            }
+        }
+
+        public async Task<GeneralResponse<Object>> CargaExcelExplocion(List<ExplocionComCargaRequest> request)
+        {
+            try
+            {
+                // Validación de datos
+                List<object> listErrores = new List<object>();
+
+                foreach (var item in request)
+                {
+
+                    // Validar si el grupo ya fue explotado
+                    var grupoExplotado = await this._context.Tbl_Explocion
+                        .AnyAsync(e => e.CotizacionGrupo == item.Grupo);
+
+                    if (grupoExplotado)
+                    {
+                        var error = new
+                        {
+                            Cotizacion = item.Cotizacion,
+                            Grupo = item.Grupo,
+                            Producto = item.Codigo_Producto,
+                            Mensaje = "El grupo ya fue explotado"
+                        };
+                        listErrores.Add(error);
+                    }
+                    // Validar si el producto existe en la cotización y grupo
+                    var existeProducto = await this._context.TBL_DetalleOrdenProduccion
+                        .AnyAsync(dp => dp.NumeroCotizacion == item.Cotizacion
+                                    && dp.CotizacionGrupo == item.Grupo
+                                    && dp.CodigoProducto == item.Codigo_Producto);
+
+
+                    if (!existeProducto)
+                    {
+                        var error = new
+                        {
+                            Cotizacion = item.Cotizacion,
+                            Grupo = item.Grupo,
+                            Producto = item.Codigo_Producto,
+                            Mensaje = "El producto no existe en la cotización y grupo cargado"
+                        };
+                        listErrores.Add(error);
+                    }
+                }
+
+                // Si hay errores, retornar respuesta con lista de errores
+                if (listErrores.Count > 0)
+                {
+                    var jsonResponse = new
+                    {
+                        Respuesta = "ERROR",
+                        idOrden = 0,
+                        listaError = listErrores
+                    };
+
+                    return new GeneralResponse<Object>(HttpStatusCode.OK, jsonResponse);
+                }
+
+                // Procesar los datos si no hay errores
+                foreach (var item in request)
+                {
+                    var nuevaFila = new Tbl_Explocion
+                    {
+                        NumeroCotizacion = item.Cotizacion,
+                        CotizacionGrupo = item.Grupo,
+                        Nombre_Producto = item.Nombre_Producto,
+                        Codigo_Producto = item.Codigo_Producto,
+                        Descrip_Componente = item.Descrip_Componente,
+                        Cod_Componente = item.Cod_Componente,
+                        Descripcion = item.Descripcion,
+                        Color = item.Color,
+                        Unidad = item.Unidad,
+                        Cantidad = item.Cantidad,
+                        Merma = item.Merma,
+                        Origen = "Carga",
+                        IdUsuarioCrea = Convert.ToInt32(item.Usuario),
+                        FechaCreacion = DateTime.Now,
+                    };
+
+                    _context.Tbl_Explocion.Add(nuevaFila);
+                    var grupo = await this._context.Tbl_DetalleOpGrupo
+                                          .Where(g => g.CotizacionGrupo == item.Grupo)
+                                          .FirstOrDefaultAsync();
+                    if (grupo != null)
+                    {
+                        grupo.IdEstado = 6; // Estado TERMINADO
+                        this._context.Tbl_DetalleOpGrupo.Update(grupo);
+                    }
+                    else
+                    {
+                        throw new Exception("No se encontró el grupo especificado.");
+                    }
+
+                }
+
+                await _context.SaveChangesAsync();
+
+                // Retornar respuesta de éxito
+                var successResponse = new
+                {
+                    Respuesta = "OK",
+                    idOrden = 0
+                };
+
+                return new GeneralResponse<Object>(HttpStatusCode.OK, successResponse);
+            }
+            catch (Exception ex)
+            {
+                this._logger.LogError($"Error al insertar orden de producción: {JsonConvert.SerializeObject(ex)}");
+
+                var errorResponse = new
+                {
+                    Respuesta = "Error al procesar la carga de datos.",
+                    Detalle = ex.Message // Aquí puedes agregar más detalles según necesites
+                };
+
+                return new GeneralResponse<Object>(HttpStatusCode.InternalServerError, errorResponse);
+            }
+        }
+
 
     }
 }

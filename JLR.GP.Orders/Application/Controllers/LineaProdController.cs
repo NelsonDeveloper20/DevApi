@@ -45,6 +45,19 @@ namespace ApiPortal_DataLake.Application.Controllers
             {
                 return StatusCode((int)response.Status, response);
             }
-        } 
+        }
+        [HttpGet("DetalleLineaProd")]
+        public async Task<ActionResult> DetalleListarLinaProduccion(string turno, string dia)
+        {
+            var response = await this._usuarioService.DetalleListarLinaProduccion(turno,dia);
+            if (response.Status == HttpStatusCode.OK)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return StatusCode((int)response.Status, response);
+            }
+        }
     }
 }

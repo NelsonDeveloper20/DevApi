@@ -9,5 +9,6 @@ namespace ApiPortal_DataLake.Domain.Contracts
     public interface ILineaProd
     {
         Task<GeneralResponse<dynamic>> ListarLinaProduccion(string fecha);
+        Task<GeneralResponse<dynamic>> DetalleListarLinaProduccion(string turno, string dia);
     }
 }
