@@ -1,0 +1,523 @@
+2024-07-01 00:03:27,116 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 00:03:27,374 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (17ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+2024-07-01 00:04:52,489 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 00:04:52,510 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (14ms) [Parameters=[@__item_Cotizacion_0='?' (Size = 4000), @__item_Grupo_1='?' (Size = 4000), @__item_Codigo_Producto_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TBL_DetalleOrdenProduccion] AS [t]
+        WHERE (([t].[NumeroCotizacion] = @__item_Cotizacion_0) AND ([t].[CotizacionGrupo] = @__item_Grupo_1)) AND ([t].[CodigoProducto] = @__item_Codigo_Producto_2)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-01 00:04:52,515 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__item_Grupo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tbl_DetalleOpGrupo] AS [t]
+        WHERE [t].[CotizacionGrupo] = @__item_Grupo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-01 00:04:52,518 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__item_Cotizacion_0='?' (Size = 4000), @__item_Grupo_1='?' (Size = 4000), @__item_Codigo_Producto_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TBL_DetalleOrdenProduccion] AS [t]
+        WHERE (([t].[NumeroCotizacion] = @__item_Cotizacion_0) AND ([t].[CotizacionGrupo] = @__item_Grupo_1)) AND ([t].[CodigoProducto] = @__item_Codigo_Producto_2)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-01 00:06:42,095 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-07-01 00:06:42,115 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2024-07-01 00:06:42,118 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Pictures\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2024-07-01 00:07:06,910 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Alto' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:07:06,914 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaCadena' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:07:06,944 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaCordon' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:07:06,946 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:07:06,948 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Ancho' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:07:06,950 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Cantidad' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:07:06,952 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TelaMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:07:06,954 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TuboMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:07:06,956 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Monto' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:07:06,958 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'SubTotal' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:07:06,960 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Total' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:07:06,962 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TotalIgv' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:07:07,129 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 00:07:08,825 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (248ms) [Parameters=[@__item_Grupo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tbl_DetalleOpGrupo] AS [t]
+        WHERE [t].[CotizacionGrupo] = @__item_Grupo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-01 00:07:09,268 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (386ms) [Parameters=[@__item_Cotizacion_0='?' (Size = 4000), @__item_Grupo_1='?' (Size = 4000), @__item_Codigo_Producto_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TBL_DetalleOrdenProduccion] AS [t]
+        WHERE (([t].[NumeroCotizacion] = @__item_Cotizacion_0) AND ([t].[CotizacionGrupo] = @__item_Grupo_1)) AND ([t].[CodigoProducto] = @__item_Codigo_Producto_2)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-01 00:07:09,276 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__item_Grupo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tbl_DetalleOpGrupo] AS [t]
+        WHERE [t].[CotizacionGrupo] = @__item_Grupo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-01 00:07:09,279 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__item_Cotizacion_0='?' (Size = 4000), @__item_Grupo_1='?' (Size = 4000), @__item_Codigo_Producto_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TBL_DetalleOrdenProduccion] AS [t]
+        WHERE (([t].[NumeroCotizacion] = @__item_Cotizacion_0) AND ([t].[CotizacionGrupo] = @__item_Grupo_1)) AND ([t].[CodigoProducto] = @__item_Codigo_Producto_2)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-01 00:08:03,289 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-07-01 00:08:03,302 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2024-07-01 00:08:03,303 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Pictures\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2024-07-01 00:08:32,295 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Alto' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:08:32,302 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaCadena' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:08:32,307 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaCordon' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:08:32,309 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:08:32,312 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Ancho' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:08:32,314 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Cantidad' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:08:32,317 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TelaMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:08:32,319 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TuboMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:08:32,321 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Monto' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:08:32,323 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'SubTotal' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:08:32,325 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Total' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:08:32,327 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TotalIgv' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:08:32,496 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 00:08:33,328 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (96ms) [Parameters=[@__item_Grupo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tbl_Explocion] AS [t]
+        WHERE [t].[CotizacionGrupo] = @__item_Grupo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-01 00:08:33,427 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (47ms) [Parameters=[@__item_Cotizacion_0='?' (Size = 4000), @__item_Grupo_1='?' (Size = 4000), @__item_Codigo_Producto_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TBL_DetalleOrdenProduccion] AS [t]
+        WHERE (([t].[NumeroCotizacion] = @__item_Cotizacion_0) AND ([t].[CotizacionGrupo] = @__item_Grupo_1)) AND ([t].[CodigoProducto] = @__item_Codigo_Producto_2)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-01 00:08:33,435 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__item_Grupo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tbl_Explocion] AS [t]
+        WHERE [t].[CotizacionGrupo] = @__item_Grupo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-01 00:08:33,443 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[@__item_Cotizacion_0='?' (Size = 4000), @__item_Grupo_1='?' (Size = 4000), @__item_Codigo_Producto_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TBL_DetalleOrdenProduccion] AS [t]
+        WHERE (([t].[NumeroCotizacion] = @__item_Cotizacion_0) AND ([t].[CotizacionGrupo] = @__item_Grupo_1)) AND ([t].[CodigoProducto] = @__item_Codigo_Producto_2)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-01 00:09:10,430 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 00:09:10,437 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__item_Grupo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tbl_Explocion] AS [t]
+        WHERE [t].[CotizacionGrupo] = @__item_Grupo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-01 00:09:10,444 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@__item_Cotizacion_0='?' (Size = 4000), @__item_Grupo_1='?' (Size = 4000), @__item_Codigo_Producto_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TBL_DetalleOrdenProduccion] AS [t]
+        WHERE (([t].[NumeroCotizacion] = @__item_Cotizacion_0) AND ([t].[CotizacionGrupo] = @__item_Grupo_1)) AND ([t].[CodigoProducto] = @__item_Codigo_Producto_2)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-01 00:09:10,447 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__item_Grupo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tbl_Explocion] AS [t]
+        WHERE [t].[CotizacionGrupo] = @__item_Grupo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-01 00:09:10,450 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__item_Cotizacion_0='?' (Size = 4000), @__item_Grupo_1='?' (Size = 4000), @__item_Codigo_Producto_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TBL_DetalleOrdenProduccion] AS [t]
+        WHERE (([t].[NumeroCotizacion] = @__item_Cotizacion_0) AND ([t].[CotizacionGrupo] = @__item_Grupo_1)) AND ([t].[CodigoProducto] = @__item_Codigo_Producto_2)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-01 00:09:10,682 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (33ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Tbl_Explocion] ([Cantidad], [Cod_Componente], [Codigo_Producto], [Color], [CotizacionGrupo], [Descrip_Componente], [Descripcion], [FechaCreacion], [FechaModifica], [IdUsuarioCrea], [IdUsuarioModifica], [Merma], [Nombre_Producto], [NumeroCotizacion], [Origen], [Unidad])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+SELECT [Id]
+FROM [Tbl_Explocion]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2024-07-01 00:09:10,711 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Tbl_Explocion] ([Cantidad], [Cod_Componente], [Codigo_Producto], [Color], [CotizacionGrupo], [Descrip_Componente], [Descripcion], [FechaCreacion], [FechaModifica], [IdUsuarioCrea], [IdUsuarioModifica], [Merma], [Nombre_Producto], [NumeroCotizacion], [Origen], [Unidad])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+SELECT [Id]
+FROM [Tbl_Explocion]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2024-07-01 00:09:23,483 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 00:09:23,694 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (111ms) [Parameters=[@__codigosProducto_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Color], [t].[DescripcionComponente], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Nombre], [t].[SubProducto], [t].[Unidad]
+FROM [Tbl_Componentes] AS [t]
+WHERE ([t].[CodigoProducto] LIKE N'') OR (CHARINDEX([t].[CodigoProducto], @__codigosProducto_0) > 0)
+2024-07-01 00:15:54,063 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-07-01 00:15:54,079 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2024-07-01 00:15:54,081 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Pictures\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2024-07-01 00:16:14,166 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-07-01 00:16:14,178 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2024-07-01 00:16:14,180 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Pictures\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2024-07-01 00:17:03,361 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Alto' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:17:03,366 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaCadena' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:17:03,371 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaCordon' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:17:03,373 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:17:03,376 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Ancho' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:17:03,378 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Cantidad' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:17:03,380 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TelaMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:17:03,383 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TuboMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:17:03,386 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Monto' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:17:03,387 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'SubTotal' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:17:03,389 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Total' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:17:03,391 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TotalIgv' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 00:17:03,552 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 00:17:04,324 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (75ms) [Parameters=[@__item_Grupo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tbl_Explocion] AS [t]
+        WHERE [t].[CotizacionGrupo] = @__item_Grupo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-01 00:17:04,387 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[@__item_Cotizacion_0='?' (Size = 4000), @__item_Grupo_1='?' (Size = 4000), @__item_Codigo_Producto_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TBL_DetalleOrdenProduccion] AS [t]
+        WHERE (([t].[NumeroCotizacion] = @__item_Cotizacion_0) AND ([t].[CotizacionGrupo] = @__item_Grupo_1)) AND ([t].[CodigoProducto] = @__item_Codigo_Producto_2)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-01 00:17:04,396 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__item_Grupo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tbl_Explocion] AS [t]
+        WHERE [t].[CotizacionGrupo] = @__item_Grupo_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-01 00:17:04,398 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__item_Cotizacion_0='?' (Size = 4000), @__item_Grupo_1='?' (Size = 4000), @__item_Codigo_Producto_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TBL_DetalleOrdenProduccion] AS [t]
+        WHERE (([t].[NumeroCotizacion] = @__item_Cotizacion_0) AND ([t].[CotizacionGrupo] = @__item_Grupo_1)) AND ([t].[CodigoProducto] = @__item_Codigo_Producto_2)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-01 00:17:04,532 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@__item_Grupo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CodigoSisgeco], [t].[CotizacionGrupo], [t].[FechaCreacion], [t].[FechaModifica], [t].[FechaProduccion], [t].[IdEstado], [t].[IdTbl_OrdenProduccion], [t].[IdUsuarioCrea], [t].[IdUsuarioModifica], [t].[NumeroCotizacion], [t].[Tipo], [t].[Turno]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+WHERE [t].[CotizacionGrupo] = @__item_Grupo_0
+2024-07-01 00:17:04,568 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__item_Grupo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CodigoSisgeco], [t].[CotizacionGrupo], [t].[FechaCreacion], [t].[FechaModifica], [t].[FechaProduccion], [t].[IdEstado], [t].[IdTbl_OrdenProduccion], [t].[IdUsuarioCrea], [t].[IdUsuarioModifica], [t].[NumeroCotizacion], [t].[Tipo], [t].[Turno]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+WHERE [t].[CotizacionGrupo] = @__item_Grupo_0
+2024-07-01 00:17:04,685 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[@p12='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Tbl_DetalleOpGrupo] SET [CodigoSisgeco] = @p0, [CotizacionGrupo] = @p1, [FechaCreacion] = @p2, [FechaModifica] = @p3, [FechaProduccion] = @p4, [IdEstado] = @p5, [IdTbl_OrdenProduccion] = @p6, [IdUsuarioCrea] = @p7, [IdUsuarioModifica] = @p8, [NumeroCotizacion] = @p9, [Tipo] = @p10, [Turno] = @p11
+WHERE [Id] = @p12;
+SELECT @@ROWCOUNT;
+2024-07-01 00:17:04,703 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Tbl_Explocion] ([Cantidad], [Cod_Componente], [Codigo_Producto], [Color], [CotizacionGrupo], [Descrip_Componente], [Descripcion], [FechaCreacion], [FechaModifica], [IdUsuarioCrea], [IdUsuarioModifica], [Merma], [Nombre_Producto], [NumeroCotizacion], [Origen], [Unidad])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+SELECT [Id]
+FROM [Tbl_Explocion]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2024-07-01 00:17:04,727 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Tbl_Explocion] ([Cantidad], [Cod_Componente], [Codigo_Producto], [Color], [CotizacionGrupo], [Descrip_Componente], [Descripcion], [FechaCreacion], [FechaModifica], [IdUsuarioCrea], [IdUsuarioModifica], [Merma], [Nombre_Producto], [NumeroCotizacion], [Origen], [Unidad])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+SELECT [Id]
+FROM [Tbl_Explocion]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2024-07-01 00:18:31,837 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 00:18:31,961 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (12ms) [Parameters=[@__grupo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[NumeroCotizacion], [t].[CodigoSisgeco], [t].[CodigoProducto], [t].[Linea], [t].[NombreProducto], [t].[UnidadMedida], [t].[Cantidad], [t].[Alto], [t].[Ancho], [t].[IndiceAgrupacion], [t].[IndexDetalle], [t].[Familia], [t].[SubFamilia], [t].[Precio], [t].[PrecioInc], [t].[Igv], [t].[Lote], CASE
+    WHEN [t].[FechaProduccion] IS NOT NULL THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END, [t].[FechaProduccion], CASE
+    WHEN [t].[FechaEntrega] IS NOT NULL THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END, [t].[FechaEntrega], [t].[Nota], [t].[Color], [t].[IdTbl_Ambiente], [t].[Ambiente], [t].[Turno], [t].[SoporteCentral], [t].[TipoSoporteCentral], [t].[Caida], [t].[Accionamiento], [t].[CodigoTubo], [t].[NombreTubo], [t].[Mando], [t].[TipoMecanismo], [t].[ModeloMecanismo], [t].[TipoCadena], [t].[CodigoCadena], [t].[Cadena], [t].[TipoRiel], [t].[TipoInstalacion], [t].[CodigoRiel], [t].[Riel], [t].[TipoCassete], [t].[Lamina], [t].[Apertura], [t].[ViaRecogida], [t].[TipoSuperior], [t].[CodigoBaston], [t].[Baston], [t].[NumeroVias], [t].[TipoCadenaInferior], [t].[MandoCordon], [t].[MandoBaston], [t].[CodigoBastonVarrilla], [t].[BastonVarrilla], [t].[Cabezal], [t].[CodigoCordon], [t].[Cordon], [t].[CodigoCordonTipo2], [t].[CordonTipo2], [t].[Cruzeta], [t].[Dispositivo], [t].[CodigoControl], [t].[Control], [t].[CodigoSwitch], [t].[Switch], [t].[LlevaBaston], [t].[MandoAdaptador], [t].[CodigoMotor], [t].[Motor], [t].[CodigoTela], [t].[Tela], [t].[Cenefa], [t].[NumeroMotores], [t].[Serie], [t].[AlturaCadena], [t].[AlturaCordon], [t].[MarcaMotor], [t].[IdUsuarioCrea], [t].[IdUsuarioModifica], [t].[FechaCreacion], [t].[FechaModifica], [t].[IdEstado], [t].[CotizacionGrupo], [t].[Tipo], [t].[Escuadra]
+FROM [TBL_DetalleOrdenProduccion] AS [t]
+WHERE [t].[CotizacionGrupo] = @__grupo_0
+ORDER BY [t].[Linea]
+2024-07-01 00:18:32,078 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 00:18:32,095 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[Indice], [t].[NumeroCotizacion]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-01 00:19:09,952 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 00:19:10,014 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NombreVendedor]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-01 00:19:10,036 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NumeroCotizacion]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-01 00:19:10,045 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+2024-07-01 00:19:10,057 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoCliente] AS [t]
+2024-07-01 00:19:10,068 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[RucCliente]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-01 00:19:10,073 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[CotizacionGrupo]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-01 20:07:38,070 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-07-01 20:07:38,108 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2024-07-01 20:07:38,121 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Pictures\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2024-07-01 20:12:01,071 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Alto' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 20:12:01,075 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaCadena' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 20:12:01,076 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaCordon' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 20:12:01,078 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 20:12:01,079 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Ancho' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 20:12:01,081 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Cantidad' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 20:12:01,082 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TelaMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 20:12:01,083 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TuboMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 20:12:01,104 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Monto' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 20:12:01,109 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'SubTotal' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 20:12:01,111 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Total' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 20:12:01,112 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TotalIgv' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-01 20:12:01,275 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:12:03,395 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (105ms) [Parameters=[@__ToLower_0='?' (Size = 4000), @__contra_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[IdTipoUsuario], [t].[Nombre], [t].[Apellido], [t].[Dni], [t].[Correo], [t].[Usuario], [t0].[Nombre] AS [Perfil]
+FROM [Tbl_Usuario] AS [t]
+INNER JOIN [Tbl_Rol] AS [t0] ON [t].[IdRol] = [t0].[Id]
+WHERE (LOWER(LTRIM(RTRIM([t].[Usuario]))) = @__ToLower_0) AND (LOWER(LTRIM(RTRIM([t].[Clave]))) = @__contra_1)
+2024-07-01 20:12:03,673 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:12:03,734 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (18ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+2024-07-01 20:17:33,712 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:17:33,727 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+2024-07-01 20:23:36,032 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:23:36,044 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+2024-07-01 20:26:50,307 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:26:50,329 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (11ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+2024-07-01 20:26:56,874 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:26:56,893 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (12ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+2024-07-01 20:27:39,290 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:27:39,308 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (11ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+2024-07-01 20:29:36,624 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:29:36,756 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (15ms) [Parameters=[@__codigosProducto_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Color], [t].[DescripcionComponente], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Nombre], [t].[SubProducto], [t].[Unidad]
+FROM [Tbl_Componentes] AS [t]
+WHERE ([t].[CodigoProducto] LIKE N'') OR (CHARINDEX([t].[CodigoProducto], @__codigosProducto_0) > 0)
+2024-07-01 20:31:29,243 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:31:29,251 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+2024-07-01 20:34:42,111 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:34:42,125 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+2024-07-01 20:38:28,034 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:38:28,042 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+2024-07-01 20:39:45,916 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:39:45,974 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NombreVendedor]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-01 20:39:45,987 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NumeroCotizacion]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-01 20:39:46,008 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+2024-07-01 20:39:46,028 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoCliente] AS [t]
+2024-07-01 20:39:46,044 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[RucCliente]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-01 20:39:46,052 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[CotizacionGrupo]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-01 20:39:55,147 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:39:55,214 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[@__grupo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[NumeroCotizacion], [t].[CodigoSisgeco], [t].[CodigoProducto], [t].[Linea], [t].[NombreProducto], [t].[UnidadMedida], [t].[Cantidad], [t].[Alto], [t].[Ancho], [t].[IndiceAgrupacion], [t].[IndexDetalle], [t].[Familia], [t].[SubFamilia], [t].[Precio], [t].[PrecioInc], [t].[Igv], [t].[Lote], CASE
+    WHEN [t].[FechaProduccion] IS NOT NULL THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END, [t].[FechaProduccion], CASE
+    WHEN [t].[FechaEntrega] IS NOT NULL THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END, [t].[FechaEntrega], [t].[Nota], [t].[Color], [t].[IdTbl_Ambiente], [t].[Ambiente], [t].[Turno], [t].[SoporteCentral], [t].[TipoSoporteCentral], [t].[Caida], [t].[Accionamiento], [t].[CodigoTubo], [t].[NombreTubo], [t].[Mando], [t].[TipoMecanismo], [t].[ModeloMecanismo], [t].[TipoCadena], [t].[CodigoCadena], [t].[Cadena], [t].[TipoRiel], [t].[TipoInstalacion], [t].[CodigoRiel], [t].[Riel], [t].[TipoCassete], [t].[Lamina], [t].[Apertura], [t].[ViaRecogida], [t].[TipoSuperior], [t].[CodigoBaston], [t].[Baston], [t].[NumeroVias], [t].[TipoCadenaInferior], [t].[MandoCordon], [t].[MandoBaston], [t].[CodigoBastonVarrilla], [t].[BastonVarrilla], [t].[Cabezal], [t].[CodigoCordon], [t].[Cordon], [t].[CodigoCordonTipo2], [t].[CordonTipo2], [t].[Cruzeta], [t].[Dispositivo], [t].[CodigoControl], [t].[Control], [t].[CodigoSwitch], [t].[Switch], [t].[LlevaBaston], [t].[MandoAdaptador], [t].[CodigoMotor], [t].[Motor], [t].[CodigoTela], [t].[Tela], [t].[Cenefa], [t].[NumeroMotores], [t].[Serie], [t].[AlturaCadena], [t].[AlturaCordon], [t].[MarcaMotor], [t].[IdUsuarioCrea], [t].[IdUsuarioModifica], [t].[FechaCreacion], [t].[FechaModifica], [t].[IdEstado], [t].[CotizacionGrupo], [t].[Tipo], [t].[Escuadra]
+FROM [TBL_DetalleOrdenProduccion] AS [t]
+WHERE [t].[CotizacionGrupo] = @__grupo_0
+ORDER BY [t].[Linea]
+2024-07-01 20:39:55,270 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:39:55,324 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (50ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[Indice], [t].[NumeroCotizacion]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-01 20:40:06,546 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:40:06,562 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8ms) [Parameters=[@__grupo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[NumeroCotizacion], [t].[CodigoSisgeco], [t].[CodigoProducto], [t].[Linea], [t].[NombreProducto], [t].[UnidadMedida], [t].[Cantidad], [t].[Alto], [t].[Ancho], [t].[IndiceAgrupacion], [t].[IndexDetalle], [t].[Familia], [t].[SubFamilia], [t].[Precio], [t].[PrecioInc], [t].[Igv], [t].[Lote], CASE
+    WHEN [t].[FechaProduccion] IS NOT NULL THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END, [t].[FechaProduccion], CASE
+    WHEN [t].[FechaEntrega] IS NOT NULL THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END, [t].[FechaEntrega], [t].[Nota], [t].[Color], [t].[IdTbl_Ambiente], [t].[Ambiente], [t].[Turno], [t].[SoporteCentral], [t].[TipoSoporteCentral], [t].[Caida], [t].[Accionamiento], [t].[CodigoTubo], [t].[NombreTubo], [t].[Mando], [t].[TipoMecanismo], [t].[ModeloMecanismo], [t].[TipoCadena], [t].[CodigoCadena], [t].[Cadena], [t].[TipoRiel], [t].[TipoInstalacion], [t].[CodigoRiel], [t].[Riel], [t].[TipoCassete], [t].[Lamina], [t].[Apertura], [t].[ViaRecogida], [t].[TipoSuperior], [t].[CodigoBaston], [t].[Baston], [t].[NumeroVias], [t].[TipoCadenaInferior], [t].[MandoCordon], [t].[MandoBaston], [t].[CodigoBastonVarrilla], [t].[BastonVarrilla], [t].[Cabezal], [t].[CodigoCordon], [t].[Cordon], [t].[CodigoCordonTipo2], [t].[CordonTipo2], [t].[Cruzeta], [t].[Dispositivo], [t].[CodigoControl], [t].[Control], [t].[CodigoSwitch], [t].[Switch], [t].[LlevaBaston], [t].[MandoAdaptador], [t].[CodigoMotor], [t].[Motor], [t].[CodigoTela], [t].[Tela], [t].[Cenefa], [t].[NumeroMotores], [t].[Serie], [t].[AlturaCadena], [t].[AlturaCordon], [t].[MarcaMotor], [t].[IdUsuarioCrea], [t].[IdUsuarioModifica], [t].[FechaCreacion], [t].[FechaModifica], [t].[IdEstado], [t].[CotizacionGrupo], [t].[Tipo], [t].[Escuadra]
+FROM [TBL_DetalleOrdenProduccion] AS [t]
+WHERE [t].[CotizacionGrupo] = @__grupo_0
+ORDER BY [t].[Linea]
+2024-07-01 20:40:06,583 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:40:06,590 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[Indice], [t].[NumeroCotizacion]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-01 20:40:14,559 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:40:14,574 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (11ms) [Parameters=[@__grupo_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[NumeroCotizacion], [t].[CodigoSisgeco], [t].[CodigoProducto], [t].[Linea], [t].[NombreProducto], [t].[UnidadMedida], [t].[Cantidad], [t].[Alto], [t].[Ancho], [t].[IndiceAgrupacion], [t].[IndexDetalle], [t].[Familia], [t].[SubFamilia], [t].[Precio], [t].[PrecioInc], [t].[Igv], [t].[Lote], CASE
+    WHEN [t].[FechaProduccion] IS NOT NULL THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END, [t].[FechaProduccion], CASE
+    WHEN [t].[FechaEntrega] IS NOT NULL THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END, [t].[FechaEntrega], [t].[Nota], [t].[Color], [t].[IdTbl_Ambiente], [t].[Ambiente], [t].[Turno], [t].[SoporteCentral], [t].[TipoSoporteCentral], [t].[Caida], [t].[Accionamiento], [t].[CodigoTubo], [t].[NombreTubo], [t].[Mando], [t].[TipoMecanismo], [t].[ModeloMecanismo], [t].[TipoCadena], [t].[CodigoCadena], [t].[Cadena], [t].[TipoRiel], [t].[TipoInstalacion], [t].[CodigoRiel], [t].[Riel], [t].[TipoCassete], [t].[Lamina], [t].[Apertura], [t].[ViaRecogida], [t].[TipoSuperior], [t].[CodigoBaston], [t].[Baston], [t].[NumeroVias], [t].[TipoCadenaInferior], [t].[MandoCordon], [t].[MandoBaston], [t].[CodigoBastonVarrilla], [t].[BastonVarrilla], [t].[Cabezal], [t].[CodigoCordon], [t].[Cordon], [t].[CodigoCordonTipo2], [t].[CordonTipo2], [t].[Cruzeta], [t].[Dispositivo], [t].[CodigoControl], [t].[Control], [t].[CodigoSwitch], [t].[Switch], [t].[LlevaBaston], [t].[MandoAdaptador], [t].[CodigoMotor], [t].[Motor], [t].[CodigoTela], [t].[Tela], [t].[Cenefa], [t].[NumeroMotores], [t].[Serie], [t].[AlturaCadena], [t].[AlturaCordon], [t].[MarcaMotor], [t].[IdUsuarioCrea], [t].[IdUsuarioModifica], [t].[FechaCreacion], [t].[FechaModifica], [t].[IdEstado], [t].[CotizacionGrupo], [t].[Tipo], [t].[Escuadra]
+FROM [TBL_DetalleOrdenProduccion] AS [t]
+WHERE [t].[CotizacionGrupo] = @__grupo_0
+ORDER BY [t].[Linea]
+2024-07-01 20:40:14,587 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:40:14,591 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[Indice], [t].[NumeroCotizacion]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-01 20:44:30,377 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:44:30,661 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (275ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Color], [t].[DescripcionComponente], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Nombre], [t].[SubProducto], [t].[Unidad]
+FROM [Tbl_Componentes] AS [t]
+2024-07-01 20:46:39,334 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:46:39,398 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (37ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[IdTipoUsuario], [t].[Nombre], [t].[Apellido], [t].[Dni], [t].[Correo], [t].[Usuario], [t].[Clave], [t].[CodigoUsuario], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Estado], [t].[IdRol], [t0].[Nombre]
+FROM [Tbl_Usuario] AS [t]
+INNER JOIN [Tbl_Rol] AS [t0] ON [t].[IdRol] = [t0].[Id]
+WHERE [t].[Estado] = 1
+2024-07-01 20:46:44,293 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:46:44,295 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:46:44,322 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Nombre]
+FROM [Tbl_Rol] AS [t]
+2024-07-01 20:46:44,327 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoUsuario] AS [t]
+2024-07-01 20:46:49,645 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:46:49,658 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Nombre]
+FROM [Tbl_Rol] AS [t]
+2024-07-01 20:48:00,643 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:48:00,646 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NombreVendedor]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-01 20:48:00,650 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NumeroCotizacion]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-01 20:48:00,653 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+2024-07-01 20:48:00,656 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoCliente] AS [t]
+2024-07-01 20:48:00,659 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[RucCliente]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-01 20:48:00,667 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[CotizacionGrupo]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-01 20:49:52,289 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-01 20:49:52,372 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (56ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
