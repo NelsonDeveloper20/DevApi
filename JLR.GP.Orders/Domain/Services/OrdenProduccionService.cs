@@ -132,7 +132,7 @@ namespace ApiPortal_DataLake.Domain.Services
                     Observacion=_ordeRequest.Observacion,
                     Observacion2=_ordeRequest.Observacion2,
 
-                    IdTipoCliente= int.Parse(_ordeRequest.IdTipoCliente),
+                    TipoCliente= int.Parse(_ordeRequest.TipoCliente),
                     RucCliente=_ordeRequest.RucCliente,
                     Cliente=_ordeRequest.Cliente,
                     Departamento=_ordeRequest.Departamento,
@@ -185,7 +185,7 @@ namespace ApiPortal_DataLake.Domain.Services
                         _orden.Observacion = _ordeRequest.Observacion;
                         _orden.Observacion2 = _ordeRequest.Observacion2;*/
 
-                        _orden.IdTipoCliente = int.Parse(_ordeRequest.IdTipoCliente);
+                        _orden.TipoCliente = int.Parse(_ordeRequest.TipoCliente);
                         /*_orden.RucCliente = _ordeRequest.RucCliente;
                         _orden.Cliente = _ordeRequest.Cliente;
                         _orden.Departamento = _ordeRequest.Departamento;

@@ -93,6 +93,6 @@
         public string? CotizacionGrupo { get; set; }
         public string? Tipo { get; set; }
         public string? EstadoOp { get; set; }
-        public string? Escuadra { get; set; }
+        public string? Escuadra { get; set; } 
     }
 }

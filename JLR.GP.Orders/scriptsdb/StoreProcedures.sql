@@ -3179,7 +3179,7 @@ Join  Tbl_DetalleOpGrupo Grd ON Grd.CotizacionGrupo= Dop.CotizacionGrupo And Grd
 JOIN Tbl_OrdenProduccion OP on OP.NumeroCotizacion=Dop.NumeroCotizacion  
 JOIN Tbl_Destino Ds on Ds.Id=OP.IdDestino   
 JOIN Tbl_TipoOperacion Tp on Tp.Id=OP.IdTipoPeracion   
-JOIN Tbl_TipoCliente Tc on Tc.Id=OP.IdTipoCliente   
+JOIN Tbl_TipoCliente Tc on Tc.Id=OP.TipoCliente   
 WHERE  
 substring(Dop.CodigoProducto,1,3)='PRT'   
 -- Dop.Id <=27
@@ -3215,7 +3215,7 @@ OP.*
 from Tbl_DetalleOpGrupo GRD
 JOIN Tbl_OrdenProduccion OP on OP.NumeroCotizacion=GRD.NumeroCotizacion
 JOIN Tbl_Estado E on E.Id=GRD.IdEstado
-join Tbl_TipoOperacion TP on tp.Id=OP.IdTipoPeracion join tbl_tipocliente tc on  tc.Id=IdTipoCliente
+join Tbl_TipoOperacion TP on tp.Id=OP.IdTipoPeracion join tbl_tipocliente tc on  tc.Id=TipoCliente
 join Tbl_Proyecto TPP on TPP.id=OP.idProyecto
     --WHERE GRD.NumeroCotizacion = @NumeroCotizacion  
 END
@@ -3260,7 +3260,7 @@ from Tbl_DetalleOpGrupo GRD
 JOIN Tbl_OrdenProduccion OP on OP.NumeroCotizacion=GRD.NumeroCotizacion
 JOIN Tbl_Estado E on E.Id=GRD.IdEstado
 join Tbl_TipoOperacion TP on tp.Id=OP.IdTipoPeracion 
-join tbl_tipocliente tc on  tc.Id=IdTipoCliente
+join tbl_tipocliente tc on  tc.Id=TipoCliente
 JOIN  tbl_proyecto p ON p.Id= op.IdProyecto
 
 END

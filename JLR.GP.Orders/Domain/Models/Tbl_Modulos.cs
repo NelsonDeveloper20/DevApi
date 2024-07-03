@@ -12,7 +12,7 @@ namespace Api_Dc.Domain.Models
         public string? Ruta { get; set; }
         public string? Icono { get; set; }
         public int? Estado { get; set; }
-
+        public int? Orden { get; set; }
 
 
 

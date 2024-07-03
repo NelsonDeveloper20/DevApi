@@ -61,7 +61,7 @@ namespace ApiPortal_DataLake.Domain.Services
                         cmd.Parameters.Add(new SqlParameter("@CodigoSisgeco", Request.CodigoSisgeco));
                         cmd.Parameters.Add(new SqlParameter("@RucCliente", Request.RucCliente));
                         cmd.Parameters.Add(new SqlParameter("@IdProyecto", Request.IdProyecto));
-                        cmd.Parameters.Add(new SqlParameter("@IdTipoCliente", Request.IdTipoCliente));
+                        cmd.Parameters.Add(new SqlParameter("@TipoCliente", Request.TipoCliente));
                         using (SqlDataAdapter adp = new SqlDataAdapter(cmd))
                         {
                             adp.Fill(result);

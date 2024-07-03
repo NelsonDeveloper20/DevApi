@@ -10,7 +10,7 @@
         public string? CodigoSisgeco { get; set; } = "";
         public string? RucCliente { get; set; } = "";
         public string? IdProyecto { get; set; } = "";
-        public string? IdTipoCliente { get; set; } = "";
+        public string? TipoCliente { get; set; } = "";
 
     }
 }

@@ -496,8 +496,8 @@ namespace ApiPortal_DataLake.Application.Controllers
                     CotizacionGrupo = reader["CotizacionGrupo"].ToString(),
                     Tipo = reader["Tipo"].ToString(),
                     EstadoOp = reader["EstadoOp"].ToString(),
-                    Escuadra = reader["Escuadra"].ToString()
-                }); ; ;
+                    Escuadra = reader["Escuadra"].ToString(), 
+                });
             }
             return list;
         }

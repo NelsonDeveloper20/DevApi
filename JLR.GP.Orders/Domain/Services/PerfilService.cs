@@ -229,24 +229,27 @@ namespace ApiPortal_DataLake.Domain.Services
         {
             try
             {
-                var result = from mr in _context.Tbl_ModuloRol
-                             join m in _context.Tbl_Modulos on mr.IdModulo equals m.Id
-                             where _context.Tbl_Usuario.Any(u => u.Id == idUsuario && u.IdRol == mr.IdRol)
-                             select new
-                             {
-                                 m.Id,
-                                 m.Nombre,
-                                 m.Descripcion,
-                                 m.Ruta,
-                                 m.Icono,
-                                 m.Estado
-                             };
+                var result = await (from mr in _context.Tbl_ModuloRol
+                                    join m in _context.Tbl_Modulos on mr.IdModulo equals m.Id
+                                    where _context.Tbl_Usuario.Any(u => u.Id == idUsuario && u.IdRol == mr.IdRol)
+                                    orderby m.Orden ascending
+                                    select new
+                                    {
+                                        m.Id,
+                                        m.Nombre,
+                                        m.Descripcion,
+                                        m.Ruta,
+                                        m.Icono,
+                                        m.Estado
+                                    }).ToListAsync();
 
-                return new GeneralResponse<object>(HttpStatusCode.OK, result);
+                return new GeneralResponse<dynamic>(HttpStatusCode.OK, result);
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                // Opcionalmente, puedes registrar el error antes de lanzarlo.
+                // _logger.LogError(ex, "Error al listar módulos por usuario.");
+                throw new Exception("Error al listar módulos por usuario.", ex);
             }
         }
     }

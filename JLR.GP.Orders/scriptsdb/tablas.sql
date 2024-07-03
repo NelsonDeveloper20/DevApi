@@ -275,7 +275,7 @@ Total numeric(10,3),
 Observacion varchar(100),
 Observacion2 varchar(100),
 
-IdTipoCliente int,
+TipoCliente int,
 RucCliente varchar(35),
 Cliente varchar(190),
 Departamento varchar(50),
@@ -755,7 +755,7 @@ BEGIN
     JOIN 
          Tbl_TipoOperacion TP ON TP.Id=OP.IdTipoPeracion 
     JOIN 
-        Tbl_TipoCliente TC ON TC.Id = OP.IdTipoCliente
+        Tbl_TipoCliente TC ON TC.Id = OP.TipoCliente
     JOIN 
         Tbl_Proyecto TPP ON TPP.Id = OP.IdProyecto
     WHERE 
@@ -2659,7 +2659,7 @@ Join  Tbl_DetalleOpGrupo Grd ON Grd.CotizacionGrupo= Dop.CotizacionGrupo And Grd
 JOIN Tbl_OrdenProduccion OP on OP.NumeroCotizacion=Dop.NumeroCotizacion  
 JOIN Tbl_Destino Ds on Ds.Id=OP.IdDestino   
 JOIN Tbl_TipoOperacion Tp on Tp.Id=OP.IdTipoPeracion   
-JOIN Tbl_TipoCliente Tc on Tc.Id=OP.IdTipoCliente   
+JOIN Tbl_TipoCliente Tc on Tc.Id=OP.TipoCliente   
 WHERE  
 substring(Dop.CodigoProducto,1,3)='PRT'   
 -- Dop.Id <=27
@@ -2695,7 +2695,7 @@ from Tbl_DetalleOpGrupo GRD
 JOIN Tbl_OrdenProduccion OP on OP.NumeroCotizacion=GRD.NumeroCotizacion
 JOIN Tbl_Estado E on E.Id=GRD.IdEstado
 join Tbl_TipoOperacion TP on tp.Id=OP.IdTipoPeracion 
-join tbl_tipocliente tc on  tc.Id=IdTipoCliente
+join tbl_tipocliente tc on  tc.Id=TipoCliente
 JOIN  tbl_proyecto p ON p.Id= op.IdProyecto
 
 END
@@ -2713,7 +2713,7 @@ Create   PROCEDURE SP_GetOrdenProduccionDetalleGrupoVenta
 @CodigoSisgeco VARCHAR(30),
 @RucCliente VARCHAR(30),
 @IdProyecto VARCHAR(30),
-@IdTipoCliente VARCHAR(30)
+@TipoCliente VARCHAR(30)
 AS  
 BEGIN   
     SET NOCOUNT ON;
@@ -2755,7 +2755,7 @@ BEGIN
     JOIN 
          Tbl_TipoOperacion TP ON TP.Id=OP.IdTipoPeracion 
     JOIN 
-        Tbl_TipoCliente TC ON TC.Id = OP.IdTipoCliente
+        Tbl_TipoCliente TC ON TC.Id = OP.TipoCliente
     JOIN 
         Tbl_Proyecto TPP ON TPP.Id = OP.IdProyecto
     WHERE 
@@ -2767,7 +2767,7 @@ BEGIN
         (CASE WHEN @CodigoSisgeco = '--' THEN 1 ELSE CASE WHEN GRD.CotizacionGrupo= @CodigoSisgeco THEN 1 ELSE 0 END END = 1) AND 
         (CASE WHEN @RucCliente = '--' THEN 1 ELSE CASE WHEN OP.RucCliente = @RucCliente THEN 1 ELSE 0 END END = 1) AND 
         (CASE WHEN @IdProyecto = '--' THEN 1 ELSE CASE WHEN OP.IdProyecto = @IdProyecto THEN 1 ELSE 0 END END = 1) AND
-        (CASE WHEN @IdTipoCliente = '--' THEN 1 ELSE CASE WHEN OP.IdTipoCliente = @IdTipoCliente THEN 1 ELSE 0 END END = 1); 
+        (CASE WHEN @TipoCliente = '--' THEN 1 ELSE CASE WHEN OP.TipoCliente = @TipoCliente THEN 1 ELSE 0 END END = 1); 
     
     SET NOCOUNT OFF;
 END
