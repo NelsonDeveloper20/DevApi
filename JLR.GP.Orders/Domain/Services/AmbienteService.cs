@@ -51,6 +51,7 @@ namespace ApiPortal_DataLake.Domain.Services
                     Indice =int.Parse( indice),
                     Ambiente =ambiente,
                     CantidadProducto =int.Parse( cantidad),
+                    Stock= int.Parse(cantidad),
                 };
 
                 await this._context.Tbl_Ambiente.AddAsync(_ambiente);
