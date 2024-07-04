@@ -24,7 +24,7 @@ namespace Api_Dc.Domain.Models
         public string? Observacion { get; set; }
         public string? Observacion2 { get; set; }
 
-        public int? TipoCliente { get; set; }
+        public string? TipoCliente { get; set; }
         public string? RucCliente { get; set; }
         public string? Cliente { get; set; }
         public string? Departamento { get; set; }

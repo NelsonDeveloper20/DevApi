@@ -52,7 +52,7 @@ namespace ApiPortal_DataLake.Application.Controllers
             catch (Exception ex)
             {
                 this._logger.LogError($"Error Listar Orden Produccion : {JsonConvert.SerializeObject(ex)}");
-                return Ok(ex);
+                return Conflict(ex);
             }
         }
 

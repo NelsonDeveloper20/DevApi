@@ -34,7 +34,7 @@ namespace Api_Dc.Domain.Models
         public decimal? AlturaMedida {get; set; } 
         public string? Central{get;set; }
         public string? CentralIndex { get; set; }
-        public string? IndexDetalle {get; set; }
+        public int? IndexDetalle {get; set; }
         public string? Escuadra { get; set; }
 
         //END

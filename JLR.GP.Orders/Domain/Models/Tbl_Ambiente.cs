@@ -12,5 +12,8 @@ namespace Api_Dc.Domain.Models
         public int? Indice { get; set; }
         public string? Ambiente { get; set; }
         public int? CantidadProducto { get; set; }
+        public int? Stock {  get; set; }
+        public DateTime? FechaProduccion { get; set; }
+        public string? Turno { get; set; }
     }
 }

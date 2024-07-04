@@ -94,5 +94,6 @@
         public string? Tipo { get; set; }
         public string? EstadoOp { get; set; }
         public string? Escuadra { get; set; } 
+        public string? Central {  get; set; }
     }
 }

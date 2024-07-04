@@ -42,22 +42,15 @@ namespace ApiPortal_DataLake.Domain.Services
             this._logger = logger;
             _env = env;
         }
-        public async Task<IEnumerable<Tbl_OrdenProduccion>> GetAllAsync(string NumeroCotizacion )
+        public async Task<IEnumerable<Tbl_OrdenProduccion>> GetAllAsync(string numeroCotizacion)
         {
-
-            try
-            {
-
-                var query = await this._context.Tbl_OrdenProduccion
-             .Where(o => o.NumeroCotizacion == NumeroCotizacion).ToListAsync();
+           
+                var query = await _context.Tbl_OrdenProduccion
+                    .Where(o => o.NumeroCotizacion == numeroCotizacion)
+                    .ToListAsync();
                 return query;
-            }
-            catch (Exception ex)
-            {
-
-                throw;
-            }
-
+          
+             
         }
         #region // AGREGAR PRODUCTO
         public async Task<GeneralResponse<Object>> AgregarOrden(AgregarOrdenProduccionRequest _ordeRequest, IFormFile? Archivo)
@@ -132,7 +125,7 @@ namespace ApiPortal_DataLake.Domain.Services
                     Observacion=_ordeRequest.Observacion,
                     Observacion2=_ordeRequest.Observacion2,
 
-                    TipoCliente= int.Parse(_ordeRequest.TipoCliente),
+                    TipoCliente= _ordeRequest.TipoCliente,
                     RucCliente=_ordeRequest.RucCliente,
                     Cliente=_ordeRequest.Cliente,
                     Departamento=_ordeRequest.Departamento,
@@ -185,7 +178,7 @@ namespace ApiPortal_DataLake.Domain.Services
                         _orden.Observacion = _ordeRequest.Observacion;
                         _orden.Observacion2 = _ordeRequest.Observacion2;*/
 
-                        _orden.TipoCliente = int.Parse(_ordeRequest.TipoCliente);
+                        _orden.TipoCliente = _ordeRequest.TipoCliente;
                         /*_orden.RucCliente = _ordeRequest.RucCliente;
                         _orden.Cliente = _ordeRequest.Cliente;
                         _orden.Departamento = _ordeRequest.Departamento;

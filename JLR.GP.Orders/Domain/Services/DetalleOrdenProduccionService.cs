@@ -215,7 +215,8 @@ namespace ApiPortal_DataLake.Domain.Services
                 string numeroCotizacion = formData.NumeroCotizacion;
                 string codigosisgeco = formData.CodigoSisgeco;  
 
-                string cotizacionGrupo = "";
+                string cotizacionGrupo = ""; 
+                int indexDetalle = 0;
                 int estadoInicial = 2; 
                 // Método para crear un nuevo grupo
                 void CrearNuevoGrupo(string cotizacionGrupo, string tipo, DateTime? fechaProduccion = null, string turno = null)
@@ -249,6 +250,7 @@ namespace ApiPortal_DataLake.Domain.Services
                             if (grupoExiste != null) // EXISTE
                             {
                                 cotizacionGrupo = grupoExiste.CotizacionGrupo;
+
                             }
                             else
                             {
@@ -263,7 +265,7 @@ namespace ApiPortal_DataLake.Domain.Services
                             DateTime fechaProduccion = DateTime.Parse(formData.FechaProduccion);
                             var grupoExistente2 = this._context.Tbl_DetalleOpGrupo
                                 .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion && g.Turno == turno && g.FechaProduccion == fechaProduccion);
-
+                           
                             if (grupoExistente2 != null) // EXISTE
                             {
                                 cotizacionGrupo = grupoExistente2.CotizacionGrupo;
@@ -386,8 +388,34 @@ namespace ApiPortal_DataLake.Domain.Services
                         {
                             dataFila.Escuadra = "SI";
                         }
+
+
+                        var ultimoDetalle = this._context.TBL_DetalleOrdenProduccion
+                    .Where(dp => dp.CotizacionGrupo == cotizacionGrupo)
+                    .OrderByDescending(dp => dp.IndexDetalle)
+                    .FirstOrDefault();
+                        indexDetalle = (int)(ultimoDetalle != null ? ultimoDetalle.IndexDetalle + 1 : 1);
+
+                        dataFila.IndexDetalle = indexDetalle;
+
+                        string indiceGroup = formData.IndiceAgrupacion;
+                        var _ambiente = this._context.Tbl_Ambiente
+                   .Where(a => a.Indice == Convert.ToInt32(indiceGroup) && a.NumeroCotizacion == numeroCotizacion)
+                   .FirstOrDefault();
+                        if (_ambiente != null)
+                        {
+                            DateTime fechaProduccion = DateTime.Parse(formData.FechaProduccion);
+                            string turno = formData.Turno;
+                            _ambiente.Stock -= 1;
+                            _ambiente.FechaProduccion = fechaProduccion;
+                            _ambiente.Turno = turno;
+                            this._context.Tbl_Ambiente.Update(_ambiente);
+                        }
                     }
                     dataFila.IdUsuarioCrea = Convert.ToInt32(formData.IdUsuarioCrea);
+                     
+
+
                     this._context.TBL_DetalleOrdenProduccion.AddAsync(dataFila); ;
 
 
