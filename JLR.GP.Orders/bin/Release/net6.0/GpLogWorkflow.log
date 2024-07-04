@@ -212,3 +212,805 @@ FROM [Tbl_OrdenProduccion] AS [t]
 2024-07-04 00:04:04,056 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT DISTINCT [t].[CotizacionGrupo]
 FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 00:07:42,766 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-07-04 00:07:42,780 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2024-07-04 00:07:42,782 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Pictures\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2024-07-04 00:16:32,891 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Alto' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 00:16:32,900 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaCadena' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 00:16:32,904 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaCordon' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 00:16:32,906 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 00:16:32,908 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Ancho' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 00:16:32,910 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Cantidad' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 00:16:32,912 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TelaMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 00:16:32,914 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TuboMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 00:16:32,915 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Monto' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 00:16:32,917 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'SubTotal' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 00:16:32,919 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Total' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 00:16:32,920 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TotalIgv' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 00:16:33,124 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:16:33,124 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:16:33,124 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:16:33,791 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (59ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoOperacion] AS [t]
+2024-07-04 00:16:33,791 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (59ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+ORDER BY [t].[Id] DESC
+2024-07-04 00:16:33,791 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (59ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Destino] AS [t]
+2024-07-04 00:18:16,606 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:18:16,611 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:18:16,733 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (17ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:18:16,735 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (18ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Archivo], [t].[Cliente], [t].[CodigoSisgeco], [t].[CodigoVendedor], [t].[Departamento], [t].[Direccion], [t].[Distrito], [t].[FechaCotizacion], [t].[FechaModificacion], [t].[FechaRegistro], [t].[FechaSap], [t].[FechaVenta], [t].[IdDestino], [t].[IdEstado], [t].[IdProyecto], [t].[IdTipoPeracion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Monto], [t].[Nivel], [t].[NombreVendedor], [t].[NumdoCref], [t].[NumeroCotizacion], [t].[Observacion], [t].[Observacion2], [t].[Provincia], [t].[RucCliente], [t].[SubNivel], [t].[SubTotal], [t].[Telefono], [t].[TipoCambio], [t].[TipoCliente], [t].[TipoMoneda], [t].[Total], [t].[TotalIgv]
+FROM [Tbl_OrdenProduccion] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:18:19,129 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:18:19,140 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:18:43,697 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:18:43,932 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (17ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Tbl_Ambiente] ([Ambiente], [CantidadProducto], [FechaProduccion], [Indice], [NumeroCotizacion], [Stock], [Turno])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [Tbl_Ambiente]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2024-07-04 00:18:44,012 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:18:44,016 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:18:45,964 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:18:46,005 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[Id] = @__p_0
+2024-07-04 00:18:46,032 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Tbl_Ambiente]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2024-07-04 00:18:46,059 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:18:46,064 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:23:07,674 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:23:07,921 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (76ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2024-07-04 00:23:21,090 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:23:21,135 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NombreVendedor]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 00:23:21,147 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NumeroCotizacion]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 00:23:21,170 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+2024-07-04 00:23:21,209 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoCliente] AS [t]
+2024-07-04 00:23:21,231 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[RucCliente]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 00:23:21,240 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[CotizacionGrupo]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 00:23:22,366 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:23:22,369 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:23:22,372 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:23:22,388 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoOperacion] AS [t]
+2024-07-04 00:23:22,414 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+ORDER BY [t].[Id] DESC
+2024-07-04 00:23:22,428 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Destino] AS [t]
+2024-07-04 00:23:25,793 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:23:25,795 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:23:25,806 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:23:25,812 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (9ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Archivo], [t].[Cliente], [t].[CodigoSisgeco], [t].[CodigoVendedor], [t].[Departamento], [t].[Direccion], [t].[Distrito], [t].[FechaCotizacion], [t].[FechaModificacion], [t].[FechaRegistro], [t].[FechaSap], [t].[FechaVenta], [t].[IdDestino], [t].[IdEstado], [t].[IdProyecto], [t].[IdTipoPeracion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Monto], [t].[Nivel], [t].[NombreVendedor], [t].[NumdoCref], [t].[NumeroCotizacion], [t].[Observacion], [t].[Observacion2], [t].[Provincia], [t].[RucCliente], [t].[SubNivel], [t].[SubTotal], [t].[Telefono], [t].[TipoCambio], [t].[TipoCliente], [t].[TipoMoneda], [t].[Total], [t].[TotalIgv]
+FROM [Tbl_OrdenProduccion] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:23:27,613 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:23:27,619 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:28:53,175 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:28:54,026 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (415ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2024-07-04 00:28:57,949 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:28:57,969 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NombreVendedor]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 00:28:57,976 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NumeroCotizacion]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 00:28:57,979 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+2024-07-04 00:28:57,983 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoCliente] AS [t]
+2024-07-04 00:28:57,989 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[RucCliente]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 00:28:57,994 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[CotizacionGrupo]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 00:28:58,986 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:28:58,991 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:28:58,994 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:28:58,998 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Destino] AS [t]
+2024-07-04 00:28:59,011 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+ORDER BY [t].[Id] DESC
+2024-07-04 00:28:59,022 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoOperacion] AS [t]
+2024-07-04 00:29:02,419 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:29:02,422 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:29:02,427 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:29:02,433 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Archivo], [t].[Cliente], [t].[CodigoSisgeco], [t].[CodigoVendedor], [t].[Departamento], [t].[Direccion], [t].[Distrito], [t].[FechaCotizacion], [t].[FechaModificacion], [t].[FechaRegistro], [t].[FechaSap], [t].[FechaVenta], [t].[IdDestino], [t].[IdEstado], [t].[IdProyecto], [t].[IdTipoPeracion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Monto], [t].[Nivel], [t].[NombreVendedor], [t].[NumdoCref], [t].[NumeroCotizacion], [t].[Observacion], [t].[Observacion2], [t].[Provincia], [t].[RucCliente], [t].[SubNivel], [t].[SubTotal], [t].[Telefono], [t].[TipoCambio], [t].[TipoCliente], [t].[TipoMoneda], [t].[Total], [t].[TotalIgv]
+FROM [Tbl_OrdenProduccion] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:29:03,556 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:29:03,561 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:29:23,532 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:29:23,549 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Tbl_Ambiente] ([Ambiente], [CantidadProducto], [FechaProduccion], [Indice], [NumeroCotizacion], [Stock], [Turno])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [Tbl_Ambiente]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2024-07-04 00:29:23,570 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:29:23,575 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:29:29,352 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:29:29,369 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[Id] = @__p_0
+2024-07-04 00:29:29,378 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Tbl_Ambiente]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2024-07-04 00:29:29,390 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:29:29,394 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:31:33,107 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:31:33,126 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (10ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2024-07-04 00:32:35,851 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:32:35,869 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NombreVendedor]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 00:32:35,874 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NumeroCotizacion]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 00:32:35,879 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+2024-07-04 00:32:35,887 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoCliente] AS [t]
+2024-07-04 00:32:35,892 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[RucCliente]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 00:32:35,898 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[CotizacionGrupo]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 00:32:36,887 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:32:36,910 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:32:36,912 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:32:36,920 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+ORDER BY [t].[Id] DESC
+2024-07-04 00:32:36,923 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoOperacion] AS [t]
+2024-07-04 00:32:36,947 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Destino] AS [t]
+2024-07-04 00:32:39,597 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:32:39,599 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:32:39,608 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Archivo], [t].[Cliente], [t].[CodigoSisgeco], [t].[CodigoVendedor], [t].[Departamento], [t].[Direccion], [t].[Distrito], [t].[FechaCotizacion], [t].[FechaModificacion], [t].[FechaRegistro], [t].[FechaSap], [t].[FechaVenta], [t].[IdDestino], [t].[IdEstado], [t].[IdProyecto], [t].[IdTipoPeracion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Monto], [t].[Nivel], [t].[NombreVendedor], [t].[NumdoCref], [t].[NumeroCotizacion], [t].[Observacion], [t].[Observacion2], [t].[Provincia], [t].[RucCliente], [t].[SubNivel], [t].[SubTotal], [t].[Telefono], [t].[TipoCambio], [t].[TipoCliente], [t].[TipoMoneda], [t].[Total], [t].[TotalIgv]
+FROM [Tbl_OrdenProduccion] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:32:39,611 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:32:40,899 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:32:40,907 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:33:21,541 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:33:21,556 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2024-07-04 00:33:41,993 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:33:42,001 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NombreVendedor]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 00:33:42,015 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NumeroCotizacion]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 00:33:42,030 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+2024-07-04 00:33:42,035 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoCliente] AS [t]
+2024-07-04 00:33:42,041 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[RucCliente]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 00:33:42,047 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[CotizacionGrupo]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 00:33:43,447 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:33:43,450 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:33:43,452 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:33:43,473 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Destino] AS [t]
+2024-07-04 00:33:43,488 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoOperacion] AS [t]
+2024-07-04 00:33:43,522 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+ORDER BY [t].[Id] DESC
+2024-07-04 00:33:48,228 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:33:48,231 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:33:48,243 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Archivo], [t].[Cliente], [t].[CodigoSisgeco], [t].[CodigoVendedor], [t].[Departamento], [t].[Direccion], [t].[Distrito], [t].[FechaCotizacion], [t].[FechaModificacion], [t].[FechaRegistro], [t].[FechaSap], [t].[FechaVenta], [t].[IdDestino], [t].[IdEstado], [t].[IdProyecto], [t].[IdTipoPeracion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Monto], [t].[Nivel], [t].[NombreVendedor], [t].[NumdoCref], [t].[NumeroCotizacion], [t].[Observacion], [t].[Observacion2], [t].[Provincia], [t].[RucCliente], [t].[SubNivel], [t].[SubTotal], [t].[Telefono], [t].[TipoCambio], [t].[TipoCliente], [t].[TipoMoneda], [t].[Total], [t].[TotalIgv]
+FROM [Tbl_OrdenProduccion] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:33:48,248 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:33:49,379 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:33:49,387 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:34:38,178 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:34:38,199 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Tbl_Ambiente] ([Ambiente], [CantidadProducto], [FechaProduccion], [Indice], [NumeroCotizacion], [Stock], [Turno])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [Tbl_Ambiente]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2024-07-04 00:34:38,230 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:34:38,236 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:34:47,546 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:34:47,566 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[Id] = @__p_0
+2024-07-04 00:34:47,591 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Tbl_Ambiente]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2024-07-04 00:34:47,602 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:34:47,607 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:36:04,538 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:36:04,565 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CodigoSisgeco], [t].[CotizacionGrupo], [t].[FechaCreacion], [t].[FechaModifica], [t].[FechaProduccion], [t].[IdEstado], [t].[IdTbl_OrdenProduccion], [t].[IdUsuarioCrea], [t].[IdUsuarioModifica], [t].[NumeroCotizacion], [t].[Tipo], [t].[Turno]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+WHERE [t].[Id] = @__p_0
+2024-07-04 00:36:04,644 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (10ms) [Parameters=[@p12='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Tbl_DetalleOpGrupo] SET [CodigoSisgeco] = @p0, [CotizacionGrupo] = @p1, [FechaCreacion] = @p2, [FechaModifica] = @p3, [FechaProduccion] = @p4, [IdEstado] = @p5, [IdTbl_OrdenProduccion] = @p6, [IdUsuarioCrea] = @p7, [IdUsuarioModifica] = @p8, [NumeroCotizacion] = @p9, [Tipo] = @p10, [Turno] = @p11
+WHERE [Id] = @p12;
+SELECT @@ROWCOUNT;
+2024-07-04 00:36:08,330 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:36:08,335 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NombreVendedor]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 00:36:08,339 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NumeroCotizacion]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 00:36:08,343 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+2024-07-04 00:36:08,348 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoCliente] AS [t]
+2024-07-04 00:36:08,353 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[RucCliente]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 00:36:08,357 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[CotizacionGrupo]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 00:36:09,464 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:36:09,468 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:36:09,471 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:36:09,491 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoOperacion] AS [t]
+2024-07-04 00:36:09,500 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+ORDER BY [t].[Id] DESC
+2024-07-04 00:36:09,505 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Destino] AS [t]
+2024-07-04 00:36:14,681 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:36:14,682 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:36:14,688 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:36:14,690 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Archivo], [t].[Cliente], [t].[CodigoSisgeco], [t].[CodigoVendedor], [t].[Departamento], [t].[Direccion], [t].[Distrito], [t].[FechaCotizacion], [t].[FechaModificacion], [t].[FechaRegistro], [t].[FechaSap], [t].[FechaVenta], [t].[IdDestino], [t].[IdEstado], [t].[IdProyecto], [t].[IdTipoPeracion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Monto], [t].[Nivel], [t].[NombreVendedor], [t].[NumdoCref], [t].[NumeroCotizacion], [t].[Observacion], [t].[Observacion2], [t].[Provincia], [t].[RucCliente], [t].[SubNivel], [t].[SubTotal], [t].[Telefono], [t].[TipoCambio], [t].[TipoCliente], [t].[TipoMoneda], [t].[Total], [t].[TotalIgv]
+FROM [Tbl_OrdenProduccion] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:36:15,519 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:36:15,524 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:41:30,498 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:41:30,782 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (136ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2024-07-04 00:41:34,944 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:41:34,995 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NombreVendedor]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 00:41:35,065 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NumeroCotizacion]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 00:41:35,227 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (158ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+2024-07-04 00:41:35,328 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoCliente] AS [t]
+2024-07-04 00:41:35,400 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (42ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[RucCliente]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 00:41:35,426 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[CotizacionGrupo]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 00:41:37,894 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:41:37,896 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:41:37,897 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:41:37,907 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+ORDER BY [t].[Id] DESC
+2024-07-04 00:41:37,911 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoOperacion] AS [t]
+2024-07-04 00:41:37,928 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Destino] AS [t]
+2024-07-04 00:41:42,013 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:41:42,015 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:41:42,025 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Archivo], [t].[Cliente], [t].[CodigoSisgeco], [t].[CodigoVendedor], [t].[Departamento], [t].[Direccion], [t].[Distrito], [t].[FechaCotizacion], [t].[FechaModificacion], [t].[FechaRegistro], [t].[FechaSap], [t].[FechaVenta], [t].[IdDestino], [t].[IdEstado], [t].[IdProyecto], [t].[IdTipoPeracion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Monto], [t].[Nivel], [t].[NombreVendedor], [t].[NumdoCref], [t].[NumeroCotizacion], [t].[Observacion], [t].[Observacion2], [t].[Provincia], [t].[RucCliente], [t].[SubNivel], [t].[SubTotal], [t].[Telefono], [t].[TipoCambio], [t].[TipoCliente], [t].[TipoMoneda], [t].[Total], [t].[TotalIgv]
+FROM [Tbl_OrdenProduccion] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:41:42,026 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:41:59,224 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:41:59,231 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:49:22,730 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:49:22,859 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (85ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2024-07-04 00:49:39,218 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:49:39,245 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NombreVendedor]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 00:49:39,251 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NumeroCotizacion]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 00:49:39,281 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+2024-07-04 00:49:39,334 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoCliente] AS [t]
+2024-07-04 00:49:39,340 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[RucCliente]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 00:49:39,345 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[CotizacionGrupo]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 00:49:41,522 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:49:41,524 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:49:41,545 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:49:41,559 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Destino] AS [t]
+2024-07-04 00:49:41,587 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoOperacion] AS [t]
+2024-07-04 00:49:41,606 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+ORDER BY [t].[Id] DESC
+2024-07-04 00:50:13,643 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:50:13,645 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:50:13,653 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:50:13,659 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Archivo], [t].[Cliente], [t].[CodigoSisgeco], [t].[CodigoVendedor], [t].[Departamento], [t].[Direccion], [t].[Distrito], [t].[FechaCotizacion], [t].[FechaModificacion], [t].[FechaRegistro], [t].[FechaSap], [t].[FechaVenta], [t].[IdDestino], [t].[IdEstado], [t].[IdProyecto], [t].[IdTipoPeracion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Monto], [t].[Nivel], [t].[NombreVendedor], [t].[NumdoCref], [t].[NumeroCotizacion], [t].[Observacion], [t].[Observacion2], [t].[Provincia], [t].[RucCliente], [t].[SubNivel], [t].[SubTotal], [t].[Telefono], [t].[TipoCambio], [t].[TipoCliente], [t].[TipoMoneda], [t].[Total], [t].[TotalIgv]
+FROM [Tbl_OrdenProduccion] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 00:50:16,904 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 00:50:16,912 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 01:01:38,691 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:01:40,329 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (357ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2024-07-04 01:03:07,881 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:03:07,919 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NombreVendedor]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 01:03:07,934 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NumeroCotizacion]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 01:03:07,942 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+2024-07-04 01:03:07,953 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoCliente] AS [t]
+2024-07-04 01:03:07,958 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[RucCliente]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 01:03:07,965 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[CotizacionGrupo]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 01:03:11,867 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:03:11,869 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:03:11,872 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:03:11,916 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoOperacion] AS [t]
+2024-07-04 01:03:11,951 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (32ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+ORDER BY [t].[Id] DESC
+2024-07-04 01:03:11,955 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (48ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Destino] AS [t]
+2024-07-04 01:03:17,690 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:03:17,727 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:03:17,739 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 01:03:17,814 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (82ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Archivo], [t].[Cliente], [t].[CodigoSisgeco], [t].[CodigoVendedor], [t].[Departamento], [t].[Direccion], [t].[Distrito], [t].[FechaCotizacion], [t].[FechaModificacion], [t].[FechaRegistro], [t].[FechaSap], [t].[FechaVenta], [t].[IdDestino], [t].[IdEstado], [t].[IdProyecto], [t].[IdTipoPeracion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Monto], [t].[Nivel], [t].[NombreVendedor], [t].[NumdoCref], [t].[NumeroCotizacion], [t].[Observacion], [t].[Observacion2], [t].[Provincia], [t].[RucCliente], [t].[SubNivel], [t].[SubTotal], [t].[Telefono], [t].[TipoCambio], [t].[TipoCliente], [t].[TipoMoneda], [t].[Total], [t].[TotalIgv]
+FROM [Tbl_OrdenProduccion] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 01:03:21,471 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:03:21,478 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 01:04:28,105 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:04:28,271 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (144ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2024-07-04 01:04:41,573 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:04:41,776 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (185ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NombreVendedor]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 01:04:41,877 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NumeroCotizacion]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 01:04:41,891 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+2024-07-04 01:04:42,003 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoCliente] AS [t]
+2024-07-04 01:04:42,031 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[RucCliente]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 01:04:42,045 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[CotizacionGrupo]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 01:04:51,691 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:04:51,722 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:04:51,726 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:04:51,731 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+ORDER BY [t].[Id] DESC
+2024-07-04 01:04:51,748 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoOperacion] AS [t]
+2024-07-04 01:04:51,756 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Destino] AS [t]
+2024-07-04 01:04:56,328 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:04:56,351 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:04:56,365 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (10ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Archivo], [t].[Cliente], [t].[CodigoSisgeco], [t].[CodigoVendedor], [t].[Departamento], [t].[Direccion], [t].[Distrito], [t].[FechaCotizacion], [t].[FechaModificacion], [t].[FechaRegistro], [t].[FechaSap], [t].[FechaVenta], [t].[IdDestino], [t].[IdEstado], [t].[IdProyecto], [t].[IdTipoPeracion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Monto], [t].[Nivel], [t].[NombreVendedor], [t].[NumdoCref], [t].[NumeroCotizacion], [t].[Observacion], [t].[Observacion2], [t].[Provincia], [t].[RucCliente], [t].[SubNivel], [t].[SubTotal], [t].[Telefono], [t].[TipoCambio], [t].[TipoCliente], [t].[TipoMoneda], [t].[Total], [t].[TotalIgv]
+FROM [Tbl_OrdenProduccion] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 01:04:56,415 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (53ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 01:05:00,595 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:05:00,601 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 01:11:39,668 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:11:40,070 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (279ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2024-07-04 01:13:14,921 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:13:15,307 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (128ms) [Parameters=[@__codigosProducto_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Color], [t].[DescripcionComponente], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Nombre], [t].[SubProducto], [t].[Unidad]
+FROM [Tbl_Componentes] AS [t]
+WHERE ([t].[CodigoProducto] LIKE N'') OR (CHARINDEX([t].[CodigoProducto], @__codigosProducto_0) > 0)
+2024-07-04 01:13:25,884 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:13:25,895 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[@__codigosProducto_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Color], [t].[DescripcionComponente], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Nombre], [t].[SubProducto], [t].[Unidad]
+FROM [Tbl_Componentes] AS [t]
+WHERE ([t].[CodigoProducto] LIKE N'') OR (CHARINDEX([t].[CodigoProducto], @__codigosProducto_0) > 0)
+2024-07-04 01:13:47,718 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:13:47,734 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (12ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2024-07-04 01:17:31,981 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:17:32,083 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (64ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2024-07-04 01:20:08,983 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-07-04 01:20:09,020 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2024-07-04 01:20:09,024 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Pictures\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2024-07-04 01:20:25,969 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Alto' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:20:25,981 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaCadena' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:20:25,986 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaCordon' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:20:25,991 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:20:25,998 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Ancho' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:20:26,003 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Cantidad' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:20:26,009 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TelaMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:20:26,013 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TuboMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:20:26,019 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Monto' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:20:26,023 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'SubTotal' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:20:26,029 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Total' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:20:26,034 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TotalIgv' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:20:26,534 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:20:26,534 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:20:27,876 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (86ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 01:20:27,876 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (86ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Archivo], [t].[Cliente], [t].[CodigoSisgeco], [t].[CodigoVendedor], [t].[Departamento], [t].[Direccion], [t].[Distrito], [t].[FechaCotizacion], [t].[FechaModificacion], [t].[FechaRegistro], [t].[FechaSap], [t].[FechaVenta], [t].[IdDestino], [t].[IdEstado], [t].[IdProyecto], [t].[IdTipoPeracion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Monto], [t].[Nivel], [t].[NombreVendedor], [t].[NumdoCref], [t].[NumeroCotizacion], [t].[Observacion], [t].[Observacion2], [t].[Provincia], [t].[RucCliente], [t].[SubNivel], [t].[SubTotal], [t].[Telefono], [t].[TipoCambio], [t].[TipoCliente], [t].[TipoMoneda], [t].[Total], [t].[TotalIgv]
+FROM [Tbl_OrdenProduccion] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 01:20:30,184 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:20:30,206 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 01:23:12,945 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-07-04 01:23:12,968 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2024-07-04 01:23:12,971 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\NelsonR\Pictures\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2024-07-04 01:23:31,987 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Alto' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:23:31,997 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaCadena' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:23:32,003 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaCordon' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:23:32,007 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'AlturaMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:23:32,014 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Ancho' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:23:32,019 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Cantidad' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:23:32,023 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TelaMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:23:32,028 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TuboMedida' on entity type 'TBL_DetalleOrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:23:32,034 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Monto' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:23:32,039 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'SubTotal' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:23:32,044 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Total' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:23:32,050 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TotalIgv' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-04 01:23:32,527 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:23:33,755 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (22ms) [Parameters=[@__numeroCotizacion_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Ambiente], [t].[CantidadProducto], [t].[FechaProduccion], [t].[Indice], [t].[NumeroCotizacion], [t].[Stock], [t].[Turno]
+FROM [Tbl_Ambiente] AS [t]
+WHERE [t].[NumeroCotizacion] = @__numeroCotizacion_0
+2024-07-04 01:26:28,406 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:26:28,441 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NombreVendedor]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 01:26:28,447 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NumeroCotizacion]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 01:26:28,453 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+2024-07-04 01:26:28,462 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoCliente] AS [t]
+2024-07-04 01:26:28,471 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[RucCliente]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 01:26:28,477 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[CotizacionGrupo]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 01:27:18,495 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:27:18,740 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (139ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2024-07-04 01:27:20,347 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:27:20,360 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NombreVendedor]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 01:27:20,365 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[NumeroCotizacion]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 01:27:20,368 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+2024-07-04 01:27:20,376 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_TipoCliente] AS [t]
+2024-07-04 01:27:20,382 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[RucCliente]
+FROM [Tbl_OrdenProduccion] AS [t]
+2024-07-04 01:27:20,388 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT DISTINCT [t].[CotizacionGrupo]
+FROM [Tbl_DetalleOpGrupo] AS [t]
+2024-07-04 01:32:14,789 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:32:14,814 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (12ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2024-07-04 01:33:40,099 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:33:40,222 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[Nombre]
+FROM [Tbl_Rol] AS [t]
+2024-07-04 01:34:48,853 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2024-07-04 01:34:48,869 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (11ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]

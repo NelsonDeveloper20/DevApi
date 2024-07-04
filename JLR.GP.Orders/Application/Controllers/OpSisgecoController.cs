@@ -524,7 +524,8 @@ namespace ApiPortal_DataLake.Application.Controllers
                 }
             }
 
-            return mergedData;
+            //return mergedData;
+            return mergedData.OrderBy(m => m.CotizacionGrupo).ThenBy(m => m.IndexDetalle).ToList();
         }
         #endregion
     }

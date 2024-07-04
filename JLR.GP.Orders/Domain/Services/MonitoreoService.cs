@@ -440,7 +440,7 @@ namespace ApiPortal_DataLake.Domain.Services
                         CotizacionGrupo = item.Grupo,
                         Nombre_Producto = item.Nombre_Producto,
                         Codigo_Producto = item.Codigo_Producto,
-                        Descrip_Componente = item.Descrip_Componente,
+                        Descrip_Componente = item.Componente,
                         Cod_Componente = item.Cod_Componente,
                         Descripcion = item.Descripcion,
                         Color = item.Color,
