@@ -90,11 +90,11 @@ namespace ApiPortal_DataLake.Application.Controllers
             }
         }
         [HttpPost("AplicarCentral")]
-        public async Task<ActionResult<GeneralResponse<Object>>> AplicarCentral(int id,string valor)
+        public async Task<ActionResult<GeneralResponse<Object>>> AplicarCentral(string cotizacionGrupo, int id,string valor)
         {
             try
             {
-                var response = await this._usuarioService.AplicarCentral(id, valor);
+                var response = await this._usuarioService.AplicarCentral(cotizacionGrupo,id, valor);
                 return response;
 
             }

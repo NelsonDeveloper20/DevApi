@@ -284,22 +284,146 @@ namespace ApiPortal_DataLake.Domain.Services
                 throw new Exception(ex.Message);
             }
         }
+        /*
+         Lógica para Aplicar Central a Productos
+En este sistema, cada cuadro representa un producto y los cuadros están organizados en filas, donde la cantidad de productos en cada fila va aumentando progresivamente. La lógica para aplicar "Central" a un producto sigue estas reglas:
 
-        public async Task<GeneralResponse<Object>> AplicarCentral(int id, string valor)
+Producto Único: Si hay solo un producto en el grupo, no se puede aplicar "Central". La respuesta será "Central": "NO".
 
+Múltiples Productos:
+
+Los productos se organizan en una lista ordenada.
+El primer producto en la lista (índice 0) no puede ser central.
+El segundo producto (índice 1) puede ser central solo para un producto.
+El tercer producto (índice 2) puede ser central para dos productos.
+Y así sucesivamente, hasta que el último producto de la lista puede ser central para todos los productos anteriores.
+Actualización del Estado Central:
+
+Primero, se obtiene la lista de productos del grupo especificado, ordenada por su identificador.
+Se cuenta la cantidad total de productos.
+Si hay más de un producto, se localiza el producto específico según su identificador (id).
+Se verifica si la posición (índice) de este producto en la lista le permite ser central.
+Si la posición es válida, se actualiza el estado del producto a "Central".
+Se guarda el cambio en la base de datos y se responde con "Central": "SI".
+Si la posición no es válida o el producto no se encuentra, se responde con un error o "Central": "NO".
+        */
+
+        public async Task<GeneralResponse<Object>> AplicarCentral(string cotizacionGrupo, int id, string valor)
         {
             try
             {
-                var _grupo=this._context.TBL_DetalleOrdenProduccion.Find(id);
-                _grupo.Central = valor.ToUpper();
-                _grupo.CentralIndex = valor.ToUpper();
-                this._context.TBL_DetalleOrdenProduccion.Update(_grupo);
-                this._context.SaveChanges();
                 var jsonresponse = new
                 {
-                    Respuesta = "OK",
-                    idModulo = id,
+                    Respuesta = "",
+                    Central = "",
+                    idModulo = 0,
+                    ProductoId = 0
                 };
+
+                // Validación del valor
+                if (valor != "SI" && valor != "NO")
+                {
+                    jsonresponse = new
+                    {
+                        Respuesta = "Valor inválido",
+                        Central = "NO",
+                        idModulo = 0,
+                        ProductoId = 0
+                    };
+                    return new GeneralResponse<Object>(HttpStatusCode.BadRequest, jsonresponse);
+                }
+
+                if (valor == "NO")
+                {
+                    var producto = await this._context.TBL_DetalleOrdenProduccion.FindAsync(id);
+                    if (producto != null)
+                    {
+                        producto.Central = "NO";
+                        this._context.TBL_DetalleOrdenProduccion.Update(producto);
+                        await this._context.SaveChangesAsync();
+                        jsonresponse = new
+                        {
+                            Respuesta = "Se ha quitado el central",
+                            Central = "NO",
+                            idModulo = 1,
+                            ProductoId = id
+                        };
+                    }
+                    else
+                    {
+                        jsonresponse = new
+                        {
+                            Respuesta = "Producto no encontrado",
+                            Central = "NO",
+                            idModulo = 0,
+                            ProductoId = id
+                        };
+                    }
+                }
+                else
+                {
+                    var productos = await this._context.TBL_DetalleOrdenProduccion
+                        .Where(dop => dop.CotizacionGrupo == cotizacionGrupo)
+                        .OrderBy(dop => dop.IndexDetalle)
+                        .ToListAsync();
+
+                    int cantidadProductos = productos.Count;
+
+                    if (cantidadProductos <= 1)
+                    {
+                        jsonresponse = new
+                        {
+                            Respuesta = "El grupo debe tener mínimo 2 productos para aplicar central",
+                            Central = "NO",
+                            idModulo = 1,
+                            ProductoId = 0
+                        };
+                    }
+                    else
+                    {
+                        var producto = productos.FirstOrDefault(p => p.Id == id);
+                        if (producto != null)
+                        {
+                            int maxCentral = cantidadProductos - 1;
+                            int centralesExistentes = productos.Count(p => p.Central == "SI");
+
+                            if (centralesExistentes >= maxCentral && valor == "SI")
+                            {
+                                jsonresponse = new
+                                {
+                                    Respuesta = "Número máximo de productos centrales alcanzado",
+                                    Central = "NO",
+                                    idModulo = 0,
+                                    ProductoId = id
+                                };
+                            }
+                            else
+                            {
+                                producto.Central = valor.ToUpper();
+                                this._context.TBL_DetalleOrdenProduccion.Update(producto);
+                                await this._context.SaveChangesAsync();
+
+                                jsonresponse = new
+                                {
+                                    Respuesta = "OK",
+                                    Central = "SI",
+                                    idModulo = 1,
+                                    ProductoId = id
+                                };
+                            }
+                        }
+                        else
+                        {
+                            jsonresponse = new
+                            {
+                                Respuesta = "Producto no encontrado",
+                                Central = "NO",
+                                idModulo = 0,
+                                ProductoId = id
+                            };
+                        }
+                    }
+                }
 
                 return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
             }
@@ -314,6 +438,9 @@ namespace ApiPortal_DataLake.Domain.Services
                 return new GeneralResponse<Object>(HttpStatusCode.InternalServerError, jsonresponse);
             }
         }
+
+
+
 
 
     }
