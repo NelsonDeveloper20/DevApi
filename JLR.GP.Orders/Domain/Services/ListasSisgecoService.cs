@@ -154,7 +154,30 @@ namespace ApiPortal_DataLake.Domain.Services
                     }
                     break;
                 case "Nombretubo":
-                    query = "SELECT * FROM Articulo WHERE   codigo like '%" + subfamilia + "%'";
+                   // query = "SELECT * FROM Articulo WHERE   codigo like '%" + subfamilia + "%'";
+                    query = @"SELECT  * FROM Articulo ar
+            WHERE  
+            ar.des NOT LIKE '%(Liquidado)%'
+            AND ar.des  LIKE '%TUBO%' 
+            AND codsubfamilia IN('"+ subfamilia + @"','LU')
+            AND ar.codigo NOT IN (
+            'PALRS00000001',
+            'PALRS00000002',
+            'PALRS00000005', 
+            'PALRS00000003',
+            'PALRS00000004', 
+            'PALRZ00000026', 
+            'PALRZ00000026',	
+            'PALRZ00000011')
+            UNION ALL
+            SELECT *FROM Articulo ar
+            WHERE    ar.codigo IN(
+            'PALRS00000005', 
+            'PALRS00000003',
+            'PALRS00000004', 
+            'PALRZ00000026', 
+            'PALRZ00000026',	
+            'PALRZ00000011')";
                     break;
                 default:
 
