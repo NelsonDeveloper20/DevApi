@@ -525,7 +525,20 @@ namespace ApiPortal_DataLake.Application.Controllers
             }
 
             //return mergedData;
-            return mergedData.OrderBy(m => m.CotizacionGrupo).ThenBy(m => m.IndexDetalle).ToList();
+            /*return mergedData.OrderBy(m => string.IsNullOrEmpty(m.CotizacionGrupo) ? 1 : 0)
+                    .ThenBy(m => m.CotizacionGrupo)
+                    .ThenBy(m => string.IsNullOrEmpty(m.Id) ? 1 : 0)
+                    .ThenBy(m => m.Id)
+                    .ThenBy(m => m.IndexDetalle)
+                    .ToList();*/
+
+            return mergedData.OrderBy(m => string.IsNullOrEmpty(m.CotizacionGrupo) ? 1 : 0)
+                    .ThenBy(m => m.CotizacionGrupo.EndsWith("-0") ? 1 : 0)
+                    .ThenBy(m => m.CotizacionGrupo)
+                    .ThenBy(m => string.IsNullOrEmpty(m.Id) ? 1 : 0)
+                    .ThenBy(m => m.Id)
+                    .ThenBy(m => m.IndexDetalle)
+                    .ToList();
         }
         #endregion
     }
