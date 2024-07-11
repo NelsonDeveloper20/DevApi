@@ -17,12 +17,14 @@ using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Reflection;
+using System.Security.Cryptography;
 using System.Threading;
 
 namespace ApiPortal_DataLake.Domain.Services
@@ -31,8 +33,9 @@ namespace ApiPortal_DataLake.Domain.Services
     {
         private readonly IConfiguration _configuration;
         private readonly DBContext _context;
+        private string CnDc_Blinds;
 
-        
+
         private readonly ILogger<DetalleOrdenProduccionService> _logger;
         
         public DetalleOrdenProduccionService(
@@ -44,6 +47,13 @@ namespace ApiPortal_DataLake.Domain.Services
             this._configuration = configuration;
             this._context = context;
             this._logger = logger;
+
+
+            var builder = new ConfigurationBuilder()
+                  .SetBasePath(Directory.GetCurrentDirectory())
+                  .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            var configurations = builder.Build();
+            CnDc_Blinds = configurations["ConnectionString:DefaultConnection"];
         }
 
         public async Task<IEnumerable<TBL_DetalleOrdenProduccion>> GetAllAsync()
@@ -100,14 +110,14 @@ namespace ApiPortal_DataLake.Domain.Services
                 }
                 else
                 {
-                    equivalencia = listCargaProd
+                    equivalencia =  listCargaProd
                         .Where(ls => ls.CodigoProducto == _CodProducto)
                         .Select(ls => ls.Equivalencia)
                         .FirstOrDefault() ?? 0;
                 }
 
                 int productos = await CalculateProductos(turno, _fechaProduccion, _CodProducto, accionamiento, equivalencia);
-
+                int productosMasUltimo = productos + equivalencia;
                 if (productos >= 30)
                 {
                     jsonresponse = new
@@ -115,8 +125,19 @@ namespace ApiPortal_DataLake.Domain.Services
                         Msj = $"Ya está superando la cantidad de producción en el turno {turno} para la fecha de producción {fechaProduccion}",
                         Resultado = "NO"
                     };
+                }else  if (productosMasUltimo >= 30){
+                        jsonresponse = new
+                        {
+                            Msj = $"Con este producto ya está superando la cantidad de producción en el turno {turno} para la fecha de producción {fechaProduccion}",
+                            Resultado = "NO"
+                        };
+                }else{
+                    jsonresponse = new
+                    {
+                        Msj = "La producción está dentro de los límites permitidos.",
+                        Resultado = "OK"
+                    };
                 }
-
                 return new GeneralResponse<object>(HttpStatusCode.OK, jsonresponse);
             }
             catch (Exception ex)
@@ -133,75 +154,39 @@ namespace ApiPortal_DataLake.Domain.Services
 
         private async Task<int> CalculateProductos(string turno, DateTime fechaProduccion, string codigoProducto, string accionamiento, int equivalencia)
         {
-            int productos = 0;
-            int additionalValue = 0;
+            int productos = 0; 
 
             // Asignar valores adicionales según el producto y el accionamiento
-            if (codigoProducto == "PRTRS" && accionamiento == "Manual")
+          
+            DataTable result = new DataTable();
+            using (SqlConnection cnm = new SqlConnection(CnDc_Blinds))
             {
-                additionalValue = 1;
-            }
-            else if (codigoProducto == "PRTRZ" && accionamiento == "Manual")
-            {
-                additionalValue = 3;
-            }
-            else if (codigoProducto == "PRTRS" && accionamiento == "Motorizado")
-            {
-                additionalValue = 2;
-            }
-            else if (codigoProducto == "PRTRZ" && accionamiento == "Motorizado")
-            {
-                additionalValue = 4;
-            }
-            else if (codigoProducto == "PRTRS" && accionamiento == "Cassete")
-            {
-                additionalValue = 2;
-            }
-            else if (codigoProducto == "PRTRM" || codigoProducto == "PRTSH" || codigoProducto == "PRTRH")
-            {
-                additionalValue = equivalencia;
+                await cnm.OpenAsync();
+                using (SqlCommand cmd = new SqlCommand("SP_ValidacionCantidadXTurnoFecProd", cnm))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@Turno", turno));
+                    cmd.Parameters.Add(new SqlParameter("@Fecha", fechaProduccion));
+                    using (SqlDataAdapter adp = new SqlDataAdapter(cmd))
+                    {
+                        adp.Fill(result);
+                    }
+                }
             }
 
-            // Aplicar filtro por cadena específico para "PRTRS" y "Cassete"
-            if (codigoProducto == "PRTRS" && accionamiento == "Cassete")
+            if (result.Rows.Count == 0)
             {
-                productos = await (from dp in _context.TBL_DetalleOrdenProduccion
-                                   join grd in _context.Tbl_DetalleOpGrupo on dp.CotizacionGrupo equals grd.CotizacionGrupo
-                                   where grd.Turno == turno
-                                         && grd.FechaProduccion == fechaProduccion
-                                         && grd.Tipo == "Producto"
-                                   //&& dp.Cadena == "Cassete"
-                                   //&& dp.CodigoProducto.Substring(0, 5) == codigoProducto
-                                   select dp)
-                                .CountAsync() * equivalencia + additionalValue;
+                // No rows returned by the stored procedure
+                return 0;
             }
-            else if (codigoProducto == "PRTRM" || codigoProducto == "PRTSH" || codigoProducto == "PRTRH") // No filtrar por accionamiento
+
+            foreach (DataRow row in result.Rows)
             {
-                productos = await (from dp in _context.TBL_DetalleOrdenProduccion
-                                   join grd in _context.Tbl_DetalleOpGrupo on dp.CotizacionGrupo equals grd.CotizacionGrupo
-                                   where grd.Turno == turno
-                                         && grd.FechaProduccion == fechaProduccion
-                                         && grd.Tipo == "Producto"
-                                         //&& dp.CodigoProducto.Substring(0, 5) == codigoProducto
-                                   select dp)
-                                .CountAsync() * equivalencia + additionalValue;
+                int _equivalencia = Convert.ToInt32(row["Equivalencia"]);
+                int cantidad = Convert.ToInt32(row["Cantidad"]);
+                productos += _equivalencia * cantidad;
             }
-            else if (codigoProducto == "PRTCV" || codigoProducto == "PRTRF" || codigoProducto == "PRTPJ") // No validar estos productos
-            {
-                productos = 0;
-            }
-            else // Aplicar filtro por accionamiento para otros productos
-            {
-                productos = await (from dp in _context.TBL_DetalleOrdenProduccion
-                                   join grd in _context.Tbl_DetalleOpGrupo on dp.CotizacionGrupo equals grd.CotizacionGrupo
-                                   where grd.Turno == turno
-                                         && grd.FechaProduccion == fechaProduccion
-                                         && grd.Tipo=="Producto"
-                                         //&& dp.Accionamiento == accionamiento
-                                         //&& dp.CodigoProducto.Substring(0, 5) == codigoProducto
-                                   select dp)
-                                .CountAsync() * equivalencia + additionalValue;
-            }
+
 
             return productos;
         }
@@ -213,7 +198,8 @@ namespace ApiPortal_DataLake.Domain.Services
             {
                 // Extraer algunos campos específicos en variables  
                 string numeroCotizacion = formData.NumeroCotizacion;
-                string codigosisgeco = formData.CodigoSisgeco;  
+                string codigosisgeco = formData.CodigoSisgeco;
+                string SuperoMaximo = formData.Maximo;
 
                 string cotizacionGrupo = ""; 
                 int indexDetalle = 0;
@@ -281,12 +267,20 @@ namespace ApiPortal_DataLake.Domain.Services
                                     // Obtener el último número de grupo y agregar 1
                                     int numeracion = int.Parse(ultimoGrupo.CotizacionGrupo.Split('-')[1]) + 1;
                                     cotizacionGrupo = $"{numeroCotizacion}-{numeracion}";
+                                    if (SuperoMaximo == "SI")
+                                    {
+                                        estadoInicial = 1;//PENDIENTE APROBACION SUPERVISOR
+                                    }
                                     CrearNuevoGrupo(cotizacionGrupo, "Producto", fechaProduccion, turno);
                                 }
                                 else
                                 {
                                     // Si no hay grupos existentes para la cotización, asignar el primer número de grupo
                                     cotizacionGrupo = $"{numeroCotizacion}-0";
+                                    if (SuperoMaximo == "SI")
+                                    {
+                                        estadoInicial = 1;//PENDIENTE APROBACION SUPERVISOR
+                                    }
                                     CrearNuevoGrupo(cotizacionGrupo, "Producto", fechaProduccion, turno);
                                 }
                             }
@@ -307,6 +301,11 @@ namespace ApiPortal_DataLake.Domain.Services
                             DateTime fechaProduccion = DateTime.Parse(formData.FechaProduccion);
 
                             cotizacionGrupo = $"{numeroCotizacion}-1";
+
+                            if (SuperoMaximo == "SI")
+                            {
+                                estadoInicial = 1;//PENDIENTE APROBACION SUPERVISOR
+                            }
                             CrearNuevoGrupo(cotizacionGrupo, "Producto", fechaProduccion, turno);
                         }
                     }
@@ -327,8 +326,10 @@ namespace ApiPortal_DataLake.Domain.Services
                         if (key == "Id")
                         { // Manejo especial para el campo "Id"                            
                             Id = value != null && value.ToString() != "" ? Convert.ToInt32(value) : 0;
-                        }
-                        else
+                        }else if (key == "Maximo")
+                        {
+
+                        }else
                         {
                             if (value != "")
                             {

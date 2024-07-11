@@ -106,5 +106,22 @@ namespace ApiPortal_DataLake.Application.Controllers
             }
         }
 
+        [HttpPost("ReiniciarGrupo")]
+        public async Task<ActionResult<GeneralResponse<Object>>> Reiniciar(int id)
+        {
+            try
+            {
+                var response = await this._usuarioService.ReinicioGrupo(id);
+                return response;
+
+            }
+            catch (Exception ex)
+            {
+
+                this._logger.LogError($"Error Agregar Perfil : {JsonConvert.SerializeObject(ex)}");
+                return Conflict();
+            }
+        }
+
     }
 }

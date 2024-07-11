@@ -43,7 +43,8 @@ namespace ApiPortal_DataLake.Domain.Services
                                     Dni = u.Dni,
                                     Correo = u.Correo,
                                     Usuario = u.Usuario,
-                                    Perfil = r.Nombre
+                                    Perfil = r.Nombre,
+                                    idS=r.Id
                                 }).ToListAsync();
 
             return result.Cast<dynamic>();

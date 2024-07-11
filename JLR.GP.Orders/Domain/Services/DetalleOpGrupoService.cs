@@ -1,4 +1,5 @@
-﻿using Api_Dc.Domain.Models;
+﻿using Api_Dc.Domain.Contracts;
+using Api_Dc.Domain.Models;
 using Api_Dc.Domain.Request;
 using ApiPortal_DataLake.Application.Models.Request;
 using ApiPortal_DataLake.Domain.Contracts;
@@ -440,6 +441,79 @@ Si la posición no es válida o el producto no se encuentra, se responde con un 
         }
 
 
+        public async Task<GeneralResponse<Object>> ReinicioGrupo2(int idGrupo)
+        {
+            try
+            {
+                var jsonresponse = new
+                {
+                    Respuesta = "OK REINICIADO",
+                    ProductoId = 0
+                };
+                var _grupo = this._context.Tbl_DetalleOpGrupo.Find(idGrupo);
+                _grupo.IdEstado = 3; //Pendiente Operaciones
+
+                var _productEstaciones=this._context.Tbl_ProduccionEstacion.Where(p=>p.CotizacionGrupo==_grupo.CotizacionGrupo).ToList();
+
+                foreach(var iten in _productEstaciones)
+                {
+                    this._context.Tbl_ProduccionEstacion.Remove(iten);
+                }
+                this._context.Tbl_DetalleOpGrupo.Update(_grupo);
+                await this._context.SaveChangesAsync();
+
+                return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
+            }
+            catch (Exception ex)
+            {
+                this._logger.LogError($"Insertar ModuloRol Error try catch: {JsonConvert.SerializeObject(ex)}");
+                var jsonresponse = new
+                {
+                    Respuesta = ex.Message,
+                    idModulo = 0
+                };
+                return new GeneralResponse<Object>(HttpStatusCode.InternalServerError, jsonresponse);
+            }
+        }
+        public async Task<GeneralResponse<Object>> ReinicioGrupo(int idGrupo)
+        {
+            using (var transaction = await this._context.Database.BeginTransactionAsync())
+            {
+                try
+                {
+                    var jsonresponse = new
+                    {
+                        Respuesta = "OK REINICIADO",
+                        ProductoId = 0
+                    };
+                    var _grupo = await this._context.Tbl_DetalleOpGrupo.FindAsync(idGrupo);
+                    if (_grupo == null)
+                    {
+                        return new GeneralResponse<Object>(HttpStatusCode.NotFound, new { Respuesta = "Grupo no encontrado", ProductoId = 0 });
+                    }
+                    _grupo.IdEstado = 3; // Pendiente Operaciones
+                    var _productEstaciones = this._context.Tbl_ProduccionEstacion
+                        .Where(p => p.CotizacionGrupo == _grupo.CotizacionGrupo)
+                        .ToList();
+                    this._context.Tbl_ProduccionEstacion.RemoveRange(_productEstaciones);
+                    this._context.Tbl_DetalleOpGrupo.Update(_grupo);
+                    await this._context.SaveChangesAsync();
+                    await transaction.CommitAsync();
+                    return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
+                }
+                catch (Exception ex)
+                {
+                    await transaction.RollbackAsync();
+                    this._logger.LogError($"ReinicioGrupo Error: {ex.Message}", ex);
+                    var jsonresponse = new
+                    {
+                        Respuesta = ex.Message,
+                        idModulo = 0
+                    };
+                    return new GeneralResponse<Object>(HttpStatusCode.InternalServerError, jsonresponse);
+                }
+            }
+        }
 
 
 
