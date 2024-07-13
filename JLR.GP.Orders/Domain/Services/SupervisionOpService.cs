@@ -80,14 +80,15 @@ namespace ApiPortal_DataLake.Domain.Services
                     IdUsuario = item.IdUsuario,
                     IdUsuarioSolicita = item.IdUsuarioSolicita,
                     Estado=item.Estado,
-                    NumeroCotizacion=item.NumeroCotizacion
+                    NumeroCotizacion=item.NumeroCotizacion,
+                    Motivo=item.Motivo
 
                 };
                 this._context.Tbl_SupervisorAprobacion.Add(newRow);
                 var grupo = this._context.Tbl_DetalleOpGrupo.Find(item.id);
                 if (item.Estado == "Aprobado")
                 {
-                    grupo.IdEstado = 2;//PENDIENTE EN VENTA
+                    grupo.IdEstado = 3;//Pendiente Operaciones
                 }
                 else
                 {

@@ -15,7 +15,8 @@ namespace Api_Dc.Domain.Models
         public DateTime? FechaCreacion { get; set; }
         public int? IdUsuario { get; set; }
         public int? IdUsuarioSolicita { get; set; }
-        public int? NumeroCotizacion { get; set; }
+        public string? NumeroCotizacion { get; set; }
         public string Estado { get; set; }
+        public string Motivo { get; set; }
     }
 }
