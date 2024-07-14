@@ -199,7 +199,7 @@ namespace ApiPortal_DataLake.Domain.Services
                 // Extraer algunos campos específicos en variables  
                 string numeroCotizacion = formData.NumeroCotizacion;
                 string codigosisgeco = formData.CodigoSisgeco;
-                string SuperoMaximo = formData.Maximo;
+                //string SuperoMaximo = formData.Maximo;
 
                 string cotizacionGrupo = ""; 
                 int indexDetalle = 0;
@@ -223,6 +223,7 @@ namespace ApiPortal_DataLake.Domain.Services
                 }
                 if (string.IsNullOrEmpty(formData.Id))
                 {
+                    string SuperoMaximo = formData.Maximo;
                     // Buscar grupo existente para la cotización 
                     var grupoExistente = this._context.Tbl_DetalleOpGrupo
                         .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion);
@@ -471,6 +472,21 @@ namespace ApiPortal_DataLake.Domain.Services
                                         var convertedValue = Convert.ChangeType(value.ToString(), propInfo.PropertyType);
                                         propInfo.SetValue(existingDataFila, convertedValue.Replace("--Seleccione--", ""), null);
                                     }
+                                }
+                            }
+                            else
+                            { 
+                                switch (key)
+                                {
+                                    case "CodigoMotor":
+                                        existingDataFila.CodigoMotor = "";
+                                        existingDataFila.Motor = "";
+                                        existingDataFila.MarcaMotor = "";
+                                        break;
+                                    case "Motor": 
+                                        existingDataFila.Motor = "";  
+                                        break;
+
                                 }
                             }
                         }
