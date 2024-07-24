@@ -223,7 +223,7 @@ namespace ApiPortal_DataLake.Domain.Services
                 }
                 if (string.IsNullOrEmpty(formData.Id))
                 {
-                    string SuperoMaximo = formData.Maximo;
+                   
                     // Buscar grupo existente para la cotización 
                     var grupoExistente = this._context.Tbl_DetalleOpGrupo
                         .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion);
@@ -248,6 +248,7 @@ namespace ApiPortal_DataLake.Domain.Services
                         }
                         else
                         {
+                            string SuperoMaximo = formData.Maximo;
                             string turno = formData.Turno;
                             DateTime fechaProduccion = DateTime.Parse(formData.FechaProduccion);
                             var grupoExistente2 = this._context.Tbl_DetalleOpGrupo
@@ -298,6 +299,7 @@ namespace ApiPortal_DataLake.Domain.Services
                         }
                         else
                         {
+                            string SuperoMaximo = formData.Maximo;
                             string turno = formData.Turno;
                             DateTime fechaProduccion = DateTime.Parse(formData.FechaProduccion);
 
