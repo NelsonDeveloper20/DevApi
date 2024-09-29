@@ -46,6 +46,20 @@ namespace ApiPortal_DataLake.Application.Controllers
                 return StatusCode((int)response.Status, response);
             }
         }
-         
+
+        [HttpGet("Componentes")]
+        public async Task<ActionResult> ListarComponentesGrupo(string numeroCotizacionGrupo)
+        {
+            var response = await this._usuarioService.ListarComponentesLayout(numeroCotizacionGrupo);
+            if (response.Status == HttpStatusCode.OK)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return StatusCode((int)response.Status, response);
+            }
+        }
+
     }
 }

@@ -67,6 +67,31 @@ namespace ApiPortal_DataLake.Domain.Services
                 throw new Exception(ex.Message);
             }
         }
+        public async Task<GeneralResponse<dynamic>> ListarComponentesLayout(string NumeroCotizacionGrupo)
+        {
+            try
+            {
+                DataTable result = new DataTable();
+                using (SqlConnection cnm = new SqlConnection(CnDc_Blinds))
+                {
+                    await cnm.OpenAsync();
+                    using (SqlCommand cmd = new SqlCommand("SP_GetLayoutGrupoComponentes", cnm))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@NumeroCotizacionGrupo", NumeroCotizacionGrupo));
+                        using (SqlDataAdapter adp = new SqlDataAdapter(cmd))
+                        {
+                            adp.Fill(result);
+                        }
+                    }
+                }
+                return new GeneralResponse<object>(HttpStatusCode.OK, result);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
     }
 }

@@ -242,7 +242,7 @@ namespace ApiPortal_DataLake.Domain.Services
                             else
                             {
                                 cotizacionGrupo = $"{numeroCotizacion}-0";
-                                estadoInicial = 5;//ESTADO COMO CONTRUCCION TERMINADA PARA LOS COMPONENTES
+                                estadoInicial = 6;//ESTADO COMO CONTRUCCION TERMINADA PARA LOS COMPONENTES
                                 CrearNuevoGrupo(cotizacionGrupo, "Componente");
                             }
                         }

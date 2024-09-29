@@ -10,5 +10,6 @@ namespace ApiPortal_DataLake.Domain.Contracts
     {
         //Task<IEnumerable<Tbl_DetalleOpGrupo>> ListarDetalleOpGrupo();
         Task<GeneralResponse<dynamic>> ListarDetalleOpGrupo(string NumeroCotizacionGrupo);
+        Task<GeneralResponse<dynamic>> ListarComponentesLayout(string NumeroCotizacionGrupo);
     }
 }
