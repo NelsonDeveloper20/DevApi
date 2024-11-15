@@ -48,12 +48,12 @@ namespace ApiPortal_DataLake.Application.Controllers
             {
                 // Cadena de conexión
                 DataTable dataTable = new DataTable();
-                using (SqlConnection connection = new SqlConnection(CnSisgeco))
+                using (SqlConnection connection = new SqlConnection(CnDc_Blinds))
                 {
                     try
                     {
                         connection.Open();
-                        SqlCommand command = new SqlCommand("usp_get_OPsV2", connection);
+                        SqlCommand command = new SqlCommand("Sp_BuscarOPEdicion", connection);
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@numero", numeroCotizacion); 
                         SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -84,11 +84,11 @@ namespace ApiPortal_DataLake.Application.Controllers
             try
             {
                 // Consulta Sisgeco
-                var sisgecoData = await ConsultarSisgeco(numeroCotizacion);
+                //var sisgecoData = await ConsultarSisgeco(numeroCotizacion);
                 // Consulta DC Blinds
                 var dcBlindsData = await ConsultarDCBlinds(numeroCotizacion);
                 // Fusionar resultados
-                var mergedData = MergeData(sisgecoData, dcBlindsData);
+                var mergedData = MergeData(null, dcBlindsData);
                 return Ok(mergedData);
             }
             catch (Exception ex)
@@ -504,35 +504,40 @@ namespace ApiPortal_DataLake.Application.Controllers
             return list;
         }
 
-        private List<DetalleOPSigecoDCResponse> MergeData(List<DetalleOPSigecoDCResponse> sisgecoData, List<DetalleOPSigecoDCResponse> dcBlindsData)
+        private List<DetalleOPSigecoDCResponse> MergeData(List<DetalleOPSigecoDCResponse> sisgecoData, 
+            List<DetalleOPSigecoDCResponse> dcBlindsData)
         {
-            var mergedData = new List<DetalleOPSigecoDCResponse>();
+            /*  var mergedData = new List<DetalleOPSigecoDCResponse>();
 
-            foreach (var sisgecoItem in sisgecoData)
+              foreach (var sisgecoItem in sisgecoData)
+              {
+                  var dcBlindsItem = dcBlindsData.FirstOrDefault(d => d.CodigoProducto == sisgecoItem.CodigoProducto && d.Linea == sisgecoItem.Linea);
+
+                  if (dcBlindsItem != null)
+                  {
+                      sisgecoItem.Existe = "SI";
+                      mergedData.Add(dcBlindsItem);
+                  }
+                  else
+                  {
+                      sisgecoItem.Existe = "NO";
+                      mergedData.Add(sisgecoItem);
+                  }
+              }*/
+
+            //return mergedData.OrderBy(m => string.IsNullOrEmpty(m.CotizacionGrupo) ? 1 : 0)
+            //        .ThenBy(m => m.CotizacionGrupo.EndsWith("-0") ? 1 : 0)
+            //        .ThenBy(m => m.CotizacionGrupo)
+            //        .ThenBy(m => string.IsNullOrEmpty(m.Id) ? 1 : 0)
+            //        .ThenBy(m => m.Id)
+            //        .ThenBy(m => m.IndexDetalle)
+            //        .ToList();
+            foreach (var item in dcBlindsData)
             {
-                var dcBlindsItem = dcBlindsData.FirstOrDefault(d => d.CodigoProducto == sisgecoItem.CodigoProducto && d.Linea == sisgecoItem.Linea);
-
-                if (dcBlindsItem != null)
-                {
-                    sisgecoItem.Existe = "SI";
-                    mergedData.Add(dcBlindsItem);
-                }
-                else
-                {
-                    sisgecoItem.Existe = "NO";
-                    mergedData.Add(sisgecoItem);
-                }
+                item.Existe = "SI";
+                
             }
-
-            //return mergedData;
-            /*return mergedData.OrderBy(m => string.IsNullOrEmpty(m.CotizacionGrupo) ? 1 : 0)
-                    .ThenBy(m => m.CotizacionGrupo)
-                    .ThenBy(m => string.IsNullOrEmpty(m.Id) ? 1 : 0)
-                    .ThenBy(m => m.Id)
-                    .ThenBy(m => m.IndexDetalle)
-                    .ToList();*/
-
-            return mergedData.OrderBy(m => string.IsNullOrEmpty(m.CotizacionGrupo) ? 1 : 0)
+            return dcBlindsData.OrderBy(m => string.IsNullOrEmpty(m.CotizacionGrupo) ? 1 : 0)
                     .ThenBy(m => m.CotizacionGrupo.EndsWith("-0") ? 1 : 0)
                     .ThenBy(m => m.CotizacionGrupo)
                     .ThenBy(m => string.IsNullOrEmpty(m.Id) ? 1 : 0)

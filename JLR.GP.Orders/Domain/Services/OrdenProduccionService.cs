@@ -76,7 +76,7 @@ namespace ApiPortal_DataLake.Domain.Services
 
                 }
                 //DateTime FechaSap = DateTime.ParseExact(_ordeRequest.FechaSap, formatoFecha, CultureInfo.InvariantCulture);
-                DateTime FechaSap = DateTime.Parse(_ordeRequest.FechaSap);
+                string FechaSap = _ordeRequest.FechaSap;
                 if (Archivo != null && Archivo.Length > 0)
                 {
                    

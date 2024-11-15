@@ -11,7 +11,7 @@ namespace Api_Dc.Domain.Models
         public string? NumeroCotizacion { get; set; }
         public string? CodigoSisgeco { get; set; }
         public string? NumdoCref { get; set; }
-        public DateTime? FechaSap { get; set; }
+        public string? FechaSap { get; set; }
         // Datos de Sisgeco
         public string? FechaCotizacion { get; set; }
         public string? FechaVenta { get; set; }
