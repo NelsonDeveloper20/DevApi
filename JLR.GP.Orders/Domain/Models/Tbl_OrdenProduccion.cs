@@ -49,6 +49,7 @@ namespace Api_Dc.Domain.Models
         public int? IdUsuarioCreacion { get; set; }
         public int? IdUsuarioModifica { get; set; }
 
-
+        public int? DocEntrySap { get; set; } //IDSAP
+        public string? DocStatusSap { get; set; } //ESTADO SAP
     }
 }

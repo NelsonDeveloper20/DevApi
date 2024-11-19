@@ -275,7 +275,8 @@ namespace ApiPortal_DataLake.Domain.Services
                                             CotizacionGrupo = dop.CotizacionGrupo,
                                             Tipo = dop.Tipo,
                                             EstadoOp = "",
-                                            Escuadra = dop.Escuadra
+                                            Escuadra = dop.Escuadra,
+                                            WhsCode=dop.WhsCode
                                         }).ToListAsync();
 
                 return new GeneralResponse<object>(HttpStatusCode.OK, _productos);

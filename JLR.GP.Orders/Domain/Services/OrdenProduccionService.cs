@@ -147,8 +147,10 @@ namespace ApiPortal_DataLake.Domain.Services
                     //estado
                     IdEstado=1,
                     FechaRegistro =DateTime.Now,
-                    IdUsuarioCreacion=int.Parse( _ordeRequest.IdUsuarioCreacion) 
-                     };
+                    IdUsuarioCreacion=int.Parse( _ordeRequest.IdUsuarioCreacion) ,
+                        DocEntrySap= _ordeRequest.DocEntrySap,
+                        DocStatusSap = _ordeRequest.DocStatusSap
+                    };
                     await this._context.Tbl_OrdenProduccion.AddAsync(newOrden);
                     await this._context.SaveChangesAsync();
                     idOrden = newOrden.Id;

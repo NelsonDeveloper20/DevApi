@@ -106,6 +106,8 @@ namespace Api_Dc.Domain.Models
         public DateTime? FechaCreacion { get; set; }
         public DateTime? FechaModifica { get; set; }
         public int? IdEstado { get; set; }
+        public string? WhsCode { get; set; } //CODIGO ALMACEN SAP
+        //public string? FamiliaSap { get; set; }//FAMILIA SAP
 
 
 

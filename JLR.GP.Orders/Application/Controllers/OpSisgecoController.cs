@@ -383,7 +383,8 @@ namespace ApiPortal_DataLake.Application.Controllers
                 CotizacionGrupo,
                 Tipo,                
                 (SELECT IdEstado FROM Tbl_DetalleOpGrupo GRD where GRD.CotizacionGrupo=DOP.CotizacionGrupo) AS EstadoOp,
-                Escuadra,Central
+                Escuadra,Central,
+                WhsCode
             FROM
                 TBL_DetalleOrdenProduccion DOP
             WHERE

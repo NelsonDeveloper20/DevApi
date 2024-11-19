@@ -22,5 +22,8 @@ namespace Api_Dc.Domain.Models
         public int? IdUsuarioModifica { get; set; }
         public DateTime? FechaCreacion { get; set; }
         public DateTime? FechaModifica { get; set; }
+        public int? IdProducto { get; set; }
+        public string? Adicional {  get; set; }
+        public string? CodigoSalidaSap { get; set; }
     }
 }

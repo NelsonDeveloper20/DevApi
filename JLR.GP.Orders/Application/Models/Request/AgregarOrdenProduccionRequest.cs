@@ -45,5 +45,7 @@
         public string? FechaModificacion { get; set; }
         public string? IdUsuarioCreacion { get; set; }
         public string? IdUsuarioModifica { get; set; }
+        public int? DocEntrySap { get; set; } //IDSAP
+        public string? DocStatusSap { get; set; } //ESTADO SAP
     }
 }

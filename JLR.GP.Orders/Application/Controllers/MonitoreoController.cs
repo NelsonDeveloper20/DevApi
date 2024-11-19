@@ -12,6 +12,8 @@ using System.Net;
 using Api_Dc.Domain.Models;
 using Api_Dc.Domain.Request;
 using Microsoft.AspNetCore.StaticFiles;
+using System.Text.RegularExpressions;
+using Api_Dc.Application.Models.Request;
 
 namespace ApiPortal_DataLake.Application.Controllers
 {
@@ -37,6 +39,19 @@ namespace ApiPortal_DataLake.Application.Controllers
         public async Task<ActionResult> ListarProductoXEstacionGrupo(string grupoCotizacion, string fechaInicio, string fechaFin) //OK
         {
             var response = await this._usuarioService.ListarExplocion(grupoCotizacion, fechaInicio, fechaFin);
+            if (response.Status == HttpStatusCode.OK)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return StatusCode((int)response.Status, response);
+            }
+        } 
+        [HttpGet("ListarMonitoreoSapSalidaEntrada")]
+        public async Task<ActionResult> ListarMonitoreoSapSalidaEntrada(string grupoCotizacion, string fechaInicio, string fechaFin) //OK
+        {
+            var response = await this._usuarioService.ListarMonitoreoSapSalidaEntrada(grupoCotizacion, fechaInicio, fechaFin);
             if (response.Status == HttpStatusCode.OK)
             {
                 return Ok(response);
@@ -203,6 +218,38 @@ namespace ApiPortal_DataLake.Application.Controllers
 
                 this._logger.LogError($"Error Agregar Perfil : {JsonConvert.SerializeObject(ex)}");
                 return Conflict();
+            }
+        }
+        [HttpPost("GuardarSalidaSap")]
+        public async Task<ActionResult<GeneralResponse<Object>>> GuardarSalidaSap([FromBody] SalidaSapRequest request)
+        {
+            try
+            {
+                if (request == null)
+                {
+                    return BadRequest(new { mensaje = "La solicitud no puede ser nula." });
+                }
+
+                var response = await this._usuarioService.GuardarCodigoSalida(request.NumeroCotizacion, request.GrupoCotizacion, request.CodigoSalida);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                this._logger.LogError($"Error al guardar salida SAP: {JsonConvert.SerializeObject(ex)}");
+                return StatusCode(StatusCodes.Status500InternalServerError, new { mensaje = "Ocurrió un error al procesar la solicitud." });
+            }
+        }
+        [HttpGet("ObtenerSalida")]
+        public async Task<ActionResult> ListarObtenerSalida(string cotizacion, string grupo) //OK
+        {
+            var response = await this._usuarioService.ObtenerSalida(cotizacion, grupo);
+            if (response.Status == HttpStatusCode.OK)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return StatusCode((int)response.Status, response);
             }
         }
     }

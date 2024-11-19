@@ -72,7 +72,7 @@ namespace ApiPortal_DataLake.Domain.Services
             }
 
         }
-        #region VALIACION DE PRODUCTOS POR TURNO Y FECH PRODUCCION
+        #region VALIDACION DE PRODUCTOS POR TURNO Y FECH PRODUCCION
         public async Task<GeneralResponse<object>> ValidarRegistroProducto(string turno, string fechaProduccion, string codigoProducto, string accionamiento)
         {
             try
@@ -378,6 +378,8 @@ namespace ApiPortal_DataLake.Domain.Services
                     dataFila.CotizacionGrupo = cotizacionGrupo.ToString();
                     dataFila.FechaCreacion = DateTime.Now;
                     dataFila.IdEstado = estadoInicial;
+                    dataFila.WhsCode = formData.WhsCode;
+                    //dataFila.FamiliaSap = formData.FamiliaSap;
                     if (tipo == "Componente")
                     {
                         dataFila.Tipo = "Componente";
@@ -385,7 +387,6 @@ namespace ApiPortal_DataLake.Domain.Services
                     }
                     else
                     {
-
                         dataFila.Tipo = "Producto";
                         dataFila.Escuadra = "NO";
                         IEnumerable<object> escuadraEnumerable0 = escuadra as IEnumerable<object>;

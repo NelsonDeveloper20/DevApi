@@ -9,6 +9,7 @@ namespace ApiPortal_DataLake.Domain.Contracts
     public interface IMonitoreo
     { 
         Task<GeneralResponse<dynamic>> ListarExplocion(string grupoCotizacion, string fechaInicio, string fechaFin); //OK
+        Task<GeneralResponse<dynamic>> ListarMonitoreoSapSalidaEntrada(string grupoCotizacion, string fechaInicio, string fechaFin); //OK
         Task<GeneralResponse<dynamic>> listarComponentesProductoPorGrupo(string grupoCotizacion, string id); //OK OK 
         Task<GeneralResponse<Object>> InsertarEstacionProducto(EstacionProductoRequest _request);
         Task<GeneralResponse<Object>> GuardarExplocion(List<ExplocionComponentesRequest> request);
@@ -18,5 +19,7 @@ namespace ApiPortal_DataLake.Domain.Contracts
         Task<GeneralResponse<dynamic>> ListarMantenimientoExplocion(string grupoCotizacion);
         Task<IEnumerable<Tbl_Componentes>> ListarComponentesPorCodigosProducto(string codigosProducto,string grupo);
         Task<GeneralResponse<Object>> GuardarExplocionMantenimiento(List<ExplocionComponentesMantRequest> request);
+        Task<GeneralResponse<dynamic>> ObtenerSalida(string P_NumeroCotizacion, string P_grupoCotizacion);
+        Task<GeneralResponse<Object>> GuardarCodigoSalida(string P_NumeroCotizacion, string P_grupoCotizacion, string codigoSalida);
     }
 }
