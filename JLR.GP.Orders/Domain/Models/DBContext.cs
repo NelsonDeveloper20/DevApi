@@ -24,6 +24,7 @@ namespace ApiPortal_DataLake.Domain.Models
         public DbSet<Tbl_DetalleOpGrupo> Tbl_DetalleOp { get; set; }
         public DbSet<TBL_DetalleOrdenProduccion> TBL_DetalleOrdenProduccion { get; set; }
         public DbSet<Tbl_Escuadra> Tbl_Escuadra { get; set; }
+        public DbSet<Tbl_MaestroArticulos> Tbl_MaestroArticulos { get; set; }
         public DbSet<Tbl_Estado> Tbl_Estado { get; set; }
         public DbSet<Tbl_ModuloRol> Tbl_ModuloRol { get; set; }
         public DbSet<Tbl_Modulos> Tbl_Modulos { get; set; }
@@ -84,9 +85,9 @@ namespace ApiPortal_DataLake.Domain.Models
             modelBuilder.Entity<Tbl_Explocion>().ToTable("Tbl_Explocion");
             modelBuilder.Entity<Tbl_CargaProduccion>().ToTable("Tbl_CargaProduccion");
             modelBuilder.Entity<Tbl_ProduccionPorTurno>().ToTable("Tbl_ProduccionPorTurno");
-            
 
 
+            modelBuilder.Entity<Tbl_MaestroArticulos>().ToTable("Tbl_MaestroArticulos");
 
 
         }

@@ -251,16 +251,10 @@ namespace ApiPortal_DataLake.Domain.Services
             using var transaction = await this._context.Database.BeginTransactionAsync();
             try
             {
-                foreach (var item in request)
-                {
 
-                    string IdProd = item.IdProducto;
-                    string Adicional = "NO";
-                    if ( item.IdProducto==null)
-                    {
-                        IdProd = request.Where(a => a.IdProducto != null).First().IdProducto;
-                        Adicional = "SI";
-                    }
+                foreach (var item in request)
+                { 
+                    string Adicional = "NO"; 
                     var nuevaFila = new Tbl_Explocion()
                     {
                         NumeroCotizacion = item.NumeroCotizacion,
@@ -276,9 +270,13 @@ namespace ApiPortal_DataLake.Domain.Services
                         Merma = item.Merma,
                         Origen = "Explocion",
                         IdUsuarioCrea = Convert.ToInt32(item.Usuario),
-                        FechaCreacion = DateTime.Now,
-                        IdProducto= Convert.ToInt32(IdProd),
-                        Adicional= Adicional
+                        FechaCreacion = DateTime.Now, 
+                        Adicional= Adicional,
+
+                        //
+                        Familia=item.Familia,
+                        WhsCode=item.WhsCode,
+
                     };
                     this._context.Tbl_Explocion.Add(nuevaFila);
                 }
@@ -543,7 +541,7 @@ namespace ApiPortal_DataLake.Domain.Services
             {
                 var datos = await (from o in _context.Tbl_OrdenProduccion
                                    join e in _context.Tbl_Explocion on o.NumeroCotizacion equals e.NumeroCotizacion
-                                   join dp in _context.TBL_DetalleOrdenProduccion on e.IdProducto equals dp.Id
+                                   //join dp in _context.TBL_DetalleOrdenProduccion on e.IdProducto equals dp.Id
                                    where e.NumeroCotizacion == P_NumeroCotizacion && e.CotizacionGrupo == P_grupoCotizacion
                                    select new
                                    {
@@ -555,7 +553,7 @@ namespace ApiPortal_DataLake.Domain.Services
                                        IdSistemaExterno = o.Id.ToString(),
                                        ItemCode = e.Codigo_Producto,
                                        Quantity = e.Cantidad,
-                                       WarehouseCode = dp.WhsCode,
+                                       WarehouseCode ="",//PENDIENTE dp.WhsCode,
                                        AcctCode = "_SYS00000058420",
                                        CostingCode = (string)null,
                                        ProjectCode = (string)null,
@@ -565,7 +563,7 @@ namespace ApiPortal_DataLake.Domain.Services
                                        CostingCode5 = (string)null,
                                        IdLineaSistemaE = "1",
                                        IdOrdenVenta = "10",
-                                       FamiliaPT = dp.Familia,
+                                       FamiliaPT =e.Familia, //PENDIENTE RAMIRO dp.Familia,
                                        CodigoProducto = e.Codigo_Producto // Conservamos el código para lógica posterior
                                    }).ToListAsync();
 
