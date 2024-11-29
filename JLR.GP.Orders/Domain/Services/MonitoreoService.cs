@@ -276,6 +276,8 @@ namespace ApiPortal_DataLake.Domain.Services
                         //
                         Familia=item.Familia,
                         WhsCode=item.WhsCode,
+                        Serie=item.Serie,
+                        Lote = item.Lote,
 
                     };
                     this._context.Tbl_Explocion.Add(nuevaFila);

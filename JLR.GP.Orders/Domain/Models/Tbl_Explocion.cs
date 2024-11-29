@@ -27,5 +27,8 @@ namespace Api_Dc.Domain.Models
         public string? CodigoSalidaSap { get; set; }
         public string? Familia {  get; set; }
         public string? WhsCode { get; set; }
+        public string? Serie { get; set; }
+        public string? Lote { get; set; }
+
     }
 }
