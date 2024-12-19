@@ -10,8 +10,7 @@ namespace Api_Dc.Domain.Models
         public int Id { get; set; }
         public string Identificador { get; set; }
         public int? CodigoGrupo { get; set; }
-        public string? Nombre { get; set; }
-        public string? CodigoFamilia { get; set; }
-        public string? NombreFamilia {  get; set; } 
+        public string? NombreGrupo { get; set; }
+        public string? Observacion { get; set; } 
     }
 }

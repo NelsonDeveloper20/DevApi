@@ -194,6 +194,7 @@ namespace ApiPortal_DataLake.Domain.Services
         #endregion
         public async Task<GeneralResponse<object>> AgregarProducto(dynamic formData, dynamic escuadra, string tipo)
         {
+            using var transaction = await _context.Database.BeginTransactionAsync();
             try
             {
                 // Extraer algunos campos específicos en variables  
@@ -569,6 +570,8 @@ namespace ApiPortal_DataLake.Domain.Services
                 }
                 await _context.SaveChangesAsync(); // Guardar los cambios en la base de datos
 
+                await transaction.CommitAsync(); // Confirmar la transacción si todo fue exitoso
+
                 var jsonresponse = new
                 {
                     Respuesta = "Ok",
@@ -579,6 +582,8 @@ namespace ApiPortal_DataLake.Domain.Services
             }
             catch (Exception ex)
             {
+                await transaction.RollbackAsync(); // Revertir la transacción en caso de error
+
                 _logger.LogError($"Insertar Orden produccion Error try catch: {JsonConvert.SerializeObject(ex)}");
                 var jsonresponse = new
                 {
