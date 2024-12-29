@@ -33,8 +33,7 @@ namespace ApiPortal_DataLake.Application.Controllers
             this._mapper = mapper;
         }
 
-        [HttpGet]
-        //[ValidateGroups(RolesConstant.Administrador)]
+        [HttpGet] 
         public async Task<ActionResult<IEnumerable<Tbl_Rol>>> GetPerfil()
         {
             var usuarios = await this._PerfilService.ListarPerfil();
@@ -45,14 +44,17 @@ namespace ApiPortal_DataLake.Application.Controllers
         [HttpGet("ModulosPorRol")]
         public async Task<ActionResult> ListarModulosPorRol(int idRol)
         {
-            var response = await this._PerfilService.ListarModulosPorRol( idRol);
-            if (response.Status == HttpStatusCode.OK)
+              
+            try
             {
+                var response = await this._PerfilService.ListarModulosPorRol(idRol);
+
                 return Ok(response);
             }
-            else
+            catch (Exception ex)
             {
-                return StatusCode((int)response.Status, response);
+                this._logger.LogError($"Error Listar modulo : {JsonConvert.SerializeObject(ex)}");
+                return Conflict(ex);
             }
         }
         [HttpGet("ModulosPorUsuario")]

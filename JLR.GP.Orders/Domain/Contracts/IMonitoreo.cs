@@ -14,12 +14,12 @@ namespace ApiPortal_DataLake.Domain.Contracts
         Task<GeneralResponse<Object>> InsertarEstacionProducto(EstacionProductoRequest _request);
         Task<GeneralResponse<Object>> GuardarExplocion(List<ExplocionComponentesRequest> request);
 
-        Task<GeneralResponse<Object>> CargaExcelExplocion(List<ExplocionComCargaRequest> request);
+        Task<GeneralResponse<Object>> CargaExcelExplocion(ExplocionComCargaRequest request);
         Task<GeneralResponse<dynamic>> ListarReporteExplocion(string grupoCotizacion, string fechaInicio, string fechaFin);
         Task<GeneralResponse<dynamic>> ListarMantenimientoExplocion(string grupoCotizacion);
         Task<IEnumerable<Tbl_Componentes>> ListarComponentesPorCodigosProducto(string codigosProducto,string grupo);
         Task<GeneralResponse<Object>> GuardarExplocionMantenimiento(List<ExplocionComponentesMantRequest> request);
-        Task<GeneralResponse<dynamic>> ObtenerSalida(string P_NumeroCotizacion, string P_grupoCotizacion);
+        Task<GeneralResponse<Object>> EnviarEntradaSap(string P_NumeroCotizacion, string P_grupoCotizacion, string idusuario);
         Task<GeneralResponse<Object>> GuardarCodigoSalida(string P_NumeroCotizacion, string P_grupoCotizacion, string codigoSalida);
     }
 }

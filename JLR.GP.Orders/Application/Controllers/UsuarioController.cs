@@ -32,8 +32,7 @@ namespace ApiPortal_DataLake.Application.Controllers
             this._mapper = mapper;
         }
 
-        [HttpGet]
-        //[ValidateGroups(RolesConstant.Administrador)]
+        [HttpGet] 
         public async Task<ActionResult<IEnumerable<dynamic>>> GetUsuarios()
         {
             var usuarios = await this._usuarioService.listarusuario();

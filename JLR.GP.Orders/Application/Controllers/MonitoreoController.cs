@@ -144,7 +144,7 @@ namespace ApiPortal_DataLake.Application.Controllers
                 var configuration = builder.Build();
                 var rutaArchivo = configuration["Archivos:rutaPlantilla"];
 
-                var filePath = Path.Combine(rutaArchivo, "Plantilla_Carga.xlsx");
+                var filePath = Path.Combine(rutaArchivo, "Plantilla_Carga.xlsm");
                 if (!System.IO.File.Exists(filePath))
                 {
                     return NotFound(); // Devuelve 404 si el archivo no existe
@@ -159,7 +159,7 @@ namespace ApiPortal_DataLake.Application.Controllers
                     contentType = "application/octet-stream"; // Tipo MIME por defecto si no se encuentra uno específico
                 }
 
-                return File(fileBytes, contentType, "Plantilla_Carga.xlsx");
+                return File(fileBytes, contentType, "Plantilla_Carga.xlsm");
             }
             catch (Exception ex)
             {
@@ -205,7 +205,7 @@ namespace ApiPortal_DataLake.Application.Controllers
             }
         }
         [HttpPost("ExplocionarCompCargaExcel")]
-        public async Task<ActionResult<GeneralResponse<Object>>> CargaExcelExplocion([FromBody] List<ExplocionComCargaRequest> request)
+        public async Task<ActionResult<GeneralResponse<Object>>> CargaExcelExplocion([FromBody] ExplocionComCargaRequest request)
         {
             try
             {
@@ -239,10 +239,10 @@ namespace ApiPortal_DataLake.Application.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new { mensaje = "Ocurrió un error al procesar la solicitud." });
             }
         }
-        [HttpGet("ObtenerSalida")]
-        public async Task<ActionResult> ListarObtenerSalida(string cotizacion, string grupo) //OK
+        [HttpGet("EnviarEntradaSap")]
+        public async Task<ActionResult<GeneralResponse<Object>>> EnviarEntradaSap(string cotizacion, string grupo , string idusuario) //OK
         {
-            var response = await this._usuarioService.ObtenerSalida(cotizacion, grupo);
+            var response = await this._usuarioService.EnviarEntradaSap(cotizacion, grupo, idusuario);
             if (response.Status == HttpStatusCode.OK)
             {
                 return Ok(response);

@@ -29,6 +29,8 @@ namespace Api_Dc.Domain.Models
         public string? WhsCode { get; set; }
         public string? Serie { get; set; }
         public string? Lote { get; set; }
+        public DateTime FechaEntradaSap { get; set; }
+        public string? CodigoEntradaSap { get; set; }
 
     }
 }

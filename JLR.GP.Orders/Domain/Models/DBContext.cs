@@ -44,7 +44,7 @@ namespace ApiPortal_DataLake.Domain.Models
         public DbSet<Tbl_Explocion> Tbl_Explocion { get; set; }
         public DbSet<Tbl_CargaProduccion> Tbl_CargaProduccion { get; set; }
         public DbSet<Tbl_ProduccionPorTurno> Tbl_ProduccionPorTurno { get; set; }
-
+        public DbSet<Tbl_ExplocionSap> Tbl_ExplocionSap { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         { 
             /*
@@ -88,6 +88,7 @@ namespace ApiPortal_DataLake.Domain.Models
 
 
             modelBuilder.Entity<Tbl_MaestroArticulos>().ToTable("Tbl_MaestroArticulos");
+            modelBuilder.Entity<Tbl_ExplocionSap>().ToTable("Tbl_ExplocionSap");
 
 
         }

@@ -29,7 +29,7 @@ using System.Threading;
 
 namespace ApiPortal_DataLake.Domain.Services
 {
-    public class DetalleOrdenProduccionService: IDetalleOrdenProduccionService
+    public class DetalleOrdenProduccionService : IDetalleOrdenProduccionService
     {
         private readonly IConfiguration _configuration;
         private readonly DBContext _context;
@@ -37,7 +37,7 @@ namespace ApiPortal_DataLake.Domain.Services
 
 
         private readonly ILogger<DetalleOrdenProduccionService> _logger;
-        
+
         public DetalleOrdenProduccionService(
             IConfiguration configuration,
             DBContext context,
@@ -110,7 +110,7 @@ namespace ApiPortal_DataLake.Domain.Services
                 }
                 else
                 {
-                    equivalencia =  listCargaProd
+                    equivalencia = listCargaProd
                         .Where(ls => ls.CodigoProducto == _CodProducto)
                         .Select(ls => ls.Equivalencia)
                         .FirstOrDefault() ?? 0;
@@ -125,13 +125,17 @@ namespace ApiPortal_DataLake.Domain.Services
                         Msj = $"Ya está superando la cantidad de producción en el turno {turno} para la fecha de producción {fechaProduccion}",
                         Resultado = "NO"
                     };
-                }else  if (productosMasUltimo >= 30){
-                        jsonresponse = new
-                        {
-                            Msj = $"Con este producto ya está superando la cantidad de producción en el turno {turno} para la fecha de producción {fechaProduccion}",
-                            Resultado = "NO"
-                        };
-                }else{
+                }
+                else if (productosMasUltimo >= 30)
+                {
+                    jsonresponse = new
+                    {
+                        Msj = $"Con este producto ya está superando la cantidad de producción en el turno {turno} para la fecha de producción {fechaProduccion}",
+                        Resultado = "NO"
+                    };
+                }
+                else
+                {
                     jsonresponse = new
                     {
                         Msj = "La producción está dentro de los límites permitidos.",
@@ -154,10 +158,10 @@ namespace ApiPortal_DataLake.Domain.Services
 
         private async Task<int> CalculateProductos(string turno, DateTime fechaProduccion, string codigoProducto, string accionamiento, int equivalencia)
         {
-            int productos = 0; 
+            int productos = 0;
 
             // Asignar valores adicionales según el producto y el accionamiento
-          
+
             DataTable result = new DataTable();
             using (SqlConnection cnm = new SqlConnection(CnDc_Blinds))
             {
@@ -202,9 +206,9 @@ namespace ApiPortal_DataLake.Domain.Services
                 string codigosisgeco = formData.CodigoSisgeco;
                 //string SuperoMaximo = formData.Maximo;
 
-                string cotizacionGrupo = ""; 
+                string cotizacionGrupo = "";
                 int indexDetalle = 0;
-                int estadoInicial = 2; 
+                int estadoInicial = 2;
                 // Método para crear un nuevo grupo
                 void CrearNuevoGrupo(string cotizacionGrupo, string tipo, DateTime? fechaProduccion = null, string turno = null)
                 {
@@ -224,7 +228,7 @@ namespace ApiPortal_DataLake.Domain.Services
                 }
                 if (string.IsNullOrEmpty(formData.Id))
                 {
-                   
+
                     // Buscar grupo existente para la cotización 
                     var grupoExistente = this._context.Tbl_DetalleOpGrupo
                         .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion);
@@ -254,7 +258,7 @@ namespace ApiPortal_DataLake.Domain.Services
                             DateTime fechaProduccion = DateTime.Parse(formData.FechaProduccion);
                             var grupoExistente2 = this._context.Tbl_DetalleOpGrupo
                                 .FirstOrDefault(g => g.NumeroCotizacion == numeroCotizacion && g.Turno == turno && g.FechaProduccion == fechaProduccion);
-                           
+
                             if (grupoExistente2 != null) // EXISTE
                             {
                                 cotizacionGrupo = grupoExistente2.CotizacionGrupo;
@@ -264,7 +268,7 @@ namespace ApiPortal_DataLake.Domain.Services
                                 var ultimoGrupo = this._context.Tbl_DetalleOpGrupo
                                     .Where(g => g.NumeroCotizacion == numeroCotizacion)
                                     .OrderByDescending(g => g.CotizacionGrupo)
-                                    .FirstOrDefault(); 
+                                    .FirstOrDefault();
                                 if (ultimoGrupo != null)
                                 {
                                     // Obtener el último número de grupo y agregar 1
@@ -330,47 +334,65 @@ namespace ApiPortal_DataLake.Domain.Services
                         if (key == "Id")
                         { // Manejo especial para el campo "Id"                            
                             Id = value != null && value.ToString() != "" ? Convert.ToInt32(value) : 0;
-                        }else if (key == "Maximo")
+                        }
+                        else if (key == "Maximo")
                         {
 
-                        }else
+                        }
+                        else
                         {
-                            if (value != "")
+                            if (value != null && !string.IsNullOrWhiteSpace(value.ToString()))
+                            //if (value.ToString() != "")
                             {
-
-                                // Obtener el tipo de datos de la propiedad
-                                var propInfo = typeof(TBL_DetalleOrdenProduccion).GetProperty(key, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
-
-                                if (propInfo != null)
+                                try
                                 {
-                                    // Verificar si el tipo de datos es decimal
-                                    if (propInfo.PropertyType == typeof(decimal) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(decimal))
+                                    // Obtener el tipo de datos de la propiedad
+                                    var propInfo = typeof(TBL_DetalleOrdenProduccion).GetProperty(key, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
+                                    if (propInfo != null)
                                     {
-                                        propInfo.SetValue(dataFila, Convert.ToDecimal(value.Replace(".", ",")), null);
+                                        // Verificar si el tipo de datos es decimal
+                                        if (propInfo.PropertyType == typeof(decimal) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(decimal))
+                                        {
+                                            propInfo.SetValue(dataFila, Convert.ToDecimal(value.ToString().Replace(".", ",")), null);
 
-                                    }// Verificar si el tipo de datos es DateTime
-                                    else if (propInfo.PropertyType == typeof(DateTime) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(DateTime))
-                                    {
-                                        // Convertir el valor a DateTime
-                                        var dateTimeValue = DateTime.Parse(value.ToString());
-                                        // Asignar el valor convertido a la propiedad correspondiente
-                                        propInfo.SetValue(dataFila, dateTimeValue, null);
+                                        }// Verificar si el tipo de datos es DateTime
+                                        else if (propInfo.PropertyType == typeof(DateTime) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(DateTime))
+                                        {
+                                            // Convertir el valor a DateTime
+                                            var dateTimeValue = DateTime.Parse(value.ToString());
+                                            // Asignar el valor convertido a la propiedad correspondiente
+                                            propInfo.SetValue(dataFila, dateTimeValue, null);
 
-                                    }// Verificar si el tipo de datos es int
-                                    else if (propInfo.PropertyType == typeof(int) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(int))
-                                    {
-                                        // Convertir el valor a int
-                                        var intvalue = int.Parse(value.ToString());
-                                        // Asignar el valor convertido a la propiedad correspondiente
-                                        propInfo.SetValue(dataFila, intvalue, null);
+                                        }// Verificar si el tipo de datos es int
+                                        else if (propInfo.PropertyType == typeof(int) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(int))
+                                        {
+                                            // Convertir el valor a int
+                                            var intvalue = int.Parse(value.ToString());
+                                            // Asignar el valor convertido a la propiedad correspondiente
+                                            propInfo.SetValue(dataFila, intvalue, null);
+                                        }
+                                        else
+                                        {
+                                            // Convertir el valor al tipo de datos de la propiedad y asignarlo
+                                            var convertedValue = Convert.ChangeType(value.ToString(), propInfo.PropertyType);
+                                            propInfo.SetValue(dataFila, convertedValue.Replace("--Seleccione--", ""), null);
+                                        }
                                     }
-                                    else
-                                    {
-                                        // Convertir el valor al tipo de datos de la propiedad y asignarlo
-                                        var convertedValue = Convert.ChangeType(value.ToString(), propInfo.PropertyType);
-                                        propInfo.SetValue(dataFila, convertedValue.Replace("--Seleccione--", ""), null);
-                                    }
+
                                 }
+                                catch (Exception ex)
+                                {
+                                    await transaction.RollbackAsync(); // Revertir la transacción en caso de error
+
+                                    _logger.LogError($"Insertar Orden produccion Error try catch: {JsonConvert.SerializeObject(ex)}");
+                                    var jsonresponsew = new
+                                    {
+                                        Respuesta = ex.Message,
+                                        idOrden = 0
+                                    };
+                                    return new GeneralResponse<object>(HttpStatusCode.InternalServerError, jsonresponsew);
+                                }
+
                             }
                         }
                     }
@@ -420,7 +442,7 @@ namespace ApiPortal_DataLake.Domain.Services
                         }
                     }
                     dataFila.IdUsuarioCrea = Convert.ToInt32(formData.IdUsuarioCrea);
-                     
+
 
 
                     this._context.TBL_DetalleOrdenProduccion.AddAsync(dataFila); ;
@@ -479,7 +501,7 @@ namespace ApiPortal_DataLake.Domain.Services
                                 }
                             }
                             else
-                            { 
+                            {
                                 switch (key)
                                 {
                                     case "CodigoMotor":
@@ -487,8 +509,8 @@ namespace ApiPortal_DataLake.Domain.Services
                                         existingDataFila.Motor = "";
                                         existingDataFila.MarcaMotor = "";
                                         break;
-                                    case "Motor": 
-                                        existingDataFila.Motor = "";  
+                                    case "Motor":
+                                        existingDataFila.Motor = "";
                                         break;
 
                                 }
@@ -516,7 +538,7 @@ namespace ApiPortal_DataLake.Domain.Services
                 {
                     // Intentar convertir escuadra a una lista de objetos
                     var escuadraList = JsonConvert.DeserializeObject<List<object>>(JsonConvert.SerializeObject(escuadra));
-                    if (escuadraList != null && escuadraList.Count > 0 && Id==0)
+                    if (escuadraList != null && escuadraList.Count > 0 && Id == 0)
                     {
                         foreach (var _item in escuadra)
                         {
@@ -566,7 +588,7 @@ namespace ApiPortal_DataLake.Domain.Services
                             }
                         }
                     }
-                       
+
                 }
                 await _context.SaveChangesAsync(); // Guardar los cambios en la base de datos
 
@@ -592,7 +614,7 @@ namespace ApiPortal_DataLake.Domain.Services
                 };
                 return new GeneralResponse<object>(HttpStatusCode.InternalServerError, jsonresponse);
             }
-        } 
+        }
 
     }
 }

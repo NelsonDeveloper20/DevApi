@@ -53,6 +53,8 @@ builder.Services.AddTransient<IRol, RolService>();
 builder.Services.AddTransient<IPerfilService, PerfilService>();
 builder.Services.AddTransient<IComponentes, ComponentesService>();
 builder.Services.AddTransient<IMonitoreo, MonitoreoService>();
+builder.Services.AddHttpClient();
+
 builder.Services.AddTransient<ISupervision, SupervisionOpService>();
 builder.Services.AddTransient<IMaestroArticuloService, MaestroArticuloService>();
 
@@ -105,18 +107,19 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(MyAllowSpecificOrigins,
-        builder =>
-        {
-            builder
-          .WithOrigins(allowedOrigins.Split(";"))
-            .AllowAnyOrigin()
-            .AllowAnyHeader()
-            
-            .AllowAnyMethod();
-            
-        });
-});
+      builder =>
+      {
 
+          builder
+         .WithOrigins("http://191.98.160.56:83")
+           .AllowAnyOrigin()
+           .AllowAnyHeader()
+
+           .AllowAnyMethod();
+
+      });
+});
+ 
 
 
 builder.Services.AddControllers().AddNewtonsoftJson();
@@ -130,30 +133,22 @@ builder.Logging.AddLog4Net();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+/*if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api DC Blinds"));
-}
+}*/
 
+app.UseSwagger();
+app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api DC Blinds"));
 if (!app.Environment.IsDevelopment())
 {
     app.UseHsts();
 }
-
-//app.UseHttpsRedirection();
-
 app.UseRouting();
-
-app.UseCors(MyAllowSpecificOrigins);
-
+ app.UseCors(MyAllowSpecificOrigins); 
+app.UseHttpsRedirection();
 app.UseAuthorization();
-
 app.MapControllers();
-
-//app.UseEndpoints(endpoints =>
-//{
-//    endpoints.MapControllers();
-//});
 
 app.Run();
