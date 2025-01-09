@@ -36,14 +36,16 @@ namespace ApiPortal_DataLake.Application.Controllers
         [HttpGet]
         public async Task<ActionResult> ListarDetalleOpGrupo(string numeroCotizacionGrupo)
         {            
-            var response = await this._usuarioService.ListarDetalleOpGrupo(numeroCotizacionGrupo);
-            if (response.Status == HttpStatusCode.OK)
+           
+            try
             {
+                var response = await this._usuarioService.ListarDetalleOpGrupo(numeroCotizacionGrupo); 
                 return Ok(response);
             }
-            else
+            catch (Exception ex)
             {
-                return StatusCode((int)response.Status, response);
+                this._logger.LogError($"Error Listar layout : {JsonConvert.SerializeObject(ex)}");
+                return Conflict(ex);
             }
         }
 

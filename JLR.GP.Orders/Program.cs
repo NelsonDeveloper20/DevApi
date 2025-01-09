@@ -11,6 +11,7 @@ using ApiPortal_DataLake.Application.Filters;
 using ApiPortal_DataLake.Domain.Shared.Constants;
 using Api_Dc.Domain.Contracts;
 using Microsoft.Extensions.Options;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
@@ -111,7 +112,7 @@ builder.Services.AddCors(options =>
       {
 
           builder
-         .WithOrigins("http://191.98.160.56:83")
+         .WithOrigins("http://10.0.2.5:83")
            .AllowAnyOrigin()
            .AllowAnyHeader()
 
@@ -129,6 +130,9 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 XmlConfigurator.Configure(new FileInfo("log4net.config"));
 
 builder.Logging.AddLog4Net();
+// Forzar cultura invariante
+//CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
+//CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
 
 var app = builder.Build();
 

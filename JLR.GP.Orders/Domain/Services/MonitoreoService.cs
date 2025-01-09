@@ -94,18 +94,21 @@ namespace ApiPortal_DataLake.Domain.Services
                         cmd.Parameters.Add(new SqlParameter("@FechaFin", fechaFin));  // Corregido el nombre del parámetro 
                         using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
                         {
-                            // Ejecuta las consultas asíncronas fuera del ciclo while
-                            var detallesSalida = await this._context.Tbl_ExplocionSap
-                                .Where(x => x.CotizacionGrupo == grupoCotizacion && x.Tipo == "Salida")
-                                .ToListAsync();
-
-                            var detallesEntrada = await this._context.Tbl_ExplocionSap
-                                .Where(x => x.CotizacionGrupo == grupoCotizacion && x.Tipo == "Entrada")
-                                .ToListAsync();
+                        
 
                             // Recorre los resultados de SqlDataReader
                             while (await reader.ReadAsync())
                             {
+                                string _cotizacionGrupo = reader["CotizacionGrupo"]?.ToString();
+                                
+                                // Ejecuta las consultas asíncronas fuera del ciclo while
+                                var detallesSalida = await this._context.Tbl_ExplocionSap
+                                    .Where(x => x.CotizacionGrupo == _cotizacionGrupo && x.Tipo == "Salida")
+                                    .ToListAsync();
+
+                                var detallesEntrada = await this._context.Tbl_ExplocionSap
+                                    .Where(x => x.CotizacionGrupo == _cotizacionGrupo && x.Tipo == "Entrada")
+                                    .ToListAsync();
                                 var row = new
                                 {
                                     DetalleSalida = detallesSalida,  // Asegúrate de que estos detalles sean relevantes para cada fila
@@ -551,7 +554,6 @@ ORDER BY e.FechaCreacion DESC;
                         HttpStatusCode.BadRequest,
                         new { Respuesta = "Error al procesar la carga de datos.", Detalle = validationError });
                 }
-
                 // Procesar items
                 var (listItems, processingError) = ProcessItems(request, grupoExplotado, _TbCotizacion);
                 if (!string.IsNullOrEmpty(processingError))
@@ -561,33 +563,33 @@ ORDER BY e.FechaCreacion DESC;
                         new { Respuesta = "Error al procesar la carga de datos.", Detalle = processingError });
                 }
 
+                // Convertir el string a DateTime
+                DateTime fechaCot = DateTime.ParseExact(_TbCotizacion.FechaCotizacion, "yyyyMMdd", null);
+                DateTime fechaVen = DateTime.ParseExact(_TbCotizacion.FechaVenta, "yyyyMMdd", null);
                 // Crear cotización
                 var cotizacion = new CotizacionCabecera
                 { 
                     
                     DocNum=request.Cotizacion,
-                    DocDate = _TbCotizacion.FechaCotizacion,
-                    TaxDate = _TbCotizacion.FechaVenta,
+                    DocDate = fechaCot.ToString("dd/MM/yyyy"),
+                    TaxDate = fechaVen.ToString("dd/MM/yyyy"),
                     Comments = "Salida",
                     Reference2 = "Ref2",
-                    U_EXX_TIPOOPER = "",
+                    U_EXX_TIPOOPER = "10",
                     IdSistemaExterno = _TbCotizacion.Id.ToString(),
                     DocumentLines = listItems
                 };
-
                 // Obtener token y hacer llamada a API
-                var token = await LoginAsync();
+               var token = await LoginAsync();
                 var inventoryUrl = _configuration["ApiSAP:BaseUrl"] + "/api/InventoryGenExit";
                 var jsonInventoryData = System.Text.Json.JsonSerializer.Serialize(cotizacion);
                 var content = new StringContent(jsonInventoryData, Encoding.UTF8, "application/json");
-
                 _httpClient.DefaultRequestHeaders.Authorization =
                     new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
-                var response = await _httpClient.PostAsync(inventoryUrl, content);
-                 
+                var response = await _httpClient.PostAsync(inventoryUrl, content);                 
                 // Leer la respuesta antes de validar el estado
-                var responseString = await response.Content.ReadAsStringAsync(); 
+                var responseString = await response.Content.ReadAsStringAsync(); //"{\"DocumentLines\":[{\"ItemCode\":\"ACCRS00000114\",\"ItemDescription\":\"\",\"Quantity\":5,\"UnitPrice\":5,\"AcctCode\":\"_SYS00000025169\",\"WareHouseCode\":\"00000000\",\"Project\":\"\",\"CostingCode\":\"\",\"CostingCode2\":\"\",\"CostingCode3\":\"\",\"CostingCode4\":\"\",\"CostingCode5\":\"\",\"IdOrdenVenta\":\"17\",\"IdSistemaExterno\":\"4\",\"IdLineaSistemaE\":\"4\",\"FamiliaPT\":\"ACC\",\"SubFamiliaPT\":\"RS\",\"Ancho\":0,\"Alto\":0,\"BatchNumbers\":[],\"SerialNumbers\":[]},{\"ItemCode\":\"ACCRS00000167\",\"ItemDescription\":\"\",\"Quantity\":5,\"UnitPrice\":5,\"AcctCode\":\"_SYS00000025169\",\"WareHouseCode\":\"00000000\",\"Project\":\"\",\"CostingCode\":\"\",\"CostingCode2\":\"\",\"CostingCode3\":\"\",\"CostingCode4\":\"\",\"CostingCode5\":\"\",\"IdOrdenVenta\":\"17\",\"IdSistemaExterno\":\"4\",\"IdLineaSistemaE\":\"4\",\"FamiliaPT\":\"ACC\",\"SubFamiliaPT\":\"RS\",\"Ancho\":0,\"Alto\":0,\"BatchNumbers\":[],\"SerialNumbers\":[]},{\"ItemCode\":\"PALRS00000001\",\"ItemDescription\":\"\",\"Quantity\":5,\"UnitPrice\":5,\"AcctCode\":\"_SYS00000025169\",\"WareHouseCode\":\"00000000\",\"Project\":\"\",\"CostingCode\":\"\",\"CostingCode2\":\"\",\"CostingCode3\":\"\",\"CostingCode4\":\"\",\"CostingCode5\":\"\",\"IdOrdenVenta\":\"17\",\"IdSistemaExterno\":\"4\",\"IdLineaSistemaE\":\"4\",\"FamiliaPT\":\"PAL\",\"SubFamiliaPT\":\"RS\",\"Ancho\":0,\"Alto\":0,\"BatchNumbers\":[],\"SerialNumbers\":[]},{\"ItemCode\":\"TELRS00000153\",\"ItemDescription\":\"\",\"Quantity\":5,\"UnitPrice\":5,\"AcctCode\":\"_SYS00000025169\",\"WareHouseCode\":\"00000000\",\"Project\":\"\",\"CostingCode\":\"\",\"CostingCode2\":\"\",\"CostingCode3\":\"\",\"CostingCode4\":\"\",\"CostingCode5\":\"\",\"IdOrdenVenta\":\"17\",\"IdSistemaExterno\":\"4\",\"IdLineaSistemaE\":\"4\",\"FamiliaPT\":\"TEL\",\"SubFamiliaPT\":\"RS\",\"Ancho\":0,\"Alto\":0,\"BatchNumbers\":[],\"SerialNumbers\":[]},{\"ItemCode\":\"TELTO00000013\",\"ItemDescription\":\"\",\"Quantity\":5,\"UnitPrice\":5,\"AcctCode\":\"_SYS00000025169\",\"WareHouseCode\":\"00000000\",\"Project\":\"\",\"CostingCode\":\"\",\"CostingCode2\":\"\",\"CostingCode3\":\"\",\"CostingCode4\":\"\",\"CostingCode5\":\"\",\"IdOrdenVenta\":\"17\",\"IdSistemaExterno\":\"4\",\"IdLineaSistemaE\":\"4\",\"FamiliaPT\":\"TEL\",\"SubFamiliaPT\":\"TO\",\"Ancho\":0,\"Alto\":0,\"BatchNumbers\":[],\"SerialNumbers\":[]}],\"DocEntry\":22,\"DocNum\":\"2700007\",\"DocDate\":\"2025-01-06\",\"TaxDate\":\"2025-01-06\",\"Comments\":\"Salida\",\"Reference2\":\"Ref2\",\"IdSistemaExterno\":\"\",\"U_EXX_TIPOOPER\":\"\"}";// await response.Content.ReadAsStringAsync(); 
                 Console.WriteLine("Respuesta del servidor: " + responseString);
 
                 // Manejar respuesta no exitosa
@@ -604,18 +606,14 @@ ORDER BY e.FechaCreacion DESC;
                     {
                         // Acceder a DocEntry usando el path adecuado
                         JsonElement root = doc.RootElement;
-
                         // Verificar si "DocEntry" está presente y obtener su valor
                         if (root.TryGetProperty("DocEntry", out JsonElement docEntryElement))
                         {
                             int docEntry = docEntryElement.GetInt32();
                             Console.WriteLine("DocEntry: " + docEntry);
-
                             // Guardar en base de datos
                             await SaveExplocionSap(cotizacion, docEntry.ToString(), request);
-
                             await transaction.CommitAsync(); 
-
                             return new GeneralResponse<Object>(
                                 HttpStatusCode.OK,
                                 new { Respuesta = "OK", idOrden = 0 });
@@ -637,7 +635,7 @@ ORDER BY e.FechaCreacion DESC;
                 _logger.LogError(ex, "Error al procesar la carga de datos");
                 return new GeneralResponse<Object>(
                     HttpStatusCode.InternalServerError,
-                    new { Respuesta = "Error al procesar la carga de datos.", Detalle = ex.Message });
+                    new { Respuesta = "Error al procesar la carga de datos.", Detalle = ex.Message +" DETALLE: "+ex.InnerException.Message });
             }
         }
 
@@ -764,8 +762,8 @@ ORDER BY e.FechaCreacion DESC;
             {
                 var cotizacionEntity = new Tbl_ExplocionSap
                 {
-                    DocDate = cotizacion.DocDate,
-                    TaxDate = cotizacion.TaxDate,
+                    DocDate = cotizacion.DocDate.ToString(),
+                    TaxDate = cotizacion.TaxDate.ToString(),
                     Comments = cotizacion.Comments,
                     Reference2 = cotizacion.Reference2,
                     U_EXX_TIPOOPER = cotizacion.U_EXX_TIPOOPER,
@@ -802,7 +800,8 @@ ORDER BY e.FechaCreacion DESC;
                 Origen = "Carga Sap",
                 IdUsuarioCrea = Convert.ToInt32(DataExcel.Usuario),
                 FechaCreacion = DateTime.Now,
-                CodigoSalidaSap = responseString
+                CodigoSalidaSap = responseString,
+                FechaEntradaSap=DateTime.Now
             };
             this._context.Tbl_Explocion.Add(nuevaFila);
             // Actualizar el estado de grupo dentro de la transacción
@@ -832,6 +831,11 @@ ORDER BY e.FechaCreacion DESC;
                 var listItems = new List<ItemEntrada>();
                 var error = "";
 
+                
+
+                // Convertir el string a DateTime
+                DateTime fechaCot = DateTime.ParseExact(_TbCotizacion.FechaCotizacion, "yyyyMMdd", null);
+                DateTime fechaVen = DateTime.ParseExact(_TbCotizacion.FechaVenta, "yyyyMMdd", null);
                 foreach (var item in explocionSap)
                 { 
 
@@ -856,16 +860,17 @@ ORDER BY e.FechaCreacion DESC;
                         SuibFamiliaPT= item.SubFamiliaPT,
                         //SubFamiliaPT =item.SubFamiliaPT,
                         BatchNumbers = batchNumbers,
-                        SerialNumbers = serialNumbers
+                        SerialNumbers = serialNumbers,
+                        IdSalida = Convert.ToInt32(explocionSap[0].CodigoSalidaSap),
                     });
 
                     var cotizacionEntity = new Tbl_ExplocionSap
                     {
-                        DocDate = _TbCotizacion?.FechaCotizacion,
-                        TaxDate = _TbCotizacion?.FechaVenta,
+                        DocDate = fechaCot.ToString("dd/MM/yyyy"),
+                        TaxDate = fechaVen.ToString("dd/MM/yyyy"),
                         Comments = "Entrada",
                         Reference2 = "Referencia2",
-                        U_EXX_TIPOOPER = "",
+                        U_EXX_TIPOOPER = "19",
                         IdSistemaExterno = item.IdSistemaExterno,
                         IdOrdenVenta = item.IdOrdenVenta?.ToString(),
                         ItemCode = item.ItemCode,
@@ -893,13 +898,14 @@ ORDER BY e.FechaCreacion DESC;
                 }
 
                 var cotizacion = new CotizacionCabeceraEntrada
-                {
+                {//2024-10-03
+                    DocEntry =Convert.ToInt32(explocionSap[0].CodigoSalidaSap),
                     DocNum = P_NumeroCotizacion,
-                    DocDate = _TbCotizacion.FechaCotizacion,
-                    TaxDate = _TbCotizacion.FechaVenta,
+                    DocDate =  fechaCot.ToString("yyyy-MM-dd"),
+                    TaxDate =  fechaVen.ToString("yyyy-MM-dd"),
                     Comments = "Entrada",
                     Reference2 = "Ref2",
-                    U_EXX_TIPOOPER = "",
+                    U_EXX_TIPOOPER = "19",
                     IdSistemaExterno = _TbCotizacion.Id.ToString(),
                     DocumentLines = listItems
                 };
@@ -935,12 +941,10 @@ ORDER BY e.FechaCreacion DESC;
                         if (root.TryGetProperty("DocEntry", out JsonElement docEntryElement))
                         {
                             int docEntry = docEntryElement.GetInt32();
-                            Console.WriteLine("DocEntry: " + docEntry);
-                             
+                            Console.WriteLine("DocEntry: " + docEntry);                            
 
                             var explocionTb = await _context.Tbl_Explocion
                                 .FirstAsync(e => e.NumeroCotizacion == P_NumeroCotizacion && e.CotizacionGrupo == P_grupoCotizacion);
-
                             explocionTb.CodigoEntradaSap = docEntry.ToString();
                             explocionTb.FechaEntradaSap = DateTime.Now;
                             explocionTb.IdUsuarioModifica = Convert.ToInt32(idusuario);
@@ -1086,6 +1090,7 @@ ORDER BY e.FechaCreacion DESC;
 
         public class CotizacionCabeceraEntrada
         {
+            public int DocEntry { get; set; }
             public string DocNum { get; set; }
             public string DocDate { get; set; }
             public string TaxDate { get; set; }
@@ -1112,6 +1117,7 @@ ORDER BY e.FechaCreacion DESC;
             public string IdOrdenVenta { get; set; }
             public string FamiliaPT { get; set; }
             public string SuibFamiliaPT { get; set; }
+            public int IdSalida {  get; set; }
             public List<BatchNumber> BatchNumbers { get; set; }  // Lista de BatchNumbers
             public List<SerialNumber> SerialNumbers { get; set; }  // Lista de SerialNumbers
         }

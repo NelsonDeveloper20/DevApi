@@ -61,7 +61,7 @@ namespace ApiPortal_DataLake.Application.Controllers
             catch (Exception ex)
             {
                 this._logger.LogError($"Error guardar Solicitud : {JsonConvert.SerializeObject(ex)}");
-                return Conflict();
+                return Conflict(ex);
             }
         } 
         [HttpDelete]
@@ -71,12 +71,13 @@ namespace ApiPortal_DataLake.Application.Controllers
             {
                 var response = await this._iservice.EliminarAmbiente(id);
                 return response;
+           
             }
             catch (Exception ex)
             {
-                this._logger.LogError($"Error guardar Solicitud : {JsonConvert.SerializeObject(ex)}");
-                return Conflict();
-            }
-        }
+                this._logger.LogError($"Error  : {JsonConvert.SerializeObject(ex)}");
+                return Conflict(ex);
+             }
+}
     }
 }

@@ -239,7 +239,7 @@ namespace ApiPortal_DataLake.Application.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new { mensaje = "Ocurrió un error al procesar la solicitud." });
             }
         }
-        [HttpGet("EnviarEntradaSap")]
+        [HttpPost("EnviarEntradaSap")]
         public async Task<ActionResult<GeneralResponse<Object>>> EnviarEntradaSap(string cotizacion, string grupo , string idusuario) //OK
         {
             var response = await this._usuarioService.EnviarEntradaSap(cotizacion, grupo, idusuario);

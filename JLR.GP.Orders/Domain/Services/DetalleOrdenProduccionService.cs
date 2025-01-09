@@ -18,6 +18,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -353,7 +354,31 @@ namespace ApiPortal_DataLake.Domain.Services
                                         // Verificar si el tipo de datos es decimal
                                         if (propInfo.PropertyType == typeof(decimal) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(decimal))
                                         {
-                                            propInfo.SetValue(dataFila, Convert.ToDecimal(value.ToString().Replace(".", ",")), null);
+
+
+                                            //decimal valor = decimal.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
+                                            //propInfo.SetValue(dataFila, valor, null);
+                                             
+                                             /*
+                                            // Primero, asegurarse que el valor usa punto como separador decimal
+                                            string valueNormalized = value.Replace(",", ".");
+                                            // Usar Convert.ToDecimal que suele mantener mejor la precisión
+                                            decimal valor = Convert.ToDecimal(valueNormalized, CultureInfo.InvariantCulture);
+                                            // Asignar directamente sin ninguna manipulación
+                                            propInfo.SetValue(dataFila, valor, null);*/
+
+                                            var nfi = new NumberFormatInfo
+                                            {
+                                                NumberDecimalSeparator = ".",
+                                                NumberDecimalDigits = 3
+                                            };
+
+                                            // Asegurarse que usamos el string original sin modificaciones
+                                            decimal valor = decimal.Parse(value.ToString(), nfi);
+
+                                            // No hacer ninguna manipulación adicional del valor
+                                            propInfo.SetValue(dataFila, valor, null);
+
 
                                         }// Verificar si el tipo de datos es DateTime
                                         else if (propInfo.PropertyType == typeof(DateTime) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(DateTime))
@@ -474,7 +499,21 @@ namespace ApiPortal_DataLake.Domain.Services
                                     // Verificar si el tipo de datos es decimal
                                     if (propInfo.PropertyType == typeof(decimal) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(decimal))
                                     {
-                                        propInfo.SetValue(existingDataFila, Convert.ToDecimal(value.Replace(".", ",")), null);
+                                        //propInfo.SetValue(existingDataFila, Convert.ToDecimal(value.Replace(".", ",")), null);
+                                        // Primero, asegurarse que el valor usa punto como separador decimal
+                                      
+
+                                        var nfi = new NumberFormatInfo
+                                        {
+                                            NumberDecimalSeparator = ".",
+                                            NumberDecimalDigits = 3
+                                        };
+
+                                        // Asegurarse que usamos el string original sin modificaciones
+                                        decimal valor = decimal.Parse(value.ToString(), nfi);
+
+                                        // No hacer ninguna manipulación adicional del valor
+                                        propInfo.SetValue(existingDataFila, valor, null);
 
                                     }// Verificar si el tipo de datos es DateTime
                                     else if (propInfo.PropertyType == typeof(DateTime) || Nullable.GetUnderlyingType(propInfo.PropertyType) == typeof(DateTime))
@@ -609,7 +648,7 @@ namespace ApiPortal_DataLake.Domain.Services
                 _logger.LogError($"Insertar Orden produccion Error try catch: {JsonConvert.SerializeObject(ex)}");
                 var jsonresponse = new
                 {
-                    Respuesta = ex.Message,
+                    Respuesta = ex.Message +  " - "+ex.InnerException.Message.ToString(),
                     idOrden = 0
                 };
                 return new GeneralResponse<object>(HttpStatusCode.InternalServerError, jsonresponse);

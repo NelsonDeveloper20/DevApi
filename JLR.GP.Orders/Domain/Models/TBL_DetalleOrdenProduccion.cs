@@ -19,8 +19,11 @@ namespace Api_Dc.Domain.Models
         public string? Familia { get; set; }
         public string? SubFamilia { get; set; }
         public string? UnidadMedida { get; set; }
+        [Column(TypeName = "decimal(10,3)")]
         public decimal? Cantidad { get; set; }
+        [Column(TypeName = "decimal(10,3)")]
         public decimal? Alto { get; set; }
+        [Column(TypeName = "decimal(10,3)")]
         public decimal? Ancho { get; set; }
         public string? Linea { get; set; }
         public string? Precio { get; set; }
@@ -29,8 +32,11 @@ namespace Api_Dc.Domain.Models
         public string? Lote { get; set; }
 
         //pendientes -agregados
+        [Column(TypeName = "decimal(10,3)")]
         public decimal? TuboMedida{get;set; }
-       public decimal? TelaMedida { get; set; }
+        [Column(TypeName = "decimal(10,3)")]
+        public decimal? TelaMedida { get; set; }
+        [Column(TypeName = "decimal(10,3)")]
         public decimal? AlturaMedida {get; set; } 
         public string? Central{get;set; }
         public string? CentralIndex { get; set; }
@@ -97,7 +103,9 @@ namespace Api_Dc.Domain.Models
         public string? Cenefa { get; set; }
         public int? NumeroMotores { get; set; }
         public string? Serie { get; set; }
+        [Column(TypeName = "decimal(10,3)")]
         public decimal? AlturaCadena { get; set; }
+        [Column(TypeName = "decimal(10,3)")]
         public decimal? AlturaCordon { get; set; }
         public string? MarcaMotor { get; set; }
 
