@@ -65,45 +65,55 @@ namespace ApiPortal_DataLake.Domain.Services
         ///AQUI ESTOY EDITANDO.
         public async Task<GeneralResponse<object>> EliminarMantenimientooOP(string id)
         {
-            try
+            using (var transaction = await _context.Database.BeginTransactionAsync())
             {
-                var mantenimientoOp = await this._context.Tbl_OrdenProduccion.FindAsync(int.Parse(id));
-
-                if (mantenimientoOp == null)
+                try
                 {
-                    return new GeneralResponse<object>(HttpStatusCode.NotFound, new { Respuesta = "El mantenimiento con el ID especificado no fue encontrado", id = 0 });
+                    var mantenimientoOp = await _context.Tbl_OrdenProduccion.FindAsync(int.Parse(id));
+
+                    if (mantenimientoOp == null)
+                    {
+                        return new GeneralResponse<object>(HttpStatusCode.NotFound, new { Respuesta = "El mantenimiento con el ID especificado no fue encontrado", id = 0 });
+                    }
+
+                    var grupos = await _context.Tbl_DetalleOpGrupo.Where(g => g.NumeroCotizacion == mantenimientoOp.NumeroCotizacion).ToListAsync();
+                    var detallesProduccion = await _context.TBL_DetalleOrdenProduccion.Where(p => p.NumeroCotizacion == mantenimientoOp.NumeroCotizacion).ToListAsync();
+                    var ambientes = await _context.Tbl_Ambiente.Where(a => a.NumeroCotizacion == mantenimientoOp.NumeroCotizacion).ToListAsync();
+
+                    _context.Tbl_DetalleOpGrupo.RemoveRange(grupos);
+                    _context.TBL_DetalleOrdenProduccion.RemoveRange(detallesProduccion);
+                    _context.Tbl_Ambiente.RemoveRange(ambientes);
+                    _context.Tbl_OrdenProduccion.Remove(mantenimientoOp);
+
+                    await _context.SaveChangesAsync();
+
+                    // Confirma la transacción
+                    await transaction.CommitAsync();
+
+                    var jsonResponse = new
+                    {
+                        Respuesta = "Ok",
+                        id = mantenimientoOp.Id
+                    };
+
+                    return new GeneralResponse<object>(HttpStatusCode.OK, jsonResponse);
                 }
-
-                var grupos = await this._context.Tbl_DetalleOpGrupo.Where(g => g.NumeroCotizacion == mantenimientoOp.NumeroCotizacion).ToListAsync();
-                var detallesProduccion = await this._context.TBL_DetalleOrdenProduccion.Where(p => p.NumeroCotizacion == mantenimientoOp.NumeroCotizacion).ToListAsync();
-                var ambientes = await this._context.Tbl_Ambiente.Where(a => a.NumeroCotizacion == mantenimientoOp.NumeroCotizacion).ToListAsync();
-
-                this._context.Tbl_DetalleOpGrupo.RemoveRange(grupos);
-                this._context.TBL_DetalleOrdenProduccion.RemoveRange(detallesProduccion);
-                this._context.Tbl_Ambiente.RemoveRange(ambientes);
-                this._context.Tbl_OrdenProduccion.Remove(mantenimientoOp);
-
-                await this._context.SaveChangesAsync();
-
-                var jsonResponse = new
+                catch (Exception ex)
                 {
-                    Respuesta = "Ok",
-                    id = mantenimientoOp.Id
-                };
+                    // Realiza rollback en caso de error
+                    await transaction.RollbackAsync();
+                    _logger.LogError($"Error al eliminar la orden de producción: {ex.Message}");
 
-                return new GeneralResponse<object>(HttpStatusCode.OK, jsonResponse);
-            }
-            catch (Exception ex)
-            {
-                this._logger.LogError($"Error al eliminar la orden de producción: {ex.Message}");
-                var jsonResponse = new
-                {
-                    Respuesta = "Error al eliminar la orden de producción "+ex.Message,
-                    idOrden = 0
-                };
-                return new GeneralResponse<object>(HttpStatusCode.InternalServerError, jsonResponse);
+                    var jsonResponse = new
+                    {
+                        Respuesta = "Error al eliminar la orden de producción: " + ex.Message,
+                        idOrden = 0
+                    };
+                    return new GeneralResponse<object>(HttpStatusCode.InternalServerError, jsonResponse);
+                }
             }
         }
+
     }
 }
 

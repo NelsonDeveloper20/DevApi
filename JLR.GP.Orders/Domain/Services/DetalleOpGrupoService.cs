@@ -35,7 +35,80 @@ namespace ApiPortal_DataLake.Domain.Services
             var configurations = builder.Build();
             CnDc_Blinds = configurations["ConnectionString:DefaultConnection"];
         }
-         
+        public async Task<GeneralResponse<object>> ModificarTurnoFechaGrupo(string grupo, string turno, string fecha)
+        {
+            using var transaction = await this._context.Database.BeginTransactionAsync();
+            try
+            {
+                // Validar y convertir la fecha
+                if (!DateTime.TryParse(fecha, out var fechaProduccion))
+                {
+                    return new GeneralResponse<object>(
+                        HttpStatusCode.BadRequest,
+                        new { Respuesta = "Formato de fecha inválido", idModulo = 0 }
+                    );
+                }
+
+                // Modificar el grupo en Tbl_DetalleOpGrupo
+                var grupoExistente = await this._context.Tbl_DetalleOpGrupo
+                    .FirstOrDefaultAsync(g => g.CotizacionGrupo == grupo);
+
+                if (grupoExistente == null)
+                {
+                    return new GeneralResponse<object>(
+                        HttpStatusCode.NotFound,
+                        new { Respuesta = "El grupo no existe", idModulo = 0 }
+                    );
+                }
+
+                grupoExistente.Turno = turno;
+                grupoExistente.FechaProduccion = fechaProduccion;
+
+                this._context.Tbl_DetalleOpGrupo.Update(grupoExistente);
+
+                // Modificar todos los productos relacionados en TBL_DetalleOrdenProduccion
+                var productosRelacionados = this._context.TBL_DetalleOrdenProduccion
+                    .Where(p => p.CotizacionGrupo == grupo)
+                    .ToList();
+
+                if (productosRelacionados.Any())
+                {
+                    foreach (var producto in productosRelacionados)
+                    {
+                        producto.Turno = turno;
+                        producto.FechaProduccion = fechaProduccion;
+                    }
+
+                    this._context.TBL_DetalleOrdenProduccion.UpdateRange(productosRelacionados);
+                }
+
+                // Guardar todos los cambios
+                await this._context.SaveChangesAsync();
+
+                // Confirmar la transacción
+                await transaction.CommitAsync();
+
+                return new GeneralResponse<object>(
+                    HttpStatusCode.OK,
+                    new { Respuesta = "Operación realizada correctamente", idModulo = 1 }
+                );
+            }
+            catch (Exception ex)
+            {
+                // Revertir la transacción en caso de error
+                await transaction.RollbackAsync();
+
+                // Loggear el error
+                this._logger.LogError($"Error en ModificarTurnoFechaGrupo: {ex}");
+
+                return new GeneralResponse<object>(
+                    HttpStatusCode.InternalServerError,
+                    new { Respuesta = ex.Message, idModulo = 0 }
+                );
+            }
+        }
+
+
         //::::::::::::::::::::::::::::::::
         /*public async Task<IEnumerable<Tbl_DetalleOpGrupo>> ListarDetalleOpGrupo()
         {

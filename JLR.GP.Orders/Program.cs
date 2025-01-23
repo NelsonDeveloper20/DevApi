@@ -111,8 +111,12 @@ builder.Services.AddCors(options =>
       builder =>
       {
 
-          builder
-         .WithOrigins("http://10.0.2.5:83")
+          
+         //.WithOrigins("http://10.0.2.5:83")
+         builder.WithOrigins(
+            "http://10.0.2.5:83", // Aplicación Angular en red local
+            "http://191.98.160.56:83" // Aplicación Angular accesible desde IP pública
+        )
            .AllowAnyOrigin()
            .AllowAnyHeader()
 

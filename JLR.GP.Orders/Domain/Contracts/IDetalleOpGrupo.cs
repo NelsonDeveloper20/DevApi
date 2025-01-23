@@ -16,6 +16,8 @@ namespace ApiPortal_DataLake.Domain.Contracts
         Task<GeneralResponse<dynamic>> ListatarProductosDetallePorGrupo(string grupo);
         Task<GeneralResponse<Object>> AplicarCentral(string cotizacionGrupo, int id, string valor);
         Task<GeneralResponse<Object>> ReinicioGrupo(int id);
-        
+        Task<GeneralResponse<Object>> ModificarTurnoFechaGrupo(string grupo, string turno, string fecha);
+
+
     }
 }
