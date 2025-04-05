@@ -1,0 +1,25 @@
+2025-03-18 11:00:54,042 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2025-03-18 11:00:54,194 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2025-03-18 11:00:54,592 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2025-03-18 11:00:54,714 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2025-03-18 11:00:54,781 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2025-03-18 11:08:51,338 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Monto' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-03-18 11:08:51,351 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'SubTotal' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-03-18 11:08:51,358 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Total' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-03-18 11:08:51,363 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TotalIgv' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-03-18 11:08:52,008 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-18 11:08:54,189 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (175ms) [Parameters=[@__ToLower_0='?' (Size = 4000), @__contra_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[IdTipoUsuario], [t].[Nombre], [t].[Apellido], [t].[Dni], [t].[Correo], [t].[Usuario], [t0].[Nombre] AS [Perfil], [t0].[Id] AS [idS]
+FROM [Tbl_Usuario] AS [t]
+INNER JOIN [Tbl_Rol] AS [t0] ON [t].[IdRol] = [t0].[Id]
+WHERE (LOWER(LTRIM(RTRIM([t].[Usuario]))) = @__ToLower_0) AND (LOWER(LTRIM(RTRIM([t].[Clave]))) = @__contra_1)
+2025-03-18 11:08:55,955 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-18 11:08:56,073 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (39ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]

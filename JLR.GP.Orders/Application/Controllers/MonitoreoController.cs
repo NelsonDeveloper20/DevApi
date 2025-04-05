@@ -239,6 +239,19 @@ namespace ApiPortal_DataLake.Application.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new { mensaje = "Ocurrió un error al procesar la solicitud." });
             }
         }
+        [HttpPost("EnviarSalidaSap")]
+        public async Task<ActionResult<GeneralResponse<Object>>> EnviarSalidaSap(string cotizacion, string grupo, string idusuario) //OK
+        {
+            var response = await this._usuarioService.EnviarSalidaSap(cotizacion, grupo, idusuario);
+            if (response.Status == HttpStatusCode.OK)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return StatusCode((int)response.Status, response);
+            }
+        }
         [HttpPost("EnviarEntradaSap")]
         public async Task<ActionResult<GeneralResponse<Object>>> EnviarEntradaSap(string cotizacion, string grupo , string idusuario) //OK
         {
@@ -252,5 +265,38 @@ namespace ApiPortal_DataLake.Application.Controllers
                 return StatusCode((int)response.Status, response);
             }
         }
+
+        [HttpGet("ListarFormulacionRollerShade")]
+        public async Task<ActionResult> ListarFormulacionRollerShade(string numCotizacion, string grupoCotizacion)
+        {
+            var response = await this._usuarioService.ListarFormulacionRollerShade(numCotizacion, grupoCotizacion);
+            if (response.Status == HttpStatusCode.OK)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return StatusCode((int)response.Status, response);
+            }
+        }
+
+
+        [HttpPost("GuardarFormulacionRollerShade")]
+        public async Task<ActionResult<GeneralResponse<Object>>> GuardarFormulacionRollerShade([FromBody] List<MonitoreoFormulacionRollerRequest> request)
+        {
+            try
+            {
+                var response = await this._usuarioService.GuardarFormulacionRollerShade(request);
+                return response;
+
+            }
+            catch (Exception ex)
+            {
+
+                this._logger.LogError($"Error Agregar Perfil : {JsonConvert.SerializeObject(ex)}");
+                return Conflict();
+            }
+        }
+
     }
 }

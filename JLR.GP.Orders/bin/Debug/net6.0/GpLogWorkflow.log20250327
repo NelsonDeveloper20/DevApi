@@ -1,0 +1,309 @@
+2025-03-27 07:06:03,094 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2025-03-27 07:06:03,244 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2025-03-27 07:06:04,132 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2025-03-27 07:06:04,222 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2025-03-27 07:06:04,227 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2025-03-27 07:12:40,549 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Monto' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-03-27 07:12:40,561 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'SubTotal' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-03-27 07:12:40,564 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Total' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-03-27 07:12:40,568 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TotalIgv' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-03-27 07:12:40,944 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 07:12:43,969 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (554ms) [Parameters=[@__ToLower_0='?' (Size = 4000), @__contra_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[IdTipoUsuario], [t].[Nombre], [t].[Apellido], [t].[Dni], [t].[Correo], [t].[Usuario], [t0].[Nombre] AS [Perfil], [t0].[Id] AS [idS]
+FROM [Tbl_Usuario] AS [t]
+INNER JOIN [Tbl_Rol] AS [t0] ON [t].[IdRol] = [t0].[Id]
+WHERE (LOWER(LTRIM(RTRIM([t].[Usuario]))) = @__ToLower_0) AND (LOWER(LTRIM(RTRIM([t].[Clave]))) = @__contra_1)
+2025-03-27 07:12:45,069 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 07:12:45,199 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (39ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2025-03-27 07:15:26,848 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 07:15:27,022 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (63ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[CodigoGrupo], [t].[Identificador], [t].[NombreGrupo], [t].[Observacion]
+FROM [Tbl_MaestroArticulos] AS [t]
+2025-03-27 07:15:27,542 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 07:15:27,880 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (209ms) [Parameters=[@__Substring_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[NombreProducto], [t].[SubGrupo], [t].[Unidad]
+FROM [Tbl_AccesorioProducto] AS [t]
+WHERE (@__Substring_0 = N'') OR (([t].[CodigoProducto] IS NOT NULL) AND (LEFT([t].[CodigoProducto], LEN(@__Substring_0)) = @__Substring_0))
+2025-03-27 07:26:01,381 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 07:26:01,707 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (140ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2025-03-27 07:26:39,303 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 07:26:39,453 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (125ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[CodigoGrupo], [t].[Identificador], [t].[NombreGrupo], [t].[Observacion]
+FROM [Tbl_MaestroArticulos] AS [t]
+2025-03-27 07:26:41,873 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 07:26:44,251 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2,319ms) [Parameters=[@__Substring_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[NombreProducto], [t].[SubGrupo], [t].[Unidad]
+FROM [Tbl_AccesorioProducto] AS [t]
+WHERE (@__Substring_0 = N'') OR (([t].[CodigoProducto] IS NOT NULL) AND (LEFT([t].[CodigoProducto], LEN(@__Substring_0)) = @__Substring_0))
+2025-03-27 07:33:41,097 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 07:33:41,765 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (340ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2025-03-27 07:33:56,502 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 07:33:56,609 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (87ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[CodigoGrupo], [t].[Identificador], [t].[NombreGrupo], [t].[Observacion]
+FROM [Tbl_MaestroArticulos] AS [t]
+2025-03-27 07:33:59,896 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 07:34:00,470 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (465ms) [Parameters=[@__Substring_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[NombreProducto], [t].[SubGrupo], [t].[Unidad]
+FROM [Tbl_AccesorioProducto] AS [t]
+WHERE (@__Substring_0 = N'') OR (([t].[CodigoProducto] IS NOT NULL) AND (LEFT([t].[CodigoProducto], LEN(@__Substring_0)) = @__Substring_0))
+2025-03-27 07:37:02,968 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 07:37:03,135 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (142ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2025-03-27 07:37:11,219 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 07:37:11,293 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (53ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[CodigoGrupo], [t].[Identificador], [t].[NombreGrupo], [t].[Observacion]
+FROM [Tbl_MaestroArticulos] AS [t]
+2025-03-27 07:37:11,589 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 07:37:11,782 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (108ms) [Parameters=[@__Substring_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[NombreProducto], [t].[SubGrupo], [t].[Unidad]
+FROM [Tbl_AccesorioProducto] AS [t]
+WHERE (@__Substring_0 = N'') OR (([t].[CodigoProducto] IS NOT NULL) AND (LEFT([t].[CodigoProducto], LEN(@__Substring_0)) = @__Substring_0))
+2025-03-27 07:39:30,173 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 07:39:30,362 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (149ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2025-03-27 07:41:25,216 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 07:41:25,469 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (231ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[CodigoGrupo], [t].[Identificador], [t].[NombreGrupo], [t].[Observacion]
+FROM [Tbl_MaestroArticulos] AS [t]
+2025-03-27 07:41:27,169 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 07:41:27,961 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (384ms) [Parameters=[@__Substring_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[NombreProducto], [t].[SubGrupo], [t].[Unidad]
+FROM [Tbl_AccesorioProducto] AS [t]
+WHERE (@__Substring_0 = N'') OR (([t].[CodigoProducto] IS NOT NULL) AND (LEFT([t].[CodigoProducto], LEN(@__Substring_0)) = @__Substring_0))
+2025-03-27 07:44:25,942 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 07:44:26,084 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (117ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2025-03-27 07:45:37,125 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 07:45:37,162 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[CodigoGrupo], [t].[Identificador], [t].[NombreGrupo], [t].[Observacion]
+FROM [Tbl_MaestroArticulos] AS [t]
+2025-03-27 07:45:39,294 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 07:45:39,525 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (57ms) [Parameters=[@__Substring_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[NombreProducto], [t].[SubGrupo], [t].[Unidad]
+FROM [Tbl_AccesorioProducto] AS [t]
+WHERE (@__Substring_0 = N'') OR (([t].[CodigoProducto] IS NOT NULL) AND (LEFT([t].[CodigoProducto], LEN(@__Substring_0)) = @__Substring_0))
+2025-03-27 08:07:59,845 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 08:08:00,490 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (349ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2025-03-27 08:08:45,822 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 08:08:45,944 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (69ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[CodigoGrupo], [t].[Identificador], [t].[NombreGrupo], [t].[Observacion]
+FROM [Tbl_MaestroArticulos] AS [t]
+2025-03-27 08:08:46,943 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 08:08:47,053 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (39ms) [Parameters=[@__Substring_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[NombreProducto], [t].[SubGrupo], [t].[Unidad]
+FROM [Tbl_AccesorioProducto] AS [t]
+WHERE (@__Substring_0 = N'') OR (([t].[CodigoProducto] IS NOT NULL) AND (LEFT([t].[CodigoProducto], LEN(@__Substring_0)) = @__Substring_0))
+2025-03-27 08:10:09,874 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 08:10:10,285 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (373ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2025-03-27 08:11:37,931 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 08:11:38,031 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (36ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[CodigoGrupo], [t].[Identificador], [t].[NombreGrupo], [t].[Observacion]
+FROM [Tbl_MaestroArticulos] AS [t]
+2025-03-27 08:11:38,483 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 08:11:38,712 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[@__Substring_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[NombreProducto], [t].[SubGrupo], [t].[Unidad]
+FROM [Tbl_AccesorioProducto] AS [t]
+WHERE (@__Substring_0 = N'') OR (([t].[CodigoProducto] IS NOT NULL) AND (LEFT([t].[CodigoProducto], LEN(@__Substring_0)) = @__Substring_0))
+2025-03-27 08:40:53,116 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 08:40:53,296 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (82ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2025-03-27 08:41:25,258 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 08:41:25,279 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[CodigoGrupo], [t].[Identificador], [t].[NombreGrupo], [t].[Observacion]
+FROM [Tbl_MaestroArticulos] AS [t]
+2025-03-27 08:41:26,364 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 08:41:26,562 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (126ms) [Parameters=[@__Substring_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[NombreProducto], [t].[SubGrupo], [t].[Unidad]
+FROM [Tbl_AccesorioProducto] AS [t]
+WHERE (@__Substring_0 = N'') OR (([t].[CodigoProducto] IS NOT NULL) AND (LEFT([t].[CodigoProducto], LEN(@__Substring_0)) = @__Substring_0))
+2025-03-27 08:44:17,471 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 08:44:17,830 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (287ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2025-03-27 08:44:22,234 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 08:44:22,320 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (65ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[CodigoGrupo], [t].[Identificador], [t].[NombreGrupo], [t].[Observacion]
+FROM [Tbl_MaestroArticulos] AS [t]
+2025-03-27 08:44:22,695 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 08:44:22,876 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (94ms) [Parameters=[@__Substring_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[NombreProducto], [t].[SubGrupo], [t].[Unidad]
+FROM [Tbl_AccesorioProducto] AS [t]
+WHERE (@__Substring_0 = N'') OR (([t].[CodigoProducto] IS NOT NULL) AND (LEFT([t].[CodigoProducto], LEN(@__Substring_0)) = @__Substring_0))
+2025-03-27 08:46:27,103 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 08:46:28,243 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1,066ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2025-03-27 08:46:33,582 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 08:46:33,602 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[CodigoGrupo], [t].[Identificador], [t].[NombreGrupo], [t].[Observacion]
+FROM [Tbl_MaestroArticulos] AS [t]
+2025-03-27 08:46:33,818 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 08:46:33,884 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (35ms) [Parameters=[@__Substring_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[NombreProducto], [t].[SubGrupo], [t].[Unidad]
+FROM [Tbl_AccesorioProducto] AS [t]
+WHERE (@__Substring_0 = N'') OR (([t].[CodigoProducto] IS NOT NULL) AND (LEFT([t].[CodigoProducto], LEN(@__Substring_0)) = @__Substring_0))
+2025-03-27 08:50:35,982 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 08:50:36,026 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[CodigoGrupo], [t].[Identificador], [t].[NombreGrupo], [t].[Observacion]
+FROM [Tbl_MaestroArticulos] AS [t]
+2025-03-27 08:50:36,587 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 08:50:36,795 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (148ms) [Parameters=[@__Substring_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[NombreProducto], [t].[SubGrupo], [t].[Unidad]
+FROM [Tbl_AccesorioProducto] AS [t]
+WHERE (@__Substring_0 = N'') OR (([t].[CodigoProducto] IS NOT NULL) AND (LEFT([t].[CodigoProducto], LEN(@__Substring_0)) = @__Substring_0))
+2025-03-27 08:56:48,757 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 08:56:48,908 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (39ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[CodigoGrupo], [t].[Identificador], [t].[NombreGrupo], [t].[Observacion]
+FROM [Tbl_MaestroArticulos] AS [t]
+2025-03-27 08:56:49,571 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 08:56:49,593 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (15ms) [Parameters=[@__Substring_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[NombreProducto], [t].[SubGrupo], [t].[Unidad]
+FROM [Tbl_AccesorioProducto] AS [t]
+WHERE (@__Substring_0 = N'') OR (([t].[CodigoProducto] IS NOT NULL) AND (LEFT([t].[CodigoProducto], LEN(@__Substring_0)) = @__Substring_0))
+2025-03-27 10:41:45,073 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 10:41:45,236 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (90ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2025-03-27 13:48:43,408 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 13:48:43,622 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (71ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2025-03-27 14:24:31,695 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 14:24:31,742 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[CodigoGrupo], [t].[Identificador], [t].[NombreGrupo], [t].[Observacion]
+FROM [Tbl_MaestroArticulos] AS [t]
+2025-03-27 14:24:31,958 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 14:24:32,472 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (319ms) [Parameters=[@__Substring_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[NombreProducto], [t].[SubGrupo], [t].[Unidad]
+FROM [Tbl_AccesorioProducto] AS [t]
+WHERE (@__Substring_0 = N'') OR (([t].[CodigoProducto] IS NOT NULL) AND (LEFT([t].[CodigoProducto], LEN(@__Substring_0)) = @__Substring_0))
+2025-03-27 16:24:12,741 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 16:24:13,030 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (213ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]
+2025-03-27 16:34:32,192 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 16:34:32,220 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[CodigoGrupo], [t].[Identificador], [t].[NombreGrupo], [t].[Observacion]
+FROM [Tbl_MaestroArticulos] AS [t]
+2025-03-27 16:34:33,280 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 16:34:33,501 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (171ms) [Parameters=[@__Substring_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[NombreProducto], [t].[SubGrupo], [t].[Unidad]
+FROM [Tbl_AccesorioProducto] AS [t]
+WHERE (@__Substring_0 = N'') OR (([t].[CodigoProducto] IS NOT NULL) AND (LEFT([t].[CodigoProducto], LEN(@__Substring_0)) = @__Substring_0))
+2025-03-27 16:35:01,960 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 16:35:01,991 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[CodigoGrupo], [t].[Identificador], [t].[NombreGrupo], [t].[Observacion]
+FROM [Tbl_MaestroArticulos] AS [t]
+2025-03-27 16:35:02,613 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 16:35:02,716 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (11ms) [Parameters=[@__Substring_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Codigo], [t].[CodigoProducto], [t].[Descripcion], [t].[Estado], [t].[FechaCreacion], [t].[FechaModificacion], [t].[IdUsuarioCreacion], [t].[IdUsuarioModifica], [t].[NombreProducto], [t].[SubGrupo], [t].[Unidad]
+FROM [Tbl_AccesorioProducto] AS [t]
+WHERE (@__Substring_0 = N'') OR (([t].[CodigoProducto] IS NOT NULL) AND (LEFT([t].[CodigoProducto], LEN(@__Substring_0)) = @__Substring_0))
+2025-03-27 17:05:51,290 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-03-27 17:05:51,620 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (33ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL))))
+ORDER BY [t0].[Orden]

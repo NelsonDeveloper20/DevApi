@@ -71,9 +71,43 @@ namespace ApiPortal_DataLake.Application.Controllers
             {
 
                 this._logger.LogError($"Error Agregar Perfil : {JsonConvert.SerializeObject(ex)}");
-                return Conflict();
+                return Conflict(ex);
             }
         }
 
+         
+
+        [HttpGet("listarTelaRielTubo")]
+        public async Task<ActionResult> listarTelaRielTubo(string tipo, string codigoProducto, string nombreProducto)
+        {
+            try { 
+                var response = await this._iservice.listarTelaRielTubo(tipo, codigoProducto, nombreProducto);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+
+                this._logger.LogError($"Error Agregar Perfil : {JsonConvert.SerializeObject(ex)}");
+                return Conflict(ex);
+            }
+
+        }
+
+        [HttpGet("listarAccesorioXProducto")]
+        public async Task<ActionResult> listarAccesorioXProducto(string codigoProducto)
+        {
+            try
+            {
+                var response = await this._iservice.listarAccesorio(codigoProducto);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+
+                this._logger.LogError($"Error Agregar Perfil : {JsonConvert.SerializeObject(ex)}");
+                return Conflict(ex);
+            }
+
+        }
     }
 }

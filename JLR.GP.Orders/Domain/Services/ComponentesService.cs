@@ -128,5 +128,45 @@ namespace ApiPortal_DataLake.Domain.Services
             var _user = this._context.Tbl_Componentes.ToList();
             return _user;
         }
+
+
+        public async Task<IEnumerable<Tbl_AccesorioProducto>> listarAccesorio(string codigoProducto)
+        {
+
+            var _user = this._context.Tbl_AccesorioProducto.
+                Where(s => s.CodigoProducto.StartsWith(codigoProducto.Substring(0, 5))).
+                ToList();
+            return _user;
+        }
+
+
+        public async Task<IEnumerable<Tbl_ComponteProducto>> listarTelaRielTubo(string tipo, string codigoProducto, string nombreProducto)
+        {
+            IQueryable<Tbl_ComponteProducto> query = this._context.Tbl_ComponteProducto;
+
+            switch (tipo)
+            {
+                case "TELA":
+                    if (codigoProducto == "PRTRS000000")
+                    {
+                        query = query.Where(s => s.Tipo == "TELA0" && s.CodigoProducto == codigoProducto && s.NombreProducto == nombreProducto);
+                    }
+                    else
+                    {
+                        query = query.Where(s => s.Tipo == "TELA" && s.CodigoProducto == codigoProducto);
+                    }
+                    break;
+
+                case "TUBO":
+                    query = query.Where(s => s.Tipo == "TUBO" && s.CodigoProducto.StartsWith(codigoProducto.Substring(0, 5)));
+                    break;
+
+                case "RIEL":
+                    query = query.Where(s => s.Tipo == "RIEL" && s.CodigoProducto.StartsWith(codigoProducto.Substring(0, 5)));//PRTRS
+                    break;
+            }
+
+            return await query.ToListAsync();
+        }
     }
 }

@@ -26,11 +26,15 @@ namespace Api_Dc.Domain.Models
         public string? Adicional {  get; set; }
         public string? CodigoSalidaSap { get; set; }
         public string? Familia {  get; set; }
+        public string? SubFamilia { get; set;}
         public string? WhsCode { get; set; }
         public string? Serie { get; set; }
         public string? Lote { get; set; }
         public DateTime? FechaEntradaSap { get; set; }
+        public DateTime? FechaSalidaSap { get; set; }
         public string? CodigoEntradaSap { get; set; }
+        public string? Alto { get; set; }
+        public string? Ancho { get; set; }
 
     }
 }

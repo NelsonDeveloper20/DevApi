@@ -1,0 +1,5018 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Api_Dc",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Ambiente": {
+      "get": {
+        "tags": [
+          "Ambiente"
+        ],
+        "parameters": [
+          {
+            "name": "numeroCotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Ambiente"
+        ],
+        "parameters": [
+          {
+            "name": "cotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "indice",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ambiente",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cantidad",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Ambiente"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/auth/token": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwtResponseGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwtResponseGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwtResponseGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/refresh-token": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwtResponseGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwtResponseGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwtResponseGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Componentes": {
+      "get": {
+        "tags": [
+          "Componentes"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Componentes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgregarComponentesRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgregarComponentesRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgregarComponentesRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgregarComponentesRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Componentes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Componentes/listarTelaRielTubo": {
+      "get": {
+        "tags": [
+          "Componentes"
+        ],
+        "parameters": [
+          {
+            "name": "tipo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codigoProducto",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "nombreProducto",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Componentes/listarAccesorioXProducto": {
+      "get": {
+        "tags": [
+          "Componentes"
+        ],
+        "parameters": [
+          {
+            "name": "codigoProducto",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/DetalleOpgrupo": {
+      "get": {
+        "tags": [
+          "DetalleOpGrupo"
+        ],
+        "parameters": [
+          {
+            "name": "Vendedor",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NumeroCotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Cliente",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "FechaInicio",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "FechaFin",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CodigoSisgeco",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "RucCliente",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "IdProyecto",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TipoCliente",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/DetalleOpgrupo/ListarFiltros": {
+      "get": {
+        "tags": [
+          "DetalleOpGrupo"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/DetalleOpgrupo/ListarProductosPorGrupo": {
+      "get": {
+        "tags": [
+          "DetalleOpGrupo"
+        ],
+        "parameters": [
+          {
+            "name": "grupo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/DetalleOpgrupo/CambioEstadoOP": {
+      "post": {
+        "tags": [
+          "DetalleOpGrupo"
+        ],
+        "parameters": [
+          {
+            "name": "destino",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/GruposIDRequest"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/GruposIDRequest"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/GruposIDRequest"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/GruposIDRequest"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/DetalleOpgrupo/AplicarCentral": {
+      "post": {
+        "tags": [
+          "DetalleOpGrupo"
+        ],
+        "parameters": [
+          {
+            "name": "cotizacionGrupo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "valor",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/DetalleOpgrupo/ReiniciarGrupo": {
+      "post": {
+        "tags": [
+          "DetalleOpGrupo"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/DetalleOpgrupo/ModificarTurnoFechaGrupo": {
+      "post": {
+        "tags": [
+          "DetalleOpGrupo"
+        ],
+        "parameters": [
+          {
+            "name": "grupo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "turno",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fecha",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/DetalleOrdenProduccion": {
+      "get": {
+        "tags": [
+          "DetalleOrdenProduccion"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TBL_DetalleOrdenProduccion"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TBL_DetalleOrdenProduccion"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TBL_DetalleOrdenProduccion"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "DetalleOrdenProduccion"
+        ],
+        "parameters": [
+          {
+            "name": "tipo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/DetalleOrdenProduccion/ValidarCantidadPorTurnoFecProd": {
+      "post": {
+        "tags": [
+          "DetalleOrdenProduccion"
+        ],
+        "parameters": [
+          {
+            "name": "turno",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fechaProduccion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codigoProducto",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accionamiento",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Estacion": {
+      "get": {
+        "tags": [
+          "Estacion"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_DetalleProductoEstacion"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_DetalleProductoEstacion"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_DetalleProductoEstacion"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Healt": {
+      "get": {
+        "tags": [
+          "Healt"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Layout": {
+      "get": {
+        "tags": [
+          "Layout"
+        ],
+        "parameters": [
+          {
+            "name": "numeroCotizacionGrupo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Layout/Componentes": {
+      "get": {
+        "tags": [
+          "Layout"
+        ],
+        "parameters": [
+          {
+            "name": "numeroCotizacionGrupo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/LineaProduccion": {
+      "get": {
+        "tags": [
+          "LineaProd"
+        ],
+        "parameters": [
+          {
+            "name": "fecha",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/LineaProduccion/DetalleLineaProd": {
+      "get": {
+        "tags": [
+          "LineaProd"
+        ],
+        "parameters": [
+          {
+            "name": "turno",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dia",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/listas": {
+      "get": {
+        "tags": [
+          "Listas"
+        ],
+        "parameters": [
+          {
+            "name": "table",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ListasResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ListasResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ListasResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Listas"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ListasSisgeco": {
+      "get": {
+        "tags": [
+          "ListasSisgeco"
+        ],
+        "parameters": [
+          {
+            "name": "tipo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "subfamilia",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ListasSisgecoResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ListasSisgecoResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ListasSisgecoResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ListasSisgeco/ListarComponentesSisgeco": {
+      "get": {
+        "tags": [
+          "ListasSisgeco"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Login": {
+      "get": {
+        "tags": [
+          "Login"
+        ],
+        "parameters": [
+          {
+            "name": "usuario",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contrasena",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MaestroArticulo": {
+      "get": {
+        "tags": [
+          "MaestroArticulo"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/MantenimientoOP": {
+      "get": {
+        "tags": [
+          "MantOP"
+        ],
+        "parameters": [
+          {
+            "name": "numeroCotizacionGrupo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "MantOP"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Monitoreo": {
+      "get": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "parameters": [
+          {
+            "name": "grupoCotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fechaInicio",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fechaFin",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstacionProductoRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstacionProductoRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstacionProductoRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstacionProductoRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/ListarMonitoreoSapSalidaEntrada": {
+      "get": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "parameters": [
+          {
+            "name": "grupoCotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fechaInicio",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fechaFin",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/ListarReporteExplocion": {
+      "get": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "parameters": [
+          {
+            "name": "grupoCotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fechaInicio",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fechaFin",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/ListarMantenimientoExplocion": {
+      "get": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "parameters": [
+          {
+            "name": "grupoCotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/ListarComponenteProducto": {
+      "get": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "parameters": [
+          {
+            "name": "grupoCotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/ListarComponentesPorCodigosProducto": {
+      "get": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "parameters": [
+          {
+            "name": "codigosProducto",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "grupo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_Componentes"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_Componentes"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_Componentes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/downloadPlantilla": {
+      "get": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/ExplocionarComponente": {
+      "post": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ExplocionComponentesRequest"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ExplocionComponentesRequest"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ExplocionComponentesRequest"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ExplocionComponentesRequest"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/ExplocionarMantenimiento": {
+      "post": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ExplocionComponentesMantRequest"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ExplocionComponentesMantRequest"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ExplocionComponentesMantRequest"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ExplocionComponentesMantRequest"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/ExplocionarCompCargaExcel": {
+      "post": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExplocionComCargaRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExplocionComCargaRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExplocionComCargaRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExplocionComCargaRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/GuardarSalidaSap": {
+      "post": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SalidaSapRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SalidaSapRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SalidaSapRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SalidaSapRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/EnviarSalidaSap": {
+      "post": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "parameters": [
+          {
+            "name": "cotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "grupo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "idusuario",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/EnviarEntradaSap": {
+      "post": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "parameters": [
+          {
+            "name": "cotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "grupo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "idusuario",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/ListarFormulacionRollerShade": {
+      "get": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "parameters": [
+          {
+            "name": "numCotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "grupoCotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/GuardarFormulacionRollerShade": {
+      "post": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MonitoreoFormulacionRollerRequest"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MonitoreoFormulacionRollerRequest"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MonitoreoFormulacionRollerRequest"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MonitoreoFormulacionRollerRequest"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/OperacionesContruccion": {
+      "get": {
+        "tags": [
+          "OperacionesContruccion"
+        ],
+        "parameters": [
+          {
+            "name": "fecha",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "OperacionesContruccion"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstacionProductoRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstacionProductoRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstacionProductoRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstacionProductoRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/OperacionesContruccion/Estacion": {
+      "get": {
+        "tags": [
+          "OperacionesContruccion"
+        ],
+        "parameters": [
+          {
+            "name": "paso",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codigoEstacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "idusuario",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "grupo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/OperacionesContruccion/ProductoEstacionPorEstacion": {
+      "get": {
+        "tags": [
+          "OperacionesContruccion"
+        ],
+        "parameters": [
+          {
+            "name": "grupoCotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "estacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/OperacionesContruccion/AvanceEstacion": {
+      "get": {
+        "tags": [
+          "OperacionesContruccion"
+        ],
+        "parameters": [
+          {
+            "name": "grupoCotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/OPSisgecoDc": {
+      "get": {
+        "tags": [
+          "OpSisgeco"
+        ],
+        "parameters": [
+          {
+            "name": "numeroCotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "OpSisgeco"
+        ],
+        "parameters": [
+          {
+            "name": "numeroCotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "OpSisgeco"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "OpSisgeco"
+        ],
+        "parameters": [
+          {
+            "name": "numeroCotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codigoProucto",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "linea",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/OrdenProduccion": {
+      "get": {
+        "tags": [
+          "OrdenProduccion"
+        ],
+        "parameters": [
+          {
+            "name": "numeroCotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_OrdenProduccion"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_OrdenProduccion"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_OrdenProduccion"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "OrdenProduccion"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "OrdenProduccion"
+        ],
+        "parameters": [
+          {
+            "name": "usuario",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "paso",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "estado",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "subestado",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "motivo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "motivorechazodevolucion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "OrdenProduccion"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/OrdenProduccion/download": {
+      "get": {
+        "tags": [
+          "OrdenProduccion"
+        ],
+        "parameters": [
+          {
+            "name": "nombre",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Perfil": {
+      "get": {
+        "tags": [
+          "Perfil"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_Rol"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_Rol"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_Rol"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Perfil"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "nombre",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "descripcion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Perfil"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Perfil/ModulosPorRol": {
+      "get": {
+        "tags": [
+          "Perfil"
+        ],
+        "parameters": [
+          {
+            "name": "idRol",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Perfil/ModulosPorUsuario": {
+      "get": {
+        "tags": [
+          "Perfil"
+        ],
+        "parameters": [
+          {
+            "name": "idUsuario",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Perfil/AgregarModuloRol": {
+      "post": {
+        "tags": [
+          "Perfil"
+        ],
+        "parameters": [
+          {
+            "name": "idRol",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AgregarModuloRolRequest"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AgregarModuloRolRequest"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AgregarModuloRolRequest"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AgregarModuloRolRequest"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Producto": {
+      "get": {
+        "tags": [
+          "Producto"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_Escuadra"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_Escuadra"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_Escuadra"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Producto"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Producto"
+        ],
+        "parameters": [
+          {
+            "name": "usuario",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "paso",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "estado",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "subestado",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "motivo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "motivorechazodevolucion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Producto"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Proyecto": {
+      "get": {
+        "tags": [
+          "Proyecto"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_Proyecto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_Proyecto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_Proyecto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Proyecto"
+        ],
+        "parameters": [
+          {
+            "name": "nombreProyecto",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Proyecto"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "nombreProyecto",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Proyecto"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Roles": {
+      "get": {
+        "tags": [
+          "Rol"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_Rol"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_Rol"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tbl_Rol"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Supervision": {
+      "get": {
+        "tags": [
+          "Supervision"
+        ],
+        "parameters": [
+          {
+            "name": "numeroCotizacionGrupo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Supervision"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SuperAprobacionRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SuperAprobacionRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SuperAprobacionRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SuperAprobacionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Usuario"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Usuario"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Usuario"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/users/roles": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Rol"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Rol"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Rol"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/users/{usuarioId}": {
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "usuarioId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32GeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Usuarios": {
+      "get": {
+        "tags": [
+          "Usuario"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Usuario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgregarUsuarioRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgregarUsuarioRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgregarUsuarioRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgregarUsuarioRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AgregarComponentesRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcionComponente": {
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "type": "string",
+            "nullable": true
+          },
+          "unidad": {
+            "type": "string",
+            "nullable": true
+          },
+          "subProducto": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoProducto": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AgregarModuloRolRequest": {
+        "type": "object",
+        "properties": {
+          "idModulo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "modulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "asignado": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechaAsignado": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AgregarUsuarioRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idUsuarioCreacion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idTipoUsuario": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellido": {
+            "type": "string",
+            "nullable": true
+          },
+          "dni": {
+            "type": "string",
+            "nullable": true
+          },
+          "correo": {
+            "type": "string",
+            "nullable": true
+          },
+          "idRol": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "clave": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EstacionProductoRequest": {
+        "type": "object",
+        "properties": {
+          "idEstacion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "numeroCotizacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "cotizacionGrupo": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaInicio": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaFin": {
+            "type": "string",
+            "nullable": true
+          },
+          "idUsuarioCreacion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExplocionComCargaRequest": {
+        "type": "object",
+        "properties": {
+          "cotizacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "grupoCotizacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentLines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExplocionProductosReques"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExplocionComponentesMantRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigo_Producto": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre_Producto": {
+            "type": "string",
+            "nullable": true
+          },
+          "componente": {
+            "type": "string",
+            "nullable": true
+          },
+          "cod_Componente": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "type": "string",
+            "nullable": true
+          },
+          "unidad": {
+            "type": "string",
+            "nullable": true
+          },
+          "cantidad": {
+            "type": "string",
+            "nullable": true
+          },
+          "merma": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroCotizacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "cotizacionGrupo": {
+            "type": "string",
+            "nullable": true
+          },
+          "idUsuarioCrea": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExplocionComponentesRequest": {
+        "type": "object",
+        "properties": {
+          "numeroCotizacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "grupo": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoProducto": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreProducto": {
+            "type": "string",
+            "nullable": true
+          },
+          "componente": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "type": "string",
+            "nullable": true
+          },
+          "unidadMedida": {
+            "type": "string",
+            "nullable": true
+          },
+          "cantidadUtilizada": {
+            "type": "string",
+            "nullable": true
+          },
+          "merma": {
+            "type": "string",
+            "nullable": true
+          },
+          "familia": {
+            "type": "string",
+            "nullable": true
+          },
+          "subFamilia": {
+            "type": "string",
+            "nullable": true
+          },
+          "whsCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "serie": {
+            "type": "string",
+            "nullable": true
+          },
+          "lote": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExplocionProductosReques": {
+        "type": "object",
+        "properties": {
+          "itemCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "costingCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "costingCode2": {
+            "type": "string",
+            "nullable": true
+          },
+          "costingCode3": {
+            "type": "string",
+            "nullable": true
+          },
+          "costingCode4": {
+            "type": "string",
+            "nullable": true
+          },
+          "costingCode5": {
+            "type": "string",
+            "nullable": true
+          },
+          "familiaPT": {
+            "type": "string",
+            "nullable": true
+          },
+          "subFamiliaPT": {
+            "type": "string",
+            "nullable": true
+          },
+          "batchNumberCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "batchQuantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "serialNumberCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "serialQuantity": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GruposIDRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "usuarioId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "HttpStatusCode": {
+        "enum": [
+          100,
+          101,
+          102,
+          103,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          226,
+          300,
+          301,
+          302,
+          303,
+          304,
+          305,
+          306,
+          307,
+          308,
+          400,
+          401,
+          402,
+          403,
+          404,
+          405,
+          406,
+          407,
+          408,
+          409,
+          410,
+          411,
+          412,
+          413,
+          414,
+          415,
+          416,
+          417,
+          421,
+          422,
+          423,
+          424,
+          426,
+          428,
+          429,
+          431,
+          451,
+          500,
+          501,
+          502,
+          503,
+          504,
+          505,
+          506,
+          507,
+          508,
+          510,
+          511
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Int32GeneralResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/HttpStatusCode"
+          },
+          "json": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "JwtResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "unidadNegocio": {
+            "type": "string",
+            "nullable": true
+          },
+          "rol": {
+            "type": "string",
+            "nullable": true
+          },
+          "token": {
+            "type": "string",
+            "nullable": true
+          },
+          "refreshToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "user": {
+            "$ref": "#/components/schemas/Usuario"
+          }
+        },
+        "additionalProperties": false
+      },
+      "JwtResponseGeneralResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/HttpStatusCode"
+          },
+          "json": {
+            "$ref": "#/components/schemas/JwtResponse"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ListasResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ListasSisgecoResponse": {
+        "type": "object",
+        "properties": {
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MonitoreoFormulacionRollerRequest": {
+        "type": "object",
+        "properties": {
+          "numeroCotizacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "grupo": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "descrip_Componente": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigo_Componente": {
+            "type": "string",
+            "nullable": true
+          },
+          "componente": {
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "type": "string",
+            "nullable": true
+          },
+          "unidadMedida": {
+            "type": "string",
+            "nullable": true
+          },
+          "cantidadUtilizada": {
+            "type": "string",
+            "nullable": true
+          },
+          "merma": {
+            "type": "string",
+            "nullable": true
+          },
+          "agregado": {
+            "type": "string",
+            "nullable": true
+          },
+          "familia": {
+            "type": "string",
+            "nullable": true
+          },
+          "subFamilia": {
+            "type": "string",
+            "nullable": true
+          },
+          "whsCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "serie": {
+            "type": "string",
+            "nullable": true
+          },
+          "lote": {
+            "type": "string",
+            "nullable": true
+          },
+          "alto": {
+            "type": "string",
+            "nullable": true
+          },
+          "ancho": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ObjectGeneralResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/HttpStatusCode"
+          },
+          "json": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RefreshTokenRequest": {
+        "type": "object",
+        "properties": {
+          "accessToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "refreshToken": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Rol": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RolUsuario": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "usuarioId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rolId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "usuarioCreacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaCreacion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "usuarioModificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaModificacion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "idUnidadNegocio": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idSede": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rol": {
+            "$ref": "#/components/schemas/Rol"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SalidaSapRequest": {
+        "type": "object",
+        "properties": {
+          "numeroCotizacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "grupoCotizacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoSalida": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SuperAprobacionRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cotizacionGrupo": {
+            "type": "string",
+            "nullable": true
+          },
+          "turnoInicial": {
+            "type": "string",
+            "nullable": true
+          },
+          "turnoCambio": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechProdInicial": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaProdCambio": {
+            "type": "string",
+            "nullable": true
+          },
+          "idUsuario": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idUsuarioSolicita": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "numeroCotizacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          },
+          "motivo": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Tbl_Componentes": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcionComponente": {
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "type": "string",
+            "nullable": true
+          },
+          "unidad": {
+            "type": "string",
+            "nullable": true
+          },
+          "subProducto": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoProducto": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaCreacion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaModificacion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "idUsuarioCreacion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idUsuarioModifica": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "estado": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TBL_DetalleOrdenProduccion": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idTbl_DetalleOpGrupo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "numeroCotizacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "cotizacionGrupo": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoSisgeco": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoProducto": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreProducto": {
+            "type": "string",
+            "nullable": true
+          },
+          "familia": {
+            "type": "string",
+            "nullable": true
+          },
+          "subFamilia": {
+            "type": "string",
+            "nullable": true
+          },
+          "unidadMedida": {
+            "type": "string",
+            "nullable": true
+          },
+          "cantidad": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "alto": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "ancho": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "linea": {
+            "type": "string",
+            "nullable": true
+          },
+          "precio": {
+            "type": "string",
+            "nullable": true
+          },
+          "precioInc": {
+            "type": "string",
+            "nullable": true
+          },
+          "igv": {
+            "type": "string",
+            "nullable": true
+          },
+          "lote": {
+            "type": "string",
+            "nullable": true
+          },
+          "tuboMedida": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "telaMedida": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "alturaMedida": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "central": {
+            "type": "string",
+            "nullable": true
+          },
+          "centralIndex": {
+            "type": "string",
+            "nullable": true
+          },
+          "indexDetalle": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "escuadra": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaProduccion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaEntrega": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "nota": {
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "indiceAgrupacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "idTbl_Ambiente": {
+            "type": "string",
+            "nullable": true
+          },
+          "ambiente": {
+            "type": "string",
+            "nullable": true
+          },
+          "turno": {
+            "type": "string",
+            "nullable": true
+          },
+          "soporteCentral": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoSoporteCentral": {
+            "type": "string",
+            "nullable": true
+          },
+          "caida": {
+            "type": "string",
+            "nullable": true
+          },
+          "accionamiento": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoTubo": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreTubo": {
+            "type": "string",
+            "nullable": true
+          },
+          "mando": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoMecanismo": {
+            "type": "string",
+            "nullable": true
+          },
+          "modeloMecanismo": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoCadena": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoCadena": {
+            "type": "string",
+            "nullable": true
+          },
+          "cadena": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoTipoRiel": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoRiel": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoInstalacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoRiel": {
+            "type": "string",
+            "nullable": true
+          },
+          "riel": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoCassete": {
+            "type": "string",
+            "nullable": true
+          },
+          "lamina": {
+            "type": "string",
+            "nullable": true
+          },
+          "apertura": {
+            "type": "string",
+            "nullable": true
+          },
+          "viaRecogida": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoSuperior": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoBaston": {
+            "type": "string",
+            "nullable": true
+          },
+          "baston": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroVias": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoCadenaInferior": {
+            "type": "string",
+            "nullable": true
+          },
+          "mandoCordon": {
+            "type": "string",
+            "nullable": true
+          },
+          "mandoBaston": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoBastonVarrilla": {
+            "type": "string",
+            "nullable": true
+          },
+          "bastonVarrilla": {
+            "type": "string",
+            "nullable": true
+          },
+          "cabezal": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoCordon": {
+            "type": "string",
+            "nullable": true
+          },
+          "cordon": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoCordonTipo2": {
+            "type": "string",
+            "nullable": true
+          },
+          "cordonTipo2": {
+            "type": "string",
+            "nullable": true
+          },
+          "cruzeta": {
+            "type": "string",
+            "nullable": true
+          },
+          "dispositivo": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoControl": {
+            "type": "string",
+            "nullable": true
+          },
+          "control": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoSwitch": {
+            "type": "string",
+            "nullable": true
+          },
+          "switch": {
+            "type": "string",
+            "nullable": true
+          },
+          "llevaBaston": {
+            "type": "string",
+            "nullable": true
+          },
+          "mandoAdaptador": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoMotor": {
+            "type": "string",
+            "nullable": true
+          },
+          "motor": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoTela": {
+            "type": "string",
+            "nullable": true
+          },
+          "tela": {
+            "type": "string",
+            "nullable": true
+          },
+          "cenefa": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroMotores": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "serie": {
+            "type": "string",
+            "nullable": true
+          },
+          "alturaCadena": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "alturaCordon": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "marcaMotor": {
+            "type": "string",
+            "nullable": true
+          },
+          "idUsuarioCrea": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idUsuarioModifica": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "fechaCreacion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaModifica": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "idEstado": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "whsCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Tbl_DetalleProductoEstacion": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idProduccionEstacion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idDetalleOrdenProduccion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "numeroCotizacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "cotizacionGrupo": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoProducto": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaInicio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fechaFin": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fechaCreacion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaModificacion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "idUsuarioCreacion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idUsuarioModificacion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "estado": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Tbl_Escuadra": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idProducto": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cotizacionGrupo": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idUsuarioCrea": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idUsuarioModifica": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "fechaCreacion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaModifica": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Tbl_OrdenProduccion": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroCotizacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoSisgeco": {
+            "type": "string",
+            "nullable": true
+          },
+          "numdoCref": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaSap": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaCotizacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaVenta": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoMoneda": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoCambio": {
+            "type": "string",
+            "nullable": true
+          },
+          "monto": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "subTotal": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "totalIgv": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "total": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "observacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "observacion2": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoCliente": {
+            "type": "string",
+            "nullable": true
+          },
+          "rucCliente": {
+            "type": "string",
+            "nullable": true
+          },
+          "cliente": {
+            "type": "string",
+            "nullable": true
+          },
+          "departamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "provincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "distrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "direccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "idDestino": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idTipoPeracion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idProyecto": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nivel": {
+            "type": "string",
+            "nullable": true
+          },
+          "subNivel": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoVendedor": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreVendedor": {
+            "type": "string",
+            "nullable": true
+          },
+          "archivo": {
+            "type": "string",
+            "nullable": true
+          },
+          "idEstado": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "fechaRegistro": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaModificacion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "idUsuarioCreacion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idUsuarioModifica": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "docEntrySap": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "docStatusSap": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Tbl_Proyecto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Tbl_Rol": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaCreacion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaModificacion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "idUsuarioCreacion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idUsuarioModifica": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "estado": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Usuario": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "correo": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuarioCreacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaCreacion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "usuarioModificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaModificacion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "idUnidadNegocio": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RolUsuario"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer'[space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 1safsfsdfdfd\"",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

@@ -45,6 +45,7 @@
         public string? TipoCadena { get; set; }
         public string? CodigoCadena { get; set; }
         public string? Cadena { get; set; }
+        public string? CodigoTipoRiel { get; set; }
         public string? TipoRiel { get; set; }
         public string? TipoInstalacion { get; set; }
         public string? CodigoRiel { get; set; }
@@ -95,5 +96,6 @@
         public string? EstadoOp { get; set; }
         public string? Escuadra { get; set; } 
         public string? Central {  get; set; }
+        public string? IdGrupo { get; set; }
     }
 }

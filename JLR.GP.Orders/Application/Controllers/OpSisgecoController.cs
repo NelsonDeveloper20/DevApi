@@ -293,104 +293,110 @@ namespace ApiPortal_DataLake.Application.Controllers
                 await connection.OpenAsync();
 
                 var query = @"
-            SELECT
-                Id,
-                NumeroCotizacion,
-                CodigoSisgeco,
-                CodigoProducto,
-                linea,
-                NombreProducto,
-                UnidadMedida,
-                Cantidad,
-                Alto,
-                Ancho,
-                IndiceAgrupacion,
-                IndexDetalle,
-                '' AS Pase,
-                '' AS Existe			
-				--ADICIONAL 	
-				,Familia  
-				,SubFamilia  
-				,Precio  
-				,PrecioInc 
-				,Igv
-				,Lote  
-                --DC
-                ,FechaProduccion,
-                FechaEntrega,
-                Nota,
-                Color, 
-                IdTbl_Ambiente,
-                Ambiente,
-                Turno,
-                SoporteCentral,
-                TipoSoporteCentral,
-                Caida,
-                Accionamiento,
-                CodigoTubo,
-                NombreTubo,
-                Mando,
-                TipoMecanismo,
-                ModeloMecanismo,
-                TipoCadena,
-                CodigoCadena,
-                Cadena,
-                TipoRiel,
-                TipoInstalacion,
-                CodigoRiel,
-                Riel,
-                TipoCassete,
-                Lamina,
-                Apertura,
-                ViaRecogida,
-                TipoSuperior,
-                CodigoBaston,
-                Baston,
-                NumeroVias,
-                TipoCadenaInferior,
-                MandoCordon,
-                MandoBaston,
-                CodigoBastonVarrilla,
-                BastonVarrilla,
-                Cabezal,
-                CodigoCordon,
-                Cordon,
-                CodigoCordonTipo2,
-                CordonTipo2,
-                Cruzeta,
-                Dispositivo,
-                CodigoControl,
-                Control,
-                CodigoSwitch,
-                Switch,
-                LlevaBaston,
-                MandoAdaptador,
-                CodigoMotor,
-                Motor,
-                CodigoTela,
-                Tela,
-                Cenefa,
-                NumeroMotores,
-                Serie,
-                AlturaCadena,
-                AlturaCordon,
-                MarcaMotor,
-                IdUsuarioCrea,
-                IdUsuarioModifica,
-                FechaCreacion,
-                FechaModifica,
-                IdEstado,
-                CotizacionGrupo,
-                Tipo,                
-                (SELECT IdEstado FROM Tbl_DetalleOpGrupo GRD where GRD.CotizacionGrupo=DOP.CotizacionGrupo) AS EstadoOp,
-                Escuadra,Central,
-                WhsCode
-            FROM
-                TBL_DetalleOrdenProduccion DOP
-            WHERE
-                NumeroCotizacion = @NumeroCotizacion
-            ORDER BY
-                CotizacionGrupo ASC";
+                            SELECT
+                    DOP.Id,
+                    DOP.NumeroCotizacion,
+                    DOP.CodigoSisgeco,
+                    DOP.CodigoProducto,
+                    DOP.linea,
+                    DOP.NombreProducto,
+                    DOP.UnidadMedida,
+                    DOP.Cantidad,
+                    DOP.Alto,
+                    DOP.Ancho,
+                    DOP.IndiceAgrupacion,
+                    DOP.IndexDetalle,
+                    '' AS Pase,
+                    '' AS Existe			
+	                --ADICIONAL 	
+	                ,DOP.Familia  
+	                ,DOP.SubFamilia  
+	                ,DOP.Precio  
+	                ,DOP.PrecioInc 
+	                ,DOP.Igv
+	                ,DOP.Lote  
+                    --DC
+                    ,DOP.FechaProduccion,
+                    DOP.FechaEntrega,
+                    DOP.Nota,
+                    DOP.Color, 
+                    DOP.IdTbl_Ambiente,
+                    DOP.Ambiente,
+                    DOP.Turno,
+                    DOP.SoporteCentral,
+                    DOP.TipoSoporteCentral,
+                    DOP.Caida,
+                    DOP.Accionamiento,
+                    DOP.CodigoTubo,
+                    DOP.NombreTubo,
+                    DOP.Mando,
+                    DOP.TipoMecanismo,
+                    DOP.ModeloMecanismo,
+                    DOP.TipoCadena,
+                    DOP.CodigoCadena,
+                    DOP.Cadena,
+                    DOP.TipoRiel,
+                    DOP.TipoInstalacion,
+                    DOP.CodigoRiel,
+                    DOP.Riel,
+                    DOP.TipoCassete,
+                    DOP.Lamina,
+                    DOP.Apertura,
+                    DOP.ViaRecogida,
+                    DOP.TipoSuperior,
+                    DOP.CodigoBaston,
+                    DOP.Baston,
+                    DOP.NumeroVias,
+                    DOP.TipoCadenaInferior,
+                    DOP.MandoCordon,
+                    DOP.MandoBaston,
+                    DOP.CodigoBastonVarrilla,
+                    DOP.BastonVarrilla,
+                    DOP.Cabezal,
+                    DOP.CodigoCordon, 
+                    DOP.Cordon,
+                    DOP.CodigoCordonTipo2,
+                    DOP.CordonTipo2,
+                    DOP.Cruzeta,
+                    DOP.Dispositivo,
+                    DOP.CodigoControl,
+                    DOP.Control,
+                    DOP.CodigoSwitch,
+                    DOP.Switch,
+                    DOP.LlevaBaston,
+                    DOP.MandoAdaptador,
+                    DOP.CodigoMotor,
+                    DOP.Motor,
+                    DOP.CodigoTela,
+                    DOP.Tela,
+                    DOP.Cenefa,
+                    DOP.NumeroMotores,
+                    DOP.Serie,
+                    DOP.AlturaCadena,
+                    DOP.AlturaCordon,
+                    DOP.MarcaMotor,
+                    DOP.IdUsuarioCrea,
+                    DOP.IdUsuarioModifica,
+                    DOP.FechaCreacion,
+                    DOP.FechaModifica,
+                    DOP.IdEstado,
+                    DOP.CotizacionGrupo,
+                    DOP.Tipo,                  
+                    GRD.IdEstado AS EstadoOp,
+                    GRD.Id AS IdGrupo,  
+                    DOP.Escuadra,DOP.Central,
+                    DOP.WhsCode,DOP.CodigoTipoRiel
+                FROM
+                    TBL_DetalleOrdenProduccion DOP
+                    OUTER APPLY (
+                    SELECT TOP 1 IdEstado, Id 
+                    FROM Tbl_DetalleOpGrupo 
+                    WHERE CotizacionGrupo = DOP.CotizacionGrupo
+                ) GRD
+                WHERE
+                    DOP.NumeroCotizacion =  @NumeroCotizacion
+                ORDER BY
+                    DOP.CotizacionGrupo ASC";
 
                 var command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@NumeroCotizacion", numeroCotizacion);
@@ -450,6 +456,7 @@ namespace ApiPortal_DataLake.Application.Controllers
                     TipoCadena = reader["TipoCadena"].ToString(),
                     CodigoCadena = reader["CodigoCadena"].ToString(),
                     Cadena = reader["Cadena"].ToString(),
+                    CodigoTipoRiel = reader["CodigoTipoRiel"].ToString(),
                     TipoRiel = reader["TipoRiel"].ToString(),
                     TipoInstalacion = reader["TipoInstalacion"].ToString(),
                     CodigoRiel = reader["CodigoRiel"].ToString(),
@@ -499,7 +506,8 @@ namespace ApiPortal_DataLake.Application.Controllers
                     Tipo = reader["Tipo"].ToString(),
                     EstadoOp = reader["EstadoOp"].ToString(),
                     Escuadra = reader["Escuadra"].ToString(),
-                    Central = reader["Central"].ToString()
+                    Central = reader["Central"].ToString(),
+                    IdGrupo = reader["IdGrupo"].ToString()
                 });
             }
             return list;

@@ -13,6 +13,9 @@ namespace ApiPortal_DataLake.Domain.Contracts
         Task<GeneralResponse<dynamic>> listarComponentesProductoPorGrupo(string grupoCotizacion, string id); //OK OK 
         Task<GeneralResponse<Object>> InsertarEstacionProducto(EstacionProductoRequest _request);
         Task<GeneralResponse<Object>> GuardarExplocion(List<ExplocionComponentesRequest> request);
+        Task<GeneralResponse<Object>> GuardarFormulacionRollerShade(List<MonitoreoFormulacionRollerRequest> request);
+
+        
 
         Task<GeneralResponse<Object>> CargaExcelExplocion(ExplocionComCargaRequest request);
         Task<GeneralResponse<dynamic>> ListarReporteExplocion(string grupoCotizacion, string fechaInicio, string fechaFin);
@@ -20,6 +23,9 @@ namespace ApiPortal_DataLake.Domain.Contracts
         Task<IEnumerable<Tbl_Componentes>> ListarComponentesPorCodigosProducto(string codigosProducto,string grupo);
         Task<GeneralResponse<Object>> GuardarExplocionMantenimiento(List<ExplocionComponentesMantRequest> request);
         Task<GeneralResponse<Object>> EnviarEntradaSap(string P_NumeroCotizacion, string P_grupoCotizacion, string idusuario);
+        Task<GeneralResponse<Object>> EnviarSalidaSap(string P_NumeroCotizacion, string P_grupoCotizacion, string idusuario); 
         Task<GeneralResponse<Object>> GuardarCodigoSalida(string P_NumeroCotizacion, string P_grupoCotizacion, string codigoSalida);
+
+        Task<GeneralResponse<dynamic>> ListarFormulacionRollerShade(string numCotizacion, string grupoCotizacion);
     }
 }

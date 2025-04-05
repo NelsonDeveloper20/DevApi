@@ -10,5 +10,7 @@ namespace ApiPortal_DataLake.Domain.Contracts
         Task<GeneralResponse<Object>> AgregarComponentes(AgregarComponentesRequest componente);
         Task<IEnumerable<Tbl_Componentes>> listarComponetes();
         Task<GeneralResponse<Object>> EliminarComponente(int id);
+        Task<IEnumerable<Tbl_ComponteProducto>> listarTelaRielTubo(string tipo, string codigoProducto, string nombreProducto);
+        Task<IEnumerable<Tbl_AccesorioProducto>> listarAccesorio(string codigoProducto);
     }
 }

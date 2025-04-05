@@ -17,6 +17,7 @@
         public string? CantidadUtilizada { get; set; } 
         public string? Merma { get; set; }
         public string? Familia { get; set; }
+        public string? SubFamilia { get; set; }
         public string? WhsCode {  get; set; }
         public string? Serie { get; set; }
         public string? Lote { get; set; }

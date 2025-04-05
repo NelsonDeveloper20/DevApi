@@ -341,6 +341,7 @@ ORDER BY e.FechaCreacion DESC;
                         Adicional= Adicional,
                         //
                         Familia=item.Familia,
+                        SubFamilia=item.SubFamilia,
                         WhsCode=item.WhsCode,
                         Serie=item.Serie,
                         Lote = item.Lote,
@@ -792,18 +793,38 @@ ORDER BY e.FechaCreacion DESC;
                 };
 
                 _context.Tbl_ExplocionSap.Add(cotizacionEntity);
-            }
-            var nuevaFila = new Tbl_Explocion()
-            {
-                NumeroCotizacion = DataExcel.Cotizacion,
-                CotizacionGrupo = DataExcel.GrupoCotizacion,
-                Origen = "Carga Sap",
-                IdUsuarioCrea = Convert.ToInt32(DataExcel.Usuario),
-                FechaCreacion = DateTime.Now,
-                CodigoSalidaSap = responseString,
-                FechaEntradaSap=DateTime.Now
-            };
-            this._context.Tbl_Explocion.Add(nuevaFila);
+
+
+                var nuevaFilaExplo = new Tbl_Explocion()
+                {
+                    NumeroCotizacion = DataExcel.Cotizacion,
+                    CotizacionGrupo = DataExcel.GrupoCotizacion,
+                    //Nombre_Producto = "ROLLER SHADE",
+                    //Codigo_Producto = "PRTS",
+                    Descrip_Componente = item.ItemCode,
+                    Cod_Componente = item.ItemCode,
+                    Descripcion = item.ItemCode,
+                    Color = "",
+                    Unidad = "",
+                    Cantidad = item.Quantity.ToString(),
+                    Merma = "",
+                    Origen = "Carga Sap",
+                    IdUsuarioCrea = Convert.ToInt32(DataExcel.Usuario),
+                    FechaCreacion = DateTime.Now,
+                    CodigoSalidaSap = responseString,
+                    Adicional = "",
+                    //
+                    Familia = item.FamiliaPT,
+                    WhsCode = item.WarehouseCode,
+                    SubFamilia = item.SubFamiliaPT,
+                    Serie = "",
+                    Lote ="",
+                    //Alto = item.Alto,
+                    //Ancho = item.Ancho,
+                };
+
+                this._context.Tbl_Explocion.Add(nuevaFilaExplo);
+            } 
             // Actualizar el estado de grupo dentro de la transacción
             var grupo = await this._context.Tbl_DetalleOpGrupo
                                          .Where(g => g.CotizacionGrupo == DataExcel.GrupoCotizacion)
@@ -816,6 +837,203 @@ ORDER BY e.FechaCreacion DESC;
         }
 
 
+        public async Task<GeneralResponse<Object>> EnviarSalidaSap(string P_NumeroCotizacion, string P_grupoCotizacion, string idusuario)
+        {
+
+            using var transaction = _context.Database.BeginTransaction();
+            try
+            {
+                var _TbCotizacion = await _context.Tbl_OrdenProduccion
+                    .FirstOrDefaultAsync(o => o.NumeroCotizacion == P_NumeroCotizacion);
+                var grupoExplotado = await _context.Tbl_DetalleOpGrupo
+               .FirstOrDefaultAsync(e => e.CotizacionGrupo == P_grupoCotizacion
+                                    && e.NumeroCotizacion == P_NumeroCotizacion);
+                var explocionSap = await _context.Tbl_Explocion
+                    .Where(e => e.CotizacionGrupo == P_grupoCotizacion)
+                    .ToListAsync();
+
+                var listItems = new List<Item>();
+                var error = "";
+
+
+
+                // Convertir el string a DateTime
+                DateTime fechaCot = DateTime.ParseExact(_TbCotizacion.FechaCotizacion, "yyyyMMdd", null);
+                DateTime fechaVen = DateTime.ParseExact(_TbCotizacion.FechaVenta, "yyyyMMdd", null);
+                //ITEMS
+                foreach (var item in explocionSap)
+                {
+                    var batchNumbers = new List<BatchNumber>();
+                    var serialNumbers = new List<SerialNumber>();
+                    listItems.Add(new Item
+                    { 
+                        ItemCode = item.Cod_Componente,
+                        Quantity = Convert.ToDecimal(item.Cantidad),
+                        WarehouseCode = _configuration["ApiSAP:WarehouseCode"],
+                        AcctCode = _configuration["ApiSAP:AcctcodeSalida"],// //item.AcctCode,
+                        CostingCode = "",//item.CostingCode,
+                        ProjectCode = "",
+                        CostingCode2 ="",// item.CostingCode2,
+                        CostingCode3 = "",// item.CostingCode3,
+                        CostingCode4 = "",//item.CostingCode4,
+                        CostingCode5 = "",//item.CostingCode5,
+                        IdSistemaExterno = grupoExplotado.Id.ToString(),
+                        IdLineaSistemaE = grupoExplotado.Id.ToString(),
+                        IdOrdenVenta = _TbCotizacion.DocEntrySap.ToString(),
+                        FamiliaPT = item.Familia,
+                        SubFamiliaPT = item.SubFamilia, 
+                        BatchNumbers = batchNumbers,
+                        SerialNumbers = serialNumbers, 
+                    });
+                    var cotizacionEntity = new Tbl_ExplocionSap
+                    {
+                        DocDate = fechaCot.ToString("dd/MM/yyyy"),
+                        TaxDate = fechaVen.ToString("dd/MM/yyyy"),
+                        Comments = "Salida",
+                        Reference2 = "Ref2",
+                        U_EXX_TIPOOPER = "10",
+                        IdSistemaExterno =  _TbCotizacion.Id.ToString(),
+                        IdOrdenVenta = _TbCotizacion.DocEntrySap.ToString(),
+                        ItemCode = item.Cod_Componente,
+                        Quantity = item.Cantidad,
+                        WarehouseCode = _configuration["ApiSAP:WarehouseCode"],
+                        AcctCode = _configuration["ApiSAP:AcctcodeSalida"],
+                        CostingCode = "",//item.CostingCode,
+                        ProjectCode = "",
+                        CostingCode2 = "",// item.CostingCode2,
+                        CostingCode3 = "",// item.CostingCode3,
+                        CostingCode4 = "",//item.CostingCode4,
+                        CostingCode5 = "",//item.CostingCode5,
+                        IdLineaSistemaE = grupoExplotado.Id.ToString(),
+                        FamiliaPT = item.Familia,
+                        SubFamiliaPT = item.SubFamilia,
+                        BatchNumbers = "[]",//JsonConvert.SerializeObject(item.BatchNumbers),
+                        SerialNumbers = "[]", //JsonConvert.SerializeObject(item.SerialNumbers),
+                        //CodigoSalidaSap = responseString,
+                        Tipo = "Salida",
+                        CotizacionGrupo = P_grupoCotizacion,
+                        IdUsuarioCrea = Convert.ToInt32(idusuario),
+                        FechaCreacion = DateTime.Now,
+                    };
+
+                    _context.Tbl_ExplocionSap.Add(cotizacionEntity);
+                }
+                // Crear cotización
+                var cotizacion = new CotizacionCabecera
+                { 
+                    DocNum = _TbCotizacion.NumeroCotizacion,
+                    DocDate = fechaCot.ToString("dd/MM/yyyy"),
+                    TaxDate = fechaVen.ToString("dd/MM/yyyy"),
+                    Comments = "Salida",
+                    Reference2 = "Ref2",
+                    U_EXX_TIPOOPER = "10",
+                    IdSistemaExterno = _TbCotizacion.Id.ToString(),
+                    DocumentLines = listItems
+                }; 
+                 /*
+                var token = await LoginAsync();
+                var inventoryUrl = _configuration["ApiSAP:BaseUrl"] + "/api/InventoryGenExit";
+                var jsonInventoryData = System.Text.Json.JsonSerializer.Serialize(cotizacion);
+                var content = new StringContent(jsonInventoryData, Encoding.UTF8, "application/json");
+
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+
+                var response = await _httpClient.PostAsync(inventoryUrl, content);
+
+                var responseString = await response.Content.ReadAsStringAsync();
+                Console.WriteLine("Respuesta del servidor: " + responseString);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    await transaction.RollbackAsync();
+                    return new GeneralResponse<Object>(
+                        HttpStatusCode.BadRequest,
+                        new { Respuesta = "Error al procesar la carga de datos.", Detalle = responseString });
+                }
+                else
+                {
+                    // Usamos JsonDocument para parsear la respuesta JSON
+                    using (JsonDocument doc = JsonDocument.Parse(responseString))
+                    {
+                        JsonElement root = doc.RootElement;
+
+                        // Verificar si "DocEntry" está presente y obtener su valor
+                        if (root.TryGetProperty("DocEntry", out JsonElement docEntryElement))
+                        {*/
+                            int docEntry = 111;// docEntryElement.GetInt32();
+                            Console.WriteLine("DocEntry: " + docEntry);
+                            // Guardar en base de datos
+                             
+                            var explocionTbList = await _context.Tbl_Explocion
+                            .Where(e => e.NumeroCotizacion == P_NumeroCotizacion && e.CotizacionGrupo == P_grupoCotizacion)
+                            .ToListAsync();
+
+                            if (explocionTbList.Any())
+                            {
+                                foreach (var item in explocionTbList)
+                                {
+                                    item.CodigoSalidaSap = docEntry.ToString();
+                                    item.FechaSalidaSap = DateTime.Now;
+                                    item.IdUsuarioModifica = Convert.ToInt32(idusuario);
+                                }
+
+                                _context.Tbl_Explocion.UpdateRange(explocionTbList); 
+                            }
+
+                            await _context.SaveChangesAsync();
+                            var explocionTbSapTbList = await _context.Tbl_ExplocionSap
+                            .Where(e => e.CotizacionGrupo == P_grupoCotizacion && e.Tipo == "Salida")
+                            .ToListAsync();
+
+                            if (explocionTbSapTbList.Any())
+                            {
+                                foreach (var item in explocionTbSapTbList)
+                                {
+                                    item.CodigoSalidaSap = docEntry.ToString();
+                                    item.CodigoEntradaSap = "";
+                                    item.IdUsuarioCrea = Convert.ToInt32(idusuario);
+                                }
+
+                                _context.Tbl_ExplocionSap.UpdateRange(explocionTbSapTbList); 
+                            }
+
+                            await _context.SaveChangesAsync();
+                            await transaction.CommitAsync();
+
+                            var jsonresponse = new
+                            {
+                                Respuesta = "OPERACION REALIZADA CORRECTAMENTE",
+                                idOrden = 0
+                            };
+                            return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
+                         /*}
+                        else
+                        {
+                            await transaction.RollbackAsync();
+                            // Si no encontramos el DocEntry
+                            return new GeneralResponse<Object>(
+                                HttpStatusCode.BadRequest,
+                                new { Respuesta = "Error: DocEntry no encontrado.", Detalle = "Error: DocEntry (Codigo Salida) no encontrado." });
+                        } */
+                   // }
+                 //}
+
+
+
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                _logger.LogError($"Insertar Orden produccion Error try catch: {JsonConvert.SerializeObject(ex)}");
+                var jsonresponse = new
+                {
+                    Respuesta = ex.Message,
+                    idOrden = 0
+                };
+                return new GeneralResponse<Object>(HttpStatusCode.InternalServerError, jsonresponse);
+            }
+        }
         public async Task<GeneralResponse<Object>> EnviarEntradaSap(string P_NumeroCotizacion, string P_grupoCotizacion, string idusuario)
         {
             using var transaction = _context.Database.BeginTransaction();
@@ -885,6 +1103,7 @@ ORDER BY e.FechaCreacion DESC;
                         CostingCode5 = item.CostingCode5,
                         IdLineaSistemaE = item.IdLineaSistemaE,
                         FamiliaPT = item.FamiliaPT,
+                        SubFamiliaPT = item.SubFamiliaPT,
                         BatchNumbers = item.BatchNumbers,
                         SerialNumbers = item.SerialNumbers,
                         CodigoSalidaSap = "",
@@ -909,7 +1128,7 @@ ORDER BY e.FechaCreacion DESC;
                     IdSistemaExterno = _TbCotizacion.Id.ToString(),
                     DocumentLines = listItems
                 };
-
+                /*
                 var token = await LoginAsync();
                 var inventoryUrl = _configuration["ApiSAP:BaseUrl"] + "/api/InventoryGenEntry";
                 var jsonInventoryData = System.Text.Json.JsonSerializer.Serialize(cotizacion);
@@ -939,8 +1158,8 @@ ORDER BY e.FechaCreacion DESC;
 
                         // Verificar si "DocEntry" está presente y obtener su valor
                         if (root.TryGetProperty("DocEntry", out JsonElement docEntryElement))
-                        {
-                            int docEntry = docEntryElement.GetInt32();
+                        {*/
+                            int docEntry = 222;// docEntryElement.GetInt32();
                             Console.WriteLine("DocEntry: " + docEntry);                            
 
                             var explocionTb = await _context.Tbl_Explocion
@@ -951,15 +1170,42 @@ ORDER BY e.FechaCreacion DESC;
                             _context.Tbl_Explocion.Update(explocionTb);
 
                             await _context.SaveChangesAsync();
-                            await transaction.CommitAsync();
+                            var explocionTbList = await _context.Tbl_Explocion
+                            .Where(e => e.NumeroCotizacion == P_NumeroCotizacion && e.CotizacionGrupo == P_grupoCotizacion)
+                            .ToListAsync();
+                            if (explocionTbList.Any())
+                            {
+                                foreach (var item in explocionTbList)
+                                {
+                                    item.CodigoEntradaSap = docEntry.ToString();
+                                    item.FechaEntradaSap = DateTime.Now;
+                                    item.IdUsuarioModifica = Convert.ToInt32(idusuario);
+                                }
+                                _context.Tbl_Explocion.UpdateRange(explocionTbList); 
+                            }
+                            var explocionTbSapTbList = await _context.Tbl_ExplocionSap
+                            .Where(e => e.CotizacionGrupo == P_grupoCotizacion && e.Tipo == "Entrada")
+                            .ToListAsync();
 
+                            if (explocionTbSapTbList.Any())
+                            {
+                                foreach (var item in explocionTbSapTbList)
+                                {
+                                    item.CodigoEntradaSap = docEntry.ToString();
+                                    item.CodigoSalidaSap = "";  
+                                }
+                                _context.Tbl_ExplocionSap.UpdateRange(explocionTbSapTbList); 
+                            }
+
+                            await _context.SaveChangesAsync();
+                            await transaction.CommitAsync();
                             var jsonresponse = new
                             {
                                 Respuesta = "OPERACION REALIZADA CORRECTAMENTE",
                                 idOrden = 0
                             };
                             return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
-                        }
+                      /*  }
                         else
                         {
                             await transaction.RollbackAsync();
@@ -967,9 +1213,9 @@ ORDER BY e.FechaCreacion DESC;
                             return new GeneralResponse<Object>(
                                 HttpStatusCode.BadRequest,
                                 new { Respuesta = "Error: DocEntry no encontrado.", Detalle = "Error: DocEntry (Codigo Entrada) no encontrado." });
-                        }
-                    }
-                }
+                        }*/
+                  //  }
+                //}
 
                  
 
@@ -1132,6 +1378,118 @@ ORDER BY e.FechaCreacion DESC;
             public int SerialNumberCode { get; set; }  // Ejemplo de campo en SerialNumbers
             public decimal Quantity { get; set; }
         }
+        #endregion
+
+
+
+        #region ROLLER SHADE FORMULACION
+
+        public async Task<GeneralResponse<dynamic>> ListarFormulacionRollerShade(string numCotizacion,string grupoCotizacion) 
+        {
+            try
+            {
+
+                DataTable result = new DataTable();
+                using (SqlConnection cnm = new SqlConnection(CnDc_Blinds))
+                {
+                    await cnm.OpenAsync();
+                    using (SqlCommand cmd = new SqlCommand("SP_ListarFormulacionRollerShade", cnm))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@NumeroCotizacion", numCotizacion));
+                        cmd.Parameters.Add(new SqlParameter("@grupoCotizacion", grupoCotizacion)); 
+                        using (SqlDataAdapter adp = new SqlDataAdapter(cmd))
+                        {
+                            adp.Fill(result);
+                        }
+                    }
+                }
+                return new GeneralResponse<object>(HttpStatusCode.OK, result);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public async Task<GeneralResponse<Object>> GuardarFormulacionRollerShade(List<MonitoreoFormulacionRollerRequest> request)
+        {
+            using var transaction = await this._context.Database.BeginTransactionAsync();
+            try
+            {
+
+                foreach (var item in request)
+                {
+                    string Adicional = "";
+                    if (item.Agregado!=null && item.Agregado == "true")
+                    {
+                        Adicional = "SI";
+                    }
+
+                    var nuevaFila = new Tbl_Explocion()
+                    {
+                        NumeroCotizacion = item.NumeroCotizacion,
+                        CotizacionGrupo = item.Grupo,
+                        Nombre_Producto = "ROLLER SHADE",
+                        Codigo_Producto = "PRTS",
+                        Descrip_Componente = item.Descrip_Componente,
+                        Cod_Componente = item.Codigo_Componente,
+                        Descripcion = item.Componente,
+                        Color = item.Color,
+                        Unidad = item.UnidadMedida,
+                        Cantidad = item.CantidadUtilizada,
+                        Merma = item.Merma,
+                        Origen = "Explocion",
+                        IdUsuarioCrea = Convert.ToInt32(item.Usuario),
+                        FechaCreacion = DateTime.Now,
+                        Adicional = Adicional,
+                        //
+                        Familia = item.Familia,
+                        WhsCode = item.WhsCode,
+                        SubFamilia=item.SubFamilia,
+                        Serie = item.Serie,
+                        Lote = item.Lote,
+                        Alto = item.Alto,
+                        Ancho = item.Ancho,
+                    };
+                    this._context.Tbl_Explocion.Add(nuevaFila);
+                }
+                // Actualizar el estado de grupo dentro de la transacción
+                var grupo = await this._context.Tbl_DetalleOpGrupo
+                                             .Where(g => g.CotizacionGrupo == request[0].Grupo)
+                                             .FirstOrDefaultAsync();
+                if (grupo != null)
+                {
+                    grupo.IdEstado = 6; // Estado TERMINADO
+                    this._context.Tbl_DetalleOpGrupo.Update(grupo);
+                }
+                else
+                {
+                    throw new Exception("No se encontró el grupo especificado.");
+                }
+                await this._context.SaveChangesAsync();
+                await transaction.CommitAsync();
+                var jsonresponse = new
+                {
+                    Respuesta = "OK",
+                    idOrden = 1,
+                };
+                return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync(); // Revertir todos los cambios
+                this._logger.LogError($"Error en GuardarExplocion: {JsonConvert.SerializeObject(ex)}");
+
+                var jsonresponse = new
+                {
+                    Respuesta = ex.Message,
+                    idOrden = 0
+                };
+
+                return new GeneralResponse<Object>(HttpStatusCode.InternalServerError, jsonresponse);
+            }
+        }
+
         #endregion
     }
 }

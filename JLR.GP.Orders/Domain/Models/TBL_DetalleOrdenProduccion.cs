@@ -66,6 +66,7 @@ namespace Api_Dc.Domain.Models
         public string? TipoCadena { get; set; }
         public string? CodigoCadena { get; set; }
         public string? Cadena { get; set; }
+        public string? CodigoTipoRiel { get; set; }
         public string? TipoRiel { get; set; }
         public string? TipoInstalacion { get; set; }
         public string? CodigoRiel { get; set; }
