@@ -395,9 +395,8 @@ namespace ApiPortal_DataLake.Application.Controllers
                 ) GRD
                 WHERE
                     DOP.NumeroCotizacion =  @NumeroCotizacion
-                ORDER BY
-                    DOP.CotizacionGrupo ASC";
-
+                ORDER BY CAST(PARSENAME(REPLACE(CotizacionGrupo, '-', '.'), 1) AS INT) , CAST( IndiceAgrupacion AS INT) ASC";
+                //DOP.CotizacionGrupo  ASC
                 var command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@NumeroCotizacion", numeroCotizacion);
 

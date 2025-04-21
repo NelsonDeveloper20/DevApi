@@ -849,7 +849,7 @@ ORDER BY e.FechaCreacion DESC;
                .FirstOrDefaultAsync(e => e.CotizacionGrupo == P_grupoCotizacion
                                     && e.NumeroCotizacion == P_NumeroCotizacion);
                 var explocionSap = await _context.Tbl_Explocion
-                    .Where(e => e.CotizacionGrupo == P_grupoCotizacion)
+                    .Where(e => e.CotizacionGrupo == P_grupoCotizacion && e.Cod_Componente!= "Ninguno")
                     .ToListAsync();
 
                 var listItems = new List<Item>();
@@ -1384,16 +1384,33 @@ ORDER BY e.FechaCreacion DESC;
 
         #region ROLLER SHADE FORMULACION
 
-        public async Task<GeneralResponse<dynamic>> ListarFormulacionRollerShade(string numCotizacion,string grupoCotizacion) 
+        public async Task<GeneralResponse<dynamic>> ListarFormulacionRollerShade(string numCotizacion,string grupoCotizacion,string tipoProducto,string accionamiento) 
         {
             try
             {
+                var procedure = "";
+                switch (tipoProducto)
+                {
+                    case "PRTRS":
+                        if (accionamiento == "Manual") //MANUAL
+                        {
+                            procedure = "SP_ListarFormulacionRollerShade";
+                        }
+                        else //MOTORIZADO
+                        {
+                            procedure = "SP_ListarFormulacionRollerShadeMot";
+                        }
+                        break;
+                    case "PRTRZ": //MOTORIZADO Y MANUAL
+                        procedure = "SP_ListarFormulacionRollerZebra";
+                        break; 
+                }
 
                 DataTable result = new DataTable();
                 using (SqlConnection cnm = new SqlConnection(CnDc_Blinds))
                 {
                     await cnm.OpenAsync();
-                    using (SqlCommand cmd = new SqlCommand("SP_ListarFormulacionRollerShade", cnm))
+                    using (SqlCommand cmd = new SqlCommand(procedure, cnm))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@NumeroCotizacion", numCotizacion));

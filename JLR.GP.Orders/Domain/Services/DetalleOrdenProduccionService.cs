@@ -266,10 +266,20 @@ namespace ApiPortal_DataLake.Domain.Services
                             }
                             else
                             {
-                                var ultimoGrupo = this._context.Tbl_DetalleOpGrupo
+                                /* var ultimoGrupo = this._context.Tbl_DetalleOpGrupo
+                                     .Where(g => g.NumeroCotizacion == numeroCotizacion)
+                                     .OrderByDescending(g => g.CotizacionGrupo)
+                                     .FirstOrDefault();*/ //ORDER BY CAST(PARSENAME(REPLACE(CotizacionGrupo, '-', '.'), 1) AS INT) DESC 
+                                    var ultimoGrupo = this._context.Tbl_DetalleOpGrupo
                                     .Where(g => g.NumeroCotizacion == numeroCotizacion)
-                                    .OrderByDescending(g => g.CotizacionGrupo)
+                                    .AsEnumerable() // <-- Esto hace que lo siguiente se ejecute en memoria
+                                    .OrderByDescending(g =>
+                                    Convert.ToInt32(g.CotizacionGrupo.Split('-')[1])
+                                    )
                                     .FirstOrDefault();
+
+
+
                                 if (ultimoGrupo != null)
                                 {
                                     // Obtener el último número de grupo y agregar 1

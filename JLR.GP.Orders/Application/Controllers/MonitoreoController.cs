@@ -267,9 +267,9 @@ namespace ApiPortal_DataLake.Application.Controllers
         }
 
         [HttpGet("ListarFormulacionRollerShade")]
-        public async Task<ActionResult> ListarFormulacionRollerShade(string numCotizacion, string grupoCotizacion)
+        public async Task<ActionResult> ListarFormulacionRollerShade(string numCotizacion, string grupoCotizacion,string tipoProducto,string accionamiento)
         {
-            var response = await this._usuarioService.ListarFormulacionRollerShade(numCotizacion, grupoCotizacion);
+            var response = await this._usuarioService.ListarFormulacionRollerShade(numCotizacion, grupoCotizacion, tipoProducto, accionamiento);
             if (response.Status == HttpStatusCode.OK)
             {
                 return Ok(response);

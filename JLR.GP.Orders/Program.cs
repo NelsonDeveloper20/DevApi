@@ -124,8 +124,21 @@ builder.Services.AddCors(options =>
 
       });
 });
- 
-
+//PARA DEPURAR MEDIANTE IP
+/*
+ Modifica el archivo launchSettings.json de tu proyecto backend. Este archivo se encuentra en la carpeta Properties.
+Busca la sección de "applicationUrl" y añade tu dirección IP, debería quedar algo así:
+"applicationUrl": "https://localhost:7014;https://192.168.0.8:7014"
+ */
+/*
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(7014, listenOptions =>
+    {
+        listenOptions.UseHttps();
+    });
+    options.ListenAnyIP(5014); // Para HTTP
+}); */
 
 builder.Services.AddControllers().AddNewtonsoftJson();
 
@@ -133,20 +146,9 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 XmlConfigurator.Configure(new FileInfo("log4net.config"));
 
-builder.Logging.AddLog4Net();
-// Forzar cultura invariante
-//CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-//CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
-
+builder.Logging.AddLog4Net(); 
 var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-/*if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api DC Blinds"));
-}*/
-
+ 
 app.UseSwagger();
 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api DC Blinds"));
 if (!app.Environment.IsDevelopment())
