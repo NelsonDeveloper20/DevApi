@@ -128,17 +128,36 @@ namespace ApiPortal_DataLake.Domain.Services
             var _user = this._context.Tbl_Componentes.ToList();
             return _user;
         }
-
-
+         
         public async Task<IEnumerable<Tbl_AccesorioProducto>> listarAccesorio(string codigoProducto)
         {
+            if (codigoProducto == "PRTRSMan" || codigoProducto == "PRTRSMot" || codigoProducto == "PRTRZ")
+            {
+                var _user = this._context.Tbl_AccesorioProducto
+                    .Where(s => s.CodigoProducto.StartsWith(codigoProducto.Substring(0, 5)))
+                    .ToList();
+                return _user;
+            }
 
-            var _user = this._context.Tbl_AccesorioProducto.
-                Where(s => s.CodigoProducto.StartsWith(codigoProducto.Substring(0, 5))).
-                ToList();
-            return _user;
+            if (codigoProducto == "PRTRM00000016" || codigoProducto == "PRTRM00000001" ||
+                codigoProducto == "PRTRH00000001" || codigoProducto == "PRTRF00000001")
+            {
+                var _user = this._context.Tbl_AccesorioProducto
+                    .Where(s => s.CodigoProducto == codigoProducto)
+                    .ToList();
+                return _user;
+            }
+
+            if (codigoProducto == "PRTLU00000001_2_3" || codigoProducto== "PRTLU00000001" || codigoProducto== "PRTLU00000002" || codigoProducto== "PRTLU00000003")
+            {
+                var _user = this._context.Tbl_AccesorioProducto
+                    .Where(s => new[] { "PRTLU00000001", "PRTLU00000002", "PRTLU00000003" }.Contains(s.CodigoProducto))
+                    .ToList();
+                return _user;
+            }
+
+            return Enumerable.Empty<Tbl_AccesorioProducto>();
         }
-
 
         public async Task<IEnumerable<Tbl_ComponteProducto>> listarTelaRielTubo(string tipo, string codigoProducto, string nombreProducto)
         {

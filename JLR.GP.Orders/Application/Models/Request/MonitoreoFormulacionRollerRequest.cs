@@ -5,6 +5,8 @@
         public string? NumeroCotizacion { get; set; }
         public string? Grupo { get; set; }
         public string? Usuario { get; set; }
+        public string? TipoProducto { get; set; }
+        public string? Producto { get; set; }
         public string? Descrip_Componente { get; set; }
         public string? Codigo_Componente { get; set; }
         public string? Componente { get; set; }

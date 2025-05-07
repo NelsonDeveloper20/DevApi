@@ -1388,23 +1388,32 @@ ORDER BY e.FechaCreacion DESC;
         {
             try
             {
-                var procedure = "";
+                string procedure = "";
+                var productosOtros = new List<string> {
+                "PRTRM00000016", "PRTRM00000001", "PRTRH00000001", "PRTRF00000001",
+                "PRTLU00000001", "PRTLU00000002", "PRTLU00000003"
+                };
                 switch (tipoProducto)
                 {
-                    case "PRTRS":
-                        if (accionamiento == "Manual") //MANUAL
-                        {
-                            procedure = "SP_ListarFormulacionRollerShade";
-                        }
-                        else //MOTORIZADO
-                        {
-                            procedure = "SP_ListarFormulacionRollerShadeMot";
-                        }
+                    case "PRTRSMan": //MANUAL
+                        procedure = "SP_ListarFormulacionRollerShade";
                         break;
+
+                    case "PRTRSMot": //MOTORIZADO
+                        procedure = "SP_ListarFormulacionRollerShadeMot";
+                        break;
+
                     case "PRTRZ": //MOTORIZADO Y MANUAL
                         procedure = "SP_ListarFormulacionRollerZebra";
-                        break; 
+                        break;
+
+                    default:
+                        if (productosOtros.Contains(tipoProducto))
+                            procedure = "SP_ListarFormulacionOtros";
+                        break;
                 }
+                if (string.IsNullOrEmpty(procedure))
+                    return new GeneralResponse<object>(HttpStatusCode.BadRequest, "Tipo de producto no reconocido");
 
                 DataTable result = new DataTable();
                 using (SqlConnection cnm = new SqlConnection(CnDc_Blinds))
@@ -1413,8 +1422,18 @@ ORDER BY e.FechaCreacion DESC;
                     using (SqlCommand cmd = new SqlCommand(procedure, cnm))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add(new SqlParameter("@NumeroCotizacion", numCotizacion));
-                        cmd.Parameters.Add(new SqlParameter("@grupoCotizacion", grupoCotizacion)); 
+
+                        if (tipoProducto == "PRTRSMan" || tipoProducto == "PRTRSMot" || tipoProducto == "PRTRZ")
+                        {
+                            cmd.Parameters.Add(new SqlParameter("@NumeroCotizacion", numCotizacion));
+                            cmd.Parameters.Add(new SqlParameter("@grupoCotizacion", grupoCotizacion));
+                        }
+                        else
+                        {
+                            cmd.Parameters.Add(new SqlParameter("@TipoProducto", tipoProducto));
+                            cmd.Parameters.Add(new SqlParameter("@grupoCotizacion", grupoCotizacion));
+                        }
+
                         using (SqlDataAdapter adp = new SqlDataAdapter(cmd))
                         {
                             adp.Fill(result);
@@ -1425,9 +1444,10 @@ ORDER BY e.FechaCreacion DESC;
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                return new GeneralResponse<object>(HttpStatusCode.InternalServerError, ex.Message); 
+                //throw new Exception(ex.Message);
             }
-        }
+        } 
         public async Task<GeneralResponse<Object>> GuardarFormulacionRollerShade(List<MonitoreoFormulacionRollerRequest> request)
         {
             using var transaction = await this._context.Database.BeginTransactionAsync();
@@ -1446,8 +1466,8 @@ ORDER BY e.FechaCreacion DESC;
                     {
                         NumeroCotizacion = item.NumeroCotizacion,
                         CotizacionGrupo = item.Grupo,
-                        Nombre_Producto = "ROLLER SHADE",
-                        Codigo_Producto = "PRTS",
+                        Nombre_Producto = item.Producto,
+                        Codigo_Producto =item.TipoProducto, //PRTRS , PRTRZ, PRTRM00000016 , ETC
                         Descrip_Componente = item.Descrip_Componente,
                         Cod_Componente = item.Codigo_Componente,
                         Descripcion = item.Componente,
