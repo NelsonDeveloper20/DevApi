@@ -930,7 +930,7 @@ ORDER BY e.FechaCreacion DESC;
                     IdSistemaExterno = _TbCotizacion.Id.ToString(),
                     DocumentLines = listItems
                 }; 
-                 /*
+                
                 var token = await LoginAsync();
                 var inventoryUrl = _configuration["ApiSAP:BaseUrl"] + "/api/InventoryGenExit";
                 var jsonInventoryData = System.Text.Json.JsonSerializer.Serialize(cotizacion);
@@ -960,8 +960,8 @@ ORDER BY e.FechaCreacion DESC;
 
                         // Verificar si "DocEntry" está presente y obtener su valor
                         if (root.TryGetProperty("DocEntry", out JsonElement docEntryElement))
-                        {*/
-                            int docEntry = 111;// docEntryElement.GetInt32();
+                        {
+                            int docEntry =  docEntryElement.GetInt32();
                             Console.WriteLine("DocEntry: " + docEntry);
                             // Guardar en base de datos
                              
@@ -1007,7 +1007,7 @@ ORDER BY e.FechaCreacion DESC;
                                 idOrden = 0
                             };
                             return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
-                         /*}
+                         }
                         else
                         {
                             await transaction.RollbackAsync();
@@ -1015,9 +1015,9 @@ ORDER BY e.FechaCreacion DESC;
                             return new GeneralResponse<Object>(
                                 HttpStatusCode.BadRequest,
                                 new { Respuesta = "Error: DocEntry no encontrado.", Detalle = "Error: DocEntry (Codigo Salida) no encontrado." });
-                        } */
-                   // }
-                 //}
+                        } 
+                    }
+                 }
 
 
 
@@ -1128,7 +1128,7 @@ ORDER BY e.FechaCreacion DESC;
                     IdSistemaExterno = _TbCotizacion.Id.ToString(),
                     DocumentLines = listItems
                 };
-                /*
+                
                 var token = await LoginAsync();
                 var inventoryUrl = _configuration["ApiSAP:BaseUrl"] + "/api/InventoryGenEntry";
                 var jsonInventoryData = System.Text.Json.JsonSerializer.Serialize(cotizacion);
@@ -1158,8 +1158,8 @@ ORDER BY e.FechaCreacion DESC;
 
                         // Verificar si "DocEntry" está presente y obtener su valor
                         if (root.TryGetProperty("DocEntry", out JsonElement docEntryElement))
-                        {*/
-                            int docEntry = 222;// docEntryElement.GetInt32();
+                        {
+                            int docEntry =   docEntryElement.GetInt32();
                             Console.WriteLine("DocEntry: " + docEntry);                            
 
                             var explocionTb = await _context.Tbl_Explocion
@@ -1205,7 +1205,7 @@ ORDER BY e.FechaCreacion DESC;
                                 idOrden = 0
                             };
                             return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
-                      /*  }
+                        }
                         else
                         {
                             await transaction.RollbackAsync();
@@ -1213,9 +1213,9 @@ ORDER BY e.FechaCreacion DESC;
                             return new GeneralResponse<Object>(
                                 HttpStatusCode.BadRequest,
                                 new { Respuesta = "Error: DocEntry no encontrado.", Detalle = "Error: DocEntry (Codigo Entrada) no encontrado." });
-                        }*/
-                  //  }
-                //}
+                        }
+                    }
+                }
 
                  
 
