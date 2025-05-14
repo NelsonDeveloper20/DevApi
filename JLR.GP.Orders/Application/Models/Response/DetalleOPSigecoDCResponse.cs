@@ -97,5 +97,6 @@
         public string? Escuadra { get; set; } 
         public string? Central {  get; set; }
         public string? IdGrupo { get; set; }
+        public string? CodFamilia { get; set; }
     }
 }

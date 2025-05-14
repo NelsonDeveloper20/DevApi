@@ -117,6 +117,7 @@ namespace Api_Dc.Domain.Models
         public int? IdEstado { get; set; }
         public string? WhsCode { get; set; } //CODIGO ALMACEN SAP
         //public string? FamiliaSap { get; set; }//FAMILIA SAP
+        public string? CodFamilia { get; set; } //CODIGO PARA ENVIAR A SAP EN SALIDA Y ENTRADA FAMILIAPT
 
 
 

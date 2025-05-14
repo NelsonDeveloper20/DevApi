@@ -22,6 +22,7 @@
         public string? Lote { get; set; }
         public string? Alto { get; set; }
         public string? Ancho { get; set; }
+        public string? CodFamilia { get; set; }
 
     }
 }

@@ -385,7 +385,7 @@ namespace ApiPortal_DataLake.Application.Controllers
                     GRD.IdEstado AS EstadoOp,
                     GRD.Id AS IdGrupo,  
                     DOP.Escuadra,DOP.Central,
-                    DOP.WhsCode,DOP.CodigoTipoRiel
+                    DOP.WhsCode,DOP.CodigoTipoRiel,DOP.CodFamilia
                 FROM
                     TBL_DetalleOrdenProduccion DOP
                     OUTER APPLY (
@@ -506,7 +506,8 @@ namespace ApiPortal_DataLake.Application.Controllers
                     EstadoOp = reader["EstadoOp"].ToString(),
                     Escuadra = reader["Escuadra"].ToString(),
                     Central = reader["Central"].ToString(),
-                    IdGrupo = reader["IdGrupo"].ToString()
+                    IdGrupo = reader["IdGrupo"].ToString(),
+                    CodFamilia = reader["CodFamilia"].ToString()
                 });
             }
             return list;

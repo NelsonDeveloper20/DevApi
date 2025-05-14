@@ -35,6 +35,7 @@ namespace Api_Dc.Domain.Models
         public string? CodigoEntradaSap { get; set; }
         public string? Alto { get; set; }
         public string? Ancho { get; set; }
+        public string? CodFamilia { get; set; }
 
     }
 }

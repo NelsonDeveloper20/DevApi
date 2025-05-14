@@ -231,7 +231,7 @@ namespace ApiPortal_DataLake.Domain.Services
             {
                 var result = await (from mr in _context.Tbl_ModuloRol
                                     join m in _context.Tbl_Modulos on mr.IdModulo equals m.Id
-                                    where _context.Tbl_Usuario.Any(u => u.Id == idUsuario && u.IdRol == mr.IdRol)
+                                    where _context.Tbl_Usuario.Any(u => u.Id == idUsuario && u.IdRol == mr.IdRol) && m.Estado==1
                                     orderby m.Orden ascending
                                     select new
                                     {

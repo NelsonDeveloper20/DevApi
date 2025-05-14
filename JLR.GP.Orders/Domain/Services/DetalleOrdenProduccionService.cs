@@ -437,6 +437,7 @@ namespace ApiPortal_DataLake.Domain.Services
                     dataFila.FechaCreacion = DateTime.Now;
                     dataFila.IdEstado = estadoInicial;
                     dataFila.WhsCode = formData.WhsCode;
+                    dataFila.CodFamilia = formData.CodFamilia;
                     //dataFila.FamiliaSap = formData.FamiliaSap;
                     if (tipo == "Componente")
                     {

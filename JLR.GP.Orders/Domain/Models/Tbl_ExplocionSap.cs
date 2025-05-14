@@ -38,6 +38,6 @@ namespace Api_Dc.Domain.Models
         public int?    IdUsuarioCrea { get; set; }
         public DateTime?  FechaCreacion { get; set; }
         public string? Tipo { get; set; }
-        public string? CotizacionGrupo { get; set; }
+        public string? CotizacionGrupo { get; set; } 
     }
 }

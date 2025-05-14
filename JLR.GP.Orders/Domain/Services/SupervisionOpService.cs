@@ -88,7 +88,7 @@ namespace ApiPortal_DataLake.Domain.Services
                 var grupo = this._context.Tbl_DetalleOpGrupo.Find(item.id);
                 if (item.Estado == "Aprobado")
                 {
-                    grupo.IdEstado = 3;//Pendiente Operaciones
+                    grupo.IdEstado = 5;//Construccion terminada
                 }
                 else
                 {

@@ -880,7 +880,7 @@ ORDER BY e.FechaCreacion DESC;
                         IdSistemaExterno = grupoExplotado.Id.ToString(),
                         IdLineaSistemaE = grupoExplotado.Id.ToString(),
                         IdOrdenVenta = _TbCotizacion.DocEntrySap.ToString(),
-                        FamiliaPT = item.Familia,
+                        FamiliaPT = item.CodFamilia,
                         SubFamiliaPT = item.SubFamilia, 
                         BatchNumbers = batchNumbers,
                         SerialNumbers = serialNumbers, 
@@ -905,7 +905,7 @@ ORDER BY e.FechaCreacion DESC;
                         CostingCode4 = "",//item.CostingCode4,
                         CostingCode5 = "",//item.CostingCode5,
                         IdLineaSistemaE = grupoExplotado.Id.ToString(),
-                        FamiliaPT = item.Familia,
+                        FamiliaPT = item.CodFamilia,
                         SubFamiliaPT = item.SubFamilia,
                         BatchNumbers = "[]",//JsonConvert.SerializeObject(item.BatchNumbers),
                         SerialNumbers = "[]", //JsonConvert.SerializeObject(item.SerialNumbers),
@@ -913,7 +913,7 @@ ORDER BY e.FechaCreacion DESC;
                         Tipo = "Salida",
                         CotizacionGrupo = P_grupoCotizacion,
                         IdUsuarioCrea = Convert.ToInt32(idusuario),
-                        FechaCreacion = DateTime.Now,
+                        FechaCreacion = DateTime.Now, 
                     };
 
                     _context.Tbl_ExplocionSap.Add(cotizacionEntity);
@@ -1110,7 +1110,7 @@ ORDER BY e.FechaCreacion DESC;
                         Tipo = "Entrada",
                         CotizacionGrupo = P_grupoCotizacion,
                         IdUsuarioCrea = Convert.ToInt32(idusuario),
-                        FechaCreacion = DateTime.Now,
+                        FechaCreacion = DateTime.Now, 
                     };
 
                     _context.Tbl_ExplocionSap.Add(cotizacionEntity);
@@ -1487,6 +1487,7 @@ ORDER BY e.FechaCreacion DESC;
                         Lote = item.Lote,
                         Alto = item.Alto,
                         Ancho = item.Ancho,
+                        CodFamilia=item.CodFamilia
                     };
                     this._context.Tbl_Explocion.Add(nuevaFila);
                 }

@@ -119,6 +119,18 @@
         }
       }
     },
+    "/api/auth/insertar-lineas": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/auth": {
       "get": {
         "tags": [
@@ -4006,6 +4018,10 @@
           "ancho": {
             "type": "string",
             "nullable": true
+          },
+          "codFamilia": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -4620,6 +4636,10 @@
             "nullable": true
           },
           "whsCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "codFamilia": {
             "type": "string",
             "nullable": true
           }
