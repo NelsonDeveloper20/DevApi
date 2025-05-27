@@ -709,9 +709,9 @@ ORDER BY e.FechaCreacion DESC;
             return (listItems, error);
         }
 
-        private (List<BatchNumber> Numbers, string Error) ValidateBatchNumbers(ExplocionProductosReques item)
+        private (List<BatchNumbers> Numbers, string Error) ValidateBatchNumbers(ExplocionProductosReques item)
         {
-            var numbers = new List<BatchNumber>();
+            var numbers = new List<BatchNumbers>();
             var error = "";
 
             if (!string.IsNullOrEmpty(item.BatchNumberCode?.Trim()))
@@ -722,9 +722,9 @@ ORDER BY e.FechaCreacion DESC;
                 }
                 else
                 {
-                    numbers.Add(new BatchNumber
+                    numbers.Add(new BatchNumbers
                     {
-                        BatchNumberCode = item.BatchNumberCode,
+                        BatchNumber = item.BatchNumberCode,
                         Quantity = item.BatchQuantity
                     });
                 }
@@ -863,8 +863,23 @@ ORDER BY e.FechaCreacion DESC;
                 //ITEMS
                 foreach (var item in explocionSap)
                 {
-                    var batchNumbers = new List<BatchNumber>();
-                    var serialNumbers = new List<SerialNumber>();
+                    var batchNumbers = new List<BatchNumbers>();
+                    var serialNumbers = new List<SerialNumber>(); 
+                    if (!string.IsNullOrWhiteSpace(item.Lote))
+                    {
+                        var lotes = item.Lote.Split(",", StringSplitOptions.RemoveEmptyEntries)
+                                             .Select(l => l.Trim());
+                        foreach (var i in lotes)
+                        {
+                            batchNumbers.Add(new BatchNumbers
+                            {
+                                BatchNumber = i,
+                                Quantity = Convert.ToDecimal(item.Cantidad)
+                            });
+                        }
+                    }
+                    string jsonLotes = JsonConvert.SerializeObject(batchNumbers ?? new List<BatchNumbers>());
+                    string jsonSeries = JsonConvert.SerializeObject(serialNumbers ?? new List<SerialNumber>());
                     listItems.Add(new Item
                     { 
                         ItemCode = item.Cod_Componente,
@@ -907,8 +922,8 @@ ORDER BY e.FechaCreacion DESC;
                         IdLineaSistemaE = grupoExplotado.Id.ToString(),
                         FamiliaPT = item.CodFamilia,
                         SubFamiliaPT = item.SubFamilia,
-                        BatchNumbers = "[]",//JsonConvert.SerializeObject(item.BatchNumbers),
-                        SerialNumbers = "[]", //JsonConvert.SerializeObject(item.SerialNumbers),
+                        BatchNumbers = jsonLotes,//"[]",
+                        SerialNumbers = jsonSeries,// "[]", 
                         //CodigoSalidaSap = responseString,
                         Tipo = "Salida",
                         CotizacionGrupo = P_grupoCotizacion,
@@ -929,8 +944,8 @@ ORDER BY e.FechaCreacion DESC;
                     U_EXX_TIPOOPER = "10",
                     IdSistemaExterno = _TbCotizacion.Id.ToString(),
                     DocumentLines = listItems
-                }; 
-                
+                };
+
                 var token = await LoginAsync();
                 var inventoryUrl = _configuration["ApiSAP:BaseUrl"] + "/api/InventoryGenExit";
                 var jsonInventoryData = System.Text.Json.JsonSerializer.Serialize(cotizacion);
@@ -947,6 +962,25 @@ ORDER BY e.FechaCreacion DESC;
                 if (!response.IsSuccessStatusCode)
                 {
                     await transaction.RollbackAsync();
+                    // Buscar si es un error de inventario negativo
+                    if (responseString.Contains("La cantidad recae en un inventario negativo"))
+                    {
+                        // Extraer ItemCode y línea
+                        var match = Regex.Match(responseString, @"\[(?<campo>IGE1\.ItemCode)\]\[line: (?<linea>\d+)\]");
+                        if (match.Success)
+                        {
+                            var linea = int.Parse(match.Groups["linea"].Value);
+                            var itemCode = cotizacion.DocumentLines[linea - 1].ItemCode; // línea 12 → índice 11
+
+                            var mensajePersonalizado = $"No hay unidades disponibles del ítem {itemCode} en el almacén {cotizacion.DocumentLines[linea - 1].WarehouseCode}.";
+                 
+                            return new GeneralResponse<Object>(
+                                HttpStatusCode.BadRequest,
+                                new { Respuesta = "Error de stock", Detalle = responseString  + " Comentario: "+ mensajePersonalizado });
+                        }
+                    }
+
+                    // Otro tipo de error
                     return new GeneralResponse<Object>(
                         HttpStatusCode.BadRequest,
                         new { Respuesta = "Error al procesar la carga de datos.", Detalle = responseString });
@@ -1057,7 +1091,7 @@ ORDER BY e.FechaCreacion DESC;
                 foreach (var item in explocionSap)
                 { 
 
-                    var batchNumbers = JsonConvert.DeserializeObject<List<BatchNumber>>(item.BatchNumbers ?? "[]");                   
+                    var batchNumbers = JsonConvert.DeserializeObject<List<BatchNumbers>>(item.BatchNumbers ?? "[]");                   
                     var serialNumbers = JsonConvert.DeserializeObject<List<SerialNumber>>(item.SerialNumbers ?? "[]");                   
                     listItems.Add(new ItemEntrada
                     {
@@ -1330,7 +1364,7 @@ ORDER BY e.FechaCreacion DESC;
             public string IdOrdenVenta { get; set; }
             public string FamiliaPT { get; set; }
             public string SubFamiliaPT { get; set; }
-            public List<BatchNumber> BatchNumbers { get; set; }  // Lista de BatchNumbers
+            public List<BatchNumbers> BatchNumbers { get; set; }  // Lista de BatchNumbers
             public List<SerialNumber> SerialNumbers { get; set; }  // Lista de SerialNumbers
         }
 
@@ -1364,12 +1398,12 @@ ORDER BY e.FechaCreacion DESC;
             public string FamiliaPT { get; set; }
             public string SuibFamiliaPT { get; set; }
             public int IdSalida {  get; set; }
-            public List<BatchNumber> BatchNumbers { get; set; }  // Lista de BatchNumbers
+            public List<BatchNumbers> BatchNumbers { get; set; }  // Lista de BatchNumbers
             public List<SerialNumber> SerialNumbers { get; set; }  // Lista de SerialNumbers
         }
-        public class BatchNumber
+        public class BatchNumbers
         {
-            public string BatchNumberCode { get; set; }  // Ejemplo de campo en BatchNumbers
+            public string BatchNumber { get; set; }  // Ejemplo de campo en BatchNumbers
             public decimal Quantity { get; set; }
         }
 
