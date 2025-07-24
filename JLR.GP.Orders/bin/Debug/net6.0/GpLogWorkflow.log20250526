@@ -1,0 +1,447 @@
+2025-05-26 20:11:13,094 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2025-05-26 20:11:13,125 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2025-05-26 20:11:13,220 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2025-05-26 20:11:13,246 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2025-05-26 20:11:13,297 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2025-05-26 20:11:37,383 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Monto' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-26 20:11:37,443 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'SubTotal' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-26 20:11:37,452 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Total' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-26 20:11:37,479 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TotalIgv' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-26 20:11:38,068 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 20:11:43,513 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2,537ms) [Parameters=[@__ToLower_0='?' (Size = 4000), @__contra_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[IdTipoUsuario], [t].[Nombre], [t].[Apellido], [t].[Dni], [t].[Correo], [t].[Usuario], [t0].[Nombre] AS [Perfil], [t0].[Id] AS [idS]
+FROM [Tbl_Usuario] AS [t]
+INNER JOIN [Tbl_Rol] AS [t0] ON [t].[IdRol] = [t0].[Id]
+WHERE (LOWER(LTRIM(RTRIM([t].[Usuario]))) = @__ToLower_0) AND (LOWER(LTRIM(RTRIM([t].[Clave]))) = @__contra_1)
+2025-05-26 20:11:45,456 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 20:11:46,092 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (481ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 20:21:25,422 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 20:21:27,584 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1,533ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 20:22:26,168 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 20:22:26,218 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (30ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 20:24:07,770 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 20:24:13,204 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5,239ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 20:24:52,364 [.NET ThreadPool Worker] ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware - An unhandled exception has occurred while executing the request.
+System.Exception: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+   at ApiPortal_DataLake.Domain.Services.LineaProdService.ListarLinaProduccion(String fecha) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Domain\Services\LineaProdService.cs:line 65
+   at ApiPortal_DataLake.Application.Controllers.LineaProdController.ListarLineaProduccion(String fecha) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Application\Controllers\LineaProdController.cs:line 39
+   at lambda_method86(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2025-05-26 20:28:54,245 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 20:28:54,402 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (103ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 20:30:00,557 [.NET ThreadPool Worker] ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware - An unhandled exception has occurred while executing the request.
+System.Exception: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+   at ApiPortal_DataLake.Domain.Services.LineaProdService.ListarLinaProduccion(String fecha) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Domain\Services\LineaProdService.cs:line 65
+   at ApiPortal_DataLake.Application.Controllers.LineaProdController.ListarLineaProduccion(String fecha) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Application\Controllers\LineaProdController.cs:line 39
+   at lambda_method86(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2025-05-26 20:30:49,064 [.NET ThreadPool Worker] ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware - An unhandled exception has occurred while executing the request.
+System.Exception: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+   at ApiPortal_DataLake.Domain.Services.LineaProdService.ListarLinaProduccion(String fecha) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Domain\Services\LineaProdService.cs:line 65
+   at ApiPortal_DataLake.Application.Controllers.LineaProdController.ListarLineaProduccion(String fecha) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Application\Controllers\LineaProdController.cs:line 39
+   at lambda_method86(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2025-05-26 20:32:16,671 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 20:32:16,807 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (95ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 20:40:33,702 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 20:40:35,723 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (243ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 20:41:10,524 [.NET ThreadPool Worker] ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware - An unhandled exception has occurred while executing the request.
+System.Exception: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+   at ApiPortal_DataLake.Domain.Services.MonitoreoService.ListarExplocion(String grupoCotizacion, String fechaInicio, String fechaFin) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Domain\Services\MonitoreoService.cs:line 77
+   at ApiPortal_DataLake.Application.Controllers.MonitoreoController.ListarProductoXEstacionGrupo(String grupoCotizacion, String fechaInicio, String fechaFin) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Application\Controllers\MonitoreoController.cs:line 41
+   at lambda_method96(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2025-05-26 20:45:18,609 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 20:45:18,860 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (213ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 20:46:13,098 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 20:46:14,565 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1,415ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 20:46:48,290 [.NET ThreadPool Worker] ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware - An unhandled exception has occurred while executing the request.
+System.Exception: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+   at ApiPortal_DataLake.Domain.Services.LineaProdService.ListarLinaProduccion(String fecha) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Domain\Services\LineaProdService.cs:line 65
+   at ApiPortal_DataLake.Application.Controllers.LineaProdController.ListarLineaProduccion(String fecha) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Application\Controllers\LineaProdController.cs:line 39
+   at lambda_method86(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2025-05-26 20:47:39,962 [28] ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware - An unhandled exception has occurred while executing the request.
+System.Exception: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+   at ApiPortal_DataLake.Domain.Services.LineaProdService.ListarLinaProduccion(String fecha) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Domain\Services\LineaProdService.cs:line 65
+   at ApiPortal_DataLake.Application.Controllers.LineaProdController.ListarLineaProduccion(String fecha) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Application\Controllers\LineaProdController.cs:line 39
+   at lambda_method86(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2025-05-26 20:47:50,193 [.NET ThreadPool Worker] ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware - An unhandled exception has occurred while executing the request.
+System.Exception: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+   at ApiPortal_DataLake.Domain.Services.LineaProdService.ListarLinaProduccion(String fecha) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Domain\Services\LineaProdService.cs:line 65
+   at ApiPortal_DataLake.Application.Controllers.LineaProdController.ListarLineaProduccion(String fecha) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Application\Controllers\LineaProdController.cs:line 39
+   at lambda_method86(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2025-05-26 20:57:25,611 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2025-05-26 20:57:25,639 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2025-05-26 20:57:26,118 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2025-05-26 20:57:26,142 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2025-05-26 20:57:26,155 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2025-05-26 20:57:50,206 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Monto' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-26 20:57:50,219 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'SubTotal' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-26 20:57:50,225 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Total' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-26 20:57:50,228 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TotalIgv' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-26 20:57:50,525 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 20:57:52,210 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (284ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 20:59:32,456 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 20:59:32,841 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (237ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 21:01:59,357 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 21:01:59,689 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (281ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 21:06:03,885 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 21:06:04,321 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (376ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 21:10:55,152 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 21:10:55,699 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (430ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 21:12:23,712 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 21:12:24,114 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (363ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 21:15:28,580 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 21:15:28,814 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (198ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 21:24:52,048 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2025-05-26 21:24:52,067 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2025-05-26 21:24:52,176 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2025-05-26 21:24:52,202 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2025-05-26 21:24:52,224 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2025-05-26 21:27:08,483 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2025-05-26 21:27:08,515 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2025-05-26 21:27:08,730 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2025-05-26 21:27:08,797 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2025-05-26 21:27:08,869 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2025-05-26 21:29:33,266 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Monto' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-26 21:29:33,284 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'SubTotal' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-26 21:29:33,291 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Total' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-26 21:29:33,297 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TotalIgv' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-26 21:29:33,831 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 21:29:41,252 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4,065ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 21:32:37,413 [.NET ThreadPool Worker] ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware - An unhandled exception has occurred while executing the request.
+System.Exception: Procedure or function 'SP_ListarLineaProduccion' expects parameter '@MesAnio', which was not supplied.
+   at ApiPortal_DataLake.Domain.Services.LineaProdService.ListarLinaProduccion(String fecha) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Domain\Services\LineaProdService.cs:line 65
+   at ApiPortal_DataLake.Application.Controllers.LineaProdController.ListarLineaProduccion(String fecha) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Application\Controllers\LineaProdController.cs:line 39
+   at lambda_method63(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2025-05-26 21:36:58,561 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 21:37:04,374 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5,145ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 21:44:56,199 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 21:44:56,567 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (270ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 21:48:46,811 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 21:48:47,165 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (84ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 21:50:49,819 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 21:51:05,103 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (15,218ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 21:53:56,251 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 21:53:56,507 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (145ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 21:57:12,788 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 21:57:13,117 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (278ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 22:00:48,106 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 22:00:48,334 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (188ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]
+2025-05-26 22:05:00,974 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-05-26 22:05:01,560 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (352ms) [Parameters=[@__idUsuario_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Nombre], [t0].[Descripcion], [t0].[Ruta], [t0].[Icono], [t0].[Estado]
+FROM [Tbl_ModuloRol] AS [t]
+INNER JOIN [Tbl_Modulos] AS [t0] ON [t].[IdModulo] = [t0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Tbl_Usuario] AS [t1]
+    WHERE ([t1].[Id] = @__idUsuario_0) AND (([t1].[IdRol] = [t].[IdRol]) OR (([t1].[IdRol] IS NULL) AND ([t].[IdRol] IS NULL)))) AND ([t0].[Estado] = 1)
+ORDER BY [t0].[Orden]

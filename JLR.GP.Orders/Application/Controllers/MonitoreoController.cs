@@ -266,6 +266,62 @@ namespace ApiPortal_DataLake.Application.Controllers
             }
         }
 
+
+        [HttpPost("JSONEnviarSalidaSap")]
+        public async Task<ActionResult<GeneralResponse<Object>>> JSONEnviarSalidaSap(string cotizacion, string grupo) //OK
+        {
+            var response = await this._usuarioService.JSONEnviarSalidaSap(cotizacion, grupo);
+            if (response.Status == HttpStatusCode.OK)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return StatusCode((int)response.Status, response);
+            }
+        }
+        [HttpPost("JSONEnviarEntradaSap")]
+        public async Task<ActionResult<GeneralResponse<Object>>> JSONEnviarEntradaSap(string cotizacion, string grupo) //OK
+        {
+            var response = await this._usuarioService.JSONEnviarEntradaSap(cotizacion, grupo);
+            if (response.Status == HttpStatusCode.OK)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return StatusCode((int)response.Status, response);
+            }
+        }
+
+
+        [HttpPost("ModificarEnviarSalidaSap")]
+        public async Task<ActionResult<GeneralResponse<Object>>> ModificarEnviarSalidaSap(dynamic datosModificados) //OK
+        {
+            var response = await this._usuarioService.ModificarEnviarSalidaSap(datosModificados);
+            if (response.Status == HttpStatusCode.OK)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return StatusCode((int)response.Status, response);
+            }
+        }
+        [HttpPost("ModificarEnviarEntradaSap")]
+        public async Task<ActionResult<GeneralResponse<Object>>> ModificarEnviarEntradaSap(dynamic datosModificados) //OK
+        {
+            var response = await this._usuarioService.ModificarEnviarEntradaSap(datosModificados);
+            if (response.Status == HttpStatusCode.OK)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return StatusCode((int)response.Status, response);
+            }
+        }
+
         [HttpGet("ListarFormulacionRollerShade")]
         public async Task<ActionResult> ListarFormulacionRollerShade(string numCotizacion, string grupoCotizacion,string tipoProducto,string accionamiento)
         {

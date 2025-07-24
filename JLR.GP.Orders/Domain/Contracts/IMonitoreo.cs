@@ -27,5 +27,11 @@ namespace ApiPortal_DataLake.Domain.Contracts
         Task<GeneralResponse<Object>> GuardarCodigoSalida(string P_NumeroCotizacion, string P_grupoCotizacion, string codigoSalida);
 
         Task<GeneralResponse<dynamic>> ListarFormulacionRollerShade(string numCotizacion, string grupoCotizacion, string tipoProducto,string accionamiento);
+
+        Task<GeneralResponse<Object>> JSONEnviarSalidaSap(string P_NumeroCotizacion, string P_grupoCotizacion);
+        Task<GeneralResponse<Object>> JSONEnviarEntradaSap(string P_NumeroCotizacion, string P_grupoCotizacion);
+
+        Task<GeneralResponse<Object>> ModificarEnviarEntradaSap(dynamic request);
+        Task<GeneralResponse<Object>> ModificarEnviarSalidaSap(dynamic request);
     }
 }

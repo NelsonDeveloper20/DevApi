@@ -1085,6 +1085,68 @@
   },
   {
     "ContainingType": "ApiPortal_DataLake.Application.Controllers.MonitoreoController",
+    "Method": "JSONEnviarEntradaSap",
+    "RelativePath": "api/Monitoreo/JSONEnviarEntradaSap",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cotizacion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "grupo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiPortal_DataLake.Domain.Response.GeneralResponse\u00601[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiPortal_DataLake.Application.Controllers.MonitoreoController",
+    "Method": "JSONEnviarSalidaSap",
+    "RelativePath": "api/Monitoreo/JSONEnviarSalidaSap",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cotizacion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "grupo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiPortal_DataLake.Domain.Response.GeneralResponse\u00601[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiPortal_DataLake.Application.Controllers.MonitoreoController",
     "Method": "listarComponentesProductoPorGrupo",
     "RelativePath": "api/Monitoreo/ListarComponenteProducto",
     "HttpMethod": "GET",
@@ -1233,6 +1295,58 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiPortal_DataLake.Application.Controllers.MonitoreoController",
+    "Method": "ModificarEnviarEntradaSap",
+    "RelativePath": "api/Monitoreo/ModificarEnviarEntradaSap",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "datosModificados",
+        "Type": "System.Object",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiPortal_DataLake.Domain.Response.GeneralResponse\u00601[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiPortal_DataLake.Application.Controllers.MonitoreoController",
+    "Method": "ModificarEnviarSalidaSap",
+    "RelativePath": "api/Monitoreo/ModificarEnviarSalidaSap",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "datosModificados",
+        "Type": "System.Object",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiPortal_DataLake.Domain.Response.GeneralResponse\u00601[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "ApiPortal_DataLake.Application.Controllers.OperacionesContruccionController",

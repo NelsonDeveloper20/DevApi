@@ -17,6 +17,7 @@ namespace Api_Dc.Domain.Models
 
         // Detalle
         public string? ItemCode { get; set; }
+        public string? ItemDescription { get; set; }
         public string? Quantity { get; set; }
         public string? WarehouseCode { get; set; }
         public string? AcctCode { get; set; }

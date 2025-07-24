@@ -1851,6 +1851,186 @@
         }
       }
     },
+    "/api/Monitoreo/JSONEnviarSalidaSap": {
+      "post": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "parameters": [
+          {
+            "name": "cotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "grupo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/JSONEnviarEntradaSap": {
+      "post": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "parameters": [
+          {
+            "name": "cotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "grupo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/ModificarEnviarSalidaSap": {
+      "post": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": { }
+            },
+            "application/json": {
+              "schema": { }
+            },
+            "text/json": {
+              "schema": { }
+            },
+            "application/*+json": {
+              "schema": { }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/ModificarEnviarEntradaSap": {
+      "post": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": { }
+            },
+            "application/json": {
+              "schema": { }
+            },
+            "text/json": {
+              "schema": { }
+            },
+            "application/*+json": {
+              "schema": { }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Monitoreo/ListarFormulacionRollerShade": {
       "get": {
         "tags": [

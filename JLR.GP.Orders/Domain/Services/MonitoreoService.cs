@@ -10,6 +10,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -17,6 +18,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using static ApiPortal_DataLake.Domain.Services.MonitoreoService;
 
@@ -835,7 +837,335 @@ ORDER BY e.FechaCreacion DESC;
 
             await _context.SaveChangesAsync();
         }
+        public async Task<GeneralResponse<Object>> ModificarEnviarSalidaSap(dynamic request)
+        {
+            using var transaction = _context.Database.BeginTransaction();
+            try
+            {
+                foreach (var item in request)
+                {
+                    var itemExplocion = await _context.Tbl_Explocion.FindAsync((int)item.Id);
 
+                    if (itemExplocion != null)
+                    {
+                        itemExplocion.Cod_Componente = item.ItemCode;
+                        itemExplocion.Descripcion = item.ItemDescription;
+                        itemExplocion.Cantidad = item.Quantity.ToString();
+                        itemExplocion.CodFamilia = item.FamiliaPT;
+                        itemExplocion.SubFamilia = item.SubFamiliaPT;
+                        // Manejar lotes - convertir array de BatchNumbers a string separado por comas
+                        if (item.BatchNumbers != null && item.BatchNumbers.Count > 0)
+                        {
+                            var lotes = new List<string>();
+                            foreach (var batch in item.BatchNumbers)
+                            {
+                                if (!string.IsNullOrWhiteSpace(batch.BatchNumber.ToString()))
+                                {
+                                    lotes.Add(batch.BatchNumber.ToString().Trim());
+                                }
+                            }
+                            itemExplocion.Lote = string.Join(",", lotes);
+                        }
+                        else
+                        {
+                            itemExplocion.Lote = "";
+                        }
+
+                        // Manejar series - convertir array de SerialNumbers a string separado por comas
+                        if (item.SerialNumbers != null && item.SerialNumbers.Count > 0)
+                        {
+                            var series = new List<string>();
+                            foreach (var serial in item.SerialNumbers)
+                            {
+                                if (!string.IsNullOrWhiteSpace(serial.SerialNumber.ToString()))
+                                {
+                                    series.Add(serial.SerialNumber.ToString().Trim());
+                                }
+                            }
+                            itemExplocion.Serie = string.Join(",", series); // Asumiendo que tienes un campo Serie en la tabla
+                        }
+                        else
+                        {
+                            itemExplocion.Serie = "";
+                        }
+
+                        _context.Tbl_Explocion.Update(itemExplocion);
+                    }
+                }
+
+                await _context.SaveChangesAsync();
+                await transaction.CommitAsync();
+
+                var jsonresponse = new
+                {
+                    Respuesta = "Guardado correctamente",
+                    idOrden = 0
+                };
+                return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                _logger.LogError($"Error try catch: {JsonConvert.SerializeObject(ex)}");
+                var jsonresponse = new
+                {
+                    Respuesta = ex.Message,
+                    idOrden = 0
+                };
+                return new GeneralResponse<Object>(HttpStatusCode.InternalServerError, jsonresponse);
+            }
+        } 
+        public async Task<GeneralResponse<Object>> JSONEnviarSalidaSap(string P_NumeroCotizacion, string P_grupoCotizacion)
+        {
+             
+            try
+            {
+                var _TbCotizacion = await _context.Tbl_OrdenProduccion
+                    .FirstOrDefaultAsync(o => o.NumeroCotizacion == P_NumeroCotizacion);
+                var grupoExplotado = await _context.Tbl_DetalleOpGrupo
+               .FirstOrDefaultAsync(e => e.CotizacionGrupo == P_grupoCotizacion
+                                    && e.NumeroCotizacion == P_NumeroCotizacion);
+                var explocionSap = await _context.Tbl_Explocion
+                    .Where(e => e.CotizacionGrupo == P_grupoCotizacion && e.Cod_Componente != "Ninguno")
+                    .ToListAsync();
+
+                var listItems = new List<dynamic>();
+                var error = "";
+
+
+
+                // Convertir el string a DateTime
+                DateTime fechaCot = DateTime.ParseExact(_TbCotizacion.FechaCotizacion, "yyyyMMdd", null);
+                DateTime fechaVen = DateTime.ParseExact(_TbCotizacion.FechaVenta, "yyyyMMdd", null);
+                //ITEMS
+                foreach (var item in explocionSap)
+                {
+                    var batchNumbers = new List<BatchNumbers>();
+                    var serialNumbers = new List<SerialNumber>();
+                    if (!string.IsNullOrWhiteSpace(item.Lote))
+                    {
+                        var lotes = item.Lote.Split(",", StringSplitOptions.RemoveEmptyEntries)
+                                             .Select(l => l.Trim());
+                        foreach (var i in lotes)
+                        {
+                            batchNumbers.Add(new BatchNumbers
+                            {
+                                BatchNumber = i,
+                                Quantity = Convert.ToDecimal(item.Cantidad)
+                            });
+                        }
+                    }
+                    // Manejar series
+                    if (!string.IsNullOrWhiteSpace(item.Serie))
+                    {
+                        var series = item.Serie.Split(",", StringSplitOptions.RemoveEmptyEntries)
+                                              .Select(s => s.Trim());
+                        foreach (var serie in series)
+                        {
+                            serialNumbers.Add(new SerialNumber
+                            {
+                                SerialNumberCode =Convert.ToInt32( serie),
+                                Quantity = 1 // Para series siempre es 1
+                            });
+                        }
+                    }
+                    string jsonLotes = JsonConvert.SerializeObject(batchNumbers ?? new List<BatchNumbers>());
+                    string jsonSeries = JsonConvert.SerializeObject(serialNumbers ?? new List<SerialNumber>());
+                    listItems.Add(new 
+                    {
+                        Id=item.Id,
+                        ItemCode = item.Cod_Componente,
+                        ItemDescription=item.Descripcion,
+                        Quantity = Convert.ToDecimal(item.Cantidad),
+                        WarehouseCode = _configuration["ApiSAP:WarehouseCode"],
+                        AcctCode = _configuration["ApiSAP:AcctcodeSalida"],
+                        CostingCode = "",
+                        ProjectCode = "",
+                        CostingCode2 = "",
+                        CostingCode3 = "",
+                        CostingCode4 = "",
+                        CostingCode5 = "",
+                        IdSistemaExterno = grupoExplotado.Id.ToString(),
+                        IdLineaSistemaE = grupoExplotado.Id.ToString(),
+                        IdOrdenVenta = _TbCotizacion.DocEntrySap.ToString(),
+                        FamiliaPT = item.CodFamilia,
+                        SubFamiliaPT = item.SubFamilia,
+                        BatchNumbers = batchNumbers,
+                        SerialNumbers = serialNumbers,
+                    });
+                }
+                // Crear cotización
+                var cotizacion = new 
+                {
+                    DocNum = _TbCotizacion.NumeroCotizacion,
+                    DocDate = fechaCot.ToString("dd/MM/yyyy"),
+                    TaxDate = fechaVen.ToString("dd/MM/yyyy"),
+                    Comments = "Salida",
+                    Reference2 = "Ref2",
+                    U_EXX_TIPOOPER = "10",
+                    IdSistemaExterno = _TbCotizacion.Id.ToString(),
+                    DocumentLines = listItems
+                };
+                 
+                var jsonInventoryData = System.Text.Json.JsonSerializer.Serialize(cotizacion);  
+                 
+                            var jsonresponse = new
+                            {
+                                Respuesta = jsonInventoryData,
+                                idOrden = 0
+                            };
+                            return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
+                     
+                    
+
+
+
+            }
+            catch (Exception ex)
+            { 
+                _logger.LogError($"JSON Orden produccion Error try catch: {JsonConvert.SerializeObject(ex)}");
+                var jsonresponse = new
+                {
+                    Respuesta = ex.Message,
+                    idOrden = 0
+                };
+                return new GeneralResponse<Object>(HttpStatusCode.InternalServerError, jsonresponse);
+            }
+        }
+        public async Task<GeneralResponse<Object>> ModificarEnviarEntradaSap(dynamic request)
+        {
+            using var transaction = _context.Database.BeginTransaction();
+            try
+            {
+                foreach (var item in request)
+                {
+                   
+                    var row = await _context.Tbl_ExplocionSap.FindAsync((int)item.Id);
+
+                    if (row != null)
+                    {
+                        // Actualizar solo los campos modificables 
+
+                        row.ItemCode = item.ItemCode ?? row.ItemCode;
+                        row.ItemDescription = item.ItemDescription ?? row.ItemDescription;
+                        row.Quantity = item.Quantity ?? row.Quantity;
+                        row.WarehouseCode = item.WarehouseCode ?? row.WarehouseCode;
+                        row.AcctCode = item.AcctCode ?? row.AcctCode;
+                        row.CostingCode = item.CostingCode ?? row.CostingCode;
+                        row.CostingCode2 = item.CostingCode2 ?? row.CostingCode2;
+                        row.CostingCode3 = item.CostingCode3 ?? row.CostingCode3;
+                        row.CostingCode4 = item.CostingCode4 ?? row.CostingCode4;
+                        row.CostingCode5 = item.CostingCode5 ?? row.CostingCode5;
+                        row.FamiliaPT = item.FamiliaPT ?? row.FamiliaPT;
+                        row.SubFamiliaPT = item.SubFamiliaPT ?? row.SubFamiliaPT;
+                         
+
+                        _context.Tbl_ExplocionSap.Update(row);
+                    } 
+                }
+
+                await _context.SaveChangesAsync();
+                await transaction.CommitAsync();
+
+                var jsonresponse = new
+                {
+                    respuesta = "Modificado",
+                    detalle = "Datos modificados correctamente"
+                };
+
+                return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                _logger.LogError($"Error en ModificarEnviarEntradaSap: {JsonConvert.SerializeObject(ex)}");
+
+                var jsonresponse = new
+                {
+                    respuesta = "Error",
+                    detalle = ex.Message
+                };
+
+                return new GeneralResponse<Object>(HttpStatusCode.InternalServerError, jsonresponse);
+            }
+        }
+        public async Task<GeneralResponse<Object>> JSONEnviarEntradaSap(string P_NumeroCotizacion, string P_grupoCotizacion)
+        {
+           try
+            {
+                var _TbCotizacion = await _context.Tbl_OrdenProduccion
+                    .FirstOrDefaultAsync(o => o.NumeroCotizacion == P_NumeroCotizacion);
+                var datEntrada = await _context.TBL_DetalleOrdenProduccion.Where(d => d.CotizacionGrupo == P_grupoCotizacion).ToListAsync();
+
+                var explocionSap = await _context.Tbl_ExplocionSap
+                .Where(e => e.CotizacionGrupo == P_grupoCotizacion)
+                .FirstAsync();
+                var listItems = new List<dynamic>();
+                var error = "";
+                // Convertir el string a DateTime
+                DateTime fechaCot = DateTime.ParseExact(_TbCotizacion.FechaCotizacion, "yyyyMMdd", null);
+                DateTime fechaVen = DateTime.ParseExact(_TbCotizacion.FechaVenta, "yyyyMMdd", null);
+                foreach (var item in datEntrada)
+                {
+                    
+                    listItems.Add(new  
+                    {
+                        Id=item.Id,
+                        ItemCode = item.CodigoProducto,
+                        ItemDescription = item.NombreProducto,  
+                        Quantity = Convert.ToDecimal(item.Cantidad),
+                        WarehouseCode = _configuration["ApiSAP:WarehouseCodeEntrada"],
+                        AcctCode = _configuration["ApiSAP:AcctcodeEntrada"],// //item.AcctCode,
+                        CostingCode = "",
+                        ProjectCode = "",
+                        CostingCode2 = "",
+                        CostingCode3 = "",
+                        CostingCode4 = "",
+                        CostingCode5 = "",
+                        IdSistemaExterno = explocionSap.IdSistemaExterno,
+                        IdLineaSistemaE = explocionSap.IdLineaSistemaE,
+                        IdOrdenVenta = explocionSap.IdOrdenVenta,
+                        FamiliaPT = "PRT",//item.CodFamilia, 
+                        SubFamiliaPT = item.SubFamilia,  
+                        BatchNumbers = "[]",
+                        SerialNumbers = "[]",
+                        IdSalida = Convert.ToInt32(explocionSap.CodigoSalidaSap),
+                        Alto = Convert.ToDecimal(item.Alto),
+                        Ancho = Convert.ToDecimal(item.Ancho),
+
+                    });
+                }
+                var cotizacion = new 
+                {
+                    DocEntry = Convert.ToInt32(explocionSap.CodigoSalidaSap),
+                    DocNum = P_NumeroCotizacion,
+                    DocDate = fechaCot.ToString("yyyy-MM-dd"),
+                    TaxDate = fechaVen.ToString("yyyy-MM-dd"),
+                    Comments = "Entrada",
+                    Reference2 = "Ref2",
+                    U_EXX_TIPOOPER = "19",
+                    IdSistemaExterno = _TbCotizacion.Id.ToString(),
+                    DocumentLines = listItems
+                }; 
+                var jsonInventoryData = System.Text.Json.JsonSerializer.Serialize(cotizacion);                 
+                            var jsonresponse = new
+                            {
+                                Respuesta = jsonInventoryData,
+                                idOrden = 0
+                            };
+                            return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);    
+            }
+            catch (Exception ex)
+            { 
+                _logger.LogError($"JSON Orden produccion Error try catch: {JsonConvert.SerializeObject(ex)}");
+                var jsonresponse = new
+                {
+                    Respuesta = ex.Message,
+                    idOrden = 0
+                };
+                return new GeneralResponse<Object>(HttpStatusCode.InternalServerError, jsonresponse);
+            }
+        }
 
         public async Task<GeneralResponse<Object>> EnviarSalidaSap(string P_NumeroCotizacion, string P_grupoCotizacion, string idusuario)
         {
@@ -883,6 +1213,7 @@ ORDER BY e.FechaCreacion DESC;
                     listItems.Add(new Item
                     { 
                         ItemCode = item.Cod_Componente,
+                        ItemDescription=item.Descripcion,
                         Quantity = Convert.ToDecimal(item.Cantidad),
                         WarehouseCode = _configuration["ApiSAP:WarehouseCode"],
                         AcctCode = _configuration["ApiSAP:AcctcodeSalida"],// //item.AcctCode,
@@ -910,6 +1241,7 @@ ORDER BY e.FechaCreacion DESC;
                         IdSistemaExterno =  _TbCotizacion.Id.ToString(),
                         IdOrdenVenta = _TbCotizacion.DocEntrySap.ToString(),
                         ItemCode = item.Cod_Componente,
+                        ItemDescription=item.Descripcion,
                         Quantity = item.Cantidad,
                         WarehouseCode = _configuration["ApiSAP:WarehouseCode"],
                         AcctCode = _configuration["ApiSAP:AcctcodeSalida"],
@@ -1075,11 +1407,12 @@ ORDER BY e.FechaCreacion DESC;
             {
                 var _TbCotizacion = await _context.Tbl_OrdenProduccion
                     .FirstOrDefaultAsync(o => o.NumeroCotizacion == P_NumeroCotizacion);
+                 
+                var datEntrada = await _context.TBL_DetalleOrdenProduccion.Where(d => d.CotizacionGrupo == P_grupoCotizacion).ToListAsync();
 
                 var explocionSap = await _context.Tbl_ExplocionSap
-                    .Where(e => e.CotizacionGrupo == P_grupoCotizacion)
-                    .ToListAsync();
-
+                .Where(e => e.CotizacionGrupo == P_grupoCotizacion)
+                .FirstAsync();
                 var listItems = new List<ItemEntrada>();
                 var error = "";
 
@@ -1088,32 +1421,28 @@ ORDER BY e.FechaCreacion DESC;
                 // Convertir el string a DateTime
                 DateTime fechaCot = DateTime.ParseExact(_TbCotizacion.FechaCotizacion, "yyyyMMdd", null);
                 DateTime fechaVen = DateTime.ParseExact(_TbCotizacion.FechaVenta, "yyyyMMdd", null);
-                foreach (var item in explocionSap)
+                foreach (var item in datEntrada)
                 { 
 
-                    var batchNumbers = JsonConvert.DeserializeObject<List<BatchNumbers>>(item.BatchNumbers ?? "[]");                   
-                    var serialNumbers = JsonConvert.DeserializeObject<List<SerialNumber>>(item.SerialNumbers ?? "[]");                   
+                    var batchNumbers = JsonConvert.DeserializeObject<List<BatchNumbers>>("[]");                   
+                    var serialNumbers = JsonConvert.DeserializeObject<List<SerialNumber>>("[]");                   
                     listItems.Add(new ItemEntrada
-                    {
-                        ItemCode = item.ItemCode,
-                        Quantity = Convert.ToDecimal(item.Quantity),
+                    { 
+                        ItemCode = item.CodigoProducto.Trim(),
+                        ItemDescription=item.NombreProducto?.Trim() ?? "",
+                        Quantity = Convert.ToDecimal(item.Cantidad),
                         WarehouseCode = _configuration["ApiSAP:WarehouseCodeEntrada"],
-                        AcctCode = _configuration["ApiSAP:AcctcodeEntrada"],// //item.AcctCode,
-                        CostingCode = item.CostingCode,
-                        ProjectCode = "",
-                        CostingCode2 = item.CostingCode2,
-                        CostingCode3 = item.CostingCode3,
-                        CostingCode4 = item.CostingCode4,
-                        CostingCode5 = item.CostingCode5,
-                        IdSistemaExterno = item.IdSistemaExterno,
-                        IdLineaSistemaE = item.IdLineaSistemaE,
-                        IdOrdenVenta = item.IdOrdenVenta,
-                        FamiliaPT = item.FamiliaPT,
-                        SuibFamiliaPT= item.SubFamiliaPT,
+                        AcctCode = _configuration["ApiSAP:AcctcodeEntrada"],// //item.AcctCode,  
+                        //FamiliaPT = "PRT", 
+                        //SuibFamiliaPT = item.SubFamilia?.Trim() ?? "",
                         //SubFamiliaPT =item.SubFamiliaPT,
-                        BatchNumbers = batchNumbers,
-                        SerialNumbers = serialNumbers,
-                        IdSalida = Convert.ToInt32(explocionSap[0].CodigoSalidaSap),
+                        //BatchNumbers = batchNumbers,
+                        //SerialNumbers = serialNumbers,
+                        IdSalida = Convert.ToInt32(explocionSap.CodigoSalidaSap),
+                        Alto= Convert.ToDecimal(item.Alto),
+                        Ancho= Convert.ToDecimal(item.Ancho),
+
+
                     });
 
                     var cotizacionEntity = new Tbl_ExplocionSap
@@ -1123,23 +1452,24 @@ ORDER BY e.FechaCreacion DESC;
                         Comments = "Entrada",
                         Reference2 = "Referencia2",
                         U_EXX_TIPOOPER = "19",
-                        IdSistemaExterno = item.IdSistemaExterno,
-                        IdOrdenVenta = item.IdOrdenVenta?.ToString(),
-                        ItemCode = item.ItemCode,
-                        Quantity = item.Quantity.ToString(),
+                        IdSistemaExterno = explocionSap.IdSistemaExterno,
+                        IdOrdenVenta = explocionSap.IdOrdenVenta?.ToString(),
+                        ItemCode = item.CodigoProducto,
+                        ItemDescription=item.NombreProducto,
+                        Quantity = item.Cantidad.ToString(),
                         WarehouseCode =  _configuration["ApiSAP:WarehouseCodeEntrada"],
                         AcctCode = _configuration["ApiSAP:AcctcodeEntrada"],// item.AcctCode,
-                        CostingCode = item.CostingCode,
-                        ProjectCode = item.ProjectCode,
-                        CostingCode2 = item.CostingCode2,
-                        CostingCode3 = item.CostingCode3,
-                        CostingCode4 = item.CostingCode4,
-                        CostingCode5 = item.CostingCode5,
-                        IdLineaSistemaE = item.IdLineaSistemaE,
-                        FamiliaPT = item.FamiliaPT,
-                        SubFamiliaPT = item.SubFamiliaPT,
-                        BatchNumbers = item.BatchNumbers,
-                        SerialNumbers = item.SerialNumbers,
+                        CostingCode = null,
+                        ProjectCode = null,
+                        CostingCode2 = null,
+                        CostingCode3 = null,
+                        CostingCode4 = null,
+                        CostingCode5 = null,
+                        IdLineaSistemaE = explocionSap.IdLineaSistemaE,
+                        FamiliaPT = "PRT",//item.CodFamilia,
+                        SubFamiliaPT = item.SubFamilia,
+                        BatchNumbers = "[]",
+                        SerialNumbers = "[]",
                         CodigoSalidaSap = "",
                         Tipo = "Entrada",
                         CotizacionGrupo = P_grupoCotizacion,
@@ -1152,8 +1482,8 @@ ORDER BY e.FechaCreacion DESC;
 
                 var cotizacion = new CotizacionCabeceraEntrada
                 {//2024-10-03
-                    DocEntry =Convert.ToInt32(explocionSap[0].CodigoSalidaSap),
-                    DocNum = P_NumeroCotizacion,
+                    DocEntry =Convert.ToInt32(explocionSap.CodigoSalidaSap),
+                    DocNum = P_NumeroCotizacion + "" + DateTime.Now.ToString("ddHHmmss"),
                     DocDate =  fechaCot.ToString("yyyy-MM-dd"),
                     TaxDate =  fechaVen.ToString("yyyy-MM-dd"),
                     Comments = "Entrada",
@@ -1165,7 +1495,13 @@ ORDER BY e.FechaCreacion DESC;
                 
                 var token = await LoginAsync();
                 var inventoryUrl = _configuration["ApiSAP:BaseUrl"] + "/api/InventoryGenEntry";
-                var jsonInventoryData = System.Text.Json.JsonSerializer.Serialize(cotizacion);
+                var options = new JsonSerializerOptions
+                {
+                    DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                };
+
+                var jsonInventoryData = System.Text.Json.JsonSerializer.Serialize(cotizacion, options);
                 var content = new StringContent(jsonInventoryData, Encoding.UTF8, "application/json");
 
                 _httpClient.DefaultRequestHeaders.Authorization =
@@ -1350,6 +1686,7 @@ ORDER BY e.FechaCreacion DESC;
         public class Item
         {
             public string ItemCode { get; set; }
+            public string ItemDescription { get; set; }
             public decimal Quantity { get; set; }
             public string WarehouseCode { get; set; }
             public string AcctCode { get; set; }
@@ -1383,6 +1720,7 @@ ORDER BY e.FechaCreacion DESC;
         public class ItemEntrada
         {
             public string ItemCode { get; set; }
+            public string ItemDescription { get; set; }
             public decimal Quantity { get; set; }
             public string WarehouseCode { get; set; }
             public string AcctCode { get; set; }
@@ -1398,6 +1736,9 @@ ORDER BY e.FechaCreacion DESC;
             public string FamiliaPT { get; set; }
             public string SuibFamiliaPT { get; set; }
             public int IdSalida {  get; set; }
+
+            public decimal Ancho { get; set; }
+            public decimal Alto { get; set; }
             public List<BatchNumbers> BatchNumbers { get; set; }  // Lista de BatchNumbers
             public List<SerialNumber> SerialNumbers { get; set; }  // Lista de SerialNumbers
         }
@@ -1426,7 +1767,8 @@ ORDER BY e.FechaCreacion DESC;
                 var productosOtros = new List<string> {
                 "PRTRM00000016", "PRTRM00000001", "PRTRH00000001", "PRTRF00000001",
                 "PRTLU00000001", "PRTLU00000002", "PRTLU00000003"
-                };
+                }; 
+
                 switch (tipoProducto)
                 {
                     case "PRTRSMan": //MANUAL
@@ -1441,9 +1783,18 @@ ORDER BY e.FechaCreacion DESC;
                         procedure = "SP_ListarFormulacionRollerZebra";
                         break;
 
+                    case "PRTCV": //CORTINA VERTICAL
+                        procedure = "SP_ListarFormulacionOtros";
+                        break;
+
                     default:
                         if (productosOtros.Contains(tipoProducto))
+                        {
                             procedure = "SP_ListarFormulacionOtros";
+                        }else if (tipoProducto.ToUpper().Contains("PRTCV"))
+                        {
+                            procedure = "SP_ListarFormulacionOtros";
+                        }
                         break;
                 }
                 if (string.IsNullOrEmpty(procedure))
@@ -1494,8 +1845,14 @@ ORDER BY e.FechaCreacion DESC;
                     if (item.Agregado!=null && item.Agregado == "true")
                     {
                         Adicional = "SI";
+                        item.CodFamilia = "PRT";
+                    } 
+                    if (string.IsNullOrEmpty(item.CodFamilia))
+                    {
+                        item.CodFamilia = "PRT";
                     }
-
+                    item.Familia = "PRT";
+                    
                     var nuevaFila = new Tbl_Explocion()
                     {
                         NumeroCotizacion = item.NumeroCotizacion,
