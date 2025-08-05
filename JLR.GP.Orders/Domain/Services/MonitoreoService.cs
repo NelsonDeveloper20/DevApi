@@ -1425,11 +1425,11 @@ ORDER BY e.FechaCreacion DESC;
                 { 
 
                     var batchNumbers = JsonConvert.DeserializeObject<List<BatchNumbers>>("[]");                   
-                    var serialNumbers = JsonConvert.DeserializeObject<List<SerialNumber>>("[]");                   
+                    var serialNumbers = JsonConvert.DeserializeObject<List<SerialNumber>>("[]");
                     listItems.Add(new ItemEntrada
-                    { 
+                    {
                         ItemCode = item.CodigoProducto.Trim(),
-                        ItemDescription=item.NombreProducto?.Trim() ?? "",
+                        ItemDescription = item.NombreProducto?.Trim() ?? "",
                         Quantity = Convert.ToDecimal(item.Cantidad),
                         WarehouseCode = _configuration["ApiSAP:WarehouseCodeEntrada"],
                         AcctCode = _configuration["ApiSAP:AcctcodeEntrada"],// //item.AcctCode,  
@@ -1439,9 +1439,9 @@ ORDER BY e.FechaCreacion DESC;
                         //BatchNumbers = batchNumbers,
                         //SerialNumbers = serialNumbers,
                         IdSalida = Convert.ToInt32(explocionSap.CodigoSalidaSap),
-                        Alto= Convert.ToDecimal(item.Alto),
-                        Ancho= Convert.ToDecimal(item.Ancho),
-
+                        Alto = Convert.ToDecimal(item.Alto),
+                        Ancho = Convert.ToDecimal(item.Ancho),
+                        IdOrdenVenta = _TbCotizacion.DocEntrySap.ToString()
 
                     });
 
