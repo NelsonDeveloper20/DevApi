@@ -1094,51 +1094,50 @@ ORDER BY e.FechaCreacion DESC;
            try
             {
                 var _TbCotizacion = await _context.Tbl_OrdenProduccion
-                    .FirstOrDefaultAsync(o => o.NumeroCotizacion == P_NumeroCotizacion);
+                   .FirstOrDefaultAsync(o => o.NumeroCotizacion == P_NumeroCotizacion);
+
                 var datEntrada = await _context.TBL_DetalleOrdenProduccion.Where(d => d.CotizacionGrupo == P_grupoCotizacion).ToListAsync();
 
                 var explocionSap = await _context.Tbl_ExplocionSap
                 .Where(e => e.CotizacionGrupo == P_grupoCotizacion)
                 .FirstAsync();
-                var listItems = new List<dynamic>();
+                var listItems = new List<ItemEntrada>();
                 var error = "";
+
+
+
                 // Convertir el string a DateTime
                 DateTime fechaCot = DateTime.ParseExact(_TbCotizacion.FechaCotizacion, "yyyyMMdd", null);
                 DateTime fechaVen = DateTime.ParseExact(_TbCotizacion.FechaVenta, "yyyyMMdd", null);
                 foreach (var item in datEntrada)
                 {
-                    
-                    listItems.Add(new  
+
+                    var batchNumbers = JsonConvert.DeserializeObject<List<BatchNumbers>>("[]");
+                    var serialNumbers = JsonConvert.DeserializeObject<List<SerialNumber>>("[]");
+                    listItems.Add(new ItemEntrada
                     {
-                        Id=item.Id,
-                        ItemCode = item.CodigoProducto,
-                        ItemDescription = item.NombreProducto,  
+                        ItemCode = item.CodigoProducto.Trim(),
+                        ItemDescription = item.NombreProducto?.Trim() ?? "",
                         Quantity = Convert.ToDecimal(item.Cantidad),
                         WarehouseCode = _configuration["ApiSAP:WarehouseCodeEntrada"],
-                        AcctCode = _configuration["ApiSAP:AcctcodeEntrada"],// //item.AcctCode,
-                        CostingCode = "",
-                        ProjectCode = "",
-                        CostingCode2 = "",
-                        CostingCode3 = "",
-                        CostingCode4 = "",
-                        CostingCode5 = "",
-                        IdSistemaExterno = explocionSap.IdSistemaExterno,
-                        IdLineaSistemaE = explocionSap.IdLineaSistemaE,
-                        IdOrdenVenta = explocionSap.IdOrdenVenta,
-                        FamiliaPT = "PRT",//item.CodFamilia, 
-                        SubFamiliaPT = item.SubFamilia,  
-                        BatchNumbers = "[]",
-                        SerialNumbers = "[]",
+                        AcctCode = _configuration["ApiSAP:AcctcodeEntrada"],// //item.AcctCode,  
+                        //FamiliaPT = "PRT", 
+                        //SuibFamiliaPT = item.SubFamilia?.Trim() ?? "",
+                        //SubFamiliaPT =item.SubFamiliaPT,
+                        //BatchNumbers = batchNumbers,
+                        //SerialNumbers = serialNumbers,
                         IdSalida = Convert.ToInt32(explocionSap.CodigoSalidaSap),
                         Alto = Convert.ToDecimal(item.Alto),
                         Ancho = Convert.ToDecimal(item.Ancho),
+                        IdOrdenVenta = _TbCotizacion.DocEntrySap.ToString()
 
                     });
+                     
                 }
-                var cotizacion = new 
-                {
+                var cotizacion = new CotizacionCabeceraEntrada
+                {//2024-10-03
                     DocEntry = Convert.ToInt32(explocionSap.CodigoSalidaSap),
-                    DocNum = P_NumeroCotizacion,
+                    DocNum = P_NumeroCotizacion + "" + DateTime.Now.ToString("ddHHmmss"),
                     DocDate = fechaCot.ToString("yyyy-MM-dd"),
                     TaxDate = fechaVen.ToString("yyyy-MM-dd"),
                     Comments = "Entrada",
@@ -1146,7 +1145,8 @@ ORDER BY e.FechaCreacion DESC;
                     U_EXX_TIPOOPER = "19",
                     IdSistemaExterno = _TbCotizacion.Id.ToString(),
                     DocumentLines = listItems
-                }; 
+                };
+
                 var jsonInventoryData = System.Text.Json.JsonSerializer.Serialize(cotizacion);                 
                             var jsonresponse = new
                             {
