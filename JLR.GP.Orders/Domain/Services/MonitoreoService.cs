@@ -113,6 +113,7 @@ namespace ApiPortal_DataLake.Domain.Services
                                     .ToListAsync();
                                 var row = new
                                 {
+                                    Merma = reader["Merma"].ToString(),
                                     DetalleSalida = detallesSalida,  // Asegúrate de que estos detalles sean relevantes para cada fila
                                     DetalleEntrada = detallesEntrada,  // Asegúrate de que estos detalles sean relevantes para cada fila
                                     RucCliente = reader["RucCliente"]?.ToString(),
@@ -323,7 +324,13 @@ ORDER BY e.FechaCreacion DESC;
 
                 foreach (var item in request)
                 { 
-                    string Adicional = "NO"; 
+                    string Adicional = "NO";
+                     
+                    
+                    var merma = string.IsNullOrWhiteSpace(item.Merma) ||
+                                item.Merma.Equals("undefined", StringComparison.OrdinalIgnoreCase)
+                        ? "0"
+                        : item.Merma;
                     var nuevaFila = new Tbl_Explocion()
                     {
                         NumeroCotizacion = item.NumeroCotizacion,
@@ -336,7 +343,7 @@ ORDER BY e.FechaCreacion DESC;
                         Color = item.Color,
                         Unidad = item.UnidadMedida,
                         Cantidad = item.CantidadUtilizada,
-                        Merma = item.Merma,
+                        Merma = merma,//item.Merma,
                         Origen = "Explocion",
                         IdUsuarioCrea = Convert.ToInt32(item.Usuario),
                         FechaCreacion = DateTime.Now, 
@@ -419,6 +426,10 @@ ORDER BY e.FechaCreacion DESC;
 
                 foreach (var item in request)
                 {
+                    var merma = string.IsNullOrWhiteSpace(item.merma) ||
+                                item.merma.Equals("undefined", StringComparison.OrdinalIgnoreCase)
+                        ? "0"
+                        : item.merma;
                     if (item.id == "0")
                     {
                         var nuevaFila = new Tbl_Explocion
@@ -433,7 +444,7 @@ ORDER BY e.FechaCreacion DESC;
                             Color = item.color,
                             Unidad = item.unidad,
                             Cantidad = item.cantidad,
-                            Merma = item.merma,
+                            Merma = merma,//item.merma,
                             Origen = "Explocion",
                             IdUsuarioCrea = Convert.ToInt32(item.idUsuarioCrea),
                             FechaCreacion = fechaExplocion
@@ -451,7 +462,7 @@ ORDER BY e.FechaCreacion DESC;
                             _explocion.Color = item.color;
                             _explocion.Unidad = item.unidad;
                             _explocion.Cantidad = item.cantidad;
-                            _explocion.Merma = item.merma;
+                            _explocion.Merma = merma;// item.merma;
                             _explocion.IdUsuarioModifica = Convert.ToInt32(item.idUsuarioCrea);
                             _explocion.FechaModifica = DateTime.Now;
                             _context.Tbl_Explocion.Update(_explocion);
@@ -1668,8 +1679,193 @@ ORDER BY e.FechaCreacion DESC;
         }
 
 
+        #region ENVIAR SALIDA MERMA --> SAP
+        public async Task<GeneralResponse<Object>> EnviarSalidaMermaSap(string P_NumeroCotizacion, string P_grupoCotizacion, string idusuario)
+        {
 
-       
+            using var transaction = _context.Database.BeginTransaction();
+            try
+            {
+                var _TbCotizacion = await _context.Tbl_OrdenProduccion
+                    .FirstOrDefaultAsync(o => o.NumeroCotizacion == P_NumeroCotizacion);
+                var grupoExplotado = await _context.Tbl_DetalleOpGrupo
+               .FirstOrDefaultAsync(e => e.CotizacionGrupo == P_grupoCotizacion
+                                    && e.NumeroCotizacion == P_NumeroCotizacion);
+                var explocionSap = await _context.Tbl_Explocion
+                    .Where(e => e.CotizacionGrupo == P_grupoCotizacion && e.Cod_Componente != "Ninguno" && e.Merma != "0")
+                    .ToListAsync();
+
+                var listItems = new List<Item>();
+                var error = "";
+
+
+
+                // Convertir el string a DateTime
+                DateTime fechaCot = DateTime.ParseExact(_TbCotizacion.FechaCotizacion, "yyyyMMdd", null);
+                DateTime fechaVen = DateTime.ParseExact(_TbCotizacion.FechaVenta, "yyyyMMdd", null);
+                //ITEMS
+                foreach (var item in explocionSap)
+                {
+                    var batchNumbers = new List<BatchNumbers>();
+                    var serialNumbers = new List<SerialNumber>();
+                    if (!string.IsNullOrWhiteSpace(item.Lote))
+                    {
+                        var lotes = item.Lote.Split(",", StringSplitOptions.RemoveEmptyEntries)
+                                             .Select(l => l.Trim());
+                        foreach (var i in lotes)
+                        {
+                            batchNumbers.Add(new BatchNumbers
+                            {
+                                BatchNumber = i,
+                                Quantity = Convert.ToDecimal(item.Merma)
+                            });
+                        }
+                    }
+                    string jsonLotes = JsonConvert.SerializeObject(batchNumbers ?? new List<BatchNumbers>());
+                    string jsonSeries = JsonConvert.SerializeObject(serialNumbers ?? new List<SerialNumber>());
+                    listItems.Add(new Item
+                    {
+                        ItemCode = item.Cod_Componente,
+                        ItemDescription = item.Descripcion,
+                        Quantity = Convert.ToDecimal(item.Merma),//Para merma es columna merma no cantidad final
+                        WarehouseCode = _configuration["ApiSAP:WarehouseCode"],
+                        AcctCode = _configuration["ApiSAP:AcctcodeSalida"],// //item.AcctCode,
+                        CostingCode = "",//item.CostingCode,
+                        ProjectCode = "",
+                        CostingCode2 = "",// item.CostingCode2,
+                        CostingCode3 = "",// item.CostingCode3,
+                        CostingCode4 = "",//item.CostingCode4,
+                        CostingCode5 = "",//item.CostingCode5,
+                        IdSistemaExterno = grupoExplotado.Id.ToString(),
+                        IdLineaSistemaE = grupoExplotado.Id.ToString(),
+                        IdOrdenVenta = _TbCotizacion.DocEntrySap.ToString(),
+                        FamiliaPT = item.CodFamilia,
+                        SubFamiliaPT = item.SubFamilia,
+                        BatchNumbers = batchNumbers,
+                        SerialNumbers = serialNumbers,
+                    }); 
+                }
+                // Crear cotización
+                var cotizacion = new CotizacionCabecera
+                {
+                    DocNum = _TbCotizacion.NumeroCotizacion,
+                    DocDate = fechaCot.ToString("dd/MM/yyyy"),
+                    TaxDate = fechaVen.ToString("dd/MM/yyyy"),
+                    Comments = "Salida",
+                    Reference2 = "Ref2",
+                    U_EXX_TIPOOPER = "13",//PARA MERMA ES 13
+                    IdSistemaExterno = _TbCotizacion.Id.ToString(),
+                    DocumentLines = listItems
+                };
+
+                var token = await LoginAsync();
+                var inventoryUrl = _configuration["ApiSAP:BaseUrl"] + "/api/InventoryGenExit";
+                var jsonInventoryData = System.Text.Json.JsonSerializer.Serialize(cotizacion);
+                var content = new StringContent(jsonInventoryData, Encoding.UTF8, "application/json");
+
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+
+                var response = await _httpClient.PostAsync(inventoryUrl, content);
+
+                var responseString = await response.Content.ReadAsStringAsync();
+                Console.WriteLine("Respuesta del servidor: " + responseString);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    await transaction.RollbackAsync();
+                    // Buscar si es un error de inventario negativo
+                    if (responseString.Contains("La cantidad recae en un inventario negativo"))
+                    {
+                        // Extraer ItemCode y línea
+                        var match = Regex.Match(responseString, @"\[(?<campo>IGE1\.ItemCode)\]\[line: (?<linea>\d+)\]");
+                        if (match.Success)
+                        {
+                            var linea = int.Parse(match.Groups["linea"].Value);
+                            var itemCode = cotizacion.DocumentLines[linea - 1].ItemCode; // línea 12 → índice 11
+
+                            var mensajePersonalizado = $"No hay unidades disponibles del ítem {itemCode} en el almacén {cotizacion.DocumentLines[linea - 1].WarehouseCode}.";
+
+                            return new GeneralResponse<Object>(
+                                HttpStatusCode.BadRequest,
+                                new { Respuesta = "Error de stock", Detalle = responseString + " Comentario: " + mensajePersonalizado });
+                        }
+                    }
+
+                    // Otro tipo de error
+                    return new GeneralResponse<Object>(
+                        HttpStatusCode.BadRequest,
+                        new { Respuesta = "Error al procesar la carga de datos.", Detalle = responseString });
+                }
+                else
+                {
+                    // Usamos JsonDocument para parsear la respuesta JSON
+                    using (JsonDocument doc = JsonDocument.Parse(responseString))
+                    {
+                        JsonElement root = doc.RootElement;
+
+                        // Verificar si "DocEntry" está presente y obtener su valor
+                        if (root.TryGetProperty("DocEntry", out JsonElement docEntryElement))
+                        {
+                            int docEntry = docEntryElement.GetInt32();
+                            Console.WriteLine("DocEntry: " + docEntry);
+                            // Guardar en base de datos
+                             
+                            var explocionTbSapTbList = await _context.Tbl_ExplocionSap
+                            .Where(e => e.CotizacionGrupo == P_grupoCotizacion && e.Tipo == "Salida")
+                            .ToListAsync();
+
+                            if (explocionTbSapTbList.Any())
+                            {
+                                foreach (var item in explocionTbSapTbList)
+                                {
+                                    item.CodigoSalidaMermaSap = docEntry.ToString(); 
+                                    item.FechaSalidaMerma = DateTime.Now;
+                                    item.IdUsuarioCreaMerma = Convert.ToInt32(idusuario);
+                                }
+
+                                _context.Tbl_ExplocionSap.UpdateRange(explocionTbSapTbList);
+                            }
+
+                            await _context.SaveChangesAsync();
+                            await transaction.CommitAsync();
+
+                            var jsonresponse = new
+                            {
+                                Respuesta = "OPERACION REALIZADA CORRECTAMENTE",
+                                idOrden = 0
+                            };
+                            return new GeneralResponse<Object>(HttpStatusCode.OK, jsonresponse);
+                        }
+                        else
+                        {
+                            await transaction.RollbackAsync();
+                            // Si no encontramos el DocEntry
+                            return new GeneralResponse<Object>(
+                                HttpStatusCode.BadRequest,
+                                new { Respuesta = "Error: DocEntry no encontrado.", Detalle = "Error: DocEntry (Codigo Salida) no encontrado." });
+                        }
+                    }
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                _logger.LogError($"Insertar Orden produccion Error try catch: {JsonConvert.SerializeObject(ex)}");
+                var jsonresponse = new
+                {
+                    Respuesta = ex.Message,
+                    idOrden = 0
+                };
+                return new GeneralResponse<Object>(HttpStatusCode.InternalServerError, jsonresponse);
+            }
+        }
+
+        #endregion
+
 
         #region ESTRUCTURA SALIDA SAP
         public class CotizacionCabecera

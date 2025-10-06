@@ -35,9 +35,12 @@ namespace Api_Dc.Domain.Models
         public string? BatchNumbers { get; set; }
         public string? SerialNumbers { get; set; }
         public string? CodigoSalidaSap { get; set; }
+        public string? CodigoSalidaMermaSap { get; set; }
         public string? CodigoEntradaSap { get; set; }
         public int?    IdUsuarioCrea { get; set; }
+        public int? IdUsuarioCreaMerma { get; set; }
         public DateTime?  FechaCreacion { get; set; }
+        public DateTime? FechaSalidaMerma { get; set; }
         public string? Tipo { get; set; }
         public string? CotizacionGrupo { get; set; } 
     }

@@ -1799,6 +1799,58 @@
         }
       }
     },
+    "/api/Monitoreo/EnviarSalidaMermaSap": {
+      "post": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "parameters": [
+          {
+            "name": "cotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "grupo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "idusuario",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Monitoreo/EnviarEntradaSap": {
       "post": {
         "tags": [

@@ -23,7 +23,8 @@ namespace ApiPortal_DataLake.Domain.Contracts
         Task<IEnumerable<Tbl_Componentes>> ListarComponentesPorCodigosProducto(string codigosProducto,string grupo);
         Task<GeneralResponse<Object>> GuardarExplocionMantenimiento(List<ExplocionComponentesMantRequest> request);
         Task<GeneralResponse<Object>> EnviarEntradaSap(string P_NumeroCotizacion, string P_grupoCotizacion, string idusuario);
-        Task<GeneralResponse<Object>> EnviarSalidaSap(string P_NumeroCotizacion, string P_grupoCotizacion, string idusuario); 
+        Task<GeneralResponse<Object>> EnviarSalidaSap(string P_NumeroCotizacion, string P_grupoCotizacion, string idusuario);
+        Task<GeneralResponse<Object>> EnviarSalidaMermaSap(string P_NumeroCotizacion, string P_grupoCotizacion, string idusuario);
         Task<GeneralResponse<Object>> GuardarCodigoSalida(string P_NumeroCotizacion, string P_grupoCotizacion, string codigoSalida);
 
         Task<GeneralResponse<dynamic>> ListarFormulacionRollerShade(string numCotizacion, string grupoCotizacion, string tipoProducto,string accionamiento);

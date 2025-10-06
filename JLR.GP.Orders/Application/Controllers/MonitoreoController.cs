@@ -252,6 +252,19 @@ namespace ApiPortal_DataLake.Application.Controllers
                 return StatusCode((int)response.Status, response);
             }
         }
+        [HttpPost("EnviarSalidaMermaSap")]
+        public async Task<ActionResult<GeneralResponse<Object>>> EnviarSalidaMermaSap(string cotizacion, string grupo, string idusuario) //OK
+        {
+            var response = await this._usuarioService.EnviarSalidaMermaSap(cotizacion, grupo, idusuario);
+            if (response.Status == HttpStatusCode.OK)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return StatusCode((int)response.Status, response);
+            }
+        }
         [HttpPost("EnviarEntradaSap")]
         public async Task<ActionResult<GeneralResponse<Object>>> EnviarEntradaSap(string cotizacion, string grupo , string idusuario) //OK
         {

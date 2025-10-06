@@ -919,6 +919,42 @@
   },
   {
     "ContainingType": "ApiPortal_DataLake.Application.Controllers.MonitoreoController",
+    "Method": "EnviarSalidaMermaSap",
+    "RelativePath": "api/Monitoreo/EnviarSalidaMermaSap",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cotizacion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "grupo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "idusuario",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiPortal_DataLake.Domain.Response.GeneralResponse\u00601[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiPortal_DataLake.Application.Controllers.MonitoreoController",
     "Method": "EnviarSalidaSap",
     "RelativePath": "api/Monitoreo/EnviarSalidaSap",
     "HttpMethod": "POST",
