@@ -79,6 +79,7 @@ namespace ApiPortal_DataLake.Domain.Services
                         IdRol = agregarUsuarioRequest.IdRol,
                         Usuario = agregarUsuarioRequest.Usuario,
                         Clave = Encriptacion.EncryptPassword(agregarUsuarioRequest.Clave.Trim().ToLower()), // Hash the password
+                        Ping=agregarUsuarioRequest.Ping.Trim().ToLower(),
                         CodigoUsuario = agregarUsuarioRequest.CodigoUsuario,
                         Estado = 1
                     };
@@ -97,6 +98,7 @@ namespace ApiPortal_DataLake.Domain.Services
                     usuarioExistente.IdRol = agregarUsuarioRequest.IdRol;
                     usuarioExistente.Usuario = agregarUsuarioRequest.Usuario;
                     usuarioExistente.Clave = Encriptacion.EncryptPassword(agregarUsuarioRequest.Clave.Trim().ToLower()); // Hash the password
+                    usuarioExistente.Ping = agregarUsuarioRequest.Ping.Trim().ToLower();
                     usuarioExistente.CodigoUsuario = agregarUsuarioRequest.CodigoUsuario;
                     usuarioExistente.Estado = agregarUsuarioRequest.Estado;
 
@@ -308,6 +310,7 @@ namespace ApiPortal_DataLake.Domain.Services
                                     u.Correo,
                                     u.Usuario,
                                     Clave = Encriptacion.DecryptPassword(u.Clave), // Nombrar la propiedad como "Clave"
+                                    u.Ping,
                                     u.CodigoUsuario,
                                     u.FechaCreacion,
                                     u.FechaModificacion,

@@ -13,7 +13,8 @@
         public int?  IdRol { get; set; }
         public string? Usuario { get; set; }
         public string? Clave { get; set; }
-       public string? CodigoUsuario { get; set; }
+        public string? Ping { get; set; }
+        public string? CodigoUsuario { get; set; }
         public int? Estado { get; set; }
 
     }

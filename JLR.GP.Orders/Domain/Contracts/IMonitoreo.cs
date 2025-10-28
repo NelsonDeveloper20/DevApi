@@ -7,13 +7,22 @@ using ApiPortal_DataLake.Domain.Response;
 namespace ApiPortal_DataLake.Domain.Contracts
 {
     public interface IMonitoreo
-    { 
+    {
+
+        //#region 
+
+        Task<GeneralResponse<Object>> ModificarMerma(List<ModificarMermaRequest> request, string idusuario);
+        Task<IEnumerable<object>> ListarMermaAmodificar(string grupo);
+        Task<GeneralResponse<Object>> RevertirProceso(RevertirRequest _request);
+
+        //#endregion
         Task<GeneralResponse<dynamic>> ListarExplocion(string grupoCotizacion, string fechaInicio, string fechaFin); //OK
         Task<GeneralResponse<dynamic>> ListarMonitoreoSapSalidaEntrada(string grupoCotizacion, string fechaInicio, string fechaFin); //OK
+        Task<GeneralResponse<dynamic>> ListarMonitoreoSapSalidaEntradaRevertido(string grupoCotizacion, string fechaInicio, string fechaFin);
         Task<GeneralResponse<dynamic>> listarComponentesProductoPorGrupo(string grupoCotizacion, string id); //OK OK 
         Task<GeneralResponse<Object>> InsertarEstacionProducto(EstacionProductoRequest _request);
         Task<GeneralResponse<Object>> GuardarExplocion(List<ExplocionComponentesRequest> request);
-        Task<GeneralResponse<Object>> GuardarFormulacionRollerShade(List<MonitoreoFormulacionRollerRequest> request);
+        Task<GeneralResponse<Object>> GuardarFormulacionRollerShade(List<MonitoreoFormulacionRollerRequest> request, string tipo);
 
         
 

@@ -1,0 +1,133 @@
+2025-10-23 07:57:44,231 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2025-10-23 07:57:44,255 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2025-10-23 07:57:44,698 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2025-10-23 07:57:44,777 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2025-10-23 07:57:45,039 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2025-10-23 09:29:54,600 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2025-10-23 09:29:54,761 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2025-10-23 09:29:54,873 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2025-10-23 09:29:54,881 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2025-10-23 09:29:54,886 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2025-10-23 09:30:22,585 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Monto' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-10-23 09:30:22,601 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'SubTotal' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-10-23 09:30:22,609 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'Total' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-10-23 09:30:22,616 [.NET ThreadPool Worker] WARN Microsoft.EntityFrameworkCore.Model.Validation - No store type was specified for the decimal property 'TotalIgv' on entity type 'Tbl_OrdenProduccion'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-10-23 09:30:23,041 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.3 initialized 'DBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: None
+2025-10-23 09:30:25,181 [.NET ThreadPool Worker] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (264ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Nombre]
+FROM [Tbl_Proyecto] AS [t]
+ORDER BY [t].[Id] DESC
+2025-10-23 10:21:07,640 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2025-10-23 10:21:07,674 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2025-10-23 10:21:08,077 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2025-10-23 10:21:08,114 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2025-10-23 10:21:08,135 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2025-10-23 10:21:22,989 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Controllers.MonitoreoController - Error al consultar artículo PALLU00000003
+System.TypeInitializationException: The type initializer for 'Sap.Data.Hana.HanaConnection' threw an exception.
+ ---> System.IO.FileNotFoundException: Cannot find a matching libadonetHDB.dll with version 2.11.14 - check the location in the HDBDOTNETCORE or PATH / LD_LIBRARY_PATH / DYLD_LIBRARY_PATH environment variables
+
+Searched paths and results: 
+
+   at Sap.Data.Hana.HanaUnmanagedDll.SearchNativeDlls()
+   at Sap.Data.Hana.HanaUnmanagedDll..ctor()
+   at Sap.Data.Hana.HanaUnmanagedDll.get_Instance()
+   at Sap.Data.Hana.HanaConnection..cctor()
+   --- End of inner exception stack trace ---
+   at Sap.Data.Hana.HanaConnection..ctor(String connectionString)
+   at ApiPortal_DataLake.Application.Controllers.MonitoreoController.GetDescripcionArticulo(String itemCode) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Application\Controllers\MonitoreoController.cs:line 66
+2025-10-23 10:22:59,670 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Controllers.MonitoreoController - Error al consultar artículo PALLU00000003
+System.TypeInitializationException: The type initializer for 'Sap.Data.Hana.HanaConnection' threw an exception.
+ ---> System.IO.FileNotFoundException: Cannot find a matching libadonetHDB.dll with version 2.11.14 - check the location in the HDBDOTNETCORE or PATH / LD_LIBRARY_PATH / DYLD_LIBRARY_PATH environment variables
+
+Searched paths and results: 
+
+   at Sap.Data.Hana.HanaUnmanagedDll.SearchNativeDlls()
+   at Sap.Data.Hana.HanaUnmanagedDll..ctor()
+   at Sap.Data.Hana.HanaUnmanagedDll.get_Instance()
+   at Sap.Data.Hana.HanaConnection..cctor()
+   --- End of inner exception stack trace ---
+   at Sap.Data.Hana.HanaConnection..ctor(String connectionString)
+   at ApiPortal_DataLake.Application.Controllers.MonitoreoController.GetDescripcionArticulo(String itemCode) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Application\Controllers\MonitoreoController.cs:line 66
+2025-10-23 10:26:15,856 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2025-10-23 10:26:16,547 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2025-10-23 10:26:17,317 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2025-10-23 10:26:17,337 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2025-10-23 10:26:17,407 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2025-10-23 10:26:38,713 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Controllers.MonitoreoController - Error al consultar artículo PALLU00000003
+System.TypeInitializationException: The type initializer for 'Sap.Data.Hana.HanaConnection' threw an exception.
+ ---> System.IO.FileNotFoundException: Cannot find a matching libadonetHDB.dll with version 2.11.14 - check the location in the HDBDOTNETCORE or PATH / LD_LIBRARY_PATH / DYLD_LIBRARY_PATH environment variables
+
+Searched paths and results: 
+
+   at Sap.Data.Hana.HanaUnmanagedDll.SearchNativeDlls()
+   at Sap.Data.Hana.HanaUnmanagedDll..ctor()
+   at Sap.Data.Hana.HanaUnmanagedDll.get_Instance()
+   at Sap.Data.Hana.HanaConnection..cctor()
+   --- End of inner exception stack trace ---
+   at Sap.Data.Hana.HanaConnection..ctor(String connectionString)
+   at ApiPortal_DataLake.Application.Controllers.MonitoreoController.GetDescripcionArticulo(String itemCode) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Application\Controllers\MonitoreoController.cs:line 66
+2025-10-23 10:51:56,636 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2025-10-23 10:51:56,660 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2025-10-23 10:51:56,825 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2025-10-23 10:51:56,831 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2025-10-23 10:51:56,972 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2025-10-23 10:52:47,523 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Controllers.MonitoreoController - Error en test de conexión
+System.Runtime.InteropServices.COMException (0x80040154): Retrieving the COM class factory for component with CLSID {632F4591-AA62-4219-8FB6-22BCF5F60088} failed due to the following error: 80040154 Clase no registrada (0x80040154 (REGDB_E_CLASSNOTREG)).
+   at ApiPortal_DataLake.Application.Controllers.MonitoreoController.TestConexion() in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Application\Controllers\MonitoreoController.cs:line 128
+2025-10-23 10:53:45,746 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2025-10-23 10:53:45,797 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2025-10-23 10:53:47,083 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2025-10-23 10:53:47,166 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2025-10-23 10:53:47,186 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2025-10-23 10:54:43,579 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Domain.Services.DIAPIService - Error crítico al conectar DI API
+System.Runtime.InteropServices.COMException (0x80040154): Retrieving the COM class factory for component with CLSID {632F4591-AA62-4219-8FB6-22BCF5F60088} failed due to the following error: 80040154 Clase no registrada (0x80040154 (REGDB_E_CLASSNOTREG)).
+   at ApiPortal_DataLake.Domain.Services.DIAPIService.GetConnection() in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Domain\Services\DIAPIService.cs:line 24
+2025-10-23 10:54:59,090 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Controllers.MonitoreoController - Error al consultar artículo PALRS00000003
+System.Runtime.InteropServices.COMException (0x80040154): Retrieving the COM class factory for component with CLSID {632F4591-AA62-4219-8FB6-22BCF5F60088} failed due to the following error: 80040154 Clase no registrada (0x80040154 (REGDB_E_CLASSNOTREG)).
+   at ApiPortal_DataLake.Domain.Services.DIAPIService.GetConnection() in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Domain\Services\DIAPIService.cs:line 24
+   at ApiPortal_DataLake.Application.Controllers.MonitoreoController.<GetDescripcionArticulov2>b__6_0() in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Application\Controllers\MonitoreoController.cs:line 66
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at ApiPortal_DataLake.Application.Controllers.MonitoreoController.GetDescripcionArticulov2(String itemCode) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Application\Controllers\MonitoreoController.cs:line 66
+2025-10-23 10:56:26,567 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2025-10-23 10:56:26,606 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2025-10-23 10:56:26,933 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2025-10-23 10:56:26,987 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2025-10-23 10:56:27,010 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2025-10-23 10:57:42,945 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Domain.Services.DIAPIService - Error crítico al conectar DI API
+System.Runtime.InteropServices.COMException (0x80040154): Retrieving the COM class factory for component with CLSID {632F4591-AA62-4219-8FB6-22BCF5F60088} failed due to the following error: 80040154 Clase no registrada (0x80040154 (REGDB_E_CLASSNOTREG)).
+   at ApiPortal_DataLake.Domain.Services.DIAPIService.GetConnection() in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Domain\Services\DIAPIService.cs:line 24
+2025-10-23 10:57:44,642 [.NET ThreadPool Worker] ERROR ApiPortal_DataLake.Application.Controllers.MonitoreoController - Error al consultar artículo PALRS00000003
+System.Runtime.InteropServices.COMException (0x80040154): Retrieving the COM class factory for component with CLSID {632F4591-AA62-4219-8FB6-22BCF5F60088} failed due to the following error: 80040154 Clase no registrada (0x80040154 (REGDB_E_CLASSNOTREG)).
+   at ApiPortal_DataLake.Domain.Services.DIAPIService.GetConnection() in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Domain\Services\DIAPIService.cs:line 24
+   at ApiPortal_DataLake.Application.Controllers.MonitoreoController.<GetDescripcionArticulov2>b__6_0() in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Application\Controllers\MonitoreoController.cs:line 66
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at ApiPortal_DataLake.Application.Controllers.MonitoreoController.GetDescripcionArticulov2(String itemCode) in C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\Application\Controllers\MonitoreoController.cs:line 66
+2025-10-23 16:18:43,999 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2025-10-23 16:18:44,023 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2025-10-23 16:18:44,458 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2025-10-23 16:18:44,500 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2025-10-23 16:18:44,631 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2025-10-23 16:20:41,904 [.NET ThreadPool Worker] FATAL ApiPortal_DataLake.Domain.Services.DIAPIService - SAP DI API no está instalada o registrada en este servidor. Instale el SDK de SAP Business One o use Service Layer.
+2025-10-23 16:20:42,056 [.NET ThreadPool Worker] WARN ApiPortal_DataLake.Domain.Services.DIAPIService - SAP DI API no está instalada o registrada en este servidor. Instale el SDK de SAP Business One o use Service Layer.
+2025-10-23 16:53:25,483 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2025-10-23 16:53:25,555 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2025-10-23 16:53:26,338 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2025-10-23 16:53:26,377 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2025-10-23 16:53:26,381 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\
+2025-10-23 17:10:43,585 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7014
+2025-10-23 17:10:43,614 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5014
+2025-10-23 17:10:44,962 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2025-10-23 17:10:44,969 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+2025-10-23 17:10:44,977 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\LENOVO\Documents\INGINIERIA\DC\Api-DC\JLR.GP.Orders\

@@ -49,6 +49,7 @@ builder.Services.AddTransient<IOperacionesContruccion, OperacionesConstruccionSe
 
 builder.Services.AddTransient<IDetalleOpGrupo, DetalleOpGrupoService>();
 builder.Services.AddTransient<IMantenimientoOp, MantenimientoOpService>();
+builder.Services.AddScoped<IDIAPIService, DIAPIService>();
 
 builder.Services.AddTransient<IRol, RolService>();
 builder.Services.AddTransient<IPerfilService, PerfilService>();

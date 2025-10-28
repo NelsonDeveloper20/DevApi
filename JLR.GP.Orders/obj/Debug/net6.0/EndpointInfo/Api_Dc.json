@@ -1240,6 +1240,54 @@
         }
       }
     },
+    "/api/Monitoreo/GetDescripcionesArticulos": {
+      "post": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Monitoreo": {
       "get": {
         "tags": [
@@ -1361,6 +1409,94 @@
         }
       }
     },
+    "/api/Monitoreo/ListarMonitoreoSapSalidaEntradaRevertido": {
+      "get": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "parameters": [
+          {
+            "name": "grupoCotizacion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fechaInicio",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fechaFin",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/revertir": {
+      "post": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevertirRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevertirRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevertirRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevertirRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Monitoreo/ListarReporteExplocion": {
       "get": {
         "tags": [
@@ -1441,6 +1577,121 @@
         "responses": {
           "200": {
             "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/GuardarEnviarMerma": {
+      "post": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "parameters": [
+          {
+            "name": "idusuario",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ModificarMermaRequest"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ModificarMermaRequest"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ModificarMermaRequest"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ModificarMermaRequest"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectGeneralResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Monitoreo/ListarMermaAEnviar": {
+      "get": {
+        "tags": [
+          "Monitoreo"
+        ],
+        "parameters": [
+          {
+            "name": "grupo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              }
+            }
           }
         }
       }
@@ -2129,6 +2380,15 @@
       "post": {
         "tags": [
           "Monitoreo"
+        ],
+        "parameters": [
+          {
+            "name": "tipo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "requestBody": {
           "content": {
@@ -3741,6 +4001,10 @@
             "type": "string",
             "nullable": true
           },
+          "ping": {
+            "type": "string",
+            "nullable": true
+          },
           "codigoUsuario": {
             "type": "string",
             "nullable": true
@@ -4168,6 +4432,32 @@
         },
         "additionalProperties": false
       },
+      "ModificarMermaRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "itemCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "itemDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "merma": {
+            "type": "string",
+            "nullable": true
+          },
+          "lote": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "MonitoreoFormulacionRollerRequest": {
         "type": "object",
         "properties": {
@@ -4254,6 +4544,10 @@
           "codFamilia": {
             "type": "string",
             "nullable": true
+          },
+          "hoja": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -4278,6 +4572,24 @@
             "nullable": true
           },
           "refreshToken": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RevertirRequest": {
+        "type": "object",
+        "properties": {
+          "codigoGrupo": {
+            "type": "string",
+            "nullable": true
+          },
+          "ping": {
+            "type": "string",
+            "nullable": true
+          },
+          "motivo": {
             "type": "string",
             "nullable": true
           }

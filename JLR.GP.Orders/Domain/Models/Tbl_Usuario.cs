@@ -22,7 +22,7 @@ namespace Api_Dc.Domain.Models
         public int? IdUsuarioCreacion { get; set; }
         public int? IdUsuarioModifica { get; set; }
         public int? Estado { get; set; }
-
+        public string? Ping { get; set; }
 
 
 

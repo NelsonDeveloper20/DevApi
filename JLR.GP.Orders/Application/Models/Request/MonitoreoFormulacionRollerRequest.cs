@@ -23,6 +23,7 @@
         public string? Alto { get; set; }
         public string? Ancho { get; set; }
         public string? CodFamilia { get; set; }
+        public string? Hoja { get; set; }
 
     }
 }

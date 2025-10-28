@@ -36,6 +36,13 @@ namespace Api_Dc.Domain.Models
         public string? Alto { get; set; }
         public string? Ancho { get; set; }
         public string? CodFamilia { get; set; }
+        public string? Hoja { get; set; }
+        public string? CodigoSalidaMerma { get; set; }
 
+
+        public int? Reversion { get; set; }
+        public int? UsuarioReversion { get; set; }
+        public DateTime? FechaReversion { get; set; }
+        public string? MotivoReversion { get; set; }
     }
 }

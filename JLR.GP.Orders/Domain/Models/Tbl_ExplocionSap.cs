@@ -42,6 +42,12 @@ namespace Api_Dc.Domain.Models
         public DateTime?  FechaCreacion { get; set; }
         public DateTime? FechaSalidaMerma { get; set; }
         public string? Tipo { get; set; }
-        public string? CotizacionGrupo { get; set; } 
+        public string? CotizacionGrupo { get; set; }
+
+
+        public int? Reversion { get; set; }
+        public int? UsuarioReversion { get; set; }
+        public DateTime? FechaReversion { get; set; }
+        public string? MotivoReversion { get; set; }
     }
 }

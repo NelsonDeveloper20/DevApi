@@ -87,6 +87,15 @@
           }
         }
       },
+      "Interop.SAPbobsCOM/8.82.76": {
+        "type": "package",
+        "compile": {
+          "lib/Interop.SAPbobsCOM.dll": {}
+        },
+        "runtime": {
+          "lib/Interop.SAPbobsCOM.dll": {}
+        }
+      },
       "log4net/2.0.13": {
         "type": "package",
         "dependencies": {
@@ -1487,6 +1496,18 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Storage.Common.dll",
         "lib/netstandard2.0/Azure.Storage.Common.xml"
+      ]
+    },
+    "Interop.SAPbobsCOM/8.82.76": {
+      "sha512": "/jHy0eT08zpWrJcpe0Xkfh6uuOovjTx1aB6gGPI8X2KmYGDk2J7FOfkledRWqTvfZELvng7TtaCjqxHBUZgTzw==",
+      "type": "package",
+      "path": "interop.sapbobscom/8.82.76",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "interop.sapbobscom.8.82.76.nupkg.sha512",
+        "interop.sapbobscom.nuspec",
+        "lib/Interop.SAPbobsCOM.dll"
       ]
     },
     "log4net/2.0.13": {
@@ -3450,6 +3471,7 @@
       "AutoMapper >= 11.0.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 11.0.0",
       "Azure.Storage.Blobs >= 12.14.1",
+      "Interop.SAPbobsCOM >= 8.82.76",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.4",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 6.0.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.3",
@@ -3523,6 +3545,10 @@
             "target": "Package",
             "version": "[12.14.1, )"
           },
+          "Interop.SAPbobsCOM": {
+            "target": "Package",
+            "version": "[8.82.76, )"
+          },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[6.0.4, )"
@@ -3590,6 +3616,16 @@
       "warningLevel": 1,
       "message": "El paquete \"RestSharp\" 107.3.0 tiene una vulnerabilidad de gravedad moderada conocida, https://github.com/advisories/GHSA-4rr6-2v9v-wcpc",
       "libraryId": "RestSharp",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"Interop.SAPbobsCOM 8.82.76\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net6.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "Interop.SAPbobsCOM",
       "targetGraphs": [
         "net6.0"
       ]

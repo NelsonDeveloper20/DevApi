@@ -14,6 +14,16 @@ using Api_Dc.Domain.Request;
 using Microsoft.AspNetCore.StaticFiles;
 using System.Text.RegularExpressions;
 using Api_Dc.Application.Models.Request;
+using System.Text;
+using System.Data.Common;
+using System.Dynamic;
+using Api_Dc.Domain.Contracts;
+using ApiPortal_DataLake.Domain.Services;
+using SAPbobsCOM;
+using System.Runtime.InteropServices;
+using Azure.Core;
+using System.Threading.Tasks;
+
 
 namespace ApiPortal_DataLake.Application.Controllers
 {
@@ -21,23 +31,130 @@ namespace ApiPortal_DataLake.Application.Controllers
     [ApiController]
     public class MonitoreoController : ControllerBase
     {
+        private readonly IDIAPIService _diapiService;
         private readonly IMonitoreo _usuarioService;
         private readonly ILogger<MonitoreoController> _logger;
         private readonly IMapper _mapper;
-
+        private readonly IConfiguration _configuration;
         public MonitoreoController(
             IMonitoreo usuarioService,
             ILogger<MonitoreoController> logger,
-            IMapper mapper
+            IMapper mapper,
+            IConfiguration configuration,
+        IDIAPIService diapiService
         )
         {
+            _diapiService = diapiService;
             this._usuarioService = usuarioService;
             this._logger = logger;
             this._mapper = mapper;
+
+            this._configuration = configuration;
+        }
+        [HttpPost("GetDescripcionesArticulos")]
+        public async Task<ActionResult> GetDescripcionArticulov2([FromBody] List<string> itemCodes)
+        {
+            if (itemCodes == null || !itemCodes.Any())
+            {
+                return BadRequest(new { message = "Debe proporcionar al menos un código de artículo" });
+            }
+
+            // Construir IN clause con los códigos
+            var codigosEscapados = itemCodes
+                .Select(code => $"'{code.Replace("'", "''")}'")
+                .ToList();
+
+            string inClause = string.Join(",", codigosEscapados);
+
+
+            Company company = null;
+            Items item = null;
+
+            Recordset oRec = null; // <-- Agregado
+            var result = new List<object>(); // <-- Agregado
+            try
+            {
+                // Obtener conexión de forma asíncrona
+                company = await Task.Run(() => _diapiService.GetConnection());
+
+                // Crear objeto Recordset
+                oRec = (Recordset)company.GetBusinessObject(BoObjectTypes.BoRecordset);
+
+                // Armar el query dinámico 
+                string query = $@"
+            SELECT 
+                ""ItemCode"",
+                ""ItemName"",
+                ""FrgnName""
+            FROM ""OITM"" 
+            WHERE ""ItemCode"" IN ({inClause})";
+                // Ejecutar consulta
+                oRec.DoQuery(query);
+
+                // Procesar resultados
+                if (oRec.RecordCount > 0)
+                {
+                    while (!oRec.EoF)
+                    {
+                        result.Add(new
+                        {
+                            ItemCode = oRec.Fields.Item("ItemCode").Value.ToString(),
+                            ItemName = oRec.Fields.Item("ItemName").Value.ToString(),
+                            FrgnName = oRec.Fields.Item("FrgnName").Value.ToString()
+                        });
+
+                        oRec.MoveNext();
+                    }
+                }
+                 
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            { 
+
+                if (company != null)
+                {
+                    string diError = company.GetLastErrorDescription();
+                    int diCode = company.GetLastErrorCode();
+
+                    if (diCode != 0)
+                    {
+                        return StatusCode(500, new
+                        {
+                            message = "Error en DI API de SAP B1",
+                            error = diError,
+                            code = diCode
+                        });
+                    }
+                }
+
+                return StatusCode(500, new
+                {
+                    message = "Error al consultar artículo",
+                    error = ex.Message,
+                    otros = ex.InnerException,
+                    err = ex
+                });
+            }
+            finally
+            {
+                if (item != null)
+                {
+                    Marshal.ReleaseComObject(item);
+                }
+
+                if (company != null)
+                {
+                    _diapiService.ReleaseConnection(company);
+                }
+            }
         } 
         [HttpGet]
         public async Task<ActionResult> ListarProductoXEstacionGrupo(string grupoCotizacion, string fechaInicio, string fechaFin) //OK
         {
+
+
             var response = await this._usuarioService.ListarExplocion(grupoCotizacion, fechaInicio, fechaFin);
             if (response.Status == HttpStatusCode.OK)
             {
@@ -47,7 +164,7 @@ namespace ApiPortal_DataLake.Application.Controllers
             {
                 return StatusCode((int)response.Status, response);
             }
-        } 
+        }
         [HttpGet("ListarMonitoreoSapSalidaEntrada")]
         public async Task<ActionResult> ListarMonitoreoSapSalidaEntrada(string grupoCotizacion, string fechaInicio, string fechaFin) //OK
         {
@@ -61,6 +178,41 @@ namespace ApiPortal_DataLake.Application.Controllers
                 return StatusCode((int)response.Status, response);
             }
         }
+        [HttpGet("ListarMonitoreoSapSalidaEntradaRevertido")]
+        public async Task<ActionResult> ListarMonitoreoSapSalidaEntradaRevertido(string grupoCotizacion, string fechaInicio, string fechaFin) //OK
+        {
+            var response = await this._usuarioService.ListarMonitoreoSapSalidaEntradaRevertido(grupoCotizacion, fechaInicio, fechaFin);
+            if (response.Status == HttpStatusCode.OK)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return StatusCode((int)response.Status, response);
+            }
+        }
+
+
+
+        [HttpPost("revertir")]
+        public async Task<ActionResult<GeneralResponse<Object>>> RevertirProcesoSap1([FromBody] RevertirRequest request)
+        {
+            try
+            {
+               
+
+                var response = await this._usuarioService.RevertirProceso(request);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                this._logger.LogError($"Error al guardar merma: {JsonConvert.SerializeObject(ex)}");
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new { mensaje = "Ocurrió un error al procesar la solicitud.", detalle = ex.Message });
+            }
+        } 
+
+
         [HttpGet("ListarReporteExplocion")]
         public async Task<ActionResult> ListarReporteExplocion(string grupoCotizacion, string fechaInicio, string fechaFin) //OK
         {
@@ -101,8 +253,53 @@ namespace ApiPortal_DataLake.Application.Controllers
             }
         }
 
+
+        [HttpPost("GuardarEnviarMerma")]
+        public async Task<ActionResult<GeneralResponse<Object>>> GuardarEnviarMerma( [FromBody] List<ModificarMermaRequest> request,   [FromQuery] string idusuario)
+        {
+            try
+            {
+                if (request == null || !request.Any())
+                {
+                    return BadRequest(new { mensaje = "La solicitud no puede estar vacía." });
+                }
+
+                if (string.IsNullOrWhiteSpace(idusuario))
+                {
+                    return BadRequest(new { mensaje = "El ID de usuario es requerido." });
+                }
+
+                var response = await this._usuarioService.ModificarMerma(request, idusuario);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                this._logger.LogError($"Error al guardar merma: {JsonConvert.SerializeObject(ex)}");
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new { mensaje = "Ocurrió un error al procesar la solicitud.", detalle = ex.Message });
+            }
+        }
+
+        [HttpGet("ListarMermaAEnviar")]
+        public async Task<ActionResult<IEnumerable<object>>> ListarMermaAmodificar(string grupo)
+        {
+            try
+            {
+                var proyectos = await _usuarioService.ListarMermaAmodificar( grupo);
+                var response = this._mapper.Map<IEnumerable<object>>(proyectos);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                this._logger.LogError($"Error Listar Orden Produccion : {JsonConvert.SerializeObject(ex)}");
+                return Ok(ex);
+            }
+        }
+
+
         [HttpGet("ListarComponentesPorCodigosProducto")]
-        public async Task<ActionResult<IEnumerable<Tbl_Componentes>>> GetAll(string codigosProducto,string grupo)
+        public async Task<ActionResult<IEnumerable<Tbl_Componentes>>> GetAll(string codigosProducto, string grupo)
         {
             try
             {
@@ -117,11 +314,11 @@ namespace ApiPortal_DataLake.Application.Controllers
                 return Ok(ex);
             }
         }
-        [HttpPost] 
+        [HttpPost]
         public async Task<ActionResult<GeneralResponse<Object>>> InsertarEstacionProducto([FromBody] EstacionProductoRequest _request)
         {
             try
-            { 
+            {
                 var response = await this._usuarioService.InsertarEstacionProducto(_request);
                 return response;
             }
@@ -137,7 +334,7 @@ namespace ApiPortal_DataLake.Application.Controllers
         {
             try
             {
-               
+
                 var builder = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
                     .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
@@ -266,7 +463,7 @@ namespace ApiPortal_DataLake.Application.Controllers
             }
         }
         [HttpPost("EnviarEntradaSap")]
-        public async Task<ActionResult<GeneralResponse<Object>>> EnviarEntradaSap(string cotizacion, string grupo , string idusuario) //OK
+        public async Task<ActionResult<GeneralResponse<Object>>> EnviarEntradaSap(string cotizacion, string grupo, string idusuario) //OK
         {
             var response = await this._usuarioService.EnviarEntradaSap(cotizacion, grupo, idusuario);
             if (response.Status == HttpStatusCode.OK)
@@ -336,7 +533,7 @@ namespace ApiPortal_DataLake.Application.Controllers
         }
 
         [HttpGet("ListarFormulacionRollerShade")]
-        public async Task<ActionResult> ListarFormulacionRollerShade(string numCotizacion, string grupoCotizacion,string tipoProducto,string accionamiento)
+        public async Task<ActionResult> ListarFormulacionRollerShade(string numCotizacion, string grupoCotizacion, string tipoProducto, string accionamiento)
         {
             var response = await this._usuarioService.ListarFormulacionRollerShade(numCotizacion, grupoCotizacion, tipoProducto, accionamiento);
             if (response.Status == HttpStatusCode.OK)
@@ -351,11 +548,11 @@ namespace ApiPortal_DataLake.Application.Controllers
 
 
         [HttpPost("GuardarFormulacionRollerShade")]
-        public async Task<ActionResult<GeneralResponse<Object>>> GuardarFormulacionRollerShade([FromBody] List<MonitoreoFormulacionRollerRequest> request)
+        public async Task<ActionResult<GeneralResponse<Object>>> GuardarFormulacionRollerShade([FromBody] List<MonitoreoFormulacionRollerRequest> request, [FromQuery] string tipo)
         {
             try
             {
-                var response = await this._usuarioService.GuardarFormulacionRollerShade(request);
+                var response = await this._usuarioService.GuardarFormulacionRollerShade(request, tipo);
                 return response;
 
             }

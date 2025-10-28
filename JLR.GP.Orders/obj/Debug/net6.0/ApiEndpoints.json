@@ -1069,6 +1069,53 @@
   },
   {
     "ContainingType": "ApiPortal_DataLake.Application.Controllers.MonitoreoController",
+    "Method": "GetDescripcionArticulov2",
+    "RelativePath": "api/Monitoreo/GetDescripcionesArticulos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "itemCodes",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiPortal_DataLake.Application.Controllers.MonitoreoController",
+    "Method": "GuardarEnviarMerma",
+    "RelativePath": "api/Monitoreo/GuardarEnviarMerma",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.Collections.Generic.List\u00601[[ApiPortal_DataLake.Application.Models.Request.ModificarMermaRequest, Api_Dc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "idusuario",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiPortal_DataLake.Domain.Response.GeneralResponse\u00601[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiPortal_DataLake.Application.Controllers.MonitoreoController",
     "Method": "GuardarFormulacionRollerShade",
     "RelativePath": "api/Monitoreo/GuardarFormulacionRollerShade",
     "HttpMethod": "POST",
@@ -1079,6 +1126,11 @@
         "Name": "request",
         "Type": "System.Collections.Generic.List\u00601[[ApiPortal_DataLake.Application.Models.Request.MonitoreoFormulacionRollerRequest, Api_Dc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
+      },
+      {
+        "Name": "tipo",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
@@ -1282,8 +1334,60 @@
   },
   {
     "ContainingType": "ApiPortal_DataLake.Application.Controllers.MonitoreoController",
+    "Method": "ListarMermaAmodificar",
+    "RelativePath": "api/Monitoreo/ListarMermaAEnviar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "grupo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiPortal_DataLake.Application.Controllers.MonitoreoController",
     "Method": "ListarMonitoreoSapSalidaEntrada",
     "RelativePath": "api/Monitoreo/ListarMonitoreoSapSalidaEntrada",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "grupoCotizacion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "fechaInicio",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "fechaFin",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiPortal_DataLake.Application.Controllers.MonitoreoController",
+    "Method": "ListarMonitoreoSapSalidaEntradaRevertido",
+    "RelativePath": "api/Monitoreo/ListarMonitoreoSapSalidaEntradaRevertido",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -1369,6 +1473,32 @@
       {
         "Name": "datosModificados",
         "Type": "System.Object",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiPortal_DataLake.Domain.Response.GeneralResponse\u00601[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiPortal_DataLake.Application.Controllers.MonitoreoController",
+    "Method": "RevertirProcesoSap1",
+    "RelativePath": "api/Monitoreo/revertir",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ApiPortal_DataLake.Application.Models.Request.RevertirRequest",
         "IsRequired": true
       }
     ],
