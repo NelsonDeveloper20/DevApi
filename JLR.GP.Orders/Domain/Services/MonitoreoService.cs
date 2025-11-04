@@ -2172,7 +2172,7 @@ namespace ApiPortal_DataLake.Domain.Services
                     case "PRTCV": //CORTINA VERTICAL
                         procedure = "SP_ListarFormulacionOtros";
                         break;
-
+                    
                     default:
                         if (productosOtros.Contains(tipoProducto))
                         {
@@ -2180,6 +2180,11 @@ namespace ApiPortal_DataLake.Domain.Services
                         }else if (tipoProducto.ToUpper().Contains("PRTCV"))
                         {
                             procedure = "SP_ListarFormulacionOtros";
+                        }
+                        else
+                        {
+                            // ✅ Si no coincide con ninguno de los anteriores
+                            procedure = "SP_ListarFormulacionGenerico"; 
                         }
                         break;
                 }
