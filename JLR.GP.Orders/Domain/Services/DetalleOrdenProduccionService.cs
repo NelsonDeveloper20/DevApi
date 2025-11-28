@@ -287,7 +287,7 @@ namespace ApiPortal_DataLake.Domain.Services
                                     cotizacionGrupo = $"{numeroCotizacion}-{numeracion}";
                                     if (SuperoMaximo == "SI")
                                     {
-                                        estadoInicial = 1;//PENDIENTE APROBACION SUPERVISOR
+                                        estadoInicial = 2;//PENDIENTE APROBACION SUPERVISOR1
                                     }
                                     CrearNuevoGrupo(cotizacionGrupo, "Producto", fechaProduccion, turno);
                                 }
@@ -297,7 +297,7 @@ namespace ApiPortal_DataLake.Domain.Services
                                     cotizacionGrupo = $"{numeroCotizacion}-0";
                                     if (SuperoMaximo == "SI")
                                     {
-                                        estadoInicial = 1;//PENDIENTE APROBACION SUPERVISOR
+                                        estadoInicial = 2;//PENDIENTE APROBACION SUPERVISOR 2
                                     }
                                     CrearNuevoGrupo(cotizacionGrupo, "Producto", fechaProduccion, turno);
                                 }
@@ -322,8 +322,8 @@ namespace ApiPortal_DataLake.Domain.Services
                             cotizacionGrupo = $"{numeroCotizacion}-1";
 
                             if (SuperoMaximo == "SI")
-                            {
-                                estadoInicial = 1;//PENDIENTE APROBACION SUPERVISOR
+                            { 
+                                estadoInicial = 2;//PENDIENTE APROBACION SUPERVISOR 1
                             }
                             CrearNuevoGrupo(cotizacionGrupo, "Producto", fechaProduccion, turno);
                         }
